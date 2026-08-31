@@ -1,0 +1,33 @@
+Issue salience, from a monthly national survey of British adults.
+
+Question: what is the most important issue facing Britain, and what other issues are important? Unprompted, so respondents supply their own answers, and multi-response, so one person may name several. Percentages are the share of respondents mentioning each issue and therefore do not sum to 100. All 27 published categories are listed, in the survey's own wording.
+
+  NHS/Hospitals/Healthcare                           44.0%
+  Race relations/Immigration/Immigrants              33.0%
+  Education/Schools                                  30.0%
+  Crime/Law and order/Violence/Vandalism             29.0%
+  Defence/Foreign affairs/International terrorism    24.0%
+  Pensions/Social security                           13.0%
+  Economy/Economic situation                         12.0%
+  Other                                              12.0%
+  Housing                                             9.0%
+  Poverty/Inequality                                  8.0%
+  Unemployment/Factory closure/Lack of industry       8.0%
+  Drug abuse                                          6.0%
+  Morality/Individual behaviour                       6.0%
+  Taxation                                            6.0%
+  Common Market/EU/Europe/Single European Currency    5.0%
+  Pollution/Environment                               4.0%
+  Transport/Public transport                          4.0%
+  Local government/Council tax/Poll tax               3.0%
+  Public services in general                          3.0%
+  Countryside/Rural life                              2.0%
+  Inflation/Prices                                    2.0%
+  Low pay/Minimum wage/Fair wages                     2.0%
+  Petrol prices/Fuel                                  2.0%
+  Animal welfare                                      1.0%
+  Foot And Mouth Outbreak/Farming Crisis              1.0%
+  Genetically Modified Foods                          1.0%
+  Nuclear weapons/Disarmament                         1.0%
+
+This instrument records that an issue was raised, not what respondents wanted done about it. It carries no measure of direction: nothing here indicates which way opinion leaned on any of these issues.

@@ -1,0 +1,68 @@
+SLOT 1  Instrument and mode
+Internet panel.
+
+SLOT 2  Sample
+Non-probability online panel with refreshment samples. Weighted by the published single-wave weight.
+
+SLOT 3  Issue salience
+Most important issue facing the country, 45 categories, manually coded:
+  Immigration                      26.3%
+  Economy-general                  19.5%
+  Health                           11.3%
+  Terrorism                         6.7%
+  Debt/deficit                      3.8%
+  Inequality                        2.9%
+  Unemployment                      2.9%
+  Housing                           2.4%
+  Election outcome                  2.3%
+  Living costs                      2.3%
+  Austerity                         2.3%
+  Welfare                           2.0%
+  Pol-neg                           1.8%
+  Europe                            1.6%
+  Poverty                           1.6%
+  Defence                           1.4%
+  Environment                       1.4%
+  Partisan-neg                      1.4%
+  Crime                             1.0%
+  Education                         0.8%
+  Uncoded                           0.5%
+  Taxation                          0.5%
+  Foreign affairs                   0.4%
+  Pensions/ageing                   0.4%
+  Morals                            0.3%
+  Scot-ind                          0.3%
+  Racism/discrimination             0.3%
+  Nat ident, goals-loss             0.2%
+  War                               0.2%
+  Pol values-left                   0.2%
+  Societal divides                  0.2%
+  Social care                       0.1%
+  Pol values-liberal                0.1%
+  Inflation                         0.1%
+  Transport/infrastructure          0.1%
+  Constitutional                    0.1%
+  Gender/sexuality/family           0.1%
+  Devolution                        0.1%
+  Economy-personal                  0.1%
+  Pol values-right                  0.1%
+  Asylum                            0.0%
+  International trade               0.0%
+  Pol values-auth                   0.0%
+  Other                             0.0%
+  Referendum unspecified            0.0%
+
+SLOT 4  Left-right position
+Weighted mean 5.19 on 0-10 self-placement, left to right.
+
+SLOT 5  Economic position (tax and spending)
+Weighted mean 4.48 on 0-10 self-placement on redistribution, government should redistribute to ordinary people.
+
+SLOT 6  Social position (authority and liberty)
+Weighted mean 6.77 on 0-10 derived authority-liberty scale, higher is more authoritarian.
+
+SLOT 7  European integration
+Weighted mean 6.55 on 0-10 self-placement on European integration, higher is more favourable to integration.
+
+SLOT 8  Instrument notes
+Salience categories are the 50-category frame applied to unprompted open-ended responses. No immigration self-placement was asked in this wave; the questions carried instead ask whether immigration benefits the culture and the economy, which are not equivalent. The authority-liberty figure is a derived multi-item scale rather than a single self-placement, so it is not directly comparable to the single-item measures in the other slots.

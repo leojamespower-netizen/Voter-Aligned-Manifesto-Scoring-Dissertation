@@ -1,0 +1,53 @@
+SLOT 1  Instrument and mode
+Salience collected by telephone; attitudinal items collected face-to-face in an earlier wave of the same panel.
+
+SLOT 2  Sample
+Probability sample. Weighted by an electors-only weight; the file is not pre-weighted.
+
+SLOT 3  Issue salience
+The issue that most influenced the respondent's vote, 39 categories, manually coded:
+  health                           33.6%
+  education                        25.6%
+  european union                    8.6%
+  macro-economic issues             7.9%
+  employment/unemployment           4.6%
+  pensions/ care for the elderly    4.3%
+  law+order/crime/policing/sentencing/prisons  3.6%
+  tax                               3.2%
+  inflation/wages/standard of living  1.2%
+  other specific n.e.c.             1.1%
+  welfare state/benefits            1.0%
+  environment                       1.0%
+  equality/ social justice          0.8%
+  scot/w dev+local govt             0.5%
+  housing/homelessness              0.5%
+  nationalisation/ privatisation    0.3%
+  industry/ business/ agriculture/ fishing  0.3%
+  sleaze/distrust politicians       0.2%
+  family values/csa/single parents  0.2%
+  transport                         0.2%
+  racism/uk ethnic minorities/immigration/refugees  0.2%
+  tactical voting                   0.2%
+  interest rates/ mortgages         0.2%
+  other economic/employment         0.2%
+  defence                           0.2%
+  oth.parties+leaders               0.1%
+  gun control                       0.1%
+  other constitutional issues       0.1%
+  foreign affairs                   0.1%
+  trade unions/ industrial action   0.0%
+
+SLOT 4  Left-right position
+Weighted mean 2.39 on 1-5 derived scale (1 = left, 5 = right).
+
+SLOT 5  Economic position (tax and spending)
+Taxation versus social services - increase both: 71.3%; reduce tax/servs: 28.7%.
+
+SLOT 6  Social position (authority and liberty)
+NOT MEASURED in this survey cycle.
+
+SLOT 7  European integration
+NOT MEASURED in this survey cycle.
+
+SLOT 8  Instrument notes
+Salience measures the vote-deciding issue, not the most important issue facing the country. Attitudinal items predate polling day by approximately ten months. Tax-versus-services ran as a split ballot, hence the reduced n.

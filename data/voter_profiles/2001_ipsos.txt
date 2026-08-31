@@ -1,0 +1,34 @@
+Issue salience, from a monthly national survey of British adults.
+
+Question: what is the most important issue facing Britain, and what other issues are important? Unprompted, so respondents supply their own answers, and multi-response, so one person may name several. Percentages are the share of respondents mentioning each issue and therefore do not sum to 100. All 28 published categories are listed, in the survey's own wording.
+
+  Foot And Mouth Outbreak/Farming Crisis             41.0%
+  NHS/Hospitals/Healthcare                           41.0%
+  Education/Schools                                  32.0%
+  Crime/Law and order/Violence/Vandalism             19.0%
+  Race relations/Immigration/Immigrants              16.0%
+  Common Market/EU/Europe/Single European Currency   14.0%
+  Unemployment/Factory closure/Lack of industry      12.0%
+  Other                                              11.0%
+  Economy/Economic situation                         10.0%
+  Pensions/Social security                            8.0%
+  Petrol prices/Fuel                                  7.0%
+  Drug abuse                                          6.0%
+  Poverty/Inequality                                  6.0%
+  Housing                                             5.0%
+  Pollution/Environment                               5.0%
+  BSE/Beef                                            4.0%
+  Taxation                                            4.0%
+  Transport/Public transport                          4.0%
+  Countryside/Rural life                              3.0%
+  Defence/Foreign affairs/International terrorism     3.0%
+  Morality/Individual behaviour                       3.0%
+  Animal welfare                                      2.0%
+  Low pay/Minimum wage/Fair wages                     2.0%
+  Aids                                                1.0%
+  Genetically Modified Foods                          1.0%
+  Inflation/Prices                                    1.0%
+  Local government/Council tax/Poll tax               1.0%
+  Northern Ireland                                    1.0%
+
+This instrument records that an issue was raised, not what respondents wanted done about it. It carries no measure of direction: nothing here indicates which way opinion leaned on any of these issues.

@@ -1,0 +1,39 @@
+Issue salience, from a monthly national survey of British adults.
+
+Question: what is the most important issue facing Britain, and what other issues are important? Unprompted, so respondents supply their own answers, and multi-response, so one person may name several. Percentages are the share of respondents mentioning each issue and therefore do not sum to 100. All 33 published categories are listed, in the survey's own wording.
+
+  NHS/Hospitals/Healthcare                           41.0%
+  Economy/Economic situation                         33.0%
+  Immigration/Immigrants                             30.0%
+  Inflation/Prices                                   29.0%
+  Housing                                            17.0%
+  Education/Schools                                  16.0%
+  Defence/Foreign affairs/International terrorism    12.0%
+  Poverty/Inequality                                 12.0%
+  Lack of faith in politics/politicians/government   12.0%
+  Other                                              11.0%
+  Crime/Law and order/Violence/Vandalism             10.0%
+  Pollution/Environment/Climate change                9.0%
+  Taxation                                            7.0%
+  Unemployment/Factory closure/Lack of industry       6.0%
+  Transport/Public transport                          6.0%
+  Ageing population/Social care                       6.0%
+  Public services in general                          6.0%
+  Common Market/Brexit/EU/Europe                      5.0%
+  Low pay/Minimum wage/Fair wages                     5.0%
+  Pensions/Social security/Benefits                   4.0%
+  Local government/Council tax                        2.0%
+  Race relations                                      2.0%
+  Mental health/Well-being                            2.0%
+  Coronavirus/Pandemic diseases                       2.0%
+  Morality/Individual behaviour/Lifestyle             2.0%
+  Food production/Farming                             1.0%
+  Population levels/Overpopulation                    1.0%
+  Nationalisation/Government control                  1.0%
+  UK union/Devolution/Reform                          1.0%
+  Nuclear weapons/Disarmament                         1.0%
+  Drug abuse                                          1.0%
+  Privatisation                                       1.0%
+  Northern Ireland                                    1.0%
+
+This instrument records that an issue was raised, not what respondents wanted done about it. It carries no measure of direction: nothing here indicates which way opinion leaned on any of these issues.

@@ -1,0 +1,122 @@
+{
+  "1997_bes": {
+    "cycle": 1997,
+    "study": "SN 3890",
+    "instrument": "British Election Study 1997 Campaign Panel",
+    "fieldwork": "Salience wave C, 17-30 Apr 1997, telephone; attitudes wave A, 10 May - 31 Jul 1996, face-to-face",
+    "n_salience": 1635
+  },
+  "1997_ipsos": {
+    "cycle": 1997,
+    "study": "Ipsos Issues Index",
+    "instrument": "Ipsos Issues Index (monthly, continuous since 1974)",
+    "fieldwork": "April 1997, preceding the May 1997 election",
+    "n_categories": 19,
+    "weeks_before_poll": 4
+  },
+  "2001_bes": {
+    "cycle": 2001,
+    "study": "SN 4620",
+    "instrument": "British Election Panel Study 2001, pre-campaign wave",
+    "fieldwork": "Pre-campaign wave, 2001, in-person CAPI",
+    "n_salience": 2752
+  },
+  "2001_ipsos": {
+    "cycle": 2001,
+    "study": "Ipsos Issues Index",
+    "instrument": "Ipsos Issues Index (monthly, continuous since 1974)",
+    "fieldwork": "April 2001, preceding the June 2001 election",
+    "n_categories": 28,
+    "weeks_before_poll": 9
+  },
+  "2005_bes": {
+    "cycle": 2005,
+    "study": "SN 6607",
+    "instrument": "British Election Study Nine-Wave Panel Survey 2005-2010",
+    "fieldwork": "Pre-campaign wave, 2005, internet (YouGov)",
+    "n_salience": 7636
+  },
+  "2005_ipsos": {
+    "cycle": 2005,
+    "study": "Ipsos Issues Index",
+    "instrument": "Ipsos Issues Index (monthly, continuous since 1974)",
+    "fieldwork": "March 2005, preceding the May 2005 election",
+    "n_categories": 27,
+    "weeks_before_poll": 6
+  },
+  "2010_bes": {
+    "cycle": 2010,
+    "study": "SN 6607",
+    "instrument": "British Election Study Nine-Wave Panel Survey 2005-2010",
+    "fieldwork": "Pre-campaign wave, 2010, internet (YouGov)",
+    "n_salience": 3158
+  },
+  "2010_ipsos": {
+    "cycle": 2010,
+    "study": "Ipsos Issues Index",
+    "instrument": "Ipsos Issues Index (monthly, continuous since 1974)",
+    "fieldwork": "April 2010, preceding the May 2010 election",
+    "n_categories": 27,
+    "weeks_before_poll": 4
+  },
+  "2015_bes": {
+    "cycle": 2015,
+    "study": "SN 8202",
+    "instrument": "BES Combined Internet Panel, 4th edition",
+    "fieldwork": "wave 4, 4-30 Mar 2015, polling day 7 May 2015",
+    "n_salience": 28126
+  },
+  "2015_ipsos": {
+    "cycle": 2015,
+    "study": "Ipsos Issues Index",
+    "instrument": "Ipsos Issues Index (monthly, continuous since 1974)",
+    "fieldwork": "April 2015, preceding the May 2015 election",
+    "n_categories": 33,
+    "weeks_before_poll": 4
+  },
+  "2017_bes": {
+    "cycle": 2017,
+    "study": "SN 8202",
+    "instrument": "BES Combined Internet Panel, 4th edition",
+    "fieldwork": "wave 11, 24 Apr - 3 May 2017, polling day 8 Jun 2017",
+    "n_salience": 27583
+  },
+  "2017_ipsos": {
+    "cycle": 2017,
+    "study": "Ipsos Issues Index",
+    "instrument": "Ipsos Issues Index (monthly, continuous since 1974)",
+    "fieldwork": "May 2017, preceding the June 2017 election",
+    "n_categories": 33,
+    "weeks_before_poll": 4
+  },
+  "2019_bes": {
+    "cycle": 2019,
+    "study": "SN 8202",
+    "instrument": "BES Combined Internet Panel, 4th edition",
+    "fieldwork": "wave 17, 1-12 Nov 2019, polling day 12 Dec 2019",
+    "n_salience": 31508
+  },
+  "2019_ipsos": {
+    "cycle": 2019,
+    "study": "Ipsos Issues Index",
+    "instrument": "Ipsos Issues Index (monthly, continuous since 1974)",
+    "fieldwork": "November 2019, preceding the December 2019 election",
+    "n_categories": 35,
+    "weeks_before_poll": 4
+  },
+  "2024_bes": {
+    "cycle": 2024,
+    "study": "SN 8202",
+    "instrument": "BES Combined Internet Panel, 4th edition",
+    "fieldwork": "wave 26, 3-22 May 2024, polling day 4 Jul 2024",
+    "n_salience": 30060
+  },
+  "2024_ipsos": {
+    "cycle": 2024,
+    "study": "Ipsos Issues Index",
+    "instrument": "Ipsos Issues Index (monthly, continuous since 1974)",
+    "fieldwork": "June 2024, preceding the July 2024 election",
+    "n_categories": 33,
+    "weeks_before_poll": 4
+  }
+}

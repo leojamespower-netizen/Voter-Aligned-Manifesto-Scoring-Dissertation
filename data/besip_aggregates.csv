@@ -1,0 +1,209 @@
+cycle,wave,measure,variable,label,value,n,coding
+2015,4,salience,mii_catW4,Immigration,26.31,28126,manual
+2015,4,salience,mii_catW4,Economy-general,19.53,28126,manual
+2015,4,salience,mii_catW4,Health,11.34,28126,manual
+2015,4,salience,mii_catW4,Terrorism,6.65,28126,manual
+2015,4,salience,mii_catW4,Debt/deficit,3.77,28126,manual
+2015,4,salience,mii_catW4,Inequality,2.89,28126,manual
+2015,4,salience,mii_catW4,Unemployment,2.87,28126,manual
+2015,4,salience,mii_catW4,Housing,2.4,28126,manual
+2015,4,salience,mii_catW4,Election outcome,2.33,28126,manual
+2015,4,salience,mii_catW4,Living costs,2.31,28126,manual
+2015,4,salience,mii_catW4,Austerity,2.26,28126,manual
+2015,4,salience,mii_catW4,Welfare,1.97,28126,manual
+2015,4,salience,mii_catW4,Pol-neg,1.76,28126,manual
+2015,4,salience,mii_catW4,Europe,1.62,28126,manual
+2015,4,salience,mii_catW4,Poverty,1.56,28126,manual
+2015,4,salience,mii_catW4,Defence,1.37,28126,manual
+2015,4,salience,mii_catW4,Environment,1.36,28126,manual
+2015,4,salience,mii_catW4,Partisan-neg,1.35,28126,manual
+2015,4,salience,mii_catW4,Crime,1.03,28126,manual
+2015,4,salience,mii_catW4,Education,0.83,28126,manual
+2015,4,salience,mii_catW4,Uncoded,0.5,28126,manual
+2015,4,salience,mii_catW4,Taxation,0.45,28126,manual
+2015,4,salience,mii_catW4,Foreign affairs,0.43,28126,manual
+2015,4,salience,mii_catW4,Pensions/ageing,0.37,28126,manual
+2015,4,salience,mii_catW4,Morals,0.32,28126,manual
+2015,4,salience,mii_catW4,Scot-ind,0.3,28126,manual
+2015,4,salience,mii_catW4,Racism/discrimination,0.27,28126,manual
+2015,4,salience,mii_catW4,"Nat ident, goals-loss",0.25,28126,manual
+2015,4,salience,mii_catW4,War,0.25,28126,manual
+2015,4,salience,mii_catW4,Pol values-left,0.23,28126,manual
+2015,4,salience,mii_catW4,Societal divides,0.17,28126,manual
+2015,4,salience,mii_catW4,Social care,0.15,28126,manual
+2015,4,salience,mii_catW4,Pol values-liberal,0.14,28126,manual
+2015,4,salience,mii_catW4,Inflation,0.11,28126,manual
+2015,4,salience,mii_catW4,Transport/infrastructure,0.1,28126,manual
+2015,4,salience,mii_catW4,Constitutional,0.09,28126,manual
+2015,4,salience,mii_catW4,Gender/sexuality/family,0.09,28126,manual
+2015,4,salience,mii_catW4,Devolution,0.07,28126,manual
+2015,4,salience,mii_catW4,Economy-personal,0.06,28126,manual
+2015,4,salience,mii_catW4,Pol values-right,0.05,28126,manual
+2015,4,salience,mii_catW4,Asylum,0.03,28126,manual
+2015,4,salience,mii_catW4,International trade,0.03,28126,manual
+2015,4,salience,mii_catW4,Pol values-auth,0.02,28126,manual
+2015,4,salience,mii_catW4,Other,0.01,28126,manual
+2015,4,salience,mii_catW4,Referendum unspecified,0.01,28126,manual
+2015,4,left_right,leftRightW4,,5.192,26135,
+2015,4,lr_scale,lr_scaleW1_W5,,3.01,28734,
+2015,4,al_scale,al_scaleW1_W5,,6.774,28278,
+2015,4,economic,redistSelfW4,,4.481,27514,
+2015,4,europe,EUIntegrationSelfW4,,6.552,13847,
+2017,11,salience,mii_catW11,Europe,44.36,27583,manual
+2017,11,salience,mii_catW11,Health,10.9,27583,manual
+2017,11,salience,mii_catW11,Immigration,10.69,27583,manual
+2017,11,salience,mii_catW11,Terrorism,5.62,27583,manual
+2017,11,salience,mii_catW11,Economy-general,5.46,27583,manual
+2017,11,salience,mii_catW11,Election outcome,4.67,27583,manual
+2017,11,salience,mii_catW11,Partisan-neg,2.08,27583,manual
+2017,11,salience,mii_catW11,Housing,1.82,27583,manual
+2017,11,salience,mii_catW11,Pol-neg,1.69,27583,manual
+2017,11,salience,mii_catW11,Inequality,1.13,27583,manual
+2017,11,salience,mii_catW11,Austerity,1.11,27583,manual
+2017,11,salience,mii_catW11,Environment,0.84,27583,manual
+2017,11,salience,mii_catW11,Poverty,0.83,27583,manual
+2017,11,salience,mii_catW11,Unemployment,0.82,27583,manual
+2017,11,salience,mii_catW11,War,0.79,27583,manual
+2017,11,salience,mii_catW11,Crime,0.78,27583,manual
+2017,11,salience,mii_catW11,Living costs,0.68,27583,manual
+2017,11,salience,mii_catW11,Welfare,0.58,27583,manual
+2017,11,salience,mii_catW11,Education,0.56,27583,manual
+2017,11,salience,mii_catW11,Scot-ind,0.54,27583,manual
+2017,11,salience,mii_catW11,Foreign affairs,0.52,27583,manual
+2017,11,salience,mii_catW11,Defence,0.46,27583,manual
+2017,11,salience,mii_catW11,Uncoded,0.42,27583,manual
+2017,11,salience,mii_catW11,Societal divides,0.33,27583,manual
+2017,11,salience,mii_catW11,Debt/deficit,0.26,27583,manual
+2017,11,salience,mii_catW11,Pensions/ageing,0.23,27583,manual
+2017,11,salience,mii_catW11,Morals,0.22,27583,manual
+2017,11,salience,mii_catW11,Racism/discrimination,0.22,27583,manual
+2017,11,salience,mii_catW11,Inflation,0.22,27583,manual
+2017,11,salience,mii_catW11,Social care,0.21,27583,manual
+2017,11,salience,mii_catW11,Taxation,0.19,27583,manual
+2017,11,salience,mii_catW11,"Nat ident, goals-loss",0.17,27583,manual
+2017,11,salience,mii_catW11,Pol values-liberal,0.14,27583,manual
+2017,11,salience,mii_catW11,Pol values-left,0.08,27583,manual
+2017,11,salience,mii_catW11,Asylum,0.05,27583,manual
+2017,11,salience,mii_catW11,Constitutional,0.05,27583,manual
+2017,11,salience,mii_catW11,Transport/infrastructure,0.05,27583,manual
+2017,11,salience,mii_catW11,Pol values-auth,0.05,27583,manual
+2017,11,salience,mii_catW11,International trade,0.04,27583,manual
+2017,11,salience,mii_catW11,Other,0.04,27583,manual
+2017,11,salience,mii_catW11,Referendum unspecified,0.03,27583,manual
+2017,11,salience,mii_catW11,Gender/sexuality/family,0.03,27583,manual
+2017,11,salience,mii_catW11,Devolution,0.02,27583,manual
+2017,11,salience,mii_catW11,Economy-personal,0.01,27583,manual
+2017,11,salience,mii_catW11,Pol values-right,0.01,27583,manual
+2017,11,salience,mii_catW11,Domestic emergency,0.0,27583,manual
+2017,11,left_right,leftRightW11,,5.163,24835,
+2017,11,lr_scale,lr_scaleW10_W12,,2.97,21769,
+2017,11,al_scale,al_scaleW10_W12,,6.556,21511,
+2017,11,economic,redistSelfW11,,4.564,26782,
+2017,11,europe,EUIntegrationSelfW11,,6.032,28829,
+2017,11,immigration,immigSelfW11,,3.307,27908,
+2019,17,salience,mii_catW17,Europe,63.02,31508,manual
+2019,17,salience,mii_catW17,Environment,6.63,31508,manual
+2019,17,salience,mii_catW17,Health,5.52,31508,manual
+2019,17,salience,mii_catW17,Pol-neg,3.47,31508,manual
+2019,17,salience,mii_catW17,Immigration,3.42,31508,manual
+2019,17,salience,mii_catW17,Crime,2.77,31508,manual
+2019,17,salience,mii_catW17,Election outcome,2.44,31508,manual
+2019,17,salience,mii_catW17,Economy-general,2.32,31508,manual
+2019,17,salience,mii_catW17,Partisan-neg,1.24,31508,manual
+2019,17,salience,mii_catW17,Housing,1.24,31508,manual
+2019,17,salience,mii_catW17,Poverty,1.16,31508,manual
+2019,17,salience,mii_catW17,Inequality,1.01,31508,manual
+2019,17,salience,mii_catW17,Austerity,0.69,31508,manual
+2019,17,salience,mii_catW17,Uncoded,0.51,31508,manual
+2019,17,salience,mii_catW17,Living costs,0.48,31508,manual
+2019,17,salience,mii_catW17,Terrorism,0.46,31508,manual
+2019,17,salience,mii_catW17,Societal divides,0.37,31508,manual
+2019,17,salience,mii_catW17,Welfare,0.37,31508,manual
+2019,17,salience,mii_catW17,Education,0.3,31508,manual
+2019,17,salience,mii_catW17,Scot-ind,0.26,31508,manual
+2019,17,salience,mii_catW17,Unemployment,0.22,31508,manual
+2019,17,salience,mii_catW17,Social care,0.2,31508,manual
+2019,17,salience,mii_catW17,Pol values-left,0.2,31508,manual
+2019,17,salience,mii_catW17,Morals,0.16,31508,manual
+2019,17,salience,mii_catW17,Defence,0.15,31508,manual
+2019,17,salience,mii_catW17,"Nat ident, goals-loss",0.14,31508,manual
+2019,17,salience,mii_catW17,Racism/discrimination,0.14,31508,manual
+2019,17,salience,mii_catW17,Debt/deficit,0.14,31508,manual
+2019,17,salience,mii_catW17,Pol values-liberal,0.14,31508,manual
+2019,17,salience,mii_catW17,Taxation,0.12,31508,manual
+2019,17,salience,mii_catW17,Pensions/ageing,0.11,31508,manual
+2019,17,salience,mii_catW17,Gender/sexuality/family,0.08,31508,manual
+2019,17,salience,mii_catW17,Constitutional,0.06,31508,manual
+2019,17,salience,mii_catW17,Foreign affairs,0.06,31508,manual
+2019,17,salience,mii_catW17,International trade,0.05,31508,manual
+2019,17,salience,mii_catW17,Transport/infrastructure,0.05,31508,manual
+2019,17,salience,mii_catW17,Pol values-auth,0.05,31508,manual
+2019,17,salience,mii_catW17,Economy-personal,0.04,31508,manual
+2019,17,salience,mii_catW17,Inflation,0.04,31508,manual
+2019,17,salience,mii_catW17,Pol values-right,0.04,31508,manual
+2019,17,salience,mii_catW17,Referendum unspecified,0.04,31508,manual
+2019,17,salience,mii_catW17,War,0.02,31508,manual
+2019,17,salience,mii_catW17,Domestic emergency,0.02,31508,manual
+2019,17,salience,mii_catW17,Other,0.02,31508,manual
+2019,17,salience,mii_catW17,Asylum,0.01,31508,manual
+2019,17,salience,mii_catW17,Devolution,0.01,31508,manual
+2019,17,left_right,leftRightW17,,4.997,26717,
+2019,17,lr_scale,lr_scaleW17_W19,,3.196,30488,
+2019,17,al_scale,al_scaleW17_W19,,6.371,29772,
+2019,17,economic,redistSelfW17,,4.624,29892,
+2019,17,europe,EUIntegrationSelfW17,,5.694,31793,
+2019,17,immigration,immigSelfW17,,3.757,30535,
+2024,26,salience,mii_cat_llmW26,Living costs,19.68,30060,llm
+2024,26,salience,mii_cat_llmW26,Immigration,17.04,30060,llm
+2024,26,salience,mii_cat_llmW26,Economy-general,13.67,30060,llm
+2024,26,salience,mii_cat_llmW26,Uncoded,9.69,30060,llm
+2024,26,salience,mii_cat_llmW26,Health,7.05,30060,llm
+2024,26,salience,mii_cat_llmW26,Environment,6.09,30060,llm
+2024,26,salience,mii_cat_llmW26,Pol-neg,3.82,30060,llm
+2024,26,salience,mii_cat_llmW26,Crime,2.44,30060,llm
+2024,26,salience,mii_cat_llmW26,Housing,2.26,30060,llm
+2024,26,salience,mii_cat_llmW26,Partisan-neg,2.14,30060,llm
+2024,26,salience,mii_cat_llmW26,War,1.97,30060,llm
+2024,26,salience,mii_cat_llmW26,Inflation,1.73,30060,llm
+2024,26,salience,mii_cat_llmW26,Defence,1.31,30060,llm
+2024,26,salience,mii_cat_llmW26,Poverty,1.31,30060,llm
+2024,26,salience,mii_cat_llmW26,Inequality,1.15,30060,llm
+2024,26,salience,mii_cat_llmW26,Europe,1.11,30060,llm
+2024,26,salience,mii_cat_llmW26,Foreign affairs,0.98,30060,llm
+2024,26,salience,mii_cat_llmW26,Election outcome,0.74,30060,llm
+2024,26,salience,mii_cat_llmW26,Austerity,0.58,30060,llm
+2024,26,salience,mii_cat_llmW26,Taxation,0.53,30060,llm
+2024,26,salience,mii_cat_llmW26,Asylum,0.48,30060,llm
+2024,26,salience,mii_cat_llmW26,Welfare,0.37,30060,llm
+2024,26,salience,mii_cat_llmW26,Terrorism,0.34,30060,llm
+2024,26,salience,mii_cat_llmW26,Education,0.33,30060,llm
+2024,26,salience,mii_cat_llmW26,Morals,0.31,30060,llm
+2024,26,salience,mii_cat_llmW26,Unemployment,0.3,30060,llm
+2024,26,salience,mii_cat_llmW26,"Nat ident, goals-loss",0.28,30060,llm
+2024,26,salience,mii_cat_llmW26,Societal divides,0.24,30060,llm
+2024,26,salience,mii_cat_llmW26,Social care,0.2,30060,llm
+2024,26,salience,mii_cat_llmW26,Transport/infrastructure,0.2,30060,llm
+2024,26,salience,mii_cat_llmW26,Pol values-liberal,0.2,30060,llm
+2024,26,salience,mii_cat_llmW26,Debt/deficit,0.19,30060,llm
+2024,26,salience,mii_cat_llmW26,Pol values-left,0.18,30060,llm
+2024,26,salience,mii_cat_llmW26,Racism/discrimination,0.17,30060,llm
+2024,26,salience,mii_cat_llmW26,Pol values-auth,0.17,30060,llm
+2024,26,salience,mii_cat_llmW26,Other,0.14,30060,llm
+2024,26,salience,mii_cat_llmW26,Pensions/ageing,0.11,30060,llm
+2024,26,salience,mii_cat_llmW26,Scot-ind,0.1,30060,llm
+2024,26,salience,mii_cat_llmW26,Economy-personal,0.1,30060,llm
+2024,26,salience,mii_cat_llmW26,Pol values-right,0.09,30060,llm
+2024,26,salience,mii_cat_llmW26,Gender/sexuality/family,0.08,30060,llm
+2024,26,salience,mii_cat_llmW26,Constitutional,0.06,30060,llm
+2024,26,salience,mii_cat_llmW26,Coronavirus,0.03,30060,llm
+2024,26,salience,mii_cat_llmW26,International trade,0.02,30060,llm
+2024,26,salience,mii_cat_llmW26,Devolution,0.01,30060,llm
+2024,26,salience,mii_cat_llmW26,Foreign emergency,0.01,30060,llm
+2024,26,salience,mii_cat_llmW26,Domestic emergency,0.01,30060,llm
+2024,26,salience,mii_cat_llmW26,Covid-economy,0.0,30060,llm
+2024,26,left_right,leftRightW26,,4.735,24725,
+2024,26,lr_scale,lr_scaleW25W26,,2.818,20097,
+2024,26,al_scale,al_scaleW25W26,,6.196,19558,
+2024,26,economic,redistSelfW26,,4.683,27139,
+2024,26,europe,EUIntegrationSelfW26,,4.727,28133,
+2024,26,immigration,immigSelfW26,,3.347,28031,

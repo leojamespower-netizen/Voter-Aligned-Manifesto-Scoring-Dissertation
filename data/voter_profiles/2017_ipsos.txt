@@ -1,0 +1,39 @@
+Issue salience, from a monthly national survey of British adults.
+
+Question: what is the most important issue facing Britain, and what other issues are important? Unprompted, so respondents supply their own answers, and multi-response, so one person may name several. Percentages are the share of respondents mentioning each issue and therefore do not sum to 100. All 33 published categories are listed, in the survey's own wording.
+
+  NHS/Hospitals/Healthcare                           61.0%
+  Common Market/EU/Europe/Single European Currency   45.0%
+  Education/Schools                                  27.0%
+  Immigration                                        25.0%
+  Economy/Economic situation                         20.0%
+  Housing                                            15.0%
+  Poverty/Inequality                                 15.0%
+  Ageing population/Social care                      12.0%
+  Unemployment/Factory closure/Lack of industry      12.0%
+  Crime/Law and order/Violence/Vandalism             10.0%
+  Defence/Foreign affairs/International terrorism    10.0%
+  Pensions/Social security                            9.0%
+  Pollution/Environment                               9.0%
+  Public services in general                          9.0%
+  Low pay/Minimum wage/Fair wages                     7.0%
+  Inflation/Prices                                    5.0%
+  Taxation                                            5.0%
+  Drug abuse                                          4.0%
+  Lack of faith in govt/politics                      4.0%
+  Morality/Individual behaviour/Lifestyle             4.0%
+  Transport/Public transport                          4.0%
+  Other                                               4.0%
+  Nuclear weapons/Disarmament                         3.0%
+  Race relations                                      3.0%
+  Animal welfare                                      2.0%
+  Local government/Council tax/Poll tax               2.0%
+  Nationalisation/Government control                  2.0%
+  Privatisation                                       2.0%
+  Scottish/Welsh Assembly/Devolution                  2.0%
+  Countryside/Rural life                              1.0%
+  Petrol prices/Fuel                                  1.0%
+  Pound/Exchange rate                                 1.0%
+  Trade unions/Strikes                                1.0%
+
+This instrument records that an issue was raised, not what respondents wanted done about it. It carries no measure of direction: nothing here indicates which way opinion leaned on any of these issues.

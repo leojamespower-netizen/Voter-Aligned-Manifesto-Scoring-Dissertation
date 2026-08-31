@@ -1,0 +1,25 @@
+Issue salience, from a monthly national survey of British adults.
+
+Question: what is the most important issue facing Britain, and what other issues are important? Unprompted, so respondents supply their own answers, and multi-response, so one person may name several. Percentages are the share of respondents mentioning each issue and therefore do not sum to 100. All 19 published categories are listed, in the survey's own wording.
+
+  NHS/Hospitals/Healthcare                           63.0%
+  Education/Schools                                  54.0%
+  Common Market/EU/Europe/Single European Currency   43.0%
+  Unemployment/Factory closure/Lack of industry      28.0%
+  Crime/Law and order/Violence/Vandalism             27.0%
+  Economy/Economic situation                         22.0%
+  Pensions/Social security                           17.0%
+  Housing                                             7.0%
+  Morality/Individual behaviour                       5.0%
+  Taxation                                            4.0%
+  Drug abuse                                          3.0%
+  Inflation/Prices                                    3.0%
+  Northern Ireland                                    3.0%
+  Race relations/Immigration/Immigrants               3.0%
+  BSE/Beef                                            2.0%
+  Defence/Foreign affairs/International terrorism     2.0%
+  Local government/Council tax/Poll tax               2.0%
+  Pollution/Environment                               2.0%
+  Privitisation                                       1.0%
+
+This instrument records that an issue was raised, not what respondents wanted done about it. It carries no measure of direction: nothing here indicates which way opinion leaned on any of these issues.

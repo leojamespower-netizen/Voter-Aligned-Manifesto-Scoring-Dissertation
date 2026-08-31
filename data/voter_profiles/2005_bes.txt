@@ -1,0 +1,64 @@
+SLOT 1  Instrument and mode
+Internet panel.
+
+SLOT 2  Sample
+Online panel. Weighted by the standard published panel weighting.
+
+SLOT 3  Issue salience
+Most important issue facing the country, 26 categories, manually coded:
+  Immigration                      19.0%
+  NHS                              14.2%
+  Law&order-crime                  13.2%
+  Terrorism                         5.8%
+  Asylum seekers                    4.8%
+  Economy                           4.4%
+  Education                         3.6%
+  Taxation                          3.6%
+  Iraq war                          3.1%
+  Lab leadership-neg                2.9%
+  Relations with EU                 2.7%
+  Pensions                          2.6%
+  Misc other                        2.4%
+  Services-spending                 2.0%
+  Environment                       1.8%
+  House prices-Inflatn              1.7%
+  Politics-neg                      1.5%
+  Civil Liberties                   1.2%
+  Poverty, living stds              1.1%
+  National security                 1.0%
+  Youth                             0.6%
+  Unemployment                      0.6%
+  Values, Morality                  0.6%
+  Inter problems                    0.6%
+  Drugs                             0.5%
+  Race tensions-racism              0.5%
+  Bush, USA-negative                0.5%
+  Consumer debt                     0.4%
+  Social inequalities               0.4%
+  Dishonesty-gov                    0.4%
+  Big gov, gov ineff                0.3%
+  Transport                         0.3%
+  Housing                           0.3%
+  Keep Tories out                   0.3%
+  Turnout, apathy                   0.3%
+  EURO membership                   0.2%
+  Aging pop                         0.2%
+  Welfare fraud                     0.1%
+  Petrol prices                     0.1%
+  School discipline                 0.1%
+  Gordon Brown-pos                  0.0%
+
+SLOT 4  Left-right position
+NOT MEASURED in this survey cycle.
+
+SLOT 5  Economic position (tax and spending)
+Weighted mean 5.54 on 0-10, cut taxes to increase spending.
+
+SLOT 6  Social position (authority and liberty)
+Weighted mean 2.35 on 0-10, crime versus rights of the accused.
+
+SLOT 7  European integration
+Weighted mean 5.16 on 0-10, EU in or out.
+
+SLOT 8  Instrument notes
+No left-right self-placement was asked in this wave. Non-probability internet panel; a face-to-face probability cross-section of the same electorate exists but was not used, so that this cycle and the following one share a single instrument.

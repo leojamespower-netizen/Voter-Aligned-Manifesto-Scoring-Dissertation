@@ -1,0 +1,74 @@
+SLOT 1  Instrument and mode
+Internet panel.
+
+SLOT 2  Sample
+Continuation panel; 3,402 of the 7,793 respondents originally recruited, 44% retention over five years, with no refreshment sample. Weighted by the standard published pre-campaign weight.
+
+SLOT 3  Issue salience
+Most important issue facing the country, 58 categories, manually coded:
+  Economy General                  46.8%
+  Immigration                      18.6%
+  Crime                             6.3%
+  Unemployment                      3.7%
+  Consumer Debt                     2.5%
+  Environment                       1.5%
+  Terrorism                         1.5%
+  Lab Gov-neg                       1.4%
+  Dishonesty                        1.4%
+  NHS                               1.1%
+  EURO, Europe                      1.1%
+  Taxation                          0.9%
+  Welfare Fraud                     0.9%
+  Inflation                         0.9%
+  Education                         0.8%
+  Lab Leadership-neg                0.8%
+  War in Afghanistan                0.7%
+  Spend, Other social               0.7%
+  Youth                             0.7%
+  Pensions                          0.6%
+  Class Difference                  0.6%
+  Drugs                             0.5%
+  Election outcome                  0.4%
+  Civil liberties                   0.4%
+  Aging Population                  0.4%
+  Banks                             0.4%
+  Petrol Prices                     0.4%
+  Family Values-lack                0.4%
+  Government Reform                 0.3%
+  Pol values-left                   0.3%
+  Housing                           0.3%
+  Morals                            0.3%
+  Asylum                            0.3%
+  Loss-Manufac Ind                  0.2%
+  Leadership gen-neg                0.2%
+  MP Scandal                        0.2%
+  Nat Ident,goals-loss              0.2%
+  Strikes                           0.2%
+  National Security                 0.2%
+  Racial Tension                    0.2%
+  Iraq War                          0.1%
+  Failure of Religious              0.1%
+  Energy                            0.1%
+  Scot Const                        0.1%
+  Transportation                    0.1%
+  I.D. Cards                        0.1%
+  Miscellaneous                     0.0%
+  Media                             0.0%
+  International Probs               0.0%
+  Pol values-right                  0.0%
+  Low Turnout, Apathy               0.0%
+
+SLOT 4  Left-right position
+NOT MEASURED in this survey cycle.
+
+SLOT 5  Economic position (tax and spending)
+Weighted mean 5.05 on 0-10, cut taxes to increase spending.
+
+SLOT 6  Social position (authority and liberty)
+NOT MEASURED in this survey cycle.
+
+SLOT 7  European integration
+Approve or disapprove of eu membership - Strongly disapprove: 27.3%; Disapprove: 22.8%; Approve: 20.7%; Neither approve nor disapprove: 18.1%; Strongly appove: 11.1%.
+
+SLOT 8  Instrument notes
+No left-right and no authority-liberty item were asked in this wave. The European integration item uses a five-point approval format rather than a graded scale. Respondents are a five-year panel survivor subset, which skews towards the politically engaged in a way demographic weighting does not correct.
