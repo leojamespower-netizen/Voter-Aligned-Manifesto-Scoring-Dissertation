@@ -52,7 +52,7 @@ def run_election(election, summaries, variants, model):
             biased = probe.biased_check(
                 election=str(election), party=party, text=text,
                 model=model, parties=[names.get(p, p) for p in parties],
-                variant=variant)
+                variant=variant, aliases=[names.get(party, party)])
             biased["family"] = "biased"
             results.append(biased)
 

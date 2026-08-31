@@ -50,10 +50,14 @@ def biased_check(election, party, text, model, parties, variant='neutral'):
     resp = call_llm(prompt, model=model, cache_key=key, subdir="probes")
     obj = _extract_json(resp.get("text", "")) or {}
     guess = str(obj.get("party", "")).strip().lower()
+
+    correct = guess == party.lower()
+    if not correct and aliases:
+        correct = any(guess == str(a).strip().lower() for a in aliases)
     return {
-        "family": "forced", "kind": "singleton", "election": election,
+        "family": "biased", "kind": "singleton", "election": election,
         "truth": party,
-        "guess": guess, "correct": guess == party.lower(),
+        "guess": guess, "correct": correct,
         "stated_confidence": obj.get("confidence"),  # diagnostic only
         "variant": variant, "model": model,
     }
