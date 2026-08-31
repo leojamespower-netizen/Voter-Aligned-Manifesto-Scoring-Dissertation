@@ -1,0 +1,23 @@
+# Questions asked: Q1. What would you say is the most important issue facing Britain today? Q2. What do you see as other important issues facing Britain today? (Unprompted - combined answers)
+
+ipsos_raw = {
+    "BSE/Beef":                                          2,  # BSE
+    "Common Market/EU/Europe/Single European Currency": 43,  # Com
+    "Crime/Law and order/Violence/Vandalism":           27,  # Cri
+    "Defence/Foreign affairs/International terrorism":   2,  # Def
+    "Drug abuse":                                        3,  # Dru
+    "Economy/Economic situation":                       22,  # Eco
+    "Education/Schools":                                54,  # Edu
+    "Housing":                                           7,  # Hou
+    "Inflation/Prices":                                  3,  # Inf
+    "Local government/Council tax/Poll tax":             2,  # LG
+    "Morality/Individual behaviour":                     5,  # Mor
+    "NHS/Hospitals/Healthcare":                         63,  # NHS
+    "Northern Ireland":                                  3,  # NI
+    "Pensions/Social security":                         17,  # Pen
+    "Pollution/Environment":                             2,  # Pol
+    "Privitisation":                                     1,  # Pri
+    "Race relations/Immigration/Immigrants":             3,  # Rac
+    "Taxation":                                          4,  # Tax
+    "Unemployment/Factory closure/Lack of industry":    28,  # Une
+}

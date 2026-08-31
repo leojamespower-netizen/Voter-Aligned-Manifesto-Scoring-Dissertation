@@ -1,0 +1,32 @@
+# Questions asked: Q1. What would you say is the most important issue facing Britain today? Q2. What do you see as other important issues facing Britain today? (Unprompted - combined answers)
+
+ipsos_raw = {
+    "Common Market/EU/Europe/Single European Currency":  3,  # Com
+    "Countryside/Rural life":                            1,  # Cou
+    "Crime/Law and order/Violence/Vandalism":           25,  # Cri
+    "Defence/Foreign affairs/International terrorism":  11,  # Def
+    "Drug abuse":                                        7,  # Dru
+    "Economy/Economic situation":                       55,  # Eco
+    "Education/Schools":                                21,  # Edu
+    "Housing":                                           5,  # Hou
+    "Inflation/Prices":                                 11,  # Inf
+    "Local government/Council tax/Poll tax":             4,  # LG
+    "Low pay/Minimum wage/Fair wages":                   4,  # Low
+    "Morality/Individual behaviour":                     8,  # Mor
+    "Nationalisation/Government control":                1,  # Nat
+    "NHS/Hospitals/Healthcare":                         24,  # NHS
+    "Nuclear weapons/Disarmament":                       1,  # Nuc
+    "Pensions/Social security":                          7,  # Pen
+    "Petrol prices/Fuel":                                7,  # Pet
+    "Pollution/Environment":                             5,  # Pol
+    "Pound/Exchange rate/Value of Pound":                2,  # Pou
+    "Poverty/Inequality":                                6,  # Pov
+    "Privatisation":                                     3,  # Pri
+    "Public services in general":                        4,  # Pub
+    "Race relations/Immigration/Immigrants":            29,  # Rac
+    "Taxation":                                          6,  # Tax
+    "Transport/Public transport":                        3,  # Tra
+    "Unemployment/Factory closure/Lack of industry":    24,  # Une
+    "Other":                                             5,  # Oth
+    "Don't know":                                       10,  # DK
+}

@@ -1,0 +1,40 @@
+# Questions asked:Q1.What would you say is the most important issue facing Britain today? Q2. What do you see as other important issues facing Britain today? (Unprompted - combined answers)
+
+ipsos_raw = {
+    "Ageing population/Social care":                    10,  # AG
+    "Animal welfare":                                    2,  # AW
+    "Common Market/EU/Europe/Single European Currency": 57,  # Com
+    "Countryside/Rural life":                            1,  # Cou
+    "Crime/Law and order/Violence/Vandalism":           18,  # Cri
+    "Defence/Foreign affairs/International terrorism":   5,  # Def
+    "Drug abuse":                                        7,  # Dru
+    "Economy/Economic situation":                       19,  # Eco
+    "Education/Schools":                                21,  # Edu
+    "Foot and mouth/Farming crisis":                     1,  # Foo
+    "Housing":                                          15,  # Hou
+    "Immigration":                                      13,  # Imm
+    "Inflation/Prices":                                  6,  # Inf
+    "Lack of faith in govt/politics":                   12,  # Lac
+    "Local government/Council tax/Poll tax":             3,  # LG
+    "Low pay/Minimum wage/Fair wages":                   8,  # Low
+    "Morality/Individual behaviour/Lifestyle":           3,  # Mor
+    "Nationalisation/Government control":                3,  # Nat
+    "NHS/Hospitals/Healthcare":                         54,  # NHS
+    "Northern Ireland":                                  1,  # NI
+    "Nuclear weapons/Disarmament":                       2,  # Nuc
+    "Pensions/Social security":                          5,  # Pen
+    "Petrol prices/Fuel":                                3,  # Pet
+    "Pollution/Environment":                            15,  # Pol
+    "Pound/Exchange rate":                               2,  # Pou
+    "Poverty/Inequality":                               16,  # Pov
+    "Privatisation":                                     2,  # Pri
+    "Public services in general":                        9,  # Pub
+    "Race relations":                                    3,  # Rac
+    "Scottish/Welsh Assembly/Devolution":                1,  # SWA
+    "Taxation":                                          3,  # Tax
+    "Trade unions/Strikes":                              1,  # TU
+    "Transport/Public transport":                        5,  # Tra
+    "Unemployment/Factory closure/Lack of industry":     7,  # Une
+    "Other":                                             3,  # Oth
+    "Don't know":                                       12,  # DK
+}
