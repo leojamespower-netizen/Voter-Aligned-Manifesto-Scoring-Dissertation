@@ -1,0 +1,705 @@
+==============================================================================
+REGISTERED PROMPT STRUCTURES  -  ALL PHASES
+LLM manifesto-alignment pipeline
+==============================================================================
+
+A readable copy of the prompts in phase_pipeline/prompts.py, with the
+framework blocks expanded and only the per-call inputs left as
+{placeholders}. Maintained by hand; prompts.py is the authority.
+
+Cross-cutting rules encoded below:
+  * No prompt names the election, the year, or the electoral context.
+  * Phase 3 prompts are domain-neutral: they do not name the document type.
+  * Schema is specified IN THE PROMPT; no provider-side constrained decoding.
+  * Field order is generation order: evidence and reasoning precede any
+    field that commits to a verdict or a weight.
+  * Abstention is representable, not merely permitted: three-valued status
+    plus nullable weight.
+  * Framework blocks are byte-identical across every condition and both models.
+
+==============================================================================
+PHASE 1  -  SUMMARISATION VARIANTS  (prose output, no JSON schema)
+==============================================================================
+
+MINIMAL is the reference. Every other variant differs from its stated base
+on exactly one describable dimension.
+
+
+------------------------------------------------------------------------------
+1.1  MINIMAL
+------------------------------------------------------------------------------
+
+[base: reference]
+
+Summarise the following text within 500 words.
+
+{manifesto}
+
+------------------------------------------------------------------------------
+1.2  NEUTRAL
+------------------------------------------------------------------------------
+
+[base: minimal + framing-suppression instruction]
+
+Summarise the following text within 500 words, while excluding ideological framing.
+
+{manifesto}
+
+------------------------------------------------------------------------------
+1.3  FRAMING_PRESERVING
+------------------------------------------------------------------------------
+
+[base: minimal + framing-preservation instruction]
+
+Summarise the following text within 500 words, while maintaining the ideological framing.
+
+{manifesto}
+
+------------------------------------------------------------------------------
+1.4  FRAMED
+------------------------------------------------------------------------------
+
+[base: neutral + party cue in prompt]
+[requires {party} substitution]
+
+Summarise the following text, which is the {party} manifesto, within 500 words, while excluding ideological framing.
+
+{manifesto}
+
+------------------------------------------------------------------------------
+1.5  DISTORTED
+------------------------------------------------------------------------------
+
+[base: minimal, articles deleted + terminal punctuation removed]
+
+Summarise following text within 500 words
+
+{manifesto}
+
+------------------------------------------------------------------------------
+1.6  ANONYMISED
+------------------------------------------------------------------------------
+
+[base: neutral prompt over identity-stripped input text]
+[input: manifesto text after anonymise() replacement list]
+
+Summarise the following text within 500 words, while excluding ideological framing.
+
+{manifesto}
+
+Carried into Phase 3: minimal, neutral, framing_preserving, framed, anonymised
+(distorted stays behind: its hypothesis completes at summary level, and it
+ serves as an invariance control rather than a manipulation)
+
+==============================================================================
+SHARED FRAMEWORK BLOCKS  (byte-identical across all conditions)
+==============================================================================
+
+
+------------------------------------------------------------------------------
+MFT_DEFINITIONS  -  six-foundation formulation
+------------------------------------------------------------------------------
+
+  - Care/Harm: related to our long evolution as mammals with attachment systems
+    and an ability to feel (and dislike) the pain of others. It underlies the
+    virtues of kindness, gentleness, and nurturance.
+
+  - Loyalty/Betrayal: related to our long history as tribal creatures able to
+    form shifting coalitions. It is active anytime people feel that it is "one
+    for all and all for one." It underlies the virtues of patriotism and
+    self-sacrifice for the group.
+
+  - Authority/Subversion: shaped by our long primate history of hierarchical
+    social interactions. It underlies virtues of leadership and followership,
+    including deference to prestigious authority figures and respect for
+    traditions.
+
+  - Sanctity/Purity: shaped by the psychology of disgust and contamination. It
+    underlies notions of striving to live in an elevated, less carnal, more
+    noble, and more "natural" way (often present in religious narratives). This
+    foundation underlies the widespread idea that the body is a temple that can
+    be desecrated by immoral activities and contaminants (an idea not unique to
+    religious traditions). It underlies the virtues of self-discipline,
+    self-improvement, naturalness, and spirituality.
+
+  - Equality: related to our intuitions about equal treatment and equal outcome
+    for individuals.
+
+  - Proportionality: related to our intuitions about individuals getting
+    rewarded in proportion to their merit or contribution.
+
+------------------------------------------------------------------------------
+BIDIRECTIONALITY_EXAMPLES
+------------------------------------------------------------------------------
+
+One person's sensitivity to the Care/Harm foundation may lead them to support high levels of immigration from poorer nations, to reduce the suffering of those who migrate. Whereas another person's sensitivity to the very same foundation may lead them to oppose those levels, because they believe it could lead to people they care about being harmed.
+
+------------------------------------------------------------------------------
+AXIS_DEFINITIONS  -  single-axis GAL-TAN
+------------------------------------------------------------------------------
+
+The GAL-TAN framework identifies political orientation on a single axis. Individuals and texts are placed according to the degree to which their views align with either pole, as follows:
+
+  - Individuals at the GAL (Green/Alternative/Libertarian) pole support expanded
+    personal freedoms and social liberalisation, for example: access to abortion,
+    same-sex marriage, environmental protection, and multiculturalism.
+
+  - Individuals at the TAN (Traditional/Authoritarian/Nationalist) pole prioritise
+    order, tradition, and stability, and believe that the state should treat the
+    maintenance of national identity as a priority, for example: restrictive
+    immigration policy, emphasis on law and order, defence of traditional social
+    institutions, and national sovereignty over supranational authority.
+
+A text occupies a position on this axis to the extent that it argues FROM these commitments, not to the extent that it mentions the associated topics:
+
+  - Environmental or immigration policy discussed in administrative or fiscal
+    terms does not by itself indicate a position.
+  - Nuclear expansion argued for energy security is not GAL.
+  - Faster asylum processing argued on humanitarian grounds is not TAN.
+
+==============================================================================
+PHASE 2  -  ELECTORATE PROFILE CONSTRUCTION
+==============================================================================
+
+Four framework arms x four source conditions per model = 12 profiles per
+election per model. Profiles are replicated and medoid-selected.
+
+------------------------------------------------------------------------------
+2.1  EXPLICIT_MFT   [returns: foundations]
+------------------------------------------------------------------------------
+
+Moral Foundations Theory is a framework that separates human morality into the following categories:
+
+  - Care/Harm: related to our long evolution as mammals with attachment systems
+    and an ability to feel (and dislike) the pain of others. It underlies the
+    virtues of kindness, gentleness, and nurturance.
+
+  - Loyalty/Betrayal: related to our long history as tribal creatures able to
+    form shifting coalitions. It is active anytime people feel that it is "one
+    for all and all for one." It underlies the virtues of patriotism and
+    self-sacrifice for the group.
+
+  - Authority/Subversion: shaped by our long primate history of hierarchical
+    social interactions. It underlies virtues of leadership and followership,
+    including deference to prestigious authority figures and respect for
+    traditions.
+
+  - Sanctity/Purity: shaped by the psychology of disgust and contamination. It
+    underlies notions of striving to live in an elevated, less carnal, more
+    noble, and more "natural" way (often present in religious narratives). This
+    foundation underlies the widespread idea that the body is a temple that can
+    be desecrated by immoral activities and contaminants (an idea not unique to
+    religious traditions). It underlies the virtues of self-discipline,
+    self-improvement, naturalness, and spirituality.
+
+  - Equality: related to our intuitions about equal treatment and equal outcome
+    for individuals.
+
+  - Proportionality: related to our intuitions about individuals getting
+    rewarded in proportion to their merit or contribution.
+
+The text below is drawn from {source_description}, a measure of the priorities of the British electorate.
+
+{voter_priority_data}
+
+Your task is to construct a Moral Foundations profile for this electorate on the basis of the data above.
+
+If the supplied data cannot support a judgment for a given foundation, return status "INSUFFICIENT" for that foundation and leave its weight null. Do not estimate. An INSUFFICIENT return is a correct answer, not a failure. Where a foundation is engaged but the data cannot resolve the direction of the appeal, return status "AMBIGUOUS".
+
+Respond with a single JSON object and nothing else. Do not wrap it in markdown code fences and do not add commentary before or after it. The object must have exactly these keys, in this order:
+
+{
+  "justification": "<two sentences on how you read the data>",
+  "foundations": [
+    {"foundation": "care" | "loyalty" | "authority" | "sanctity" | "equality" | "proportionality",
+     "basis": "<one line: which items in the data bear on this>",
+     "status": "SCORED" | "AMBIGUOUS" | "INSUFFICIENT",
+     "weight": <0-1> | null}
+  ]
+}
+
+All six foundations must appear exactly once. The weights of entries with status "SCORED" must sum to 1. Entries with status "AMBIGUOUS" or "INSUFFICIENT" must have weight null.
+
+------------------------------------------------------------------------------
+2.2  BIDIRECTIONAL_MFT   [returns: foundations]
+------------------------------------------------------------------------------
+
+Moral Foundations Theory is a framework that separates human morality into the following categories:
+
+  - Care/Harm: related to our long evolution as mammals with attachment systems
+    and an ability to feel (and dislike) the pain of others. It underlies the
+    virtues of kindness, gentleness, and nurturance.
+
+  - Loyalty/Betrayal: related to our long history as tribal creatures able to
+    form shifting coalitions. It is active anytime people feel that it is "one
+    for all and all for one." It underlies the virtues of patriotism and
+    self-sacrifice for the group.
+
+  - Authority/Subversion: shaped by our long primate history of hierarchical
+    social interactions. It underlies virtues of leadership and followership,
+    including deference to prestigious authority figures and respect for
+    traditions.
+
+  - Sanctity/Purity: shaped by the psychology of disgust and contamination. It
+    underlies notions of striving to live in an elevated, less carnal, more
+    noble, and more "natural" way (often present in religious narratives). This
+    foundation underlies the widespread idea that the body is a temple that can
+    be desecrated by immoral activities and contaminants (an idea not unique to
+    religious traditions). It underlies the virtues of self-discipline,
+    self-improvement, naturalness, and spirituality.
+
+  - Equality: related to our intuitions about equal treatment and equal outcome
+    for individuals.
+
+  - Proportionality: related to our intuitions about individuals getting
+    rewarded in proportion to their merit or contribution.
+
+Every category has a bidirectional nature. For example:
+
+One person's sensitivity to the Care/Harm foundation may lead them to support high levels of immigration from poorer nations, to reduce the suffering of those who migrate. Whereas another person's sensitivity to the very same foundation may lead them to oppose those levels, because they believe it could lead to people they care about being harmed.
+
+The text below is drawn from {source_description}, a measure of the priorities of the British electorate.
+
+{voter_priority_data}
+
+Your task is to construct a Moral Foundations profile for this electorate on the basis of the data above, taking into account that each foundation may be invoked in either direction.
+
+If the supplied data cannot support a judgment for a given foundation, return status "INSUFFICIENT" for that foundation and leave its weight null. Do not estimate. An INSUFFICIENT return is a correct answer, not a failure. Where a foundation is engaged but the data cannot resolve the direction of the appeal, return status "AMBIGUOUS".
+
+Respond with a single JSON object and nothing else. Do not wrap it in markdown code fences and do not add commentary before or after it. The object must have exactly these keys, in this order:
+
+{
+  "justification": "<two sentences on how you read the data>",
+  "foundations": [
+    {"foundation": "care" | "loyalty" | "authority" | "sanctity" | "equality" | "proportionality",
+     "basis": "<one line: which items in the data bear on this>",
+     "status": "SCORED" | "AMBIGUOUS" | "INSUFFICIENT",
+     "weight": <0-1> | null}
+  ]
+}
+
+All six foundations must appear exactly once. The weights of entries with status "SCORED" must sum to 1. Entries with status "AMBIGUOUS" or "INSUFFICIENT" must have weight null.
+
+------------------------------------------------------------------------------
+2.3  AXIS   [returns: poles]
+------------------------------------------------------------------------------
+
+The GAL-TAN framework identifies political orientation on a single axis. Individuals and texts are placed according to the degree to which their views align with either pole, as follows:
+
+  - Individuals at the GAL (Green/Alternative/Libertarian) pole support expanded
+    personal freedoms and social liberalisation, for example: access to abortion,
+    same-sex marriage, environmental protection, and multiculturalism.
+
+  - Individuals at the TAN (Traditional/Authoritarian/Nationalist) pole prioritise
+    order, tradition, and stability, and believe that the state should treat the
+    maintenance of national identity as a priority, for example: restrictive
+    immigration policy, emphasis on law and order, defence of traditional social
+    institutions, and national sovereignty over supranational authority.
+
+A text occupies a position on this axis to the extent that it argues FROM these commitments, not to the extent that it mentions the associated topics:
+
+  - Environmental or immigration policy discussed in administrative or fiscal
+    terms does not by itself indicate a position.
+  - Nuclear expansion argued for energy security is not GAL.
+  - Faster asylum processing argued on humanitarian grounds is not TAN.
+
+The text below is drawn from {source_description}, a measure of the priorities of the British electorate.
+
+{voter_priority_data}
+
+Your task is to construct a positional profile for this electorate on the basis of the data above.
+
+If the supplied data cannot support a judgment for a given pole, return status "INSUFFICIENT" for that pole and leave its weight null. Do not estimate. An INSUFFICIENT return is a correct answer, not a failure. Where a pole is engaged but the data cannot resolve the direction of the appeal, return status "AMBIGUOUS".
+
+Respond with a single JSON object and nothing else. Do not wrap it in markdown code fences and do not add commentary before or after it. The object must have exactly these keys, in this order:
+
+{
+  "justification": "<two sentences on how you read the data>",
+  "poles": [
+    {"pole": "gal" | "tan",
+     "basis": "<one line: which items in the data bear on this>",
+     "status": "SCORED" | "AMBIGUOUS" | "INSUFFICIENT",
+     "weight": <0-1> | null}
+  ]
+}
+
+Both poles must appear exactly once. The weights of entries with status "SCORED" must sum to 1. Entries with status "AMBIGUOUS" or "INSUFFICIENT" must have weight null.
+
+------------------------------------------------------------------------------
+2.4  ZERO_DEFINITION   [returns: foundations]
+------------------------------------------------------------------------------
+
+[PROBE ARM: no framework definitions supplied. Measures the model's
+ internalised MFT, not framework-free reasoning. Not primary.]
+
+The text below is drawn from {source_description}, a measure of the priorities of the British electorate.
+
+{voter_priority_data}
+
+Your task is to construct a Moral Foundations profile for this electorate on the basis of the data above.
+
+If the supplied data cannot support a judgment for a given foundation, return status "INSUFFICIENT" for that foundation and leave its weight null. Do not estimate. An INSUFFICIENT return is a correct answer, not a failure. Where a foundation is engaged but the data cannot resolve the direction of the appeal, return status "AMBIGUOUS".
+
+Respond with a single JSON object and nothing else. Do not wrap it in markdown code fences and do not add commentary before or after it. The object must have exactly these keys, in this order:
+
+{
+  "justification": "<two sentences on how you read the data>",
+  "foundations": [
+    {"foundation": "care" | "loyalty" | "authority" | "sanctity" | "equality" | "proportionality",
+     "basis": "<one line: which items in the data bear on this>",
+     "status": "SCORED" | "AMBIGUOUS" | "INSUFFICIENT",
+     "weight": <0-1> | null}
+  ]
+}
+
+All six foundations must appear exactly once. The weights of entries with status "SCORED" must sum to 1. Entries with status "AMBIGUOUS" or "INSUFFICIENT" must have weight null.
+
+------------------------------------------------------------------------------
+2.5  SOURCE CONDITIONS  -  provenance-tagged data blocks
+------------------------------------------------------------------------------
+
+All four run in full and reported side by side. None is a baseline.
+
+[ipsos]
+  {source_description} = an unprompted issue-salience survey
+  {voter_priority_data} =
+    <source type="survey" instrument="Ipsos Issues Index" measurement="unprompted salience; multi-response" limitation="records salience only; direction not recoverable">
+    {ipsos_data}
+    </source>
+
+[bes]
+  {source_description} = a structured attitudinal survey
+  {voter_priority_data} =
+    <source type="survey" instrument="BES pre-election wave" measurement="structured attitudinal items; weighted" weighting="applied">
+    {bes_data}
+    </source>
+
+[both_simultaneous]
+  {source_description} = two surveys of the British electorate
+  {voter_priority_data} =
+    <source type="survey" instrument="Ipsos Issues Index" measurement="unprompted salience; multi-response" limitation="records salience only; direction not recoverable">
+    {ipsos_data}
+    </source>
+    
+    <source type="survey" instrument="BES pre-election wave" measurement="structured attitudinal items; weighted" weighting="applied">
+    {bes_data}
+    </source>
+
+[both_sequential]
+  {source_description} = two surveys of the British electorate, presented in sequence
+  {voter_priority_data} =
+    Source 1:
+    <source type="survey" instrument="Ipsos Issues Index" measurement="unprompted salience; multi-response" limitation="records salience only; direction not recoverable">
+    {ipsos_data}
+    </source>
+    
+    Source 2:
+    <source type="survey" instrument="BES pre-election wave" measurement="structured attitudinal items; weighted" weighting="applied">
+    {bes_data}
+    </source>
+
+==============================================================================
+PHASE 3  -  PAIRWISE COMPARISON
+==============================================================================
+
+Every pair in BOTH positional orderings, without exception. label_a/label_b
+are randomised pseudonyms in the blind condition and party names in the
+labelled condition; the schema returns A/B either way, mapped back to
+parties locally via slot metadata the model never sees.
+
+------------------------------------------------------------------------------
+3.1  BASELINE   [no profile: tests whether framework mediation matters at all]
+------------------------------------------------------------------------------
+
+The text below is drawn from {source_description}, a measure of the priorities of the British electorate.
+
+{voter_priority_data}
+
+Below are two texts.
+
+{label_a}:
+{text_a}
+
+{label_b}:
+{text_b}
+
+Judge whether A or B better reflects what these voters cared about.
+
+Respond with a single JSON object and nothing else. Do not wrap it in markdown code fences and do not add commentary before or after it. The object must have exactly these keys, in this order:
+
+{
+  "evidence": "<the specific commitments in each text you relied on>",
+  "reasoning": "<two sentences connecting that evidence to the verdict>",
+  "confidence": "high" | "medium" | "low",
+  "winner": "A" | "B"
+}
+
+------------------------------------------------------------------------------
+3.2  EXPLICIT_MFT
+------------------------------------------------------------------------------
+
+Moral Foundations Theory is a framework that separates human morality into the following categories:
+
+  - Care/Harm: related to our long evolution as mammals with attachment systems
+    and an ability to feel (and dislike) the pain of others. It underlies the
+    virtues of kindness, gentleness, and nurturance.
+
+  - Loyalty/Betrayal: related to our long history as tribal creatures able to
+    form shifting coalitions. It is active anytime people feel that it is "one
+    for all and all for one." It underlies the virtues of patriotism and
+    self-sacrifice for the group.
+
+  - Authority/Subversion: shaped by our long primate history of hierarchical
+    social interactions. It underlies virtues of leadership and followership,
+    including deference to prestigious authority figures and respect for
+    traditions.
+
+  - Sanctity/Purity: shaped by the psychology of disgust and contamination. It
+    underlies notions of striving to live in an elevated, less carnal, more
+    noble, and more "natural" way (often present in religious narratives). This
+    foundation underlies the widespread idea that the body is a temple that can
+    be desecrated by immoral activities and contaminants (an idea not unique to
+    religious traditions). It underlies the virtues of self-discipline,
+    self-improvement, naturalness, and spirituality.
+
+  - Equality: related to our intuitions about equal treatment and equal outcome
+    for individuals.
+
+  - Proportionality: related to our intuitions about individuals getting
+    rewarded in proportion to their merit or contribution.
+
+The profile below describes the moral priorities of the British electorate.
+
+{profile}
+
+Below are two texts.
+
+{label_a}:
+{text_a}
+
+{label_b}:
+{text_b}
+
+Judge whether A or B aligns more closely with this profile.
+
+Respond with a single JSON object and nothing else. Do not wrap it in markdown code fences and do not add commentary before or after it. The object must have exactly these keys, in this order:
+
+{
+  "evidence": "<the specific commitments in each text you relied on>",
+  "reasoning": "<two sentences connecting that evidence to the verdict>",
+  "confidence": "high" | "medium" | "low",
+  "winner": "A" | "B"
+}
+
+------------------------------------------------------------------------------
+3.3  BIDIRECTIONAL_MFT
+------------------------------------------------------------------------------
+
+Moral Foundations Theory is a framework that separates human morality into the following categories:
+
+  - Care/Harm: related to our long evolution as mammals with attachment systems
+    and an ability to feel (and dislike) the pain of others. It underlies the
+    virtues of kindness, gentleness, and nurturance.
+
+  - Loyalty/Betrayal: related to our long history as tribal creatures able to
+    form shifting coalitions. It is active anytime people feel that it is "one
+    for all and all for one." It underlies the virtues of patriotism and
+    self-sacrifice for the group.
+
+  - Authority/Subversion: shaped by our long primate history of hierarchical
+    social interactions. It underlies virtues of leadership and followership,
+    including deference to prestigious authority figures and respect for
+    traditions.
+
+  - Sanctity/Purity: shaped by the psychology of disgust and contamination. It
+    underlies notions of striving to live in an elevated, less carnal, more
+    noble, and more "natural" way (often present in religious narratives). This
+    foundation underlies the widespread idea that the body is a temple that can
+    be desecrated by immoral activities and contaminants (an idea not unique to
+    religious traditions). It underlies the virtues of self-discipline,
+    self-improvement, naturalness, and spirituality.
+
+  - Equality: related to our intuitions about equal treatment and equal outcome
+    for individuals.
+
+  - Proportionality: related to our intuitions about individuals getting
+    rewarded in proportion to their merit or contribution.
+
+Every category has a bidirectional nature. For example:
+
+One person's sensitivity to the Care/Harm foundation may lead them to support high levels of immigration from poorer nations, to reduce the suffering of those who migrate. Whereas another person's sensitivity to the very same foundation may lead them to oppose those levels, because they believe it could lead to people they care about being harmed.
+
+The profile below describes the moral priorities of the British electorate.
+
+{profile}
+
+Below are two texts.
+
+{label_a}:
+{text_a}
+
+{label_b}:
+{text_b}
+
+Judge whether A or B aligns more closely with this profile, taking into account that each foundation may be invoked in either direction.
+
+Respond with a single JSON object and nothing else. Do not wrap it in markdown code fences and do not add commentary before or after it. The object must have exactly these keys, in this order:
+
+{
+  "evidence": "<the specific commitments in each text you relied on>",
+  "reasoning": "<two sentences connecting that evidence to the verdict>",
+  "confidence": "high" | "medium" | "low",
+  "winner": "A" | "B"
+}
+
+------------------------------------------------------------------------------
+3.4  AXIS
+------------------------------------------------------------------------------
+
+The GAL-TAN framework identifies political orientation on a single axis. Individuals and texts are placed according to the degree to which their views align with either pole, as follows:
+
+  - Individuals at the GAL (Green/Alternative/Libertarian) pole support expanded
+    personal freedoms and social liberalisation, for example: access to abortion,
+    same-sex marriage, environmental protection, and multiculturalism.
+
+  - Individuals at the TAN (Traditional/Authoritarian/Nationalist) pole prioritise
+    order, tradition, and stability, and believe that the state should treat the
+    maintenance of national identity as a priority, for example: restrictive
+    immigration policy, emphasis on law and order, defence of traditional social
+    institutions, and national sovereignty over supranational authority.
+
+A text occupies a position on this axis to the extent that it argues FROM these commitments, not to the extent that it mentions the associated topics:
+
+  - Environmental or immigration policy discussed in administrative or fiscal
+    terms does not by itself indicate a position.
+  - Nuclear expansion argued for energy security is not GAL.
+  - Faster asylum processing argued on humanitarian grounds is not TAN.
+
+The profile below describes the positional priorities of the British electorate.
+
+{profile}
+
+Below are two texts.
+
+{label_a}:
+{text_a}
+
+{label_b}:
+{text_b}
+
+Judge whether A or B aligns more closely with this profile.
+
+Respond with a single JSON object and nothing else. Do not wrap it in markdown code fences and do not add commentary before or after it. The object must have exactly these keys, in this order:
+
+{
+  "evidence": "<the specific commitments in each text you relied on>",
+  "reasoning": "<two sentences connecting that evidence to the verdict>",
+  "confidence": "high" | "medium" | "low",
+  "winner": "A" | "B"
+}
+
+==============================================================================
+DIAGNOSTIC PROBES  (outside the scored pipeline)
+==============================================================================
+
+Measure how much party identity survives summarisation. Run on
+non-anonymised summaries first, to decide whether anonymisation is needed.
+
+------------------------------------------------------------------------------
+P.1  OPEN SINGLETON  -  no scaffolding, matched to Phase 3 conditions
+------------------------------------------------------------------------------
+
+What is the following text, and where does it come from?
+
+<text>
+{text}
+</text>
+
+Respond with a single JSON object and nothing else, with these keys in this order:
+
+{{
+  "evidence": "<what in the text informed your answer>",
+  "confidence": "high" | "medium" | "low",
+  "identification": "<what you think this is and who produced it, as specifically as you can>"
+}}
+
+------------------------------------------------------------------------------
+P.2  OPEN PAIR
+------------------------------------------------------------------------------
+
+What are the following two texts, and where does each come from?
+
+<text_a>
+{text_a}
+</text_a>
+
+<text_b>
+{text_b}
+</text_b>
+
+Respond with a single JSON object and nothing else, with these keys in this order:
+
+{{
+  "evidence": "<what in the texts informed your answers>",
+  "confidence": "high" | "medium" | "low",
+  "identification_a": "<what you think text A is and who produced it>",
+  "identification_b": "<what you think text B is and who produced it>"
+}}
+
+------------------------------------------------------------------------------
+P.3  FORCED SINGLETON  -  chance = 1/n_parties
+------------------------------------------------------------------------------
+
+Below is a policy summary from a UK general election manifesto. Identify the party that produced it. You must choose one.
+
+<text>
+{text}
+</text>
+
+Respond with a single JSON object and nothing else, with these keys in this order:
+
+{{
+  "evidence": "<what in the text informed your choice>",
+  "confidence": "high" | "medium" | "low",
+  "party": one of {options}
+}}
+
+------------------------------------------------------------------------------
+P.4  FORCED PAIR
+------------------------------------------------------------------------------
+
+Below are two policy summaries from UK general election manifestos. Identify the party that produced each. You must choose for both.
+
+<text_a>
+{text_a}
+</text_a>
+
+<text_b>
+{text_b}
+</text_b>
+
+Respond with a single JSON object and nothing else, with these keys in this order:
+
+{{
+  "evidence": "<what in the texts informed your choices>",
+  "confidence": "high" | "medium" | "low",
+  "party_a": one of {options},
+  "party_b": one of {options}
+}}
+
+==============================================================================
+PLACEHOLDER REFERENCE
+==============================================================================
+
+  {manifesto}              Extracted manifesto text, or CMP corpus text where extraction fails the gate
+  {party}                  Registered party name (framed variant only)
+  {source_description}     Instrument description per source condition (see 2.5)
+  {voter_priority_data}    Provenance-tagged data block per source condition (see 2.5)
+  {profile}                Medoid-selected profile from Phase 2, rendered with abstentions shown
+  {label_a}, {label_b}     Randomised pseudonym (blind) or party name (labelled)
+  {text_a}, {text_b}       Medoid-selected summary under the active variant, or CMP text
+  {options}                Party list for the forced probe
+
+==============================================================================
+END
+==============================================================================
