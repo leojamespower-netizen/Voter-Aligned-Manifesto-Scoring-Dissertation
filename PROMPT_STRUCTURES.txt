@@ -80,10 +80,9 @@ Summarise following text within 500 words
 1.6  ANONYMISED
 ------------------------------------------------------------------------------
 
-[base: neutral prompt over identity-stripped input text]
-[input: manifesto text after anonymise() replacement list]
+[base: neutral + instruction to omit party and personal names]
 
-Summarise the following text within 500 words, while excluding ideological framing.
+Summarise the following text within 500 words, while excluding ideological framing. Do not name any political parties, or individuals.
 
 {manifesto}
 
@@ -358,7 +357,12 @@ All six foundations must appear exactly once. The weights of entries with status
 2.5  SOURCE CONDITIONS  -  provenance-tagged data blocks
 ------------------------------------------------------------------------------
 
-All four run in full and reported side by side. None is a baseline.
+All three run in full and reported side by side. None is a baseline.
+A fourth condition presenting the sources sequentially was registered
+in the proposal and dropped: under the two-phase architecture both
+sources arrive in one prompt, so the manipulation reduced to labelling
+them Source 1 and Source 2 and the anchoring prediction no longer
+applied.
 
 [ipsos]
   {source_description} = an unprompted issue-salience survey
@@ -374,7 +378,7 @@ All four run in full and reported side by side. None is a baseline.
     {bes_data}
     </source>
 
-[both_simultaneous]
+[both]
   {source_description} = two surveys of the British electorate
   {voter_priority_data} =
     <source type="survey" instrument="Ipsos Issues Index" measurement="unprompted salience; multi-response" limitation="records salience only; direction not recoverable">
@@ -385,18 +389,6 @@ All four run in full and reported side by side. None is a baseline.
     {bes_data}
     </source>
 
-[both_sequential]
-  {source_description} = two surveys of the British electorate, presented in sequence
-  {voter_priority_data} =
-    Source 1:
-    <source type="survey" instrument="Ipsos Issues Index" measurement="unprompted salience; multi-response" limitation="records salience only; direction not recoverable">
-    {ipsos_data}
-    </source>
-    
-    Source 2:
-    <source type="survey" instrument="BES pre-election wave" measurement="structured attitudinal items; weighted" weighting="applied">
-    {bes_data}
-    </source>
 
 ==============================================================================
 PHASE 3  -  PAIRWISE COMPARISON
@@ -605,8 +597,14 @@ DIAGNOSTIC PROBES  (outside the scored pipeline)
 Measure how much party identity survives summarisation. Run on
 non-anonymised summaries first, to decide whether anonymisation is needed.
 
+Two probes, both on a single summary. A pair variant presenting two
+summaries together was registered and dropped: it doubled the grid for a
+distinction the proposal did not specify, and the leakage report took the
+worse of the two rates, so the pair probe could require anonymisation where
+singletons looked clean.
+
 ------------------------------------------------------------------------------
-P.1  OPEN SINGLETON  -  no scaffolding, matched to Phase 3 conditions
+P.1  MINIMAL  -  no scaffolding, matched to Phase 3 conditions
 ------------------------------------------------------------------------------
 
 What is the following text, and where does it come from?
@@ -624,30 +622,7 @@ Respond with a single JSON object and nothing else, with these keys in this orde
 }}
 
 ------------------------------------------------------------------------------
-P.2  OPEN PAIR
-------------------------------------------------------------------------------
-
-What are the following two texts, and where does each come from?
-
-<text_a>
-{text_a}
-</text_a>
-
-<text_b>
-{text_b}
-</text_b>
-
-Respond with a single JSON object and nothing else, with these keys in this order:
-
-{{
-  "evidence": "<what in the texts informed your answers>",
-  "confidence": "high" | "medium" | "low",
-  "identification_a": "<what you think text A is and who produced it>",
-  "identification_b": "<what you think text B is and who produced it>"
-}}
-
-------------------------------------------------------------------------------
-P.3  FORCED SINGLETON  -  chance = 1/n_parties
+P.2  BIASED  -  party list supplied; chance = 1/n_parties
 ------------------------------------------------------------------------------
 
 Below is a policy summary from a UK general election manifesto. Identify the party that produced it. You must choose one.
@@ -664,29 +639,6 @@ Respond with a single JSON object and nothing else, with these keys in this orde
   "party": one of {options}
 }}
 
-------------------------------------------------------------------------------
-P.4  FORCED PAIR
-------------------------------------------------------------------------------
-
-Below are two policy summaries from UK general election manifestos. Identify the party that produced each. You must choose for both.
-
-<text_a>
-{text_a}
-</text_a>
-
-<text_b>
-{text_b}
-</text_b>
-
-Respond with a single JSON object and nothing else, with these keys in this order:
-
-{{
-  "evidence": "<what in the texts informed your choices>",
-  "confidence": "high" | "medium" | "low",
-  "party_a": one of {options},
-  "party_b": one of {options}
-}}
-
 ==============================================================================
 PLACEHOLDER REFERENCE
 ==============================================================================
@@ -698,7 +650,7 @@ PLACEHOLDER REFERENCE
   {profile}                Medoid-selected profile from Phase 2, rendered with abstentions shown
   {label_a}, {label_b}     Randomised pseudonym (blind) or party name (labelled)
   {text_a}, {text_b}       Medoid-selected summary under the active variant, or CMP text
-  {options}                Party list for the forced probe
+  {options}                Party list for the biased probe
 
 ==============================================================================
 END

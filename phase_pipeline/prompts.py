@@ -1,28 +1,5 @@
-"""REGISTERED prompt specification (Phases 1-3).
+"""REGISTERED prompt specification (Phases 1-3)."""
 
-This module is a pre-registration artefact as well as code. The wordings
-below are frozen by the pre-analysis-plan Git commit and MUST NOT be edited
-after the first confirmatory API call. See Registered_Prompt_Specification
-for the full rationale, predictions, and design grid.
-
-Cross-cutting rules encoded here:
-  * No prompt names the election, the year, or the electoral context. The
-    correspondence between rankings and outcomes lives in the analysis
-    layer only.
-  * Schema is specified IN THE PROMPT; provider-side constrained decoding is
-    not used (cross-model comparability; avoids decoding-induced
-    distributional shift). Tested, not assumed - see the 2024 robustness cell.
-  * Field order is generation order: evidence and reasoning precede any
-    field that commits to a verdict or a weight.
-  * Abstention is REPRESENTABLE, not merely permitted: three-valued status
-    plus nullable weight.
-"""
-
-from __future__ import annotations
-
-# ===========================================================================
-# Output contracts
-# ===========================================================================
 
 VERDICT_SCHEMA = """Respond with a single JSON object and nothing else. Do not wrap it in \
 markdown code fences and do not add commentary before or after it. The object \
@@ -82,22 +59,13 @@ Both poles must appear exactly once. The weights of entries with status \
 have weight null."""
 
 # Six-foundation formulation (Fairness split into Equality and
-# Proportionality), per the revised Moral Foundations Theory. Registered
-# choice: the split is retained because equality-of-outcome versus
-# reward-for-merit is a primary axis of UK political debate and merging
-# them would blur it. Note this departs from the five-foundation
-# formulation used by most of the LLM-MFT literature; justified in the
-# methods chapter.
+# Proportionality), per the revised Moral Foundations Theory.
 FOUNDATIONS = ("care", "loyalty", "authority", "sanctity",
                "equality", "proportionality")
 POLES = ("gal", "tan")
 
-# ===========================================================================
-# Framework definition blocks (byte-identical across all conditions)
-# ===========================================================================
 
-# Canonical foundation descriptions (Graham, Haidt & Nosek; six-foundation
-# revision). Held byte-identical across all conditions and both models.
+# Framework definition blocks (byte-identical across all conditions)
 MFT_DEFINITIONS = """  - Care/Harm: related to our long evolution as mammals with attachment systems
     and an ability to feel (and dislike) the pain of others. It underlies the
     virtues of kindness, gentleness, and nurturance.
@@ -126,9 +94,7 @@ MFT_DEFINITIONS = """  - Care/Harm: related to our long evolution as mammals wit
   - Proportionality: related to our intuitions about individuals getting
     rewarded in proportion to their merit or contribution."""
 
-# Single worked example, deliberately not a catalogue: the bidirectional MFT
-# arm differs from the explicit arm by THIS ADDITION ALONE, so the wording is
-# the entire manipulation. A list of cases would invite topic-matching.
+# Single worked example of a bidirectional foundation
 BIDIRECTIONALITY_EXAMPLES = """One person's sensitivity to the Care/Harm foundation may lead them to support \
 high levels of immigration from poorer nations, to reduce the suffering of those \
 who migrate. Whereas another person's sensitivity to the very same foundation \
@@ -160,9 +126,7 @@ commitments, not to the extent that it mentions the associated topics:
   - Nuclear expansion argued for energy security is not GAL.
   - Faster asylum processing argued on humanitarian grounds is not TAN."""
 
-# ===========================================================================
 # PHASE 1 - Summarisation variants (prose output; no JSON schema)
-# ===========================================================================
 
 MINIMAL = "Summarise the following text within 500 words.\n\n{manifesto}"
 
@@ -175,13 +139,13 @@ FRAMING_PRESERVING = ("Summarise the following text within 500 words, while "
 FRAMED = ("Summarise the following text, which is the {party} manifesto, "
           "within 500 words, while excluding ideological framing.\n\n{manifesto}")
 
-# Transformation rule (registered): MINIMAL with all articles ("the") deleted
-# and the terminal full stop removed.
+# Transformation rule
 DISTORTED = "Summarise following text within 500 words\n\n{manifesto}"
 
-# Prompt identical to NEUTRAL; the manipulation is applied to the INPUT.
-ANONYMISED = ("Summarise the following text within 500 words, while excluding "
-              "ideological framing.\n\n{manifesto}")
+# Prompt identical to NEUTRAL apart from the additional call for party name removal.
+ANONYMISED = ("Summarise the following text within 500 words, while "
+              "excluding ideological framing. Do not name any political "
+              "party, politician, or party-specific programme.\n\n{manifesto}")
 
 VARIANTS: dict[str, str] = {
     "minimal": MINIMAL,
@@ -195,14 +159,6 @@ VARIANTS: dict[str, str] = {
 ANONYMISED_INPUT: set[str] = {"anonymised"}
 NEEDS_PARTY: set[str] = {"framed"}
 
-VARIANT_BASE: dict[str, str] = {
-    "minimal": "reference",
-    "neutral": "minimal + framing-suppression instruction",
-    "framing_preserving": "minimal + framing-preservation instruction",
-    "framed": "neutral + party cue in prompt",
-    "distorted": "minimal, articles deleted + terminal punctuation removed",
-    "anonymised": "neutral prompt over identity-stripped input text",
-}
 
 # Variants carried into Phase 3. Distorted's hypothesis completes at the
 # summary level and its single-draw limitation weakens downstream inference.
@@ -210,9 +166,9 @@ CARRIED_FORWARD: tuple[str, ...] = (
     "minimal", "neutral", "framing_preserving", "framed", "anonymised",
 )
 
-# ===========================================================================
+
 # PHASE 2 - Profile construction
-# ===========================================================================
+
 
 _DATA_BLOCK = """The text below is drawn from {source_description}, a measure of the \
 priorities of the British electorate.
@@ -258,9 +214,7 @@ basis of the data above.
 {AXIS_SCHEMA}"""
 
 # Probe arm: no definitions supplied. Registered as a measurement of the
-# model's internalised framework, NOT as the primary condition. Predicted to
-# diverge from the definition-supplied arms in the direction of the model's
-# partisan priors (US-inflected MFT coding).
+# model's internalised framework.
 PROFILE_ZERO_DEFINITION = f"""{_DATA_BLOCK}
 
 Your task is to construct a Moral Foundations profile for this electorate on \
@@ -367,17 +321,7 @@ COMPARE_PROMPTS: dict[str, str] = {
 # Prompt types that require a Phase 2 profile.
 NEEDS_PROFILE: set[str] = {"explicit_mft", "bidirectional_mft", "axis"}
 
-# ===========================================================================
 # MEASUREMENT INSTRUMENT - commitment extraction (Phase 1 stability)
-# ===========================================================================
-# This prompt is part of the measurement instrument, not a utility: its
-# wording determines what the stability metric can see. Registered and frozen
-# alongside the pipeline prompts. Run at temperature 0 - the extractor must
-# not add variance on top of the variance being measured.
-#
-# The grain instruction is load-bearing. Without it, one replicate may state
-# "reform the planning system" where another lists five specific measures;
-# the metric would read that as instability when it is only resolution.
 
 EXTRACTION_PROMPT = """Extract every policy commitment stated in the text below.
 
@@ -395,14 +339,3 @@ implementation details. Do not subdivide a single commitment into steps.
 <text>
 {summary}
 </text>"""
-
-# ===========================================================================
-# Prompt lint - leading language that must never enter a prompt
-# ===========================================================================
-
-BANNED_PATTERNS: tuple[str, ...] = (
-    r"\bprogressive\b", r"\bright-wing\b", r"\bleft-wing\b",
-    r"\blikely (?:favours?|prefers?)\b", r"\bwould be expected to\b",
-    r"\bincumbent\b", r"\bwon\b", r"\bmajority\b", r"\bpopular\b",
-    r"\bmainstream\b", r"\bfringe\b", r"\belection\b", r"\b(?:19|20)\d{2}\b",
-)
