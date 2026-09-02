@@ -14,33 +14,56 @@ CACHE_DIR = REPO_ROOT / "cache"
 CALL_LOG = CACHE_DIR / "call_log.csv"
 
 # Model identifiers used throughout the pipeline.
-GPT5 = "gpt-5" # closed-weight, via OpenAI API
+GPT5 = "gpt-5" # closed-weight, fixed temperature via Anthropic API
+CLAUDE = "claude" # closed-weight, fixed temperature via the Anthropic API
+
 
 # Registered decoding parameters, per stage.
+# Temperature doesn't apply to GPT-5 due to fixed parameterisation
+# It does however apply to Claude Opus 4.1, and as such is included for flexibility, even though it will be overriden on the anthropic side.
 DECODING = {
-    "summaries":   {"temperature": 0.0, "max_tokens": 1200},
-    "profiles":    {"temperature": 0.0, "max_tokens": 1500},
-    "comparisons": {"temperature": 0.0, "max_tokens": 800},
-    "probes":      {"temperature": 0.0, "max_tokens": 400},
+    "summaries":   {"temperature": 1.0, "max_tokens": 4000}, # arbitrary upper limit.
+    "extractions": {"temperature": 1.0, "max_tokens": 4000},
+    "profiles":    {"temperature": 1.0, "max_tokens": 4000},
+    "comparisons": {"temperature": 1.0, "max_tokens": 4000},
+    "probes":      {"temperature": 1.0, "max_tokens": 4000},
 }
 
+TEMPERATURE_OVERRIDE = None
 
 def call_llm(prompt, model, cache_key, subdir='comparisons', system=None,
-             temperature=1.0, max_retries=3, force_refresh=False):
+             temperature=None, max_retries=3, force_refresh=False):  
     """Cached API call. Returns the cached response if one exists.
 
     The cache key holds the identifiers of the inputs, not their content:
     edit an input and the stale response is still served. force_refresh is
-    manual; deleting the subdirectory is safer."""
+    manual; deleting the subdirectory is safer.
+
+    Decoding parameters come from DECODING, so the values sent to the API
+    and the values written into the cache file are the same object. An
+    earlier version took them from two places, and every file recorded a
+    temperature the request had not used.
+    """
+    settings = DECODING.get(subdir, {})
+    if temperature is None:
+        temperature = (TEMPERATURE_OVERRIDE if TEMPERATURE_OVERRIDE is not None
+                       else settings.get("temperature", 1.0))
+    max_tokens = settings.get("max_tokens", 4000)
+
+    # the key carries the temperature so that runs at different values
+    # write to different files rather than one serving the other's responses
+    if temperature != 1.0:
+        cache_key = f"{cache_key}_t{temperature}"
+    
     cache_file = CACHE_DIR / subdir / f"{cache_key}.json"
 
     if cache_file.exists() and not force_refresh:
         return json.loads(cache_file.read_text(encoding="utf-8"))
-
+    
     last_error = None
     for attempt in range(1, max_retries + 1):
         try:
-            text = _api_request(prompt, model, system, temperature)
+            text = _api_request(prompt, model, system, temperature, max_tokens)
             break
         except Exception as exc:  # noqa: BLE001 - want to retry on any API error
             last_error = exc
@@ -61,7 +84,7 @@ def call_llm(prompt, model, cache_key, subdir='comparisons', system=None,
         "prompt": prompt,
         "system": system,
         # Ensures a divergence found at write-up can attributed to inputs, prompt, or model version rather than estimated.
-        "decoding": DECODING.get(subdir, {"temperature": temperature}),
+        "decoding": {"temperature": temperature, "max_tokens":max_tokens},
         "prompt_hash": hashlib.sha256(prompt.encode()).hexdigest()[:16],
     }
 
@@ -75,7 +98,8 @@ def call_llm(prompt, model, cache_key, subdir='comparisons', system=None,
 
 # providers, keyed by model id
 PROVIDERS = {
-    GPT5: {"key_var": "OPENAI_API_KEY", "api_model": "gpt-5"},
+    GPT5: {"sdk": "openai", "key_var": "OPENAI_API_KEY", "api_model": "gpt-5"},
+    CLAUDE: {"sdk": "anthropic", "key_var": "ANTHROPIC_API_KEY", "api_model": "claude-opus-4-1"}
 }
 
 _CLIENTS = {}
