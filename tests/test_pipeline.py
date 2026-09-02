@@ -241,3 +241,92 @@ def test_all_pairs_is_complete_and_unordered():
     pairs = compare.all_pairs(["a", "b", "c", "d", "e"])
     assert len(pairs) == 10
     assert len({frozenset(p) for p in pairs}) == 10
+
+def test_API_registration():
+    from phase_pipeline.llm_client import PROVIDERS, GPT5, CLAUDE
+    assert GPT5 in PROVIDERS and CLAUDE in PROVIDERS
+    for spec in PROVIDERS.values():
+        assert spec["sdk"] in ("openai", "anthropic")
+        assert spec["key_var"] and spec["api_model"]
+
+
+def test_missing_key():
+    from phase_pipeline import llm_client
+    import os
+    saved = os.environ.pop("ANTHROPIC_API_KEY", None)
+    llm_client._CLIENTS.clear()
+    try:
+        with pytest.raises(RuntimeError, match="ANTHROPIC_API_KEY"):
+            llm_client._api_request("hi", llm_client.CLAUDE, None, 0.0)
+    finally:
+        if saved:
+            os.environ["ANTHROPIC_API_KEY"] = saved
+
+
+def test_unknown_model_identification():
+    from phase_pipeline.llm_client import _api_request
+    with pytest.raises(ValueError, match="Unknown model"):
+        _api_request("hi", "not-a-model", None, 0.0)
+
+
+def test_cache_keys_separate_by_model():
+    # the key format used throughout phase 1
+    keys = {f"2024_lab_minimal_{m}_run1" for m in ("gpt-5", "claude")}
+    assert len(keys) == 2, "a second model would overwrite the first's cache"
+
+@pytest.fixture
+def fake_api(monkeypatch, tmp_path):
+    # replaces the API with a stub that records what it was sent, and points
+    # the cache at a temporary directory
+    from phase_pipeline import llm_client
+    sent = {}
+
+    def stub(prompt, model, system, temperature, max_tokens=4000):
+        sent.update(temperature=temperature, max_tokens=max_tokens)
+        return "ok"
+
+    monkeypatch.setattr(llm_client, "_api_request", stub)
+    monkeypatch.setattr(llm_client, "CACHE_DIR", tmp_path)
+    monkeypatch.setattr(llm_client, "TEMPERATURE_OVERRIDE", None)
+    (tmp_path / "probes").mkdir()
+    return llm_client, sent, tmp_path / "probes"
+
+
+def test_every_subdir_used_has_decoding_settings():
+    import ast, glob
+    from phase_pipeline.llm_client import DECODING
+    used = set()
+    for f in glob.glob("phase_pipeline/*.py"):
+        for node in ast.walk(ast.parse(open(f, encoding="utf-8").read())):
+            if isinstance(node, ast.Call):
+                for kw in node.keywords:
+                    if kw.arg == "subdir" and isinstance(kw.value, ast.Constant):
+                        used.add(kw.value.value)
+    assert used <= set(DECODING), f"no decoding registered for {used - set(DECODING)}"
+
+
+def test_request_and_record_match(fake_api):
+    llm_client, sent, _ = fake_api
+    response = llm_client.call_llm("hi", "gpt-5", "k", subdir="probes")
+    assert response["decoding"] == sent
+    assert sent["temperature"] == llm_client.DECODING["probes"]["temperature"]
+
+
+def test_temperature_is_uniform_across_stages():
+    from phase_pipeline.llm_client import DECODING
+    values = {s["temperature"] for s in DECODING.values()}
+    assert len(values) == 1, f"stages disagree on temperature: {values}"
+
+
+def test_temperature_override_separates_the_cache(fake_api):
+    llm_client, _, cache = fake_api
+    llm_client.call_llm("hi", "gpt-5", "k", subdir="probes")
+    llm_client.TEMPERATURE_OVERRIDE = 0.0
+    llm_client.call_llm("hi", "gpt-5", "k", subdir="probes")
+    assert len(list(cache.iterdir())) == 2, "two temperatures shared a file"
+
+
+def test_token_ceilings_do_not_bind():
+    from phase_pipeline.llm_client import DECODING
+    for subdir, settings in DECODING.items():
+        assert settings["max_tokens"] >= 4000, f"{subdir} could truncate a response"
