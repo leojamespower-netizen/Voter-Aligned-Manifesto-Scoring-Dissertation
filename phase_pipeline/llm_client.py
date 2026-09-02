@@ -32,7 +32,7 @@ DECODING = {
 TEMPERATURE_OVERRIDE = None
 
 def call_llm(prompt, model, cache_key, subdir='comparisons', system=None,
-             temperature=None, max_retries=3, force_refresh=False):  
+             temperature=None, max_retries=6, force_refresh=False):  
     """Cached API call. Returns the cached response if one exists.
 
     The cache key holds the identifiers of the inputs, not their content:
@@ -67,7 +67,7 @@ def call_llm(prompt, model, cache_key, subdir='comparisons', system=None,
             break
         except Exception as exc:  # noqa: BLE001 - want to retry on any API error
             last_error = exc
-            wait = 2 ** attempt 
+            wait = (2 ** attempt, 60) #extends waits to 2 mins to resolve a disconnection problem encountered during a overnight run
             print(f"[llm_client] attempt {attempt} failed for {cache_key}: {exc}. "
                   f"Retrying in {wait}s...")
             time.sleep(wait)
