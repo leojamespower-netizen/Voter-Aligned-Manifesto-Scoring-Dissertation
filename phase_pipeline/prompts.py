@@ -145,7 +145,7 @@ DISTORTED = "Summarise following text within 500 words\n\n{manifesto}"
 # Prompt identical to NEUTRAL apart from the additional call for party name removal.
 ANONYMISED = ("Summarise the following text within 500 words, while "
               "excluding ideological framing. Do not name any political "
-              "party, politician, or party-specific programme.\n\n{manifesto}")
+              "parties, or individuals.\n\n{manifesto}")
 
 VARIANTS: dict[str, str] = {
     "minimal": MINIMAL,
