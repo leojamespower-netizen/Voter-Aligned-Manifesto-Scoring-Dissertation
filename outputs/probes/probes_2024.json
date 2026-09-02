@@ -26,7 +26,6 @@
   "results": [
     {
       "family": "minimal",
-      "kind": "singleton",
       "election": "2024",
       "truth": "lab",
       "identification": "A condensed summary of the UK Labour Party\u2019s 2024 General Election manifesto\u2014\u2018Change: Labour Party Manifesto 2024\u2019\u2014and its accompanying \u2018Six First Steps for Change\u2019 pledge card, as published by the Labour Party in June 2024.",
@@ -39,7 +38,6 @@
     },
     {
       "family": "biased",
-      "kind": "singleton",
       "election": "2024",
       "truth": "lab",
       "guess": "labour",
@@ -50,7 +48,6 @@
     },
     {
       "family": "minimal",
-      "kind": "singleton",
       "election": "2024",
       "truth": "con",
       "identification": "A bullet\u2011point summary of the UK Conservative and Unionist Party\u2019s 2024 General Election manifesto ('Clear Plan. Bold Action. Secure Future.'), i.e., the Conservative Party manifesto published in June 2024.",
@@ -63,7 +60,6 @@
     },
     {
       "family": "biased",
-      "kind": "singleton",
       "election": "2024",
       "truth": "con",
       "guess": "conservative",
@@ -74,7 +70,6 @@
     },
     {
       "family": "minimal",
-      "kind": "singleton",
       "election": "2024",
       "truth": "reform",
       "identification": "A condensed summary of Reform UK\u2019s 2024 General Election manifesto titled \u2018Our Contract with You,\u2019 produced by the Reform UK party (UK), i.e., content from their 2024 manifesto/contract document.",
@@ -87,7 +82,6 @@
     },
     {
       "family": "biased",
-      "kind": "singleton",
       "election": "2024",
       "truth": "reform",
       "guess": "reform uk",
@@ -98,7 +92,6 @@
     },
     {
       "family": "minimal",
-      "kind": "singleton",
       "election": "2024",
       "truth": "ld",
       "identification": "An unofficial bullet\u2011point summary of the UK Liberal Democrats\u2019 2024 General Election manifesto (\u201cFor a Fair Deal\u201d), derived from the party\u2019s manifesto document rather than being the manifesto itself.",
@@ -111,7 +104,6 @@
     },
     {
       "family": "biased",
-      "kind": "singleton",
       "election": "2024",
       "truth": "ld",
       "guess": "liberal democrats",
@@ -122,7 +114,6 @@
     },
     {
       "family": "minimal",
-      "kind": "singleton",
       "election": "2024",
       "truth": "green",
       "identification": "A third\u2011party bullet\u2011point summary of the Green Party of England and Wales\u2019 2024 UK General Election manifesto (Real Hope, Real Change), derived from the party\u2019s official manifesto and costings but not an official document itself.",
@@ -135,7 +126,6 @@
     },
     {
       "family": "biased",
-      "kind": "singleton",
       "election": "2024",
       "truth": "green",
       "guess": "green party",
@@ -146,7 +136,6 @@
     },
     {
       "family": "minimal",
-      "kind": "singleton",
       "election": "2024",
       "truth": "lab",
       "identification": "A neutral, bullet\u2011point summary of the UK Labour Party\u2019s 2024 General Election manifesto (\u201cChange\u201d), published by the Labour Party in June 2024.",
@@ -159,7 +148,6 @@
     },
     {
       "family": "biased",
-      "kind": "singleton",
       "election": "2024",
       "truth": "lab",
       "guess": "labour",
@@ -170,7 +158,6 @@
     },
     {
       "family": "minimal",
-      "kind": "singleton",
       "election": "2024",
       "truth": "con",
       "identification": "A neutral, bullet\u2011point synopsis of the UK Conservative and Unionist Party\u2019s 2024 General Election manifesto (and associated policy plans), derived from that manifesto.",
@@ -183,7 +170,6 @@
     },
     {
       "family": "biased",
-      "kind": "singleton",
       "election": "2024",
       "truth": "con",
       "guess": "conservative",
@@ -194,7 +180,6 @@
     },
     {
       "family": "minimal",
-      "kind": "singleton",
       "election": "2024",
       "truth": "reform",
       "identification": "A condensed, third\u2011party-style summary of Reform UK\u2019s 2024 UK general election manifesto (branded by the party as \u2018Our Contract with You\u2019), drawn from Reform UK\u2019s published manifesto and costings document.",
@@ -207,7 +192,6 @@
     },
     {
       "family": "biased",
-      "kind": "singleton",
       "election": "2024",
       "truth": "reform",
       "guess": "reform uk",
@@ -218,7 +202,6 @@
     },
     {
       "family": "minimal",
-      "kind": "singleton",
       "election": "2024",
       "truth": "ld",
       "identification": "A de\u2011jargonized bullet\u2011point summary of the UK Liberal Democrats\u2019 2024 General Election manifesto (\u201cFor a Fair Deal\u201d), i.e., their official manifesto policies presented in neutral wording.",
@@ -231,7 +214,6 @@
     },
     {
       "family": "biased",
-      "kind": "singleton",
       "election": "2024",
       "truth": "ld",
       "guess": "liberal democrats",
@@ -242,7 +224,6 @@
     },
     {
       "family": "minimal",
-      "kind": "singleton",
       "election": "2024",
       "truth": "green",
       "identification": "An unofficial bullet\u2011point summary of the Green Party of England & Wales 2024 General Election manifesto (UK), derived from the party\u2019s manifesto rather than being the manifesto text itself.",
@@ -255,7 +236,6 @@
     },
     {
       "family": "biased",
-      "kind": "singleton",
       "election": "2024",
       "truth": "green",
       "guess": "green party",

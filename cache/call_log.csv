@@ -1429,3 +1429,6 @@ timestamp_utc,cache_key,model,subdir
 2026-09-01T09:09:17.215473+00:00,2024_reform-v-green_orderB_axis_anonymised_axis_both_blind_gpt-5_run0,gpt-5,comparisons
 2026-09-01T09:09:42.079628+00:00,2024_ld-v-green_orderA_axis_anonymised_axis_both_blind_gpt-5_run0,gpt-5,comparisons
 2026-09-01T09:10:03.005673+00:00,2024_ld-v-green_orderB_axis_anonymised_axis_both_blind_gpt-5_run0,gpt-5,comparisons
+2026-09-02T16:31:39.114788+00:00,k,gpt-5,probes
+2026-09-02T16:31:39.121440+00:00,k,gpt-5,probes
+2026-09-02T16:31:39.122928+00:00,k_t0.0,gpt-5,probes

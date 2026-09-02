@@ -1,0 +1,122 @@
+{
+  "profile:2024_explicit_mft_ipsos_gpt-5": {
+    "cell": "profile:2024_explicit_mft_ipsos_gpt-5",
+    "selected_run_index": 1,
+    "selected_cache_key": "2024_explicit_mft_ipsos_gpt-5_run2",
+    "stability_cosine": 0.8358641624450683,
+    "stability_cosine_sd": 0.026979026676528652,
+    "stability_rouge_l": 0.4924739916472974,
+    "metrics_agree_on_medoid": false,
+    "n_runs": 5
+  },
+  "profile:2024_explicit_mft_bes_gpt-5": {
+    "cell": "profile:2024_explicit_mft_bes_gpt-5",
+    "selected_run_index": 1,
+    "selected_cache_key": "2024_explicit_mft_bes_gpt-5_run2",
+    "stability_cosine": 0.8516535282135009,
+    "stability_cosine_sd": 0.030817754661139358,
+    "stability_rouge_l": 0.44516702575410927,
+    "metrics_agree_on_medoid": false,
+    "n_runs": 5
+  },
+  "profile:2024_explicit_mft_both_gpt-5": {
+    "cell": "profile:2024_explicit_mft_both_gpt-5",
+    "selected_run_index": 4,
+    "selected_cache_key": "2024_explicit_mft_both_gpt-5_run5",
+    "stability_cosine": 0.8321514427661896,
+    "stability_cosine_sd": 0.05038189661959838,
+    "stability_rouge_l": 0.459247512310316,
+    "metrics_agree_on_medoid": false,
+    "n_runs": 5
+  },
+  "profile:2024_bidirectional_mft_ipsos_gpt-5": {
+    "cell": "profile:2024_bidirectional_mft_ipsos_gpt-5",
+    "selected_run_index": 1,
+    "selected_cache_key": "2024_bidirectional_mft_ipsos_gpt-5_run2",
+    "stability_cosine": 0.8228511571884155,
+    "stability_cosine_sd": 0.03532864402441555,
+    "stability_rouge_l": 0.5072034229809061,
+    "metrics_agree_on_medoid": false,
+    "n_runs": 5
+  },
+  "profile:2024_bidirectional_mft_bes_gpt-5": {
+    "cell": "profile:2024_bidirectional_mft_bes_gpt-5",
+    "selected_run_index": 0,
+    "selected_cache_key": "2024_bidirectional_mft_bes_gpt-5_run1",
+    "stability_cosine": 0.8431466817855835,
+    "stability_cosine_sd": 0.03850539257923224,
+    "stability_rouge_l": 0.4088167661294667,
+    "metrics_agree_on_medoid": false,
+    "n_runs": 5
+  },
+  "profile:2024_bidirectional_mft_both_gpt-5": {
+    "cell": "profile:2024_bidirectional_mft_both_gpt-5",
+    "selected_run_index": 2,
+    "selected_cache_key": "2024_bidirectional_mft_both_gpt-5_run3",
+    "stability_cosine": 0.8278815388679505,
+    "stability_cosine_sd": 0.04283607789572237,
+    "stability_rouge_l": 0.48870818350707407,
+    "metrics_agree_on_medoid": true,
+    "n_runs": 5
+  },
+  "profile:2024_axis_ipsos_gpt-5": {
+    "cell": "profile:2024_axis_ipsos_gpt-5",
+    "selected_run_index": 4,
+    "selected_cache_key": "2024_axis_ipsos_gpt-5_run5",
+    "stability_cosine": 0.8446094334125519,
+    "stability_cosine_sd": 0.03577693364686272,
+    "stability_rouge_l": 0.4806789109985805,
+    "metrics_agree_on_medoid": true,
+    "n_runs": 5
+  },
+  "profile:2024_axis_bes_gpt-5": {
+    "cell": "profile:2024_axis_bes_gpt-5",
+    "selected_run_index": 4,
+    "selected_cache_key": "2024_axis_bes_gpt-5_run5",
+    "stability_cosine": 0.8774683773517609,
+    "stability_cosine_sd": 0.018979098787164507,
+    "stability_rouge_l": 0.39934747615891647,
+    "metrics_agree_on_medoid": false,
+    "n_runs": 5
+  },
+  "profile:2024_axis_both_gpt-5": {
+    "cell": "profile:2024_axis_both_gpt-5",
+    "selected_run_index": 1,
+    "selected_cache_key": "2024_axis_both_gpt-5_run2",
+    "stability_cosine": 0.8219472110271454,
+    "stability_cosine_sd": 0.05403165067427852,
+    "stability_rouge_l": 0.4231359347809853,
+    "metrics_agree_on_medoid": true,
+    "n_runs": 5
+  },
+  "profile:2024_zero_definition_ipsos_gpt-5": {
+    "cell": "profile:2024_zero_definition_ipsos_gpt-5",
+    "selected_run_index": 1,
+    "selected_cache_key": "2024_zero_definition_ipsos_gpt-5_run2",
+    "stability_cosine": 0.7711877286434173,
+    "stability_cosine_sd": 0.06316463754020016,
+    "stability_rouge_l": 0.4906593585490892,
+    "metrics_agree_on_medoid": false,
+    "n_runs": 5
+  },
+  "profile:2024_zero_definition_bes_gpt-5": {
+    "cell": "profile:2024_zero_definition_bes_gpt-5",
+    "selected_run_index": 0,
+    "selected_cache_key": "2024_zero_definition_bes_gpt-5_run1",
+    "stability_cosine": 0.8956818282604218,
+    "stability_cosine_sd": 0.03050938957253702,
+    "stability_rouge_l": 0.4559336402733726,
+    "metrics_agree_on_medoid": true,
+    "n_runs": 5
+  },
+  "profile:2024_zero_definition_both_gpt-5": {
+    "cell": "profile:2024_zero_definition_both_gpt-5",
+    "selected_run_index": 1,
+    "selected_cache_key": "2024_zero_definition_both_gpt-5_run2",
+    "stability_cosine": 0.8606105089187622,
+    "stability_cosine_sd": 0.027463980801428402,
+    "stability_rouge_l": 0.4178322469011099,
+    "metrics_agree_on_medoid": false,
+    "n_runs": 5
+  }
+}
