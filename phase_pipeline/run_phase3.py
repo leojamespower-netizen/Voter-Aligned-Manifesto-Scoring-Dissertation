@@ -201,6 +201,9 @@ def parse_args():
 
 def main():
     args = parse_args()
+    if args.temperature is not None:
+        from . import llm_client 
+        llm_client.TEMPERATURE_OVERRIDE = args.temperature
 
     if (args.text_source == "cmp"
             and args.election not in CMP_ELECTIONS):

@@ -25,6 +25,7 @@ from pathlib import Path
 from . import bradley_terry, compare, profiles, validate
 from .run_phase3 import load_phase1, load_phase2
 from .vote_shares import vote_shares
+from .prompts import N_RUNS
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_PHASE1 = REPO_ROOT / "outputs" / "phase1"
@@ -36,7 +37,6 @@ ELECTION = 2024
 VARIANT = "neutral"
 PROMPT_TYPE = "explicit_mft"
 SOURCE = "ipsos"
-REPEATS = 5
 
 
 def run_pass(election, parties, summaries, profile_block, model, repeat_index):
@@ -117,13 +117,17 @@ def parse_args():
     parser.add_argument("--phase2", type=Path, default=DEFAULT_PHASE2)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--model", default="gpt-5")
-    parser.add_argument("--repeats", type=int, default=REPEATS)
+    parser.add_argument("--temperature", type=float, default=None, help="override the registered temperature for this run")
+    parser.add_argument("--repeats", type=int, default=N_RUNS)
     parser.add_argument("--dry-run", action="store_true")
     return parser.parse_args()
 
 
 def main():
     args = parse_args()
+    if args.temperature is not None:
+        from . import llm_client
+        llm_client.TEMPERATURE_OVERRIDE = args.temperature
     shares = vote_shares(ELECTION)
     parties = list(shares)
 

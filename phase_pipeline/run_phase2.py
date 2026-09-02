@@ -9,13 +9,12 @@ from pathlib import Path
 
 from . import profiles
 from .report import write_report
-from .prompts import PROFILE_PROMPTS, SOURCE_CONDITIONS
+from .prompts import PROFILE_PROMPTS, SOURCE_CONDITIONS, N_RUNS
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_RECORDS = REPO_ROOT / "data" / "voter_profiles"
 DEFAULT_OUTPUT = REPO_ROOT / "outputs" / "phase2"
 
-N_RUNS = 5
 ARMS = tuple(PROFILE_PROMPTS)
 
 
@@ -102,6 +101,7 @@ def parse_args():
     parser.add_argument("--records", type=Path, default=DEFAULT_RECORDS)
     parser.add_argument("--model", default="gpt-5")
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
+    parser.add_argument("--temperature", type=float, default=None, help="override the registered temperature for this run")
     parser.add_argument("--dry-run", action="store_true",
                         help="resolve records and count calls, make none")
     return parser.parse_args()
@@ -109,7 +109,9 @@ def parse_args():
 
 def main():
     args = parse_args()
-
+    if arg.temperature is not None:
+        from . import llm_client
+        llm_client.TEMPERATURE_OVERRIDE = args.temperature
     try:
         ipsos, bes = load_records(args.records, args.election)
     except FileNotFoundError as err:

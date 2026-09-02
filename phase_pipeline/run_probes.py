@@ -46,14 +46,12 @@ def run_election(election, summaries, variants, model):
             minimal = probe.minimal_check(
                 election=str(election), party=party, text=text,
                 model=model, variant=variant)
-            minimal["family"] = "minimal"
             results.append(minimal)
 
             biased = probe.biased_check(
                 election=str(election), party=party, text=text,
                 model=model, parties=[names.get(p, p) for p in parties],
                 variant=variant, aliases=[names.get(party, party)])
-            biased["family"] = "biased"
             results.append(biased)
 
             print(f"  {variant}/{party}: minimal "
@@ -68,6 +66,7 @@ def parse_args():
     parser.add_argument("--phase1", type=Path, default=DEFAULT_PHASE1)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--model", default="gpt-5")
+    parser.add_argument("--temperature", type=float, default=None, help="override the registed temperature for this run")
     parser.add_argument("--variants", nargs="+", default=list(DEFAULT_VARIANTS))
     parser.add_argument("--dry-run", action="store_true")
     return parser.parse_args()
@@ -75,7 +74,9 @@ def parse_args():
 
 def main():
     args = parse_args()
-
+    if args.temperature is not None:
+        from . import llm_client
+        llm_client.TEMPERATURE_OVERRIDE = args.temperature
     try:
         summaries = load_phase1(args.phase1, args.election, args.variants)
     except FileNotFoundError as err:

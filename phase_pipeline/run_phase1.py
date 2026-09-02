@@ -126,6 +126,7 @@ def parse_args():
     parser.add_argument("--model", default="gpt-5",
                         help="model identifier passed to llm_client")
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
+    parser.add_argument("--temperature", type=float, default=None, help="override the registered temperature for this run")
     parser.add_argument("--dry-run", action="store_true",
                         help="resolve files and count calls, make none")
     return parser.parse_args()
@@ -133,6 +134,9 @@ def parse_args():
 
 def main():
     args = parse_args()
+    if args.temperature is not None:
+        from . import llm_client
+        llm_client.TEMPERATURE_OVERRIDE = args.temperature
 
     if not args.manifestos.is_dir():
         sys.exit(f"Not a directory: {args.manifestos}")
