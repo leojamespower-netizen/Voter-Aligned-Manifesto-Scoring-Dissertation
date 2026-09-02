@@ -44,7 +44,7 @@ Respond with a single JSON object and nothing else, with these keys in this orde
   "party": one of {options}
 }}"""
 
-def biased_check(election, party, text, model, parties, variant='neutral'):
+def biased_check(election, party, text, model, parties, variant='neutral', aliases=None):
     prompt = BIASED_PROMPT.format(text=text, options=list(parties))
     key = f"probe_biased_{election}_{party}_{variant}_{model}"
     resp = call_llm(prompt, model=model, cache_key=key, subdir="probes")

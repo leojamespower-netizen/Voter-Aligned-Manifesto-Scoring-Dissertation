@@ -4,6 +4,8 @@ from collections import defaultdict
 
 from scipy.stats import spearmanr
 
+# every design dimension a verdict carries
+_DESIGN_KEYS = ("variant", "prompt_type", "source", "labelled", "run_index")
 
 # spearman rho between BT scores and vote shares for one election
 def spearman_validation(scores, vote_shares):
@@ -38,10 +40,14 @@ def positional_error(verdicts):
     return reversals / len(pairs)
 
 
-def _comparison_key(meta):
-    """What is held constant when a condition is varied: the same pair of
-    manifestos, judged for the same election by the same model."""
-    return (meta["election"], tuple(sorted(meta["pair"])), meta["scorer"])
+# hold every dimension constant except the excluded one, or verdicts from
+# different arms and sources collapse into one group and the rate is nothing
+def _comparison_key(meta, exclude=None):
+    key = [meta["election"], tuple(sorted(meta["pair"])), meta["scorer"]]
+    for k in _DESIGN_KEYS:
+        if k != exclude:
+            key.append(meta.get(k))
+    return tuple(key)
 
 
 def _flip_rate(verdicts, varying):
@@ -72,7 +78,7 @@ def _flip_rate(verdicts, varying):
         # one winner per (comparison, value); later runs overwrite, so
         # positional pairs are collapsed first by taking the slot-A ordering
         if m.get("slot_A") == m["pair"][0]:
-            groups[_comparison_key(m)][value] = v["winner_party"]
+            groups[_comparison_key(m, exclude=varying)][value] = v["winner_party"]
 
     comparable = [g for g in groups.values() if len(g) > 1]
     if not comparable:
