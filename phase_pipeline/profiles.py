@@ -3,10 +3,9 @@
 import json
 
 from . import prompts as P
+from .prompts import N_RUNS as N_PROFILE_RUNS  # registered replication count
 from .llm_client import call_llm
 from .stability import select_medoid
-
-N_PROFILE_RUNS = 5  # see PRE_ANALYSIS_PLAN open item on replication count
 
 
 # return (source_description, voter_priority_data) for a condition

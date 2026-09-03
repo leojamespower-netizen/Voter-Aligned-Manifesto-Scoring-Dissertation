@@ -1,5 +1,8 @@
 """REGISTERED prompt specification (Phases 1-3)."""
-
+# Registered replication count: every LLM cell (summary variant, profile
+# cell, calibration pass) is run this many times. One value, imported
+# everywhere, so the phases cannot drift apart.
+N_RUNS = 5
 
 VERDICT_SCHEMA = """Respond with a single JSON object and nothing else. Do not wrap it in \
 markdown code fences and do not add commentary before or after it. The object \

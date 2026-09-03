@@ -109,7 +109,7 @@ def parse_args():
 
 def main():
     args = parse_args()
-    if arg.temperature is not None:
+    if args.temperature is not None:
         from . import llm_client
         llm_client.TEMPERATURE_OVERRIDE = args.temperature
     try:

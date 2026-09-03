@@ -2,7 +2,7 @@
 
 from .llm_client import call_llm
 
-N_RUNS = 5
+from .prompts import N_RUNS  # registered count
 
 
 from .prompts import (ANONYMISED_INPUT, CARRIED_FORWARD, NEEDS_PARTY,
