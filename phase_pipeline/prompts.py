@@ -15,13 +15,16 @@ must have exactly these keys, in this order:
   "winner": "A" | "B"
 }}"""
 
-_ABSTENTION = """If the supplied data cannot support a judgment for a given {unit}, \
-return status "INSUFFICIENT" for that {unit} and leave its weight null. Do not \
-estimate. An INSUFFICIENT return is a correct answer, not a failure. Where a \
-{unit} is engaged but the data cannot resolve the direction of the appeal, \
-return status "AMBIGUOUS"."""
+# Profile design. The 2024 pilot let the model abstain per foundation
+# (SCORED / AMBIGUOUS / INSUFFICIENT); one model abstained on most of them.
+# The main series forces a full set of weights. The tag goes into the profile
+# and comparison cache keys so the two designs never share a file.
+PROFILE_DESIGN = "forced"
 
-PROFILE_SCHEMA = _ABSTENTION.format(unit="foundation") + """
+PROFILE_SCHEMA = """Your profile construction must follow the below rules:
+   - All six foundations must appear exactly once.
+   - Each foundation must be given a weight between 0 and 1.
+   - The six weights must sum to 1.
 
 Respond with a single JSON object and nothing else. Do not wrap it in markdown \
 code fences and do not add commentary before or after it. The object must have \
@@ -32,16 +35,14 @@ exactly these keys, in this order:
   "foundations": [
     {{"foundation": "care" | "loyalty" | "authority" | "sanctity" | "equality" | "proportionality",
      "basis": "<one line: which items in the data bear on this>",
-     "status": "SCORED" | "AMBIGUOUS" | "INSUFFICIENT",
-     "weight": <0-1> | null}}
+     "weight": <0-1>}}
   ]
-}}
+}}"""
 
-All six foundations must appear exactly once. The weights of entries with \
-status "SCORED" must sum to 1. Entries with status "AMBIGUOUS" or \
-"INSUFFICIENT" must have weight null."""
-
-AXIS_SCHEMA = _ABSTENTION.format(unit="pole") + """
+AXIS_SCHEMA = """Your profile construction must follow the below rules:
+   - Both poles must appear exactly once.
+   - Each pole must be given a weight between 0 and 1.
+   - The two weights must sum to 1.
 
 Respond with a single JSON object and nothing else. Do not wrap it in markdown \
 code fences and do not add commentary before or after it. The object must have \
@@ -52,14 +53,9 @@ exactly these keys, in this order:
   "poles": [
     {{"pole": "gal" | "tan",
      "basis": "<one line: which items in the data bear on this>",
-     "status": "SCORED" | "AMBIGUOUS" | "INSUFFICIENT",
-     "weight": <0-1> | null}}
+     "weight": <0-1>}}
   ]
-}}
-
-Both poles must appear exactly once. The weights of entries with status \
-"SCORED" must sum to 1. Entries with status "AMBIGUOUS" or "INSUFFICIENT" must \
-have weight null."""
+}}"""
 
 # Six-foundation formulation (Fairness split into Equality and
 # Proportionality), per the revised Moral Foundations Theory.
