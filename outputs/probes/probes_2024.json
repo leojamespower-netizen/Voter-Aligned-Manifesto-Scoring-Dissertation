@@ -1,0 +1,248 @@
+{
+  "election": 2024,
+  "model": "claude",
+  "plan": {
+    "model": "claude",
+    "summaries": 10,
+    "total_calls": 20
+  },
+  "leakage": {
+    "accuracy": 1.0,
+    "chance": 0.2,
+    "high_confidence_correct_rate": 1.0,
+    "threshold": 0.45,
+    "anonymisation_failed": true,
+    "n": 20
+  },
+  "dual": {
+    "minimal": 1.0,
+    "biased": 1.0,
+    "chance_biased": 0.2,
+    "gap": 0.0,
+    "partial_rate": 0.0,
+    "threshold": 0.45,
+    "anonymisation_indicated": true
+  },
+  "results": [
+    {
+      "family": "minimal",
+      "election": "2024",
+      "truth": "lab",
+      "identification": "This is a summary of the UK Labour Party's general election manifesto for the 2024 general election. The summary itself appears to be a condensed version created by someone (possibly AI-generated or human-authored) rather than an official Labour Party document, as official manifestos are typically longer and this is clearly labeled as a 'Summary'. The underlying source material is the official Labour Party manifesto titled 'Change' released in June 2024.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The title explicitly states 'Labour Party Manifesto 2024: Summary'. The content describes Labour's five national missions, specific policy commitments (Great British Energy, 1.5 million homes, 6,500 new teachers), funding mechanisms (non-dom tax status, VAT on private schools), and references to '14 years of Conservative government' which aligns with the 2024 UK general election context. The specific figures (\u00a37.3 billion National Wealth Fund, \u00a38.3 billion for Great British Energy, \u00a36.6 billion Warm Homes Plan) and policy details match the actual 2024 Labour manifesto.",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2024",
+      "truth": "lab",
+      "guess": "labour",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2024",
+      "truth": "con",
+      "identification": "This is an AI-generated or human-written summary of the UK Conservative Party's General Election Manifesto 2024. The original manifesto was produced by the Conservative and Unionist Party for the July 2024 UK General Election. This summary document itself appears to be created by a third party (possibly AI-generated given the structured format) to condense the key policy commitments.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text explicitly states it is a 'Summary: Conservative Party Manifesto 2024' in the title. It contains specific UK Conservative Party policies including National Insurance cuts, Rwanda deportation flights, NHS spending commitments, and mandatory National Service for 18-year-olds - all policies announced in the actual 2024 Conservative manifesto.",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2024",
+      "truth": "con",
+      "guess": "conservative",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2024",
+      "truth": "reform",
+      "identification": "This is a summary document of Reform UK's 2024 General Election manifesto. The summary itself appears to be produced by a third party (possibly AI-generated or created by a researcher/journalist) to condense the original manifesto document titled 'Our Contract with You' released by Reform UK for the July 2024 UK General Election. The original manifesto was produced by Reform UK, a right-wing British political party led by Nigel Farage.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text explicitly states it is a 'Summary of Reform UK Manifesto 2024' in the title. It references Nigel Farage as the party leader, describes the document as a 'Contract with You,' and details specific policy positions consistent with Reform UK's 2024 General Election platform, including their five core pledges, financial projections, and positions on Brexit, immigration, and Net Zero.",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2024",
+      "truth": "reform",
+      "guess": "reform uk",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2024",
+      "truth": "ld",
+      "identification": "This is an AI-generated or human-written summary of the Liberal Democrats' 2024 UK General Election manifesto. The original manifesto was produced by the Liberal Democrats political party for the July 2024 UK General Election. This summary document itself was likely created by an AI system (possibly Claude or similar) or a human analyst to condense the full manifesto into key points.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text explicitly states it is a 'Liberal Democrats Manifesto 2024: Summary' in the title. It references Ed Davey as leader, mentions specific 2024 policy proposals (Rwanda scheme, 380,000 homes target, net zero by 2045), and uses the slogan 'For a Fair Deal' which was the actual 2024 Liberal Democrat manifesto tagline. The detailed policy specifics match the actual manifesto content.",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2024",
+      "truth": "ld",
+      "guess": "liberal democrats",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2024",
+      "truth": "green",
+      "identification": "This is a summary of the Green Party of England and Wales' 2024 General Election manifesto. The summary itself appears to be produced by a third party (possibly an AI, news organization, or research group) rather than being an official party document, as it is written in an analytical summarizing style rather than as official party communications.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The title explicitly states 'Green Party Manifesto 2024 Summary', references co-leaders Carla Denyer and Adrian Ramsay (who are the current co-leaders of the Green Party of England and Wales), discusses UK-specific policies like NHS, Universal Credit, the two-child benefit cap, bedroom tax, House of Lords reform, and mentions 'rejoining the EU' and 'Right to Roam for England'",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2024",
+      "truth": "green",
+      "guess": "green party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2024",
+      "truth": "lab",
+      "identification": "This is a summary of the UK Labour Party's 2024 General Election Manifesto. The original manifesto was produced by the Labour Party for the July 2024 UK general election. This particular summary appears to be a condensed version created by someone (possibly an AI system, researcher, or journalist) to distill the key points from the full manifesto document, rather than being an official Labour Party publication itself.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text explicitly states it is a 'Summary of the Labour Party Manifesto 2024' in its title. The content describes specific policy commitments including \u00a37.3 billion National Wealth Fund, \u00a38.3 billion for Great British Energy, 1.5 million new homes, 40,000 additional weekly NHS appointments, and other detailed pledges consistent with the UK Labour Party's 2024 general election manifesto. The five missions framework, specific fiscal rules, and policy details match the actual manifesto released ahead of the July 2024 UK general election.",
+      "variant": "neutral",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2024",
+      "truth": "lab",
+      "guess": "labour",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "neutral",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2024",
+      "truth": "con",
+      "identification": "This is a summary of the UK Conservative Party's 2024 General Election Manifesto. The original manifesto was produced by the Conservative and Unionist Party for the July 2024 UK general election. This appears to be a condensed summary document rather than the full manifesto text itself, possibly created by a third party or for briefing purposes.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The title explicitly states '# Conservative Party Manifesto 2024: Summary'. The content includes specific UK policy proposals such as National Insurance reductions, NHS funding, Rwanda removal flights, HS2 savings, and defence spending at 2.5% of GDP - all policies associated with the UK Conservative Party's 2024 general election platform. References to Parliament, Green Belt, Northern Powerhouse Rail, and the Advanced British Standard are distinctly British political terminology.",
+      "variant": "neutral",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2024",
+      "truth": "con",
+      "guess": "conservative",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "neutral",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2024",
+      "truth": "reform",
+      "identification": "This is an AI-generated or human-written summary of Reform UK's 2024 general election manifesto, titled 'Our Contract with You'. The original manifesto was produced by Reform UK, a British right-wing political party led by Nigel Farage, for the July 2024 UK general election. This particular document appears to be a structured summary rather than the original manifesto text itself.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The title states 'Reform UK 2024 Manifesto Summary', references 'Our Contract with You' as the manifesto title, mentions specific UK political policies including leaving the European Convention on Human Rights, NHS reform, Net Zero targets, HS2, ULEZ zones, BBC licence fee, and references to St George's and St David's Day as public holidays. The document structure, financial figures (\u00a3150 billion savings, \u00a3141 billion costs), and specific policy proposals (40,000 police officers, raising income tax threshold to \u00a320,000) are consistent with Reform UK's 2024 general election manifesto.",
+      "variant": "neutral",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2024",
+      "truth": "reform",
+      "guess": "reform uk",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "neutral",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2024",
+      "truth": "ld",
+      "identification": "This is an AI-generated or human-written summary of the Liberal Democrats' 2024 UK General Election manifesto. The original manifesto was produced by the Liberal Democrats (a UK political party led by Ed Davey). This particular summary format (markdown with headers) suggests it was created as a condensed reference document, likely by a news organization, research group, or AI system analyzing the original manifesto document titled 'For a Fair Deal'.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text is explicitly titled '# Liberal Democrats Manifesto 2024 Summary' and contains detailed policy proposals across multiple areas including economy, healthcare, housing, and political reform. Specific policy commitments mentioned (380,000 homes annually, 90% renewable electricity by 2030, net zero by 2045, proportional representation, Single Market membership goal) align with known Liberal Democrat 2024 manifesto positions.",
+      "variant": "neutral",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2024",
+      "truth": "ld",
+      "guess": "liberal democrats",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "neutral",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2024",
+      "truth": "green",
+      "identification": "This is a summary of the Green Party of England and Wales 2024 General Election Manifesto. The summary itself appears to be produced by someone (possibly AI-generated or human-written) who condensed the original manifesto into bullet points, rather than being the official document itself.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The title explicitly states 'Green Party 2024 Manifesto Summary'. The content includes specific UK policy proposals (NHS funding, references to Scottish care model, UK-specific legislation like the Elections Act 2022, NHS Reinstatement Bill, Trident, House of Lords reform, Universal Credit, bedroom tax), pound sterling figures, and references to rejoining the EU, all consistent with the Green Party of England and Wales 2024 general election manifesto.",
+      "variant": "neutral",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2024",
+      "truth": "green",
+      "guess": "green party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "neutral",
+      "model": "claude"
+    }
+  ]
+}
