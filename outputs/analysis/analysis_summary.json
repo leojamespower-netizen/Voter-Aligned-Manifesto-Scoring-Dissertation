@@ -5,11 +5,11 @@
   "source": "summary",
   "n_verdicts": 1000,
   "best_cell": {
-    "2024": "neutral/bidirectional_mft/ipsos"
+    "2024": "minimal/bidirectional_mft/ipsos"
   },
   "noise_floors": {
     "invariance": {
-      "positional_swap": 0.5270541082164328,
+      "positional_swap": 0.5454545454545454,
       "distorted_vs_minimal": {
         "rate": null,
         "n_comparisons": 0,
@@ -22,11 +22,11 @@
         "n_comparisons": 0,
         "values": []
       },
-      "floor": 0.5270541082164328
+      "floor": 0.5454545454545454
     },
     "framing": {
       "framing_axis": {
-        "rate": 0.31,
+        "rate": 0.22,
         "n_comparisons": 100,
         "values": [
           "framing_preserving",
@@ -35,15 +35,15 @@
         ]
       },
       "party_cue": {
-        "rate": 0.1717171717171717,
-        "n_comparisons": 99,
+        "rate": 0.14285714285714285,
+        "n_comparisons": 98,
         "values": [
           "anonymised",
           "framed"
         ]
       },
       "framework_arm": {
-        "rate": 0.3933333333333333,
+        "rate": 0.5533333333333333,
         "n_comparisons": 150,
         "values": [
           "axis",
@@ -53,7 +53,7 @@
         ]
       },
       "source_condition": {
-        "rate": 0.5066666666666667,
+        "rate": 0.47333333333333333,
         "n_comparisons": 150,
         "values": [
           "bes",
@@ -62,46 +62,46 @@
           "noprofile"
         ]
       },
-      "invariance_floor": 0.5270541082164328,
+      "invariance_floor": 0.5454545454545454,
       "ordering_holds": false
     },
     "calibration": {
       "reversal_by_confidence": {
-        "low": 0.4621212121212121,
-        "medium": 0.49586776859504134,
-        "high": 0.55
+        "high": 0.5961538461538461,
+        "low": 0.5252525252525253,
+        "medium": 0.53125
       },
-      "gap": 0.08787878787878795,
+      "gap": 0.07090132090132084,
       "distribution": {
         "counts": {
-          "low": 341,
-          "medium": 350,
-          "high": 308
+          "high": 502,
+          "low": 268,
+          "medium": 225
         },
         "proportions": {
-          "low": 0.34134134134134136,
-          "medium": 0.35035035035035034,
-          "high": 0.3083083083083083
+          "high": 0.5045226130653266,
+          "low": 0.2693467336683417,
+          "medium": 0.22613065326633167
         },
-        "n": 999
+        "n": 995
       }
     }
   },
   "profile_value_added": {
     "2024": {
-      "rho_with_profile": 0.7,
-      "rho_no_profile": -0.6,
-      "improvement": 1.2999999999999998,
+      "rho_with_profile": 0.7999999999999999,
+      "rho_no_profile": -0.8999999999999998,
+      "improvement": 1.6999999999999997,
       "profile_helps": "True"
     }
   },
   "party_error": {
     "con": {
-      "mean_signed_error": 0,
+      "mean_signed_error": -1,
       "sd_across_elections": 0.0,
       "n_elections": 1,
       "per_election": {
-        "2024": 0
+        "2024": -1
       }
     },
     "green": {
@@ -113,34 +113,34 @@
       }
     },
     "lab": {
+      "mean_signed_error": 1,
+      "sd_across_elections": 0.0,
+      "n_elections": 1,
+      "per_election": {
+        "2024": 1
+      }
+    },
+    "ld": {
+      "mean_signed_error": 1,
+      "sd_across_elections": 0.0,
+      "n_elections": 1,
+      "per_election": {
+        "2024": 1
+      }
+    },
+    "reform": {
       "mean_signed_error": 0,
       "sd_across_elections": 0.0,
       "n_elections": 1,
       "per_election": {
         "2024": 0
       }
-    },
-    "ld": {
-      "mean_signed_error": -1,
-      "sd_across_elections": 0.0,
-      "n_elections": 1,
-      "per_election": {
-        "2024": -1
-      }
-    },
-    "reform": {
-      "mean_signed_error": 2,
-      "sd_across_elections": 0.0,
-      "n_elections": 1,
-      "per_election": {
-        "2024": 2
-      }
     }
   },
   "directional_error": {
     "by_family": {
       "centre-right": {
-        "mean_signed_error": 0,
+        "mean_signed_error": -1,
         "sd": 0.0,
         "n_parties": 1
       },
@@ -150,28 +150,28 @@
         "n_parties": 1
       },
       "centre-left": {
-        "mean_signed_error": 0,
+        "mean_signed_error": 1,
         "sd": 0.0,
         "n_parties": 1
       },
       "centre": {
-        "mean_signed_error": -1,
+        "mean_signed_error": 1,
         "sd": 0.0,
         "n_parties": 1
       },
       "right": {
-        "mean_signed_error": 2,
+        "mean_signed_error": 0,
         "sd": 0.0,
         "n_parties": 1
       }
     },
     "by_party": {
       "con": {
-        "mean_signed_error": 0,
+        "mean_signed_error": -1,
         "sd_across_elections": 0.0,
         "n_elections": 1,
         "per_election": {
-          "2024": 0
+          "2024": -1
         }
       },
       "green": {
@@ -183,27 +183,27 @@
         }
       },
       "lab": {
+        "mean_signed_error": 1,
+        "sd_across_elections": 0.0,
+        "n_elections": 1,
+        "per_election": {
+          "2024": 1
+        }
+      },
+      "ld": {
+        "mean_signed_error": 1,
+        "sd_across_elections": 0.0,
+        "n_elections": 1,
+        "per_election": {
+          "2024": 1
+        }
+      },
+      "reform": {
         "mean_signed_error": 0,
         "sd_across_elections": 0.0,
         "n_elections": 1,
         "per_election": {
           "2024": 0
-        }
-      },
-      "ld": {
-        "mean_signed_error": -1,
-        "sd_across_elections": 0.0,
-        "n_elections": 1,
-        "per_election": {
-          "2024": -1
-        }
-      },
-      "reform": {
-        "mean_signed_error": 2,
-        "sd_across_elections": 0.0,
-        "n_elections": 1,
-        "per_election": {
-          "2024": 2
         }
       }
     }
