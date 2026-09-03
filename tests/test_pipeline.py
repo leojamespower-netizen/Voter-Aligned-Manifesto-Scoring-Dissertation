@@ -363,6 +363,8 @@ def test_claude_sends_only_the_required_max_tokens(fake_api):
     llm_client.call_llm("hi", "claude", "k", subdir="probes")
     assert decoding_sent(sent) == {"max_tokens": llm_client.ANTHROPIC_MAX_TOKENS}
     assert sent["model"] == "claude-opus-4-5-20251101"
+    block = sent["messages"][0]["content"][0]
+    assert block["text"] == "hi" and block["cache_control"] == {"type": "ephemeral"}  # prompt unchanged, marked for caching to reduce financial and time costs
 
 def test_retry_recovers_from_transient_error(fake_api):
     llm_client, _, cache, failures = fake_api
