@@ -66,7 +66,7 @@ def run_pair(election, party_a, party_b, text_a, text_b, prompt_type,
         )
         key = (f"{election}_{party_a}-v-{party_b}_{order}_{prompt_type}"
                f"_{condition_tag}_{'labelled' if labelled else 'blind'}"
-               f"_{scorer_model}_run{run_index}")
+               f"_{scorer_model}_{P.PROFILE_DESIGN}_run{run_index}")  # design tag: see prompts.PROFILE_DESIGN
         resp = call_llm(prompt, model=scorer_model, cache_key=key,
                         subdir="comparisons")
         # Written at call-construction time; the model never sees this.

@@ -373,11 +373,42 @@ def test_retry_recovers_from_transient_error(fake_api):
     assert response["text"] == "ok"
     assert len(list(cache.iterdir())) == 1
 
-def test_api_tests_do_not_touch_the_real_call_log(fake_api):
+def test_fake_api_runs_do_not_touch_the_real_call_log(fake_api):
     llm_client, _, _, _ = fake_api
     real = Path(llm_client.__file__).resolve().parent.parent / "cache" / "call_log.csv"
     before = real.read_bytes() if real.exists() else None
     llm_client.call_llm("hi", "gpt-5", "k", subdir="probes")
     assert (real.read_bytes() if real.exists() else None) == before
 
+def test_consolidate_metrics_mean_rho(tmp_path, monkeypatch):
+    # two cells in one arm, rho +1 and -1: the arm's mean rho must be 0
+    import json
+    from phase_pipeline import consolidate_metrics as cm
+    right = ["lab", "con", "reform", "ld", "green"]
+    def cell(ranking, rho):
+        scores = {p: 5 - i for i, p in enumerate(ranking)}
+        return {"spearman": {"rho": rho, "pvalue": 0.0, "n": 5}, "null_percentile": 0.5, "ranking": ranking,
+                "binary_winner": False, "positional_error": 0.5, "parse_failure_rate": 0.0,
+                "alpha_sensitivity": {"0.1": scores}}
+    report = {"election": 2024, "model": "test", "plan": {"calls_per_cell": 20},
+              "vote_shares": {"lab": 33.7, "con": 23.7, "reform": 14.3, "ld": 12.2, "green": 6.4},
+              "cells": {"minimal/explicit_mft/bes": cell(right, 1.0),
+                        "neutral/explicit_mft/bes": cell(right[::-1], -1.0)}}
+    (tmp_path / "p3.json").write_text(json.dumps(report), encoding="utf-8")
+    monkeypatch.setattr("sys.argv", ["consolidate_metrics", str(tmp_path / "p3.json"), "--out", str(tmp_path), "--label", "t"])
+    cm.main()
+    t = json.loads((tmp_path / "tables_t.json").read_text(encoding="utf-8"))
+    assert t["by_arm_source"] == [{"arm": "explicit_mft", "source": "bes", "n_cells": 2, "mean_rho": 0.0,
+                                   "cells_rho_positive": 1, "winner_rate": 0, "mean_positional_error": 0.5, "rejected": 0}]
+    assert t["by_arm_source"] == [{"arm": "explicit_mft", "source": "bes", "n_cells": 2, "mean_rho": 0.0,
+    "cells_rho_positive": 1, "winner_rate": 0, "mean_positional_error": 0.5, "rejected": 0}]
+
+
+def test_profile_design_tag_is_in_the_cache_keys():
+    # pilot files are 2024_<arm>_<source>_<model>_runN; the main series must not read them
+    import inspect
+    from phase_pipeline import profiles, compare, prompts as P
+    assert P.PROFILE_DESIGN == "forced"
+    assert "P.PROFILE_DESIGN" in inspect.getsource(profiles.generate_profiles)
+    assert "P.PROFILE_DESIGN" in inspect.getsource(compare.run_pair)
 

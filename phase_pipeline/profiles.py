@@ -49,7 +49,7 @@ def generate_profiles(election, arm, source, model, ipsos, bes,
     prompt = build_profile_prompt(arm, source, ipsos, bes)
     out = []
     for run in range(1, n_runs + 1):
-        key = f"{election}_{arm}_{source}_{model}_run{run}"
+        key = f"{election}_{arm}_{source}_{model}_{P.PROFILE_DESIGN}_run{run}"  # design tag keeps pilot and main-series files apart
         resp = call_llm(prompt, model=model, cache_key=key, subdir="profiles")
         resp["meta"] = {"election": election, "arm": arm, "source": source,
                         "model": model, "run": run}
@@ -59,7 +59,7 @@ def generate_profiles(election, arm, source, model, ipsos, bes,
 
 # medoid-select the representative profile for one cell and record it
 def select_profile(election, arm, source, model, responses):
-    cell = f"profile:{election}_{arm}_{source}_{model}"
+    cell = f"profile:{election}_{arm}_{source}_{model}_{P.PROFILE_DESIGN}"
     return select_medoid(cell, responses)
 
 # parsing
@@ -72,40 +72,28 @@ def parse_profile(response, arm):
 
     obj = _extract_json(response.get("text", ""))
     if obj is None or unit_key not in obj:
-        return {"parse_error": True, "weights": {}, "statuses": {},
-                "justification": None, "abstention_rate": None,
+        return {"parse_error": True, "weights": {}, "weight_sum": None,
+                "justification": None,
                 "meta": response.get("meta")}
 
-    weights, statuses = {}, {}
+    weights = {}
     for row in obj[unit_key]:
         name = str(row.get(unit_name, "")).strip().lower()
-        if name not in expected:
-            continue
-        status = str(row.get("status", "")).strip().upper()
-        statuses[name] = status
-        if status == "SCORED" and isinstance(row.get("weight"), (int, float)):
+        if name in expected and isinstance(row.get("weight"), (int, float)):
             weights[name] = float(row["weight"])
 
-    abstained = sum(1 for s in statuses.values()
-                    if s in ("AMBIGUOUS", "INSUFFICIENT"))
     return {
-        "parse_error": len(statuses) != len(expected),
+        "parse_error": len(weights) != len(expected), # every unit now needs a weight
         "weights": weights,
-        "statuses": statuses,
+        "weight_sum": sum(weights.values()) if weights else None,  # recorded, not corrected
         "justification": obj.get("justification"),
-        "abstention_rate": abstained / len(expected) if statuses else None,
         "meta": response.get("meta"),
     }
 
 
 # render a parsed profile for insertion into a Phase 3 prompt
 def render_profile_block(parsed):
-    lines = []
-    for unit, status in parsed["statuses"].items():
-        if status == "SCORED":
-            lines.append(f"  {unit}: {parsed['weights'].get(unit, 0):.2f}")
-        else:
-            lines.append(f"  {unit}: {status.lower()} (not scored)")
+    lines = [f"  {unit}: {w:.2f}" for unit, w in parsed["weights"].items()]
     return "<profile>\n" + "\n".join(lines) + "\n</profile>"
 
 
