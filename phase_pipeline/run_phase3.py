@@ -183,6 +183,7 @@ def parse_args():
     parser.add_argument("--phase2", type=Path, default=DEFAULT_PHASE2)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--model", default="gpt-5")
+    parser.add_argument("--temperature", type=float, default=None)
     parser.add_argument("--variants", nargs="+", default=list(CARRIED_FORWARD),
                         help="summary variants to run (default: all carried)")
     parser.add_argument("--arms", nargs="+", default=list(PROMPT_TYPES),
