@@ -14,6 +14,7 @@ so they skip when the directory is absent. Everything else runs anywhere.
 
 import os
 import pytest
+from pathlib import Path
 
 from phase_pipeline import compare, probe, validate
 from phase_pipeline.bes_extract import (BLINDING_EXCLUSIONS, assert_blinded,
@@ -257,7 +258,7 @@ def test_missing_key():
     llm_client._CLIENTS.clear()
     try:
         with pytest.raises(RuntimeError, match="ANTHROPIC_API_KEY"):
-            llm_client._api_request("hi", llm_client.CLAUDE, None, 0.0)
+            llm_client._api_request("hi", llm_client.CLAUDE, None, {})
     finally:
         if saved:
             os.environ["ANTHROPIC_API_KEY"] = saved
@@ -266,7 +267,7 @@ def test_missing_key():
 def test_unknown_model_identification():
     from phase_pipeline.llm_client import _api_request
     with pytest.raises(ValueError, match="Unknown model"):
-        _api_request("hi", "not-a-model", None, 0.0)
+        _api_request("hi", "not-a-model", None, {})
 
 
 def test_cache_keys_separate_by_model():
@@ -274,22 +275,44 @@ def test_cache_keys_separate_by_model():
     keys = {f"2024_lab_minimal_{m}_run1" for m in ("gpt-5", "claude")}
     assert len(keys) == 2, "a second model would overwrite the first's cache"
 
+
 @pytest.fixture
 def fake_api(monkeypatch, tmp_path):
-    # replaces the API with a stub that records what it was sent, and points
-    # the cache at a temporary directory
+    # stubs the two provider calls, recording what each was sent, and points
+    # the cache and the call log at a temporary directory
+    from types import SimpleNamespace
     from phase_pipeline import llm_client
     sent = {}
+    failures = []  # exceptions to raise before succeeding
 
-    def stub(prompt, model, system, temperature, max_tokens=4000):
-        sent.update(temperature=temperature, max_tokens=max_tokens)
-        return "ok"
+    def create(**kwargs):  # stands in for OpenAI's chat.completions.create
+        if failures:
+            raise failures.pop(0)
+        sent.clear()
+        sent.update(kwargs)
+        return SimpleNamespace(choices=[SimpleNamespace(message=SimpleNamespace(content="ok"))])
 
-    monkeypatch.setattr(llm_client, "_api_request", stub)
+    def post(body, key):  # stands in for the Messages API
+        if failures:
+            raise failures.pop(0)
+        sent.clear()
+        sent.update(body)
+        return {"content": [{"type": "text", "text": "ok"}]}
+
+    client = SimpleNamespace(chat=SimpleNamespace(completions=SimpleNamespace(create=create)))
+    monkeypatch.setattr(llm_client, "_client", lambda model: client)
+    monkeypatch.setattr(llm_client, "_anthropic_post", post)
+    monkeypatch.setenv("ANTHROPIC_API_KEY", "test-key")
     monkeypatch.setattr(llm_client, "CACHE_DIR", tmp_path)
+    monkeypatch.setattr(llm_client, "CALL_LOG", tmp_path / "call_log.csv")
     monkeypatch.setattr(llm_client, "TEMPERATURE_OVERRIDE", None)
+    monkeypatch.setattr(llm_client.time, "sleep", lambda s: None)
     (tmp_path / "probes").mkdir()
-    return llm_client, sent, tmp_path / "probes"
+    return llm_client, sent, tmp_path / "probes", failures
+
+
+def decoding_sent(sent):
+    return {k: v for k, v in sent.items() if k not in ("model", "messages", "system")}  # drops the non-decoding fields
 
 
 def test_every_subdir_used_has_decoding_settings():
@@ -306,10 +329,9 @@ def test_every_subdir_used_has_decoding_settings():
 
 
 def test_request_and_record_match(fake_api):
-    llm_client, sent, _ = fake_api
+    llm_client, sent, _, _ = fake_api
     response = llm_client.call_llm("hi", "gpt-5", "k", subdir="probes")
-    assert response["decoding"] == sent
-    assert sent["temperature"] == llm_client.DECODING["probes"]["temperature"]
+    assert response["decoding"] == decoding_sent(sent)  # the cache file records what was sent
 
 
 def test_temperature_is_uniform_across_stages():
@@ -319,14 +341,41 @@ def test_temperature_is_uniform_across_stages():
 
 
 def test_temperature_override_separates_the_cache(fake_api):
-    llm_client, _, cache = fake_api
-    llm_client.call_llm("hi", "gpt-5", "k", subdir="probes")
+    llm_client, sent, cache, _ = fake_api
+    llm_client.call_llm("hi", "claude", "k", subdir="probes")
     llm_client.TEMPERATURE_OVERRIDE = 0.0
-    llm_client.call_llm("hi", "gpt-5", "k", subdir="probes")
+    llm_client.call_llm("hi", "claude", "k", subdir="probes")
+    assert sent["temperature"] == 0.0  # the override is sent
     assert len(list(cache.iterdir())) == 2, "two temperatures shared a file"
 
-
-def test_token_ceilings_do_not_bind():
+def test_no_output_cap_is_registered():
     from phase_pipeline.llm_client import DECODING
     for subdir, settings in DECODING.items():
-        assert settings["max_tokens"] >= 4000, f"{subdir} could truncate a response"
+        assert "max_tokens" not in settings and "max_completion_tokens" not in settings, f"{subdir} is capped"
+
+def test_gpt5_sends_no_decoding_parameters(fake_api):
+    llm_client, sent, _, _ = fake_api
+    llm_client.call_llm("hi", "gpt-5", "k", subdir="probes")
+    assert decoding_sent(sent) == {}  # GPT-5 accepts only its defaults
+
+def test_claude_sends_only_the_required_max_tokens(fake_api):
+    llm_client, sent, _, _ = fake_api
+    llm_client.call_llm("hi", "claude", "k", subdir="probes")
+    assert decoding_sent(sent) == {"max_tokens": llm_client.ANTHROPIC_MAX_TOKENS}
+    assert sent["model"] == "claude-opus-4-5-20251101"
+
+def test_retry_recovers_from_transient_error(fake_api):
+    llm_client, _, cache, failures = fake_api
+    failures.extend([ConnectionError("dropped"), ConnectionError("dropped")])
+    response = llm_client.call_llm("hi", "gpt-5", "k", subdir="probes")
+    assert response["text"] == "ok"
+    assert len(list(cache.iterdir())) == 1
+
+def test_api_tests_do_not_touch_the_real_call_log(fake_api):
+    llm_client, _, _, _ = fake_api
+    real = Path(llm_client.__file__).resolve().parent.parent / "cache" / "call_log.csv"
+    before = real.read_bytes() if real.exists() else None
+    llm_client.call_llm("hi", "gpt-5", "k", subdir="probes")
+    assert (real.read_bytes() if real.exists() else None) == before
+
+
