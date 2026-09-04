@@ -12,7 +12,7 @@ must have exactly these keys, in this order:
   "evidence": "<the specific commitments in each text you relied on>",
   "reasoning": "<two sentences connecting that evidence to the verdict>",
   "confidence": "high" | "medium" | "low",
-  "winner": "A" | "B"
+  "winner": "{label_a}" | "{label_b}"
 }}"""
 
 # Profile design. The 2024 pilot let the model abstain per foundation

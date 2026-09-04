@@ -8,7 +8,11 @@ from .llm_client import call_llm
 from .profiles import _extract_json
 
 MASTER_SEED = 20260101
-
+# Pseudonym letters. The pilot asked for the winner out of "A" or "B".
+# The problem with this is that two texts were often labelled TEXT_A and TEXT_B, in "B" and "A" respectively.
+# So the LLM was not sure which A and B we were referring to, thereby leading to artificially compromised comparisons.
+LABEL_LETTERS = "CDEFGHJK"
+LABEL_SCHEME = "byname"  # in the comparison cache key, so pilot verdicts are never reused
 
 # all unique unordered pairs (10 pairs for five parties)
 def all_pairs(parties):
@@ -18,7 +22,7 @@ def all_pairs(parties):
 # pseudonym mapping for one run
 def run_mapping(parties, run_index, master_seed=MASTER_SEED):
     rng = random.Random(master_seed + run_index)
-    labels = [f"TEXT_{c}" for c in "ABCDEFGH"][:len(parties)]
+    labels = [f"TEXT_{c}" for c in LABEL_LETTERS][:len(parties)]
     rng.shuffle(labels)
     return dict(zip(parties, labels))
 
@@ -37,7 +41,7 @@ def build_compare_prompt(prompt_type, text_a, text_b, label_a, label_b,
         voter_priority_data=voter_priority_data,
         label_a=label_a, label_b=label_b,
         text_a=text_a, text_b=text_b,
-        ref_a="A", ref_b="B",
+        ref_a=label_a, ref_b=label_b,  # the question names the texts by label
     )
 
 
@@ -66,7 +70,7 @@ def run_pair(election, party_a, party_b, text_a, text_b, prompt_type,
         )
         key = (f"{election}_{party_a}-v-{party_b}_{order}_{prompt_type}"
                f"_{condition_tag}_{'labelled' if labelled else 'blind'}"
-               f"_{scorer_model}_{P.PROFILE_DESIGN}_run{run_index}")  # design tag: see prompts.PROFILE_DESIGN
+               f"_{scorer_model}_{P.PROFILE_DESIGN}_{LABEL_SCHEME}_run{run_index}")  # design and label tags: see prompts.PROFILE_DESIGN, LABEL_SCHEME
         resp = call_llm(prompt, model=scorer_model, cache_key=key,
                         subdir="comparisons")
         # Written at call-construction time; the model never sees this.
@@ -89,9 +93,9 @@ def parse_verdict(response):
     if obj is None:
         return _fail(meta)
 
-    slot = str(obj.get("winner", "")).strip().upper()
-    winner = (meta.get("slot_A") if slot == "A"
-              else meta.get("slot_B") if slot == "B" else None)
+    named = str(obj.get("winner", "")).strip().upper()  # the label the model returned
+    winner = (meta.get("slot_A") if named == meta.get("label_A")
+              else meta.get("slot_B") if named == meta.get("label_B") else None)
     if winner is None:
         return _fail(meta)
 

@@ -185,10 +185,10 @@ def test_invariance_survives_missing_ordering_pairs():
 
 def test_parse_verdict_handles_a_code_fence():
     response = {
-        "text": '```json\n{"winner": "A", "confidence": "high", '
+        "text": '```json\n{"winner": "TEXT_E", "confidence": "high", '
                 '"reasoning": "x", "evidence": "y"}\n```',
-        "meta": {"slot_A": "lab", "slot_B": "con", "label_A": "A",
-                 "label_B": "B", "pair": ("lab", "con")},
+        "meta": {"slot_A": "lab", "slot_B": "con", "label_A": "TEXT_E",
+                 "label_B": "TEXT_C", "pair": ("lab", "con")}
     }
     verdict = compare.parse_verdict(response)
     assert not verdict.get("parse_error")
@@ -434,4 +434,24 @@ def test_polling_benchmark_gap_is_polls_minus_pipeline():
     assert out["rho_polling"] == pytest.approx(1.0) and out["rho_pipeline"] == pytest.approx(-1.0)
     assert out["gap"] == pytest.approx(2.0)
     assert not out["pipeline_matches_or_beats"] 
+
+def test_verdict_names_the_text_not_the_position():
+    # the question and the schema use the pseudonyms; "A"/"B" appear nowhere as references
+    import inspect
+    from phase_pipeline.vote_shares import ELECTIONS, vote_shares
+    for election in ELECTIONS:
+        parties = list(vote_shares(election))
+        for run in range(10):
+            labels = set(compare.run_mapping(parties, run).values())
+            assert len(labels) == len(parties) and not labels & {"TEXT_A", "TEXT_B"}, f"{election} run {run}: {labels}"
+    prompt = compare.build_compare_prompt("baseline", "one", "two", "TEXT_E", "TEXT_C")
+    assert "whether TEXT_E or TEXT_C" in prompt and '"winner": "TEXT_E" | "TEXT_C"' in prompt
+    assert " A or B" not in prompt and '"A" | "B"' not in prompt
+    # a verdict naming the second text is placed in the second slot
+    meta = {"slot_A": "lab", "slot_B": "con", "label_A": "TEXT_E", "label_B": "TEXT_C", "pair": ("lab", "con")}
+    verdict = compare.parse_verdict({"text": '{"winner": "TEXT_C"}', "meta": meta})
+    assert verdict["winner_party"] == "con"
+    assert compare.parse_verdict({"text": '{"winner": "B"}', "meta": meta})["parse_error"]  # a bare letter is no longer an answer
+    assert "LABEL_SCHEME" in inspect.getsource(compare.run_pair)
+
 
