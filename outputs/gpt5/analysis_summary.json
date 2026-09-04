@@ -5,11 +5,11 @@
   "source": "summary",
   "n_verdicts": 1000,
   "best_cell": {
-    "2024": "minimal/explicit_mft/bes"
+    "2024": "minimal/bidirectional_mft/both"
   },
   "noise_floors": {
     "invariance": {
-      "positional_swap": 0.452,
+      "positional_swap": 0.4408817635270541,
       "distorted_vs_minimal": {
         "rate": null,
         "n_comparisons": 0,
@@ -22,11 +22,11 @@
         "n_comparisons": 0,
         "values": []
       },
-      "floor": 0.452
+      "floor": 0.4408817635270541
     },
     "framing": {
       "framing_axis": {
-        "rate": 0.18,
+        "rate": 0.08,
         "n_comparisons": 100,
         "values": [
           "framing_preserving",
@@ -35,15 +35,15 @@
         ]
       },
       "party_cue": {
-        "rate": 0.07,
-        "n_comparisons": 100,
+        "rate": 0.06060606060606061,
+        "n_comparisons": 99,
         "values": [
           "anonymised",
           "framed"
         ]
       },
       "framework_arm": {
-        "rate": 0.5266666666666666,
+        "rate": 0.46,
         "n_comparisons": 150,
         "values": [
           "axis",
@@ -53,7 +53,7 @@
         ]
       },
       "source_condition": {
-        "rate": 0.5066666666666667,
+        "rate": 0.3933333333333333,
         "n_comparisons": 150,
         "values": [
           "bes",
@@ -62,36 +62,33 @@
           "noprofile"
         ]
       },
-      "invariance_floor": 0.452,
+      "invariance_floor": 0.4408817635270541,
       "ordering_holds": false
     },
     "calibration": {
       "reversal_by_confidence": {
-        "medium": 0.4,
-        "high": 0.4745762711864407,
-        "low": 0.5294117647058824
+        "medium": 0.3588235294117647,
+        "high": 0.49029126213592233
       },
-      "gap": 0.12941176470588234,
+      "gap": 0.13146773272415763,
       "distribution": {
         "counts": {
-          "medium": 511,
-          "high": 451,
-          "low": 38
+          "medium": 463,
+          "high": 536
         },
         "proportions": {
-          "medium": 0.511,
-          "high": 0.451,
-          "low": 0.038
+          "medium": 0.46346346346346345,
+          "high": 0.5365365365365365
         },
-        "n": 1000
+        "n": 999
       }
     }
   },
   "profile_value_added": {
     "2024": {
-      "rho_with_profile": 0.6668859288553503,
+      "rho_with_profile": 0.6,
       "rho_no_profile": 0.35909242322980395,
-      "improvement": 0.3077935056255463,
+      "improvement": 0.24090757677019603,
       "profile_helps": "True"
     }
   },
@@ -214,5 +211,14 @@
     "reform": "right",
     "ld": "centre",
     "green": "left"
+  },
+  "polling_benchmark": {
+    "2024": {
+      "rho_pipeline": 0.6,
+      "rho_polling": 0.9999999999999999,
+      "gap": 0.3999999999999999,
+      "pipeline_matches_or_beats": "False",
+      "n_parties": 5
+    }
   }
 }
