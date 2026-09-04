@@ -4,6 +4,7 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 VOTE_SHARES_CSV = REPO_ROOT / "data" / "vote_shares.csv"
+POLLING_CSV = REPO_ROOT / "data" / "pre-election_polling.csv"  # pre-election polling, the benchmark the pipeline is compared against
 
 ELECTIONS = [1997, 2001, 2005, 2010, 2015, 2017, 2019, 2024]
 
@@ -26,6 +27,16 @@ def vote_shares(election, path=VOTE_SHARES_CSV):
     if rows.empty:
         raise ValueError(f"no vote shares recorded for {election}")
     return dict(zip(rows["party_key"], rows["vote_share"].astype(float)))
+
+# {party_key: polling_average} for one election, or None if not yet recorded
+def polling_averages(election, path=POLLING_CSV):
+    if not Path(path).exists():
+        return None
+    rows = _load(path)
+    rows = rows[rows["election"] == election]
+    if rows.empty:
+        return None
+    return dict(zip(rows["party_key"], rows["polling_average"].astype(float)))
 
 
 # descriptive only; seats reflect geography as well as support

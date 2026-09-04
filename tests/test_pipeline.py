@@ -412,3 +412,26 @@ def test_profile_design_tag_is_in_the_cache_keys():
     assert "P.PROFILE_DESIGN" in inspect.getsource(profiles.generate_profiles)
     assert "P.PROFILE_DESIGN" in inspect.getsource(compare.run_pair)
 
+def test_polling_averages_2024_rank_the_parties_as_the_result_did():
+    # the recorded 2024 averages must be one row per party and order them like the vote
+    from phase_pipeline.vote_shares import polling_averages, vote_shares
+    polling, shares = polling_averages(2024), vote_shares(2024)
+    assert set(polling) == set(shares)
+    assert sorted(polling, key=polling.get) == sorted(shares, key=shares.get)
+
+def test_polling_averages_absent_election_returns_none(tmp_path):
+    # an election with no rows, or no file at all, is None rather than an error
+    from phase_pipeline.vote_shares import polling_averages
+    assert polling_averages(1900) is None
+    assert polling_averages(2024, path=tmp_path / "missing.csv") is None
+
+def test_polling_benchmark_gap_is_polls_minus_pipeline():
+    # perfect polls, backwards pipeline: gap is 2 and the pipeline does not match
+    from phase_pipeline import validate
+    shares = {"lab": 33.7, "con": 23.7, "reform": 14.3, "ld": 12.2, "green": 6.4}
+    backwards = {p: -v for p, v in shares.items()}
+    out = validate.benchmark_against_polling(backwards, shares, shares)
+    assert out["rho_polling"] == pytest.approx(1.0) and out["rho_pipeline"] == pytest.approx(-1.0)
+    assert out["gap"] == pytest.approx(2.0)
+    assert not out["pipeline_matches_or_beats"] 
+

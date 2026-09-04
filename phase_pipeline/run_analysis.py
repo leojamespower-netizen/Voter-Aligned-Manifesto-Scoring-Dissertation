@@ -19,7 +19,7 @@ from pathlib import Path
 
 from . import ches, validate
 from .report import write_report
-from .vote_shares import parties as ches_names, vote_shares
+from .vote_shares import parties as ches_names, vote_shares, polling_averages
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_PHASE3 = REPO_ROOT / "outputs" / "phase3"
@@ -160,6 +160,12 @@ def main():
         "profile_value_added": profile_contribution(reports),
     }
     analysis.update(per_party(reports))
+    analysis["polling_benchmark"] = {}  # best cell versus pre-election polling, on vote share
+    for e, r in reports.items():
+        polling, best = polling_averages(e), best_cell(r)[1]
+        if polling and best:
+            analysis["polling_benchmark"][e] = validate.benchmark_against_polling(
+                best["scores"], polling, vote_shares(e))
 
     floor = analysis["noise_floors"]["invariance"]["floor"]
     ordering = analysis["noise_floors"]["framing"]["ordering_holds"]
@@ -169,9 +175,10 @@ def main():
 
     path = write_report(args.output, f"analysis_{args.source}", analysis)
     print(f"\nWrote {path}")
-    print("Not computed here: benchmark_against_polling needs polling "
-          "averages, adversarial_ablation needs an adversarial run.")
-
+    missing = [e for e in elections if e not in analysis["polling_benchmark"]]
+    if missing:
+        print(f"No polling averages recorded for {missing}; benchmark_against_polling skipped there.")
+    print("Not computed here: adversarial_ablation needs an adversarial run.")
 
 if __name__ == "__main__":
     main()
