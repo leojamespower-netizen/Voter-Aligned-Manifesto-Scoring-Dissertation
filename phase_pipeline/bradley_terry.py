@@ -3,8 +3,8 @@
 import choix
 
 
-# bradley-Terry scores for one cell, via regularised lsr_pairwise with pre-agreed 0.1 alpha
-def estimate_scores(verdicts, parties, alpha=0.1):
+# bradley-Terry scores for one cell, via regularised lsr_pairwise with alpha 1
+def estimate_scores(verdicts, parties, alpha=1):
     idx = {p:k for k, p in enumerate(parties)}
     comparisons = []  # choix format:(winner_index, loser_index)
     skipped = 0
