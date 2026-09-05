@@ -469,3 +469,35 @@ def test_score_spread_and_margin_come_from_the_raw_scores():
     assert rows["minimal"]["pearson_log_share"] == pytest.approx(rows["neutral"]["pearson_log_share"])  # same order, same correlation
 
 
+def test_main_grid_is_a_subset_of_the_narrowed_design():
+    from phase_pipeline import prompts as P
+    assert set(P.MAIN_VARIANTS) <= set(P.CARRIED_FORWARD)
+    assert set(P.MAIN_ARMS) <= set(P.PROFILE_PROMPTS) and "baseline" not in P.MAIN_ARMS  # Phase 3 adds baseline
+    assert set(P.MAIN_SOURCES) <= set(P.SOURCE_CONDITIONS)
+    assert "minimal" in P.MAIN_VARIANTS and "anonymised" in P.MAIN_VARIANTS  # reference and blinding condition stay
+
+
+def test_pipeline_defaults_to_the_main_grid(monkeypatch):
+    from phase_pipeline import prompts as P, run_phase1, run_phase2, run_phase3, run_probes
+    for module, argv in ((run_phase1, ["x", "2024"]), (run_phase2, ["x", "2024"]), (run_phase3, ["x", "2024"])):
+        monkeypatch.setattr("sys.argv", argv)
+        args = module.parse_args()
+        if hasattr(args, "variants"):
+            assert tuple(args.variants) == P.MAIN_VARIANTS
+        if hasattr(args, "sources"):
+            assert tuple(args.sources) == P.MAIN_SOURCES
+    assert tuple(run_phase2.parse_args().arms) == P.MAIN_ARMS
+    assert tuple(run_phase3.parse_args().arms) == ("baseline", *P.MAIN_ARMS)
+    assert set(run_probes.DEFAULT_VARIANTS) <= set(P.MAIN_VARIANTS)  # probes read summaries Phase 1 made
+
+def test_summarise_only_runs_the_requested_variants(fake_api):
+    llm_client, _, _, _ = fake_api
+    (llm_client.CACHE_DIR / "summaries").mkdir()
+    from phase_pipeline import summarise
+    responses = summarise.summarise_manifesto("2024", "lab", "text", "gpt-5",
+                                              variants=["minimal", "anonymised"])
+    keys = {r["cache_key"] for r in responses}
+    assert len(responses) == 2 * summarise.N_RUNS
+    assert all(("_minimal_" in k) or ("_anonymised_" in k) for k in keys)
+
+

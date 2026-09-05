@@ -20,9 +20,11 @@ def anonymise(text, party_names):
 
 # run all six variants x N_RUNS for one manifesto with one model
 def summarise_manifesto(election, party, manifesto_text, model, party_name='',
-                        replacement_list=None):
+                        replacement_list=None, variants=None):
     responses = []
-    for variant, template in VARIANTS.items():
+    variants = variants or list(VARIANTS)
+    for variant in variants:
+        template = VARIANTS[variant]
         text = manifesto_text
         if variant in ANONYMISED_INPUT:
             text = anonymise(manifesto_text, replacement_list or [])

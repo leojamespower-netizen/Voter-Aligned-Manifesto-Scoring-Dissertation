@@ -165,6 +165,16 @@ CARRIED_FORWARD: tuple[str, ...] = (
     "minimal", "neutral", "framing_preserving", "framed", "anonymised",
 )
 
+# Main-series grid for 1997-2019, cut after the 2024 calibration cycle ran the
+# full design: the summary variant moved verdicts in under a fifth of pairs,
+# and "both" was never better than the better single source. minimal is the
+# reference, framing_preserving the framing contrast, anonymised the blinding
+# condition. Phase 3 adds the no-profile baseline to the arms.
+MAIN_VARIANTS: tuple[str, ...] = ("minimal", "framing_preserving", "anonymised")
+MAIN_ARMS: tuple[str, ...] = ("explicit_mft", "bidirectional_mft", "axis")
+MAIN_SOURCES: tuple[str, ...] = ("ipsos", "bes")
+
+
 
 # PHASE 2 - Profile construction
 

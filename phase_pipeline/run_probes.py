@@ -25,8 +25,8 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_PHASE1 = REPO_ROOT / "outputs" / "phase1"
 DEFAULT_OUTPUT = REPO_ROOT / "outputs" / "probes"
 
-# the probe reads the control-group summaries, not every variant
-DEFAULT_VARIANTS = ("minimal", "neutral")
+# pre 2024 set up
+DEFAULT_VARIANTS = ("minimal", "anonymised")
 
 
 def plan(summaries, variants, model):

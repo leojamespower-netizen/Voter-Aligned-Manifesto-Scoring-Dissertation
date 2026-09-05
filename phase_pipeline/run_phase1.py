@@ -9,7 +9,7 @@ from pathlib import Path
 
 from . import summarise
 from .report import write_report
-from .prompts import VARIANTS
+from .prompts import MAIN_VARIANTS, VARIANTS
 from .vote_shares import display_names, vote_shares
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -57,12 +57,12 @@ def load_manifestos(directory, election):
 
 # call count before anything is spent
 def plan(texts, model):
-    per_manifesto = len(VARIANTS) * summarise.N_RUNS
+    per_manifesto = len(variants) * summarise.N_RUNS
     summaries = len(texts) * per_manifesto
     return {
         "model": model,
         "manifestos": len(texts),
-        "variants": len(VARIANTS),
+        "variants": len(variants),
         "runs_per_variant": summarise.N_RUNS,
         "summary_calls": summaries,
         "commitment_calls": summaries,
@@ -73,6 +73,7 @@ def plan(texts, model):
 # returns selection plus the five replicate texts the ranking needs
 def run_election(election, texts, model, replacements=None):
     names = display_names()
+    variants = variants or list(VARIANTS)
     replacements = replacements or {}
     selections = {}
 
@@ -85,13 +86,13 @@ def run_election(election, texts, model, replacements=None):
             manifesto_text=text,
             model=model,
             party_name=names.get(party_key, party_key),
-            replacement_list=replacements.get(party_key),
+            replacement_list=replacements.get(party_key), variants=variants
         )
 
         # summarise_manifesto returns one flat list; split it back into cells
         # in the order VARIANTS was iterated.
         selections[party_key] = {}
-        for i, variant in enumerate(VARIANTS):
+        for i, variant in enumerate(variants):
             start = i * summarise.N_RUNS
             cell = responses[start:start + summarise.N_RUNS]
             selections[party_key][variant] = {
@@ -127,6 +128,8 @@ def parse_args():
                         help="model identifier passed to llm_client")
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--temperature", type=float, default=None, help="override the registered temperature for this run")
+    parser.add_argument("--variants", nargs="+", default=list(MAIN_VARIANTS), choices=list(VARIANTS),
+                        help="summary variants to run (default: the main-series grid)")
     parser.add_argument("--dry-run", action="store_true",
                         help="resolve files and count calls, make none")
     return parser.parse_args()
@@ -152,7 +155,7 @@ def main():
     if not texts:
         sys.exit("No usable manifestos; nothing to run.")
 
-    counts = plan(texts, args.model)
+    counts = plan(texts, args.model, args.variants)
     print(f"\nPlan: {counts['manifestos']} manifestos x "
           f"{counts['variants']} variants x {counts['runs_per_variant']} runs")
     print(f"      {counts['summary_calls']} summary calls + "
@@ -166,7 +169,7 @@ def main():
         return
 
     print()
-    selections = run_election(args.election, texts, args.model)
+    selections = run_election(args.election, texts, args.model, variants=args.variants)
     scored = score_stability(selections, args.election, args.model)
 
     top, minimal = scored["control_group"]

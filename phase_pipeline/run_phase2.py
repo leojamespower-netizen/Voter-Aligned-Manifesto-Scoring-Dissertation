@@ -9,7 +9,7 @@ from pathlib import Path
 
 from . import profiles
 from .report import write_report
-from .prompts import PROFILE_PROMPTS, SOURCE_CONDITIONS, N_RUNS
+from .prompts import MAIN_ARMS, MAIN_SOURCES, PROFILE_PROMPTS, SOURCE_CONDITIONS, N_RUNS
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_RECORDS = REPO_ROOT / "data" / "voter_profiles"
@@ -42,19 +42,19 @@ def load_records(records_dir, election):
 
 
 # call count before anything is spent
-def plan(model):
-    cells = len(ARMS) * len(SOURCE_CONDITIONS)
+def plan(model, arms, sources):
+    cells = len(arms) * len(sources)
     return {
         "model": model,
-        "arms": len(ARMS),
-        "sources": len(SOURCE_CONDITIONS),
+        "arms": len(arms),
+        "sources": len(sources),
         "runs_per_cell": N_RUNS,
         "cells": cells,
         "total_calls": cells * N_RUNS,
     }
 
 
-def run_election(election, ipsos, bes, model):
+def run_election(election, ipsos, bes, model, arms=ARMS, sources=SOURCE_CONDITIONS):
     """Generate and select a profile for every cell.
 
     Args:
@@ -69,9 +69,9 @@ def run_election(election, ipsos, bes, model):
     """
     selections, failures = {}, []
 
-    for arm in ARMS:
+    for arm in arms:
         selections[arm] = {}
-        for source in SOURCE_CONDITIONS:
+        for source in sources:
             responses = profiles.generate_profiles(
                 election=str(election), arm=arm, source=source, model=model,
                 ipsos=ipsos, bes=bes, n_runs=N_RUNS)
@@ -102,6 +102,10 @@ def parse_args():
     parser.add_argument("--model", default="gpt-5")
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--temperature", type=float, default=None, help="override the registered temperature for this run")
+    parser.add_argument("--arms", nargs="+", default=list(MAIN_ARMS), choices=list(ARMS),
+                        help="profile arms to run (default: the main-series grid)")
+    parser.add_argument("--sources", nargs="+", default=list(MAIN_SOURCES), choices=list(SOURCE_CONDITIONS),
+                        help="source conditions to run (default: the main-series grid)")
     parser.add_argument("--dry-run", action="store_true",
                         help="resolve records and count calls, make none")
     return parser.parse_args()
@@ -117,7 +121,7 @@ def main():
     except FileNotFoundError as err:
         sys.exit(str(err))
 
-    counts = plan(args.model)
+    counts = plan(args.model,args.arms, args.sources)
     print(f"Election {args.election}: {counts['arms']} arms x "
           f"{counts['sources']} sources x {counts['runs_per_cell']} runs")
     print(f"      {counts['cells']} cells, {counts['total_calls']} calls "
@@ -130,7 +134,7 @@ def main():
         return
 
     print()
-    selections, failures = run_election(args.election, ipsos, bes, args.model)
+    selections, failures = run_election(args.election, ipsos, bes, args.model, args.arms, args.sources)
 
     for cell in failures:
         print(f"  PARSE FAILED {cell}", file=sys.stderr)

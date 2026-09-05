@@ -19,7 +19,7 @@ from pathlib import Path
 
 from . import bradley_terry, cmp, compare, profiles, validate
 from .report import write_report
-from .prompts import CARRIED_FORWARD, COMPARE_PROMPTS, NEEDS_PROFILE
+from .prompts import CARRIED_FORWARD, COMPARE_PROMPTS, MAIN_ARMS, MAIN_SOURCES, MAIN_VARIANTS, NEEDS_PROFILE
 from .vote_shares import vote_shares
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -184,11 +184,11 @@ def parse_args():
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--model", default="gpt-5")
     parser.add_argument("--temperature", type=float, default=None)
-    parser.add_argument("--variants", nargs="+", default=list(CARRIED_FORWARD),
+    parser.add_argument("--variants", nargs="+", default=list(MAIN_VARIANTS), choices=(CARRIED_FORWARD),
                         help="summary variants to run (default: all carried)")
-    parser.add_argument("--arms", nargs="+", default=list(PROMPT_TYPES),
+    parser.add_argument("--arms", nargs="+", default=["baseline", *MAIN_ARMS], choices=list(PROMPT_TYPES),
                         help="comparison prompt types to run")
-    parser.add_argument("--sources", nargs="+", default=["ipsos", "bes", "both"],
+    parser.add_argument("--sources", nargs="+", default=list(MAIN_SOURCES), choices=["ipsos", "bes", "both"],
                         help="profile source conditions to run")
     parser.add_argument("--text-source", choices=("summary", "cmp"),
                         default="summary",
