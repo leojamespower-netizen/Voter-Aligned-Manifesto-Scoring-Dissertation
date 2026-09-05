@@ -56,7 +56,7 @@ def load_manifestos(directory, election):
 
 
 # call count before anything is spent
-def plan(texts, model):
+def plan(texts, model, variants):
     per_manifesto = len(variants) * summarise.N_RUNS
     summaries = len(texts) * per_manifesto
     return {
@@ -71,7 +71,7 @@ def plan(texts, model):
 
 
 # returns selection plus the five replicate texts the ranking needs
-def run_election(election, texts, model, replacements=None):
+def run_election(election, texts, model, replacements=None, variants=None):
     names = display_names()
     variants = variants or list(VARIANTS)
     replacements = replacements or {}

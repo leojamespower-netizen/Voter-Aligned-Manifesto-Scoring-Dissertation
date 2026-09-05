@@ -500,4 +500,9 @@ def test_summarise_only_runs_the_requested_variants(fake_api):
     assert len(responses) == 2 * summarise.N_RUNS
     assert all(("_minimal_" in k) or ("_anonymised_" in k) for k in keys)
 
+def test_phase1_plan_counts_the_requested_variants():
+    from phase_pipeline import run_phase1, summarise
+    counts = run_phase1.plan({"lab": "x", "con": "y"}, "gpt-5", ["minimal", "anonymised"])
+    assert counts["summary_calls"] == 2 * 2 * summarise.N_RUNS and counts["total_calls"] == 2 * counts["summary_calls"]
+
 
