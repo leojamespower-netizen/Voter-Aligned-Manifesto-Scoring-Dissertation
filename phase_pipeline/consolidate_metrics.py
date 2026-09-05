@@ -114,6 +114,39 @@ def nulls_vs_performance(rows, nulls):
                     "mean_rho": round(p, 3), "winner_rate": ""})  # last row: r in nulls column, p in mean_rho column
     return out
 
+# the raw Bradley-Terry scores, how far apart the
+# parties are, how clear the top is, and whether magnitude tracks vote share
+def score_rows(report):
+    import math
+    shares = report["vote_shares"]; parties = sorted(shares)
+    log_share = [math.log(shares[p]) for p in parties]
+    polling = polling_averages(report["election"]) if "election" in report else None
+    log_poll = [math.log(polling[p]) for p in parties] if polling else None
+    rows = []
+    for name, c in report["cells"].items():
+        variant, arm, source = name.split("/")
+        sc = c["scores"]; ordered = sorted(sc.values(), reverse=True)
+        r, _ = pearsonr([sc[p] for p in parties], log_share)
+        rows.append({"variant": variant, "arm": arm, "source": source,
+                     "spread": ordered[0] - ordered[-1],        # top minus bottom
+                     "top_margin": ordered[0] - ordered[1],     # first over second
+                     "pearson_log_share": float(r),            # magnitude against log vote share
+                     "pearson_log_polling": float(pearsonr([sc[p] for p in parties], log_poll)[0]) if log_poll else None,
+                     **{f"score_{p}": sc[p] for p in parties}})
+    return rows
+
+def score_marginal(rows, keys):
+    groups = defaultdict(list)
+    for r in rows:
+        groups[tuple(r[k] for k in keys)].append(r)
+    return [{**dict(zip(keys, g)), "n_cells": len(rs),
+             "mean_spread": mean(r["spread"] for r in rs),
+             "mean_top_margin": mean(r["top_margin"] for r in rs),
+             "mean_pearson_log_share": mean(r["pearson_log_share"] for r in rs)
+             "mean_pearson_log_polling": (mean(r["pearson_log_polling"] for r in rs)
+                                         if all(r["pearson_log_polling"] is not None for r in rs) else None)}
+           for g, rs in sorted(groups.items())]
+
 
 def main():
     ap = argparse.ArgumentParser()
@@ -135,7 +168,10 @@ def main():
         "by_source": marginal(rows, ["source"]),             # profile combination
         "by_variant": marginal(rows, ["variant"]),
         "alpha": alpha_rows(report),
-        "signed_error_by_party": signed_error_rows(report)[1],   # mean over all 50 cells
+        "scores_by_cell": score_rows(report), # raw Bradley-Terry scores and their spread
+        "scores_by_arm": score_marginal(score_rows(report), ["arm"]),
+        "scores_by_source": score_marginal(score_rows(report), ["source"]),
+        "signed_error_by_party": signed_error_rows(report)[1], # mean over all 50 cells
         "signed_error_by_cell": signed_error_rows(report)[0],
         "rejected": [{"cell": f"{r['variant']}/{r['arm']}/{r['source']}", "rejected": r["rejected"]}
                      for r in rows if r["rejected"]] + [{"cell": "total", "rejected": sum(r["rejected"] for r in rows)}],

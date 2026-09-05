@@ -388,7 +388,7 @@ def test_consolidate_metrics_mean_rho(tmp_path, monkeypatch):
     def cell(ranking, rho):
         scores = {p: 5 - i for i, p in enumerate(ranking)}
         return {"spearman": {"rho": rho, "pvalue": 0.0, "n": 5}, "null_percentile": 0.5, "ranking": ranking,
-                "binary_winner": False, "positional_error": 0.5, "parse_failure_rate": 0.0,
+                "binary_winner": False, "positional_error": 0.5, "parse_failure_rate": 0.0, "scores": scores,
                 "alpha_sensitivity": {"0.1": scores}}
     report = {"election": 2024, "model": "test", "plan": {"calls_per_cell": 20},
               "vote_shares": {"lab": 33.7, "con": 23.7, "reform": 14.3, "ld": 12.2, "green": 6.4},
@@ -453,5 +453,19 @@ def test_verdict_names_the_text_not_the_position():
     assert verdict["winner_party"] == "con"
     assert compare.parse_verdict({"text": '{"winner": "B"}', "meta": meta})["parse_error"]  # a bare letter is no longer an answer
     assert "LABEL_SCHEME" in inspect.getsource(compare.run_pair)
+
+def test_score_spread_and_margin_come_from_the_raw_scores():
+    # a decisive ranking and a near-tied one have the same rho; only the scores tell them apart
+    from phase_pipeline import consolidate_metrics as cm
+    shares = {"lab": 33.7, "con": 23.7, "reform": 14.3, "ld": 12.2, "green": 6.4}
+    def cell(scores):
+        return {"scores": scores, "ranking": sorted(scores, key=scores.get, reverse=True)}
+    report = {"vote_shares": shares, "cells": {
+        "minimal/axis/bes": cell({"lab": 2.0, "con": 1.0, "reform": 0.0, "ld": -1.0, "green": -2.0}),
+        "neutral/axis/bes": cell({"lab": 0.02, "con": 0.01, "reform": 0.0, "ld": -0.01, "green": -0.02})}}
+    rows = {r["variant"]: r for r in cm.score_rows(report)}
+    assert rows["minimal"]["spread"] == 4.0 and rows["minimal"]["top_margin"] == 1.0
+    assert rows["neutral"]["spread"] == pytest.approx(0.04) and rows["neutral"]["top_margin"] == pytest.approx(0.01)
+    assert rows["minimal"]["pearson_log_share"] == pytest.approx(rows["neutral"]["pearson_log_share"])  # same order, same correlation
 
 
