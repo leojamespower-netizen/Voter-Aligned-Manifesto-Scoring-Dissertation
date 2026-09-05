@@ -1,5 +1,5 @@
 {
-  "label": "",
+  "label": "gpt5",
   "model": "gpt-5",
   "election": 2024,
   "cells": [
@@ -7,45 +7,45 @@
       "variant": "minimal",
       "arm": "baseline",
       "source": "noprofile",
+      "rho": 0.8999999999999998,
+      "null_percentile": 0.9593,
+      "winner": 1,
+      "positional_error": 0.1,
+      "rejected": 0,
+      "ranking": "lab > con > ld > reform > green"
+    },
+    {
+      "variant": "minimal",
+      "arm": "explicit_mft",
+      "source": "ipsos",
+      "rho": -0.09999999999999999,
+      "null_percentile": 0.3879,
+      "winner": 0,
+      "positional_error": 0.2,
+      "rejected": 0,
+      "ranking": "ld > lab > green > con > reform"
+    },
+    {
+      "variant": "minimal",
+      "arm": "explicit_mft",
+      "source": "bes",
+      "rho": 0.8207826816681234,
+      "null_percentile": 0.9593,
+      "winner": 0,
+      "positional_error": 0.1,
+      "rejected": 0,
+      "ranking": "con > lab > reform > ld > green"
+    },
+    {
+      "variant": "minimal",
+      "arm": "explicit_mft",
+      "source": "both",
       "rho": 0.35909242322980395,
       "null_percentile": 0.7384,
       "winner": 1,
-      "positional_error": 0.5,
+      "positional_error": 0.1,
       "rejected": 0,
-      "ranking": "lab > green > con > reform > ld"
-    },
-    {
-      "variant": "minimal",
-      "arm": "explicit_mft",
-      "source": "ipsos",
-      "rho": 0.09999999999999999,
-      "null_percentile": 0.5247,
-      "winner": 1,
-      "positional_error": 0.4,
-      "rejected": 0,
-      "ranking": "lab > green > ld > con > reform"
-    },
-    {
-      "variant": "minimal",
-      "arm": "explicit_mft",
-      "source": "bes",
-      "rho": 0.15389675281277312,
-      "null_percentile": 0.6071,
-      "winner": 0,
-      "positional_error": 0.5,
-      "rejected": 0,
-      "ranking": "con > reform > green > lab > ld"
-    },
-    {
-      "variant": "minimal",
-      "arm": "explicit_mft",
-      "source": "both",
-      "rho": 0.19999999999999998,
-      "null_percentile": 0.6071,
-      "winner": 1,
-      "positional_error": 0.3,
-      "rejected": 0,
-      "ranking": "lab > ld > green > con > reform"
+      "ranking": "lab > ld > con > green > reform"
     },
     {
       "variant": "minimal",
@@ -54,7 +54,7 @@
       "rho": 0.19999999999999998,
       "null_percentile": 0.6071,
       "winner": 1,
-      "positional_error": 0.5,
+      "positional_error": 0.0,
       "rejected": 0,
       "ranking": "lab > ld > green > con > reform"
     },
@@ -62,496 +62,496 @@
       "variant": "minimal",
       "arm": "bidirectional_mft",
       "source": "bes",
-      "rho": 0.10259783520851543,
-      "null_percentile": 0.6071,
+      "rho": 0.8207826816681234,
+      "null_percentile": 0.9593,
       "winner": 0,
-      "positional_error": 0.5,
+      "positional_error": 0.1,
       "rejected": 0,
-      "ranking": "con > green > lab > reform > ld"
+      "ranking": "con > lab > reform > ld > green"
     },
     {
       "variant": "minimal",
       "arm": "bidirectional_mft",
       "source": "both",
-      "rho": 0.6,
-      "null_percentile": 0.8245,
+      "rho": 0.9999999999999999,
+      "null_percentile": 0.992,
       "winner": 1,
-      "positional_error": 0.7,
+      "positional_error": 0.0,
       "rejected": 0,
-      "ranking": "lab > con > green > ld > reform"
+      "ranking": "lab > con > reform > ld > green"
     },
     {
       "variant": "minimal",
       "arm": "axis",
       "source": "ipsos",
-      "rho": 0.0,
-      "null_percentile": 0.4741,
+      "rho": 0.7,
+      "null_percentile": 0.8828,
       "winner": 0,
-      "positional_error": 0.4,
+      "positional_error": 0.0,
       "rejected": 0,
-      "ranking": "con > green > reform > lab > ld"
+      "ranking": "con > reform > lab > ld > green"
     },
     {
       "variant": "minimal",
       "arm": "axis",
       "source": "bes",
-      "rho": 0.0,
-      "null_percentile": 0.4741,
+      "rho": 0.6668859288553503,
+      "null_percentile": 0.8828,
       "winner": 0,
-      "positional_error": 0.4,
+      "positional_error": 0.1,
       "rejected": 0,
-      "ranking": "con > green > reform > lab > ld"
+      "ranking": "con > reform > lab > ld > green"
     },
     {
       "variant": "minimal",
       "arm": "axis",
       "source": "both",
-      "rho": 0.0,
-      "null_percentile": 0.4741,
+      "rho": 0.7,
+      "null_percentile": 0.8828,
       "winner": 0,
-      "positional_error": 0.4,
+      "positional_error": 0.0,
       "rejected": 0,
-      "ranking": "con > green > reform > lab > ld"
+      "ranking": "con > reform > lab > ld > green"
     },
     {
       "variant": "neutral",
       "arm": "baseline",
       "source": "noprofile",
-      "rho": 0.49999999999999994,
-      "null_percentile": 0.7741,
-      "winner": 0,
-      "positional_error": 0.6,
+      "rho": 0.8999999999999998,
+      "null_percentile": 0.9593,
+      "winner": 1,
+      "positional_error": 0.2,
       "rejected": 0,
-      "ranking": "con > lab > green > ld > reform"
+      "ranking": "lab > con > ld > reform > green"
     },
     {
       "variant": "neutral",
       "arm": "explicit_mft",
       "source": "ipsos",
-      "rho": 0.19999999999999998,
-      "null_percentile": 0.6071,
-      "winner": 1,
-      "positional_error": 0.5,
-      "rejected": 0,
-      "ranking": "lab > ld > green > con > reform"
-    },
-    {
-      "variant": "neutral",
-      "arm": "explicit_mft",
-      "source": "bes",
-      "rho": 0.15389675281277312,
-      "null_percentile": 0.6071,
-      "winner": 0,
-      "positional_error": 0.5,
-      "rejected": 0,
-      "ranking": "con > green > lab > reform > ld"
-    },
-    {
-      "variant": "neutral",
-      "arm": "explicit_mft",
-      "source": "both",
-      "rho": 0.0,
-      "null_percentile": 0.4741,
-      "winner": 1,
-      "positional_error": 0.3,
-      "rejected": 0,
-      "ranking": "lab > green > ld > reform > con"
-    },
-    {
-      "variant": "neutral",
-      "arm": "bidirectional_mft",
-      "source": "ipsos",
-      "rho": 0.09999999999999999,
-      "null_percentile": 0.5247,
-      "winner": 1,
-      "positional_error": 0.4,
-      "rejected": 0,
-      "ranking": "lab > green > ld > con > reform"
-    },
-    {
-      "variant": "neutral",
-      "arm": "bidirectional_mft",
-      "source": "bes",
-      "rho": 0.19999999999999998,
-      "null_percentile": 0.6071,
-      "winner": 0,
-      "positional_error": 0.4,
-      "rejected": 0,
-      "ranking": "con > green > lab > reform > ld"
-    },
-    {
-      "variant": "neutral",
-      "arm": "bidirectional_mft",
-      "source": "both",
-      "rho": 0.3,
-      "null_percentile": 0.6553,
-      "winner": 1,
-      "positional_error": 0.5,
-      "rejected": 0,
-      "ranking": "lab > green > con > ld > reform"
-    },
-    {
-      "variant": "neutral",
-      "arm": "axis",
-      "source": "ipsos",
-      "rho": 0.0,
-      "null_percentile": 0.4741,
-      "winner": 0,
-      "positional_error": 0.4,
-      "rejected": 0,
-      "ranking": "con > green > reform > lab > ld"
-    },
-    {
-      "variant": "neutral",
-      "arm": "axis",
-      "source": "bes",
-      "rho": 0.0,
-      "null_percentile": 0.4741,
-      "winner": 0,
-      "positional_error": 0.4,
-      "rejected": 0,
-      "ranking": "con > green > reform > lab > ld"
-    },
-    {
-      "variant": "neutral",
-      "arm": "axis",
-      "source": "both",
-      "rho": 0.0,
-      "null_percentile": 0.4741,
-      "winner": 0,
-      "positional_error": 0.4,
-      "rejected": 0,
-      "ranking": "con > green > reform > lab > ld"
-    },
-    {
-      "variant": "framing_preserving",
-      "arm": "baseline",
-      "source": "noprofile",
-      "rho": 0.3,
-      "null_percentile": 0.6553,
-      "winner": 1,
-      "positional_error": 0.6,
-      "rejected": 0,
-      "ranking": "lab > green > con > ld > reform"
-    },
-    {
-      "variant": "framing_preserving",
-      "arm": "explicit_mft",
-      "source": "ipsos",
-      "rho": -0.49999999999999994,
-      "null_percentile": 0.1738,
-      "winner": 0,
-      "positional_error": 0.4,
-      "rejected": 0,
-      "ranking": "ld > green > lab > con > reform"
-    },
-    {
-      "variant": "framing_preserving",
-      "arm": "explicit_mft",
-      "source": "bes",
-      "rho": 0.19999999999999998,
-      "null_percentile": 0.6071,
-      "winner": 0,
-      "positional_error": 0.4,
-      "rejected": 0,
-      "ranking": "con > green > lab > reform > ld"
-    },
-    {
-      "variant": "framing_preserving",
-      "arm": "explicit_mft",
-      "source": "both",
-      "rho": 0.09999999999999999,
-      "null_percentile": 0.5247,
-      "winner": 1,
-      "positional_error": 0.4,
-      "rejected": 0,
-      "ranking": "lab > green > ld > con > reform"
-    },
-    {
-      "variant": "framing_preserving",
-      "arm": "bidirectional_mft",
-      "source": "ipsos",
-      "rho": 0.09999999999999999,
-      "null_percentile": 0.5247,
-      "winner": 1,
-      "positional_error": 0.4,
-      "rejected": 0,
-      "ranking": "lab > green > ld > con > reform"
-    },
-    {
-      "variant": "framing_preserving",
-      "arm": "bidirectional_mft",
-      "source": "bes",
-      "rho": 0.19999999999999998,
-      "null_percentile": 0.6071,
-      "winner": 0,
-      "positional_error": 0.4,
-      "rejected": 0,
-      "ranking": "con > green > lab > reform > ld"
-    },
-    {
-      "variant": "framing_preserving",
-      "arm": "bidirectional_mft",
-      "source": "both",
-      "rho": 0.3,
-      "null_percentile": 0.6553,
-      "winner": 1,
-      "positional_error": 0.6,
-      "rejected": 0,
-      "ranking": "lab > green > con > ld > reform"
-    },
-    {
-      "variant": "framing_preserving",
-      "arm": "axis",
-      "source": "ipsos",
-      "rho": 0.0,
-      "null_percentile": 0.4741,
-      "winner": 0,
-      "positional_error": 0.4,
-      "rejected": 0,
-      "ranking": "con > green > reform > lab > ld"
-    },
-    {
-      "variant": "framing_preserving",
-      "arm": "axis",
-      "source": "bes",
-      "rho": 0.0,
-      "null_percentile": 0.4741,
-      "winner": 0,
-      "positional_error": 0.4,
-      "rejected": 0,
-      "ranking": "con > green > reform > lab > ld"
-    },
-    {
-      "variant": "framing_preserving",
-      "arm": "axis",
-      "source": "both",
-      "rho": 0.0,
-      "null_percentile": 0.4741,
-      "winner": 0,
-      "positional_error": 0.4,
-      "rejected": 0,
-      "ranking": "con > green > reform > lab > ld"
-    },
-    {
-      "variant": "framed",
-      "arm": "baseline",
-      "source": "noprofile",
-      "rho": 0.39999999999999997,
-      "null_percentile": 0.7384,
-      "winner": 1,
-      "positional_error": 0.5,
-      "rejected": 0,
-      "ranking": "lab > green > con > reform > ld"
-    },
-    {
-      "variant": "framed",
-      "arm": "explicit_mft",
-      "source": "ipsos",
-      "rho": -0.49999999999999994,
-      "null_percentile": 0.1738,
-      "winner": 0,
-      "positional_error": 0.4,
-      "rejected": 0,
-      "ranking": "ld > green > lab > con > reform"
-    },
-    {
-      "variant": "framed",
-      "arm": "explicit_mft",
-      "source": "bes",
-      "rho": 0.19999999999999998,
-      "null_percentile": 0.6071,
-      "winner": 0,
-      "positional_error": 0.4,
-      "rejected": 0,
-      "ranking": "con > green > lab > reform > ld"
-    },
-    {
-      "variant": "framed",
-      "arm": "explicit_mft",
-      "source": "both",
       "rho": 0.05129891760425771,
       "null_percentile": 0.5247,
       "winner": 1,
-      "positional_error": 0.4,
+      "positional_error": 0.1,
       "rejected": 0,
       "ranking": "lab > ld > green > con > reform"
     },
     {
-      "variant": "framed",
-      "arm": "bidirectional_mft",
-      "source": "ipsos",
-      "rho": -0.49999999999999994,
-      "null_percentile": 0.1738,
+      "variant": "neutral",
+      "arm": "explicit_mft",
+      "source": "bes",
+      "rho": 0.8207826816681234,
+      "null_percentile": 0.9593,
       "winner": 0,
-      "positional_error": 0.4,
+      "positional_error": 0.1,
       "rejected": 0,
-      "ranking": "ld > green > lab > con > reform"
+      "ranking": "con > lab > reform > ld > green"
     },
     {
-      "variant": "framed",
+      "variant": "neutral",
+      "arm": "explicit_mft",
+      "source": "both",
+      "rho": 0.6155870112510925,
+      "null_percentile": 0.8828,
+      "winner": 1,
+      "positional_error": 0.1,
+      "rejected": 0,
+      "ranking": "lab > ld > con > reform > green"
+    },
+    {
+      "variant": "neutral",
+      "arm": "bidirectional_mft",
+      "source": "ipsos",
+      "rho": 0.35909242322980395,
+      "null_percentile": 0.7384,
+      "winner": 1,
+      "positional_error": 0.2,
+      "rejected": 0,
+      "ranking": "lab > ld > con > green > reform"
+    },
+    {
+      "variant": "neutral",
       "arm": "bidirectional_mft",
       "source": "bes",
+      "rho": 0.8999999999999998,
+      "null_percentile": 0.9593,
+      "winner": 0,
+      "positional_error": 0.0,
+      "rejected": 0,
+      "ranking": "con > lab > reform > ld > green"
+    },
+    {
+      "variant": "neutral",
+      "arm": "bidirectional_mft",
+      "source": "both",
+      "rho": 0.8207826816681234,
+      "null_percentile": 0.9593,
+      "winner": 1,
+      "positional_error": 0.1,
+      "rejected": 0,
+      "ranking": "lab > con > ld > reform > green"
+    },
+    {
+      "variant": "neutral",
+      "arm": "axis",
+      "source": "ipsos",
+      "rho": 0.7,
+      "null_percentile": 0.8828,
+      "winner": 0,
+      "positional_error": 0.0,
+      "rejected": 0,
+      "ranking": "con > reform > lab > ld > green"
+    },
+    {
+      "variant": "neutral",
+      "arm": "axis",
+      "source": "bes",
+      "rho": 0.7,
+      "null_percentile": 0.8828,
+      "winner": 0,
+      "positional_error": 0.0,
+      "rejected": 0,
+      "ranking": "con > reform > lab > ld > green"
+    },
+    {
+      "variant": "neutral",
+      "arm": "axis",
+      "source": "both",
+      "rho": 0.7,
+      "null_percentile": 0.8828,
+      "winner": 0,
+      "positional_error": 0.0,
+      "rejected": 0,
+      "ranking": "con > reform > lab > ld > green"
+    },
+    {
+      "variant": "framing_preserving",
+      "arm": "baseline",
+      "source": "noprofile",
+      "rho": 0.8207826816681234,
+      "null_percentile": 0.9593,
+      "winner": 1,
+      "positional_error": 0.1,
+      "rejected": 0,
+      "ranking": "lab > con > ld > reform > green"
+    },
+    {
+      "variant": "framing_preserving",
+      "arm": "explicit_mft",
+      "source": "ipsos",
       "rho": 0.19999999999999998,
       "null_percentile": 0.6071,
-      "winner": 0,
-      "positional_error": 0.4,
+      "winner": 1,
+      "positional_error": 0.2,
       "rejected": 0,
-      "ranking": "con > green > lab > reform > ld"
+      "ranking": "lab > ld > green > con > reform"
+    },
+    {
+      "variant": "framing_preserving",
+      "arm": "explicit_mft",
+      "source": "bes",
+      "rho": 0.8207826816681234,
+      "null_percentile": 0.9593,
+      "winner": 0,
+      "positional_error": 0.1,
+      "rejected": 0,
+      "ranking": "con > lab > reform > ld > green"
+    },
+    {
+      "variant": "framing_preserving",
+      "arm": "explicit_mft",
+      "source": "both",
+      "rho": 0.49999999999999994,
+      "null_percentile": 0.7741,
+      "winner": 1,
+      "positional_error": 0.0,
+      "rejected": 0,
+      "ranking": "lab > ld > con > green > reform"
+    },
+    {
+      "variant": "framing_preserving",
+      "arm": "bidirectional_mft",
+      "source": "ipsos",
+      "rho": 0.19999999999999998,
+      "null_percentile": 0.6071,
+      "winner": 1,
+      "positional_error": 0.0,
+      "rejected": 0,
+      "ranking": "lab > ld > green > con > reform"
+    },
+    {
+      "variant": "framing_preserving",
+      "arm": "bidirectional_mft",
+      "source": "bes",
+      "rho": 0.8207826816681234,
+      "null_percentile": 0.9593,
+      "winner": 0,
+      "positional_error": 0.1,
+      "rejected": 0,
+      "ranking": "con > lab > reform > ld > green"
+    },
+    {
+      "variant": "framing_preserving",
+      "arm": "bidirectional_mft",
+      "source": "both",
+      "rho": 0.9999999999999999,
+      "null_percentile": 0.992,
+      "winner": 1,
+      "positional_error": 0.0,
+      "rejected": 0,
+      "ranking": "lab > con > reform > ld > green"
+    },
+    {
+      "variant": "framing_preserving",
+      "arm": "axis",
+      "source": "ipsos",
+      "rho": 0.7,
+      "null_percentile": 0.8828,
+      "winner": 0,
+      "positional_error": 0.0,
+      "rejected": 0,
+      "ranking": "con > reform > lab > ld > green"
+    },
+    {
+      "variant": "framing_preserving",
+      "arm": "axis",
+      "source": "bes",
+      "rho": 0.6668859288553503,
+      "null_percentile": 0.8828,
+      "winner": 0,
+      "positional_error": 0.1,
+      "rejected": 0,
+      "ranking": "con > reform > lab > ld > green"
+    },
+    {
+      "variant": "framing_preserving",
+      "arm": "axis",
+      "source": "both",
+      "rho": 0.7,
+      "null_percentile": 0.8828,
+      "winner": 0,
+      "positional_error": 0.0,
+      "rejected": 0,
+      "ranking": "con > reform > lab > ld > green"
+    },
+    {
+      "variant": "framed",
+      "arm": "baseline",
+      "source": "noprofile",
+      "rho": 0.8999999999999998,
+      "null_percentile": 0.9593,
+      "winner": 1,
+      "positional_error": 0.2,
+      "rejected": 0,
+      "ranking": "lab > con > ld > reform > green"
+    },
+    {
+      "variant": "framed",
+      "arm": "explicit_mft",
+      "source": "ipsos",
+      "rho": -0.09999999999999999,
+      "null_percentile": 0.3879,
+      "winner": 0,
+      "positional_error": 0.2,
+      "rejected": 0,
+      "ranking": "ld > lab > green > con > reform"
+    },
+    {
+      "variant": "framed",
+      "arm": "explicit_mft",
+      "source": "bes",
+      "rho": 0.8207826816681234,
+      "null_percentile": 0.9593,
+      "winner": 0,
+      "positional_error": 0.1,
+      "rejected": 0,
+      "ranking": "con > lab > reform > ld > green"
+    },
+    {
+      "variant": "framed",
+      "arm": "explicit_mft",
+      "source": "both",
+      "rho": 0.49999999999999994,
+      "null_percentile": 0.7741,
+      "winner": 1,
+      "positional_error": 0.2,
+      "rejected": 0,
+      "ranking": "lab > ld > con > green > reform"
+    },
+    {
+      "variant": "framed",
+      "arm": "bidirectional_mft",
+      "source": "ipsos",
+      "rho": -0.09999999999999999,
+      "null_percentile": 0.3879,
+      "winner": 0,
+      "positional_error": 0.1,
+      "rejected": 0,
+      "ranking": "ld > lab > green > con > reform"
+    },
+    {
+      "variant": "framed",
+      "arm": "bidirectional_mft",
+      "source": "bes",
+      "rho": 0.8207826816681234,
+      "null_percentile": 0.9593,
+      "winner": 0,
+      "positional_error": 0.1,
+      "rejected": 0,
+      "ranking": "con > lab > reform > ld > green"
     },
     {
       "variant": "framed",
       "arm": "bidirectional_mft",
       "source": "both",
-      "rho": 0.09999999999999999,
-      "null_percentile": 0.5247,
+      "rho": 0.7999999999999999,
+      "null_percentile": 0.9331,
       "winner": 0,
-      "positional_error": 0.4,
+      "positional_error": 0.0,
       "rejected": 0,
-      "ranking": "con > green > lab > ld > reform"
+      "ranking": "con > lab > ld > reform > green"
     },
     {
       "variant": "framed",
       "arm": "axis",
       "source": "ipsos",
-      "rho": 0.0,
-      "null_percentile": 0.4741,
+      "rho": 0.7,
+      "null_percentile": 0.8828,
       "winner": 0,
-      "positional_error": 0.4,
+      "positional_error": 0.0,
       "rejected": 0,
-      "ranking": "con > green > reform > lab > ld"
+      "ranking": "con > reform > lab > ld > green"
     },
     {
       "variant": "framed",
       "arm": "axis",
       "source": "bes",
-      "rho": 0.0,
-      "null_percentile": 0.4741,
+      "rho": 0.7,
+      "null_percentile": 0.8828,
       "winner": 0,
-      "positional_error": 0.4,
+      "positional_error": 0.0,
       "rejected": 0,
-      "ranking": "con > green > reform > lab > ld"
+      "ranking": "con > reform > lab > ld > green"
     },
     {
       "variant": "framed",
       "arm": "axis",
       "source": "both",
-      "rho": 0.10259783520851543,
-      "null_percentile": 0.6071,
+      "rho": 0.7,
+      "null_percentile": 0.8828,
       "winner": 0,
-      "positional_error": 0.5,
+      "positional_error": 0.0,
       "rejected": 0,
-      "ranking": "con > green > lab > reform > ld"
+      "ranking": "con > reform > lab > ld > green"
     },
     {
       "variant": "anonymised",
       "arm": "baseline",
       "source": "noprofile",
+      "rho": 0.8720815992723809,
+      "null_percentile": 0.9593,
+      "winner": 1,
+      "positional_error": 0.1,
+      "rejected": 0,
+      "ranking": "lab > con > ld > reform > green"
+    },
+    {
+      "variant": "anonymised",
+      "arm": "explicit_mft",
+      "source": "ipsos",
+      "rho": -0.09999999999999999,
+      "null_percentile": 0.3879,
+      "winner": 0,
+      "positional_error": 0.0,
+      "rejected": 0,
+      "ranking": "ld > lab > green > con > reform"
+    },
+    {
+      "variant": "anonymised",
+      "arm": "explicit_mft",
+      "source": "bes",
+      "rho": 0.8999999999999998,
+      "null_percentile": 0.9593,
+      "winner": 0,
+      "positional_error": 0.2,
+      "rejected": 0,
+      "ranking": "con > lab > reform > ld > green"
+    },
+    {
+      "variant": "anonymised",
+      "arm": "explicit_mft",
+      "source": "both",
       "rho": 0.49999999999999994,
       "null_percentile": 0.7741,
-      "winner": 0,
-      "positional_error": 0.5,
-      "rejected": 0,
-      "ranking": "con > lab > green > ld > reform"
-    },
-    {
-      "variant": "anonymised",
-      "arm": "explicit_mft",
-      "source": "ipsos",
-      "rho": -0.5642880936468347,
-      "null_percentile": 0.1738,
-      "winner": 0,
-      "positional_error": 0.5,
-      "rejected": 0,
-      "ranking": "ld > green > lab > con > reform"
-    },
-    {
-      "variant": "anonymised",
-      "arm": "explicit_mft",
-      "source": "bes",
-      "rho": 0.19999999999999998,
-      "null_percentile": 0.6071,
-      "winner": 0,
-      "positional_error": 0.6,
-      "rejected": 0,
-      "ranking": "con > green > lab > reform > ld"
-    },
-    {
-      "variant": "anonymised",
-      "arm": "explicit_mft",
-      "source": "both",
-      "rho": 0.09999999999999999,
-      "null_percentile": 0.5247,
       "winner": 1,
-      "positional_error": 0.4,
+      "positional_error": 0.2,
       "rejected": 0,
-      "ranking": "lab > green > ld > con > reform"
+      "ranking": "lab > ld > con > green > reform"
     },
     {
       "variant": "anonymised",
       "arm": "bidirectional_mft",
       "source": "ipsos",
-      "rho": -0.49999999999999994,
-      "null_percentile": 0.1738,
+      "rho": -0.09999999999999999,
+      "null_percentile": 0.3879,
       "winner": 0,
-      "positional_error": 0.4,
+      "positional_error": 0.0,
       "rejected": 0,
-      "ranking": "ld > green > lab > con > reform"
+      "ranking": "ld > lab > green > con > reform"
     },
     {
       "variant": "anonymised",
       "arm": "bidirectional_mft",
       "source": "bes",
-      "rho": 0.19999999999999998,
-      "null_percentile": 0.6071,
+      "rho": 0.8999999999999998,
+      "null_percentile": 0.9593,
       "winner": 0,
-      "positional_error": 0.3333333333333333,
-      "rejected": 1,
-      "ranking": "con > green > lab > reform > ld"
+      "positional_error": 0.0,
+      "rejected": 0,
+      "ranking": "con > lab > reform > ld > green"
     },
     {
       "variant": "anonymised",
       "arm": "bidirectional_mft",
       "source": "both",
-      "rho": 0.3,
-      "null_percentile": 0.6553,
-      "winner": 1,
-      "positional_error": 0.4,
+      "rho": 0.7999999999999999,
+      "null_percentile": 0.9331,
+      "winner": 0,
+      "positional_error": 0.1,
       "rejected": 0,
-      "ranking": "lab > green > con > ld > reform"
+      "ranking": "con > lab > ld > reform > green"
     },
     {
       "variant": "anonymised",
       "arm": "axis",
       "source": "ipsos",
-      "rho": 0.0,
-      "null_percentile": 0.4741,
+      "rho": 0.7,
+      "null_percentile": 0.8828,
       "winner": 0,
-      "positional_error": 0.4,
+      "positional_error": 0.0,
       "rejected": 0,
-      "ranking": "con > green > reform > lab > ld"
+      "ranking": "con > reform > lab > ld > green"
     },
     {
       "variant": "anonymised",
       "arm": "axis",
       "source": "bes",
-      "rho": 0.0,
-      "null_percentile": 0.4741,
+      "rho": 0.7,
+      "null_percentile": 0.8828,
       "winner": 0,
-      "positional_error": 0.5,
+      "positional_error": 0.0,
       "rejected": 0,
-      "ranking": "con > green > reform > lab > ld"
+      "ranking": "con > reform > lab > ld > green"
     },
     {
       "variant": "anonymised",
       "arm": "axis",
       "source": "both",
-      "rho": 0.0,
-      "null_percentile": 0.4741,
+      "rho": 0.7,
+      "null_percentile": 0.8828,
       "winner": 0,
-      "positional_error": 0.4,
+      "positional_error": 0.0,
       "rejected": 0,
-      "ranking": "con > green > reform > lab > ld"
+      "ranking": "con > reform > lab > ld > green"
     }
   ],
   "by_arm_source": [
@@ -559,100 +559,100 @@
       "arm": "axis",
       "source": "bes",
       "n_cells": 5,
-      "mean_rho": 0.0,
-      "cells_rho_positive": 0,
+      "mean_rho": 0.68675437154214,
+      "cells_rho_positive": 5,
       "winner_rate": 0,
-      "mean_positional_error": 0.42000000000000004,
+      "mean_positional_error": 0.04,
       "rejected": 0
     },
     {
       "arm": "axis",
       "source": "both",
       "n_cells": 5,
-      "mean_rho": 0.020519567041703084,
-      "cells_rho_positive": 1,
+      "mean_rho": 0.7,
+      "cells_rho_positive": 5,
       "winner_rate": 0,
-      "mean_positional_error": 0.42000000000000004,
+      "mean_positional_error": 0.0,
       "rejected": 0
     },
     {
       "arm": "axis",
       "source": "ipsos",
       "n_cells": 5,
-      "mean_rho": 0.0,
-      "cells_rho_positive": 0,
+      "mean_rho": 0.7,
+      "cells_rho_positive": 5,
       "winner_rate": 0,
-      "mean_positional_error": 0.4,
+      "mean_positional_error": 0.0,
       "rejected": 0
     },
     {
       "arm": "baseline",
       "source": "noprofile",
       "n_cells": 5,
-      "mean_rho": 0.41181848464596077,
+      "mean_rho": 0.8785728561881008,
       "cells_rho_positive": 5,
-      "winner_rate": 0.6,
-      "mean_positional_error": 0.54,
+      "winner_rate": 1,
+      "mean_positional_error": 0.14,
       "rejected": 0
     },
     {
       "arm": "bidirectional_mft",
       "source": "bes",
       "n_cells": 5,
-      "mean_rho": 0.18051956704170308,
+      "mean_rho": 0.852469609000874,
       "cells_rho_positive": 5,
       "winner_rate": 0,
-      "mean_positional_error": 0.4066666666666667,
-      "rejected": 1
+      "mean_positional_error": 0.060000000000000005,
+      "rejected": 0
     },
     {
       "arm": "bidirectional_mft",
       "source": "both",
       "n_cells": 5,
-      "mean_rho": 0.32,
+      "mean_rho": 0.8841565363336246,
       "cells_rho_positive": 5,
-      "winner_rate": 0.8,
-      "mean_positional_error": 0.52,
+      "winner_rate": 0.6,
+      "mean_positional_error": 0.04,
       "rejected": 0
     },
     {
       "arm": "bidirectional_mft",
       "source": "ipsos",
       "n_cells": 5,
-      "mean_rho": -0.11999999999999998,
+      "mean_rho": 0.11181848464596078,
       "cells_rho_positive": 3,
       "winner_rate": 0.6,
-      "mean_positional_error": 0.42000000000000004,
+      "mean_positional_error": 0.060000000000000005,
       "rejected": 0
     },
     {
       "arm": "explicit_mft",
       "source": "bes",
       "n_cells": 5,
-      "mean_rho": 0.18155870112510925,
+      "mean_rho": 0.8366261453344986,
       "cells_rho_positive": 5,
       "winner_rate": 0,
-      "mean_positional_error": 0.48,
+      "mean_positional_error": 0.12000000000000001,
       "rejected": 0
     },
     {
       "arm": "explicit_mft",
       "source": "both",
       "n_cells": 5,
-      "mean_rho": 0.09025978352085154,
-      "cells_rho_positive": 4,
+      "mean_rho": 0.49493588689617923,
+      "cells_rho_positive": 5,
       "winner_rate": 1,
-      "mean_positional_error": 0.36,
+      "mean_positional_error": 0.12000000000000001,
       "rejected": 0
     },
     {
       "arm": "explicit_mft",
       "source": "ipsos",
       "n_cells": 5,
-      "mean_rho": -0.2528576187293669,
+      "mean_rho": -0.009740216479148456,
       "cells_rho_positive": 2,
       "winner_rate": 0.4,
-      "mean_positional_error": 0.44,
+      "mean_positional_error": 0.14,
       "rejected": 0
     }
   ],
@@ -660,37 +660,37 @@
     {
       "arm": "axis",
       "n_cells": 15,
-      "mean_rho": 0.006839855680567695,
-      "cells_rho_positive": 1,
+      "mean_rho": 0.6955847905140466,
+      "cells_rho_positive": 15,
       "winner_rate": 0,
-      "mean_positional_error": 0.41333333333333333,
+      "mean_positional_error": 0.013333333333333334,
       "rejected": 0
     },
     {
       "arm": "baseline",
       "n_cells": 5,
-      "mean_rho": 0.41181848464596077,
+      "mean_rho": 0.8785728561881008,
       "cells_rho_positive": 5,
-      "winner_rate": 0.6,
-      "mean_positional_error": 0.54,
+      "winner_rate": 1,
+      "mean_positional_error": 0.14,
       "rejected": 0
     },
     {
       "arm": "bidirectional_mft",
       "n_cells": 15,
-      "mean_rho": 0.1268398556805677,
+      "mean_rho": 0.6161482099934864,
       "cells_rho_positive": 13,
-      "winner_rate": 0.4666666666666667,
-      "mean_positional_error": 0.4488888888888889,
-      "rejected": 1
+      "winner_rate": 0.4,
+      "mean_positional_error": 0.05333333333333334,
+      "rejected": 0
     },
     {
       "arm": "explicit_mft",
       "n_cells": 15,
-      "mean_rho": 0.006320288638864615,
-      "cells_rho_positive": 11,
+      "mean_rho": 0.44060727191717647,
+      "cells_rho_positive": 12,
       "winner_rate": 0.4666666666666667,
-      "mean_positional_error": 0.4266666666666667,
+      "mean_positional_error": 0.12666666666666668,
       "rejected": 0
     }
   ],
@@ -698,37 +698,37 @@
     {
       "source": "bes",
       "n_cells": 15,
-      "mean_rho": 0.1206927560556041,
-      "cells_rho_positive": 10,
+      "mean_rho": 0.791950041959171,
+      "cells_rho_positive": 15,
       "winner_rate": 0,
-      "mean_positional_error": 0.4355555555555556,
-      "rejected": 1
+      "mean_positional_error": 0.07333333333333333,
+      "rejected": 0
     },
     {
       "source": "both",
       "n_cells": 15,
-      "mean_rho": 0.14359311685418488,
-      "cells_rho_positive": 10,
-      "winner_rate": 0.6,
-      "mean_positional_error": 0.43333333333333335,
+      "mean_rho": 0.693030807743268,
+      "cells_rho_positive": 15,
+      "winner_rate": 0.5333333333333333,
+      "mean_positional_error": 0.05333333333333334,
       "rejected": 0
     },
     {
       "source": "ipsos",
       "n_cells": 15,
-      "mean_rho": -0.12428587290978897,
-      "cells_rho_positive": 5,
+      "mean_rho": 0.26735942272227076,
+      "cells_rho_positive": 10,
       "winner_rate": 0.3333333333333333,
-      "mean_positional_error": 0.42000000000000004,
+      "mean_positional_error": 0.06666666666666667,
       "rejected": 0
     },
     {
       "source": "noprofile",
       "n_cells": 5,
-      "mean_rho": 0.41181848464596077,
+      "mean_rho": 0.8785728561881008,
       "cells_rho_positive": 5,
-      "winner_rate": 0.6,
-      "mean_positional_error": 0.54,
+      "winner_rate": 1,
+      "mean_positional_error": 0.14,
       "rejected": 0
     }
   ],
@@ -736,78 +736,78 @@
     {
       "variant": "anonymised",
       "n_cells": 10,
-      "mean_rho": 0.02357119063531652,
-      "cells_rho_positive": 5,
+      "mean_rho": 0.5872081599272381,
+      "cells_rho_positive": 8,
       "winner_rate": 0.2,
-      "mean_positional_error": 0.44333333333333336,
-      "rejected": 1
+      "mean_positional_error": 0.060000000000000005,
+      "rejected": 0
     },
     {
       "variant": "framed",
       "n_cells": 10,
-      "mean_rho": 0.005389675281277317,
-      "cells_rho_positive": 6,
+      "mean_rho": 0.5741565363336246,
+      "cells_rho_positive": 8,
       "winner_rate": 0.2,
-      "mean_positional_error": 0.42000000000000004,
+      "mean_positional_error": 0.09000000000000001,
       "rejected": 0
     },
     {
       "variant": "framing_preserving",
       "n_cells": 10,
-      "mean_rho": 0.06999999999999999,
-      "cells_rho_positive": 6,
-      "winner_rate": 0.4,
-      "mean_positional_error": 0.44,
+      "mean_rho": 0.642923397385972,
+      "cells_rho_positive": 10,
+      "winner_rate": 0.5,
+      "mean_positional_error": 0.060000000000000005,
       "rejected": 0
     },
     {
       "variant": "minimal",
       "n_cells": 10,
-      "mean_rho": 0.17155870112510924,
-      "cells_rho_positive": 7,
-      "winner_rate": 0.5,
-      "mean_positional_error": 0.46,
+      "mean_rho": 0.6067543715421401,
+      "cells_rho_positive": 9,
+      "winner_rate": 0.4,
+      "mean_positional_error": 0.07,
       "rejected": 0
     },
     {
       "variant": "neutral",
       "n_cells": 10,
-      "mean_rho": 0.1453896752812773,
-      "cells_rho_positive": 6,
-      "winner_rate": 0.4,
-      "mean_positional_error": 0.44,
+      "mean_rho": 0.65675437154214,
+      "cells_rho_positive": 10,
+      "winner_rate": 0.5,
+      "mean_positional_error": 0.08,
       "rejected": 0
     }
   ],
   "alpha": [
     {
       "alpha": 0.01,
-      "mean_rho": 0.07112989176042576,
-      "cells_rho_positive": 30,
-      "winner_rate": 0.34
+      "mean_rho": 0.6114686096692034,
+      "cells_rho_positive": 45,
+      "winner_rate": 0.36
     },
     {
       "alpha": 0.05,
-      "mean_rho": 0.0720519567041703,
-      "cells_rho_positive": 28,
+      "mean_rho": 0.6272074485534289,
+      "cells_rho_positive": 45,
       "winner_rate": 0.36
     },
     {
       "alpha": 0.1,
-      "mean_rho": 0.08318184846459607,
-      "cells_rho_positive": 30,
-      "winner_rate": 0.34
+      "mean_rho": 0.6123255621774566,
+      "cells_rho_positive": 45,
+      "winner_rate": 0.36
     },
     {
       "alpha": 0.5,
-      "mean_rho": 0.24580532891463977,
-      "cells_rho_positive": 42,
-      "winner_rate": 0.32
+      "mean_rho": 0.6154547425640732,
+      "cells_rho_positive": 45,
+      "winner_rate": 0.36
     },
     {
       "alpha": 1.0,
-      "mean_rho": 0.25323380516876637,
-      "cells_rho_positive": 44,
+      "mean_rho": 0.613559367346223,
+      "cells_rho_positive": 45,
       "winner_rate": 0.36
     }
   ],
@@ -815,41 +815,41 @@
     {
       "party": "lab",
       "actual_rank": 1,
-      "mean_signed_error": 1.58,
+      "mean_signed_error": 0.94,
       "cells_too_high": 0,
-      "cells_exact": 17,
-      "cells_too_low": 33
+      "cells_exact": 18,
+      "cells_too_low": 32
     },
     {
       "party": "con",
       "actual_rank": 2,
-      "mean_signed_error": 0.18,
-      "cells_too_high": 28,
-      "cells_exact": 1,
-      "cells_too_low": 21
+      "mean_signed_error": -0.06,
+      "cells_too_high": 27,
+      "cells_exact": 8,
+      "cells_too_low": 15
     },
     {
       "party": "reform",
       "actual_rank": 3,
-      "mean_signed_error": 1.12,
-      "cells_too_high": 1,
-      "cells_exact": 14,
-      "cells_too_low": 35
+      "mean_signed_error": 0.44,
+      "cells_too_high": 15,
+      "cells_exact": 12,
+      "cells_too_low": 23
     },
     {
       "party": "ld",
       "actual_rank": 4,
-      "mean_signed_error": -0.04,
-      "cells_too_high": 15,
-      "cells_exact": 8,
-      "cells_too_low": 27
+      "mean_signed_error": -0.86,
+      "cells_too_high": 23,
+      "cells_exact": 27,
+      "cells_too_low": 0
     },
     {
       "party": "green",
       "actual_rank": 5,
-      "mean_signed_error": -2.84,
-      "cells_too_high": 50,
-      "cells_exact": 0,
+      "mean_signed_error": -0.46,
+      "cells_too_high": 14,
+      "cells_exact": 36,
       "cells_too_low": 0
     }
   ],
@@ -857,34 +857,34 @@
     {
       "cell": "minimal/baseline/noprofile",
       "lab": 0,
-      "con": 1,
+      "con": 0,
       "reform": 1,
-      "ld": 1,
-      "green": -3
+      "ld": -1,
+      "green": 0
     },
     {
       "cell": "minimal/explicit_mft/ipsos",
-      "lab": 0,
+      "lab": 1,
       "con": 2,
       "reform": 2,
-      "ld": -1,
-      "green": -3
+      "ld": -3,
+      "green": -2
     },
     {
       "cell": "minimal/explicit_mft/bes",
-      "lab": 3,
+      "lab": 1,
       "con": -1,
-      "reform": -1,
-      "ld": 1,
-      "green": -2
+      "reform": 0,
+      "ld": 0,
+      "green": 0
     },
     {
       "cell": "minimal/explicit_mft/both",
       "lab": 0,
-      "con": 2,
+      "con": 1,
       "reform": 2,
       "ld": -2,
-      "green": -2
+      "green": -1
     },
     {
       "cell": "minimal/bidirectional_mft/ipsos",
@@ -896,51 +896,51 @@
     },
     {
       "cell": "minimal/bidirectional_mft/bes",
-      "lab": 2,
+      "lab": 1,
       "con": -1,
-      "reform": 1,
-      "ld": 1,
-      "green": -3
+      "reform": 0,
+      "ld": 0,
+      "green": 0
     },
     {
       "cell": "minimal/bidirectional_mft/both",
       "lab": 0,
       "con": 0,
-      "reform": 2,
+      "reform": 0,
       "ld": 0,
-      "green": -2
+      "green": 0
     },
     {
       "cell": "minimal/axis/ipsos",
-      "lab": 3,
+      "lab": 2,
       "con": -1,
-      "reform": 0,
-      "ld": 1,
-      "green": -3
+      "reform": -1,
+      "ld": 0,
+      "green": 0
     },
     {
       "cell": "minimal/axis/bes",
-      "lab": 3,
+      "lab": 2,
       "con": -1,
-      "reform": 0,
-      "ld": 1,
-      "green": -3
+      "reform": -1,
+      "ld": 0,
+      "green": 0
     },
     {
       "cell": "minimal/axis/both",
-      "lab": 3,
+      "lab": 2,
       "con": -1,
-      "reform": 0,
-      "ld": 1,
-      "green": -3
+      "reform": -1,
+      "ld": 0,
+      "green": 0
     },
     {
       "cell": "neutral/baseline/noprofile",
-      "lab": 1,
-      "con": -1,
-      "reform": 2,
-      "ld": 0,
-      "green": -2
+      "lab": 0,
+      "con": 0,
+      "reform": 1,
+      "ld": -1,
+      "green": 0
     },
     {
       "cell": "neutral/explicit_mft/ipsos",
@@ -952,174 +952,78 @@
     },
     {
       "cell": "neutral/explicit_mft/bes",
-      "lab": 2,
+      "lab": 1,
       "con": -1,
-      "reform": 1,
-      "ld": 1,
-      "green": -3
+      "reform": 0,
+      "ld": 0,
+      "green": 0
     },
     {
       "cell": "neutral/explicit_mft/both",
       "lab": 0,
-      "con": 3,
+      "con": 1,
       "reform": 1,
-      "ld": -1,
-      "green": -3
+      "ld": -2,
+      "green": 0
     },
     {
       "cell": "neutral/bidirectional_mft/ipsos",
       "lab": 0,
-      "con": 2,
+      "con": 1,
       "reform": 2,
-      "ld": -1,
-      "green": -3
+      "ld": -2,
+      "green": -1
     },
     {
       "cell": "neutral/bidirectional_mft/bes",
-      "lab": 2,
+      "lab": 1,
       "con": -1,
-      "reform": 1,
-      "ld": 1,
-      "green": -3
+      "reform": 0,
+      "ld": 0,
+      "green": 0
     },
     {
       "cell": "neutral/bidirectional_mft/both",
       "lab": 0,
-      "con": 1,
-      "reform": 2,
-      "ld": 0,
-      "green": -3
+      "con": 0,
+      "reform": 1,
+      "ld": -1,
+      "green": 0
     },
     {
       "cell": "neutral/axis/ipsos",
-      "lab": 3,
+      "lab": 2,
       "con": -1,
-      "reform": 0,
-      "ld": 1,
-      "green": -3
+      "reform": -1,
+      "ld": 0,
+      "green": 0
     },
     {
       "cell": "neutral/axis/bes",
-      "lab": 3,
+      "lab": 2,
       "con": -1,
-      "reform": 0,
-      "ld": 1,
-      "green": -3
+      "reform": -1,
+      "ld": 0,
+      "green": 0
     },
     {
       "cell": "neutral/axis/both",
-      "lab": 3,
+      "lab": 2,
       "con": -1,
-      "reform": 0,
-      "ld": 1,
-      "green": -3
+      "reform": -1,
+      "ld": 0,
+      "green": 0
     },
     {
       "cell": "framing_preserving/baseline/noprofile",
       "lab": 0,
-      "con": 1,
-      "reform": 2,
-      "ld": 0,
-      "green": -3
+      "con": 0,
+      "reform": 1,
+      "ld": -1,
+      "green": 0
     },
     {
       "cell": "framing_preserving/explicit_mft/ipsos",
-      "lab": 2,
-      "con": 2,
-      "reform": 2,
-      "ld": -3,
-      "green": -3
-    },
-    {
-      "cell": "framing_preserving/explicit_mft/bes",
-      "lab": 2,
-      "con": -1,
-      "reform": 1,
-      "ld": 1,
-      "green": -3
-    },
-    {
-      "cell": "framing_preserving/explicit_mft/both",
-      "lab": 0,
-      "con": 2,
-      "reform": 2,
-      "ld": -1,
-      "green": -3
-    },
-    {
-      "cell": "framing_preserving/bidirectional_mft/ipsos",
-      "lab": 0,
-      "con": 2,
-      "reform": 2,
-      "ld": -1,
-      "green": -3
-    },
-    {
-      "cell": "framing_preserving/bidirectional_mft/bes",
-      "lab": 2,
-      "con": -1,
-      "reform": 1,
-      "ld": 1,
-      "green": -3
-    },
-    {
-      "cell": "framing_preserving/bidirectional_mft/both",
-      "lab": 0,
-      "con": 1,
-      "reform": 2,
-      "ld": 0,
-      "green": -3
-    },
-    {
-      "cell": "framing_preserving/axis/ipsos",
-      "lab": 3,
-      "con": -1,
-      "reform": 0,
-      "ld": 1,
-      "green": -3
-    },
-    {
-      "cell": "framing_preserving/axis/bes",
-      "lab": 3,
-      "con": -1,
-      "reform": 0,
-      "ld": 1,
-      "green": -3
-    },
-    {
-      "cell": "framing_preserving/axis/both",
-      "lab": 3,
-      "con": -1,
-      "reform": 0,
-      "ld": 1,
-      "green": -3
-    },
-    {
-      "cell": "framed/baseline/noprofile",
-      "lab": 0,
-      "con": 1,
-      "reform": 1,
-      "ld": 1,
-      "green": -3
-    },
-    {
-      "cell": "framed/explicit_mft/ipsos",
-      "lab": 2,
-      "con": 2,
-      "reform": 2,
-      "ld": -3,
-      "green": -3
-    },
-    {
-      "cell": "framed/explicit_mft/bes",
-      "lab": 2,
-      "con": -1,
-      "reform": 1,
-      "ld": 1,
-      "green": -3
-    },
-    {
-      "cell": "framed/explicit_mft/both",
       "lab": 0,
       "con": 2,
       "reform": 2,
@@ -1127,149 +1031,315 @@
       "green": -2
     },
     {
-      "cell": "framed/bidirectional_mft/ipsos",
+      "cell": "framing_preserving/explicit_mft/bes",
+      "lab": 1,
+      "con": -1,
+      "reform": 0,
+      "ld": 0,
+      "green": 0
+    },
+    {
+      "cell": "framing_preserving/explicit_mft/both",
+      "lab": 0,
+      "con": 1,
+      "reform": 2,
+      "ld": -2,
+      "green": -1
+    },
+    {
+      "cell": "framing_preserving/bidirectional_mft/ipsos",
+      "lab": 0,
+      "con": 2,
+      "reform": 2,
+      "ld": -2,
+      "green": -2
+    },
+    {
+      "cell": "framing_preserving/bidirectional_mft/bes",
+      "lab": 1,
+      "con": -1,
+      "reform": 0,
+      "ld": 0,
+      "green": 0
+    },
+    {
+      "cell": "framing_preserving/bidirectional_mft/both",
+      "lab": 0,
+      "con": 0,
+      "reform": 0,
+      "ld": 0,
+      "green": 0
+    },
+    {
+      "cell": "framing_preserving/axis/ipsos",
       "lab": 2,
+      "con": -1,
+      "reform": -1,
+      "ld": 0,
+      "green": 0
+    },
+    {
+      "cell": "framing_preserving/axis/bes",
+      "lab": 2,
+      "con": -1,
+      "reform": -1,
+      "ld": 0,
+      "green": 0
+    },
+    {
+      "cell": "framing_preserving/axis/both",
+      "lab": 2,
+      "con": -1,
+      "reform": -1,
+      "ld": 0,
+      "green": 0
+    },
+    {
+      "cell": "framed/baseline/noprofile",
+      "lab": 0,
+      "con": 0,
+      "reform": 1,
+      "ld": -1,
+      "green": 0
+    },
+    {
+      "cell": "framed/explicit_mft/ipsos",
+      "lab": 1,
       "con": 2,
       "reform": 2,
       "ld": -3,
-      "green": -3
+      "green": -2
+    },
+    {
+      "cell": "framed/explicit_mft/bes",
+      "lab": 1,
+      "con": -1,
+      "reform": 0,
+      "ld": 0,
+      "green": 0
+    },
+    {
+      "cell": "framed/explicit_mft/both",
+      "lab": 0,
+      "con": 1,
+      "reform": 2,
+      "ld": -2,
+      "green": -1
+    },
+    {
+      "cell": "framed/bidirectional_mft/ipsos",
+      "lab": 1,
+      "con": 2,
+      "reform": 2,
+      "ld": -3,
+      "green": -2
     },
     {
       "cell": "framed/bidirectional_mft/bes",
-      "lab": 2,
+      "lab": 1,
       "con": -1,
-      "reform": 1,
-      "ld": 1,
-      "green": -3
+      "reform": 0,
+      "ld": 0,
+      "green": 0
     },
     {
       "cell": "framed/bidirectional_mft/both",
-      "lab": 2,
+      "lab": 1,
       "con": -1,
-      "reform": 2,
-      "ld": 0,
-      "green": -3
+      "reform": 1,
+      "ld": -1,
+      "green": 0
     },
     {
       "cell": "framed/axis/ipsos",
-      "lab": 3,
+      "lab": 2,
       "con": -1,
-      "reform": 0,
-      "ld": 1,
-      "green": -3
+      "reform": -1,
+      "ld": 0,
+      "green": 0
     },
     {
       "cell": "framed/axis/bes",
-      "lab": 3,
+      "lab": 2,
       "con": -1,
-      "reform": 0,
-      "ld": 1,
-      "green": -3
+      "reform": -1,
+      "ld": 0,
+      "green": 0
     },
     {
       "cell": "framed/axis/both",
       "lab": 2,
       "con": -1,
-      "reform": 1,
-      "ld": 1,
-      "green": -3
+      "reform": -1,
+      "ld": 0,
+      "green": 0
     },
     {
       "cell": "anonymised/baseline/noprofile",
-      "lab": 1,
-      "con": -1,
-      "reform": 2,
-      "ld": 0,
-      "green": -2
+      "lab": 0,
+      "con": 0,
+      "reform": 1,
+      "ld": -1,
+      "green": 0
     },
     {
       "cell": "anonymised/explicit_mft/ipsos",
-      "lab": 2,
+      "lab": 1,
       "con": 2,
       "reform": 2,
       "ld": -3,
-      "green": -3
+      "green": -2
     },
     {
       "cell": "anonymised/explicit_mft/bes",
-      "lab": 2,
+      "lab": 1,
       "con": -1,
-      "reform": 1,
-      "ld": 1,
-      "green": -3
+      "reform": 0,
+      "ld": 0,
+      "green": 0
     },
     {
       "cell": "anonymised/explicit_mft/both",
       "lab": 0,
-      "con": 2,
+      "con": 1,
       "reform": 2,
-      "ld": -1,
-      "green": -3
+      "ld": -2,
+      "green": -1
     },
     {
       "cell": "anonymised/bidirectional_mft/ipsos",
-      "lab": 2,
+      "lab": 1,
       "con": 2,
       "reform": 2,
       "ld": -3,
-      "green": -3
+      "green": -2
     },
     {
       "cell": "anonymised/bidirectional_mft/bes",
-      "lab": 2,
+      "lab": 1,
       "con": -1,
-      "reform": 1,
-      "ld": 1,
-      "green": -3
+      "reform": 0,
+      "ld": 0,
+      "green": 0
     },
     {
       "cell": "anonymised/bidirectional_mft/both",
-      "lab": 0,
-      "con": 1,
-      "reform": 2,
-      "ld": 0,
-      "green": -3
+      "lab": 1,
+      "con": -1,
+      "reform": 1,
+      "ld": -1,
+      "green": 0
     },
     {
       "cell": "anonymised/axis/ipsos",
-      "lab": 3,
+      "lab": 2,
       "con": -1,
-      "reform": 0,
-      "ld": 1,
-      "green": -3
+      "reform": -1,
+      "ld": 0,
+      "green": 0
     },
     {
       "cell": "anonymised/axis/bes",
-      "lab": 3,
+      "lab": 2,
       "con": -1,
-      "reform": 0,
-      "ld": 1,
-      "green": -3
+      "reform": -1,
+      "ld": 0,
+      "green": 0
     },
     {
       "cell": "anonymised/axis/both",
-      "lab": 3,
+      "lab": 2,
       "con": -1,
-      "reform": 0,
-      "ld": 1,
-      "green": -3
+      "reform": -1,
+      "ld": 0,
+      "green": 0
     }
   ],
   "rejected": [
     {
-      "cell": "anonymised/bidirectional_mft/bes",
-      "rejected": 1
-    },
-    {
       "cell": "total",
-      "rejected": 1
+      "rejected": 0
     }
   ],
   "polling_benchmark": {
     "rho_polling": 0.9999999999999999,
     "polling_ranking": "lab > con > reform > ld > green",
-    "mean_rho_pipeline": 0.08318184846459607,
-    "best_cell_rho_pipeline": 0.6,
-    "cells_matching_or_beating_polls": 0
-  }
+    "mean_rho_pipeline": 0.613559367346223,
+    "best_cell_rho_pipeline": 0.9999999999999999,
+    "cells_matching_or_beating_polls": 2
+  },
+  "nulls_vs_performance": [
+    {
+      "arm": "axis",
+      "source": "bes",
+      "nulls": 0,
+      "n_cells": 5,
+      "mean_rho": 0.68675437154214,
+      "winner_rate": 0
+    },
+    {
+      "arm": "axis",
+      "source": "both",
+      "nulls": 0,
+      "n_cells": 5,
+      "mean_rho": 0.7,
+      "winner_rate": 0
+    },
+    {
+      "arm": "axis",
+      "source": "ipsos",
+      "nulls": 0,
+      "n_cells": 5,
+      "mean_rho": 0.7,
+      "winner_rate": 0
+    },
+    {
+      "arm": "bidirectional_mft",
+      "source": "bes",
+      "nulls": 0,
+      "n_cells": 5,
+      "mean_rho": 0.852469609000874,
+      "winner_rate": 0
+    },
+    {
+      "arm": "bidirectional_mft",
+      "source": "both",
+      "nulls": 0,
+      "n_cells": 5,
+      "mean_rho": 0.8841565363336246,
+      "winner_rate": 0.6
+    },
+    {
+      "arm": "bidirectional_mft",
+      "source": "ipsos",
+      "nulls": 0,
+      "n_cells": 5,
+      "mean_rho": 0.11181848464596078,
+      "winner_rate": 0.6
+    },
+    {
+      "arm": "explicit_mft",
+      "source": "bes",
+      "nulls": 0,
+      "n_cells": 5,
+      "mean_rho": 0.8366261453344986,
+      "winner_rate": 0
+    },
+    {
+      "arm": "explicit_mft",
+      "source": "both",
+      "nulls": 0,
+      "n_cells": 5,
+      "mean_rho": 0.49493588689617923,
+      "winner_rate": 1
+    },
+    {
+      "arm": "explicit_mft",
+      "source": "ipsos",
+      "nulls": 0,
+      "n_cells": 5,
+      "mean_rho": -0.009740216479148456,
+      "winner_rate": 0.4
+    }
+  ]
 }
