@@ -1,0 +1,248 @@
+{
+  "election": 2005,
+  "model": "claude",
+  "plan": {
+    "model": "claude",
+    "summaries": 10,
+    "total_calls": 20
+  },
+  "leakage": {
+    "accuracy": 1.0,
+    "chance": 0.2,
+    "high_confidence_correct_rate": 1.0,
+    "threshold": 0.45,
+    "anonymisation_failed": true,
+    "n": 20
+  },
+  "dual": {
+    "minimal": 1.0,
+    "biased": 1.0,
+    "chance_biased": 0.2,
+    "gap": 0.0,
+    "partial_rate": 0.0,
+    "threshold": 0.45,
+    "anonymisation_indicated": true
+  },
+  "results": [
+    {
+      "family": "minimal",
+      "election": "2005",
+      "truth": "lab",
+      "identification": "This is a summary of the UK Labour Party's general election manifesto from 2005, titled 'Britain Forward, Not Back'. The original manifesto was produced by the Labour Party under Tony Blair's leadership. This particular text appears to be a condensed summary of that manifesto, likely produced by an AI system, researcher, or political analyst rather than the Labour Party itself, given its structured analytical format.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The title explicitly states 'Labour Party Manifesto 2005 Summary'. The text references specific details consistent with the 2005 UK General Election: the slogan 'Britain Forward, Not Back', achievements since 1997, Iraq War references, specific policy pledges (minimum wage \u00a35.35 by October 2006, tuition fees capped at \u00a33,000), NHS spending figures, 50% higher education target by 2010, and G8 presidency priorities. The foreword description mentions the party leader (Tony Blair at the time).",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2005",
+      "truth": "lab",
+      "guess": "labour",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2005",
+      "truth": "con",
+      "identification": "This is a summary document of the 2005 UK Conservative Party general election manifesto (the original manifesto was titled 'Are You Thinking What We're Thinking? It's Time for Action'). The summary itself appears to be produced by an AI system or human analyst who condensed the original manifesto into this structured format - it is not the original Conservative Party document but rather an analytical summary of it.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text explicitly states it is a 'Summary: Conservative Party Manifesto 2005' in its title. It references Michael Howard as the leader, mentions specific policy commitments like \u00a312 billion in cuts, the Australian-style points system for immigration, opposition to the EU Constitution, and other detailed manifesto pledges. The formatting as a structured summary with headers and bullet points suggests this is a condensed analysis document rather than the original manifesto itself.",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2005",
+      "truth": "con",
+      "guess": "conservative",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2005",
+      "truth": "ld",
+      "identification": "This is an AI-generated or human-written summary of the UK Liberal Democrats' 2005 General Election Manifesto titled 'The Real Alternative'. The original manifesto was produced by the Liberal Democrat party for the May 2005 UK General Election. This summary itself appears to be a condensed analysis of that manifesto, likely produced by an AI system or researcher, not the original document from the party.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text explicitly states it is a 'Summary: Liberal Democrats Manifesto 2005 - \"The Real Alternative\"' in the title. The content discusses specific UK political policies including references to Labour, Council Tax, GCSE/A-levels, the NHS, the Iraq War position, EU constitution, and British political structures. The policies and positions described (opposing tuition fees, Local Income Tax, 50p tax rate, opposing ID cards, Iraq War opposition) are consistent with the Liberal Democrats' 2005 manifesto.",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2005",
+      "truth": "ld",
+      "guess": "liberal democrats",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2005",
+      "truth": "ukip",
+      "identification": "This is an AI-generated summary of the UK Independence Party's 2005 general election manifesto. The original manifesto was produced by UKIP for the May 2005 UK general election, but this particular summary document appears to be a modern AI-produced condensation of that manifesto, likely generated by a large language model given its structured format, comprehensive coverage, and typical summarization style.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text is explicitly titled 'Summary of UKIP Manifesto 2005' and references specific details including Roger Knapman as party leader, the 1972 European Communities Act, specific policy proposals like \u00a325/week pension increases, \u00a312 billion EU contributions, and \u00a3500,000 inheritance tax thresholds. The formatting uses markdown headers and structured sections typical of AI-generated summaries.",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2005",
+      "truth": "ukip",
+      "guess": "uk independence party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2005",
+      "truth": "green",
+      "identification": "This is a summary of the Green Party of England and Wales' 2005 General Election Manifesto. The summary itself appears to be AI-generated or created by someone (possibly a researcher, student, or organization) synthesizing the key points from the original manifesto document, rather than being an official Green Party publication.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text is explicitly titled 'Summary of the Green Party Manifesto 2005' and references the manifesto's title 'The Real Choice for Real Change.' The content describes UK-specific policies including NHS, Westminster elections, VAT, euro membership, and UK constitutional reform. The structured format with headers and bullet-point style summaries, along with the neutral summarizing tone, suggests this is a summary document rather than the original manifesto itself.",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2005",
+      "truth": "green",
+      "guess": "green party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2005",
+      "truth": "lab",
+      "identification": "This is a summary of the Labour Party's 2005 UK General Election Manifesto, titled 'Britain Forward, Not Back', produced by the Labour Party under Tony Blair's leadership.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The title 'Britain Forward, Not Back (2005)' is the exact slogan and title of the Labour Party's 2005 general election manifesto. Key identifying features include: references to achievements 'since 1997' (when Labour came to power), policies like Sure Start, the 50% higher education target, foundation trusts, the 2012 Olympic bid (London won in 2005), specific commitments on NHS waiting times, the EU Constitutional Treaty referendum promise, and the overall New Labour philosophy of balancing 'economic dynamism with social justice' and 'rights with responsibilities'.",
+      "variant": "anonymised",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2005",
+      "truth": "lab",
+      "guess": "labour",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2005",
+      "truth": "con",
+      "identification": "This is a summary of the 2005 Conservative Party General Election Manifesto, titled 'Are You Thinking What We're Thinking? It's Time for Action', produced by the Conservative Party under Michael Howard's leadership.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text contains several distinctive policy markers pointing to a specific UK political manifesto: \u00a312 billion savings target, halving council tax for over-65s, 5,000 additional police officers annually, 20,000 extra prison places, Australian-style points system for immigration, opposition to European constitution with referendum promise, elected police commissioners, 'West Lothian question' solution (English votes for English laws), \u00a32.7 billion defence increase, and the specific commitment to 0.7% aid by 2013. The combination of Euroscepticism, tough immigration stance, law and order focus, and specific spending figures matches Conservative Party positioning in the mid-2000s.",
+      "variant": "anonymised",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2005",
+      "truth": "con",
+      "guess": "conservative",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2005",
+      "truth": "ld",
+      "identification": "This is a summary of the Liberal Democrats' 2005 UK General Election Manifesto, titled 'The Real Alternative'. The manifesto was produced by the Liberal Democrats under the leadership of Charles Kennedy.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text describes a 2005 General Election Manifesto with distinctively Liberal Democrat policies: abolishing tuition fees, replacing Council Tax with local income tax, opposing Iraq War as lacking legal authority, opposing ID cards, supporting proportional representation, a 50% tax rate on high earners, citizen's pension, and 10,000 extra police officers. The combination of civil liberties focus, constitutional reform, environmental policies, and the specific policy mix (especially the local income tax, opposition to nuclear power, and elected second chamber) are hallmarks of Liberal Democrat positioning.",
+      "variant": "anonymised",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2005",
+      "truth": "ld",
+      "guess": "liberal democrats",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2005",
+      "truth": "ukip",
+      "identification": "This is a summary of the UK Independence Party (UKIP) 2005 General Election Manifesto. The original manifesto was produced by UKIP for the May 2005 UK General Election. This particular text appears to be an AI-generated or human-written summary of that manifesto rather than the original document itself.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text explicitly states it is a 'Summary of 2005 UK Independence Manifesto' in the title. The content discusses UKIP's core policy of EU withdrawal, mentions specific figures like \u00a312 billion EU contribution and \u00a325 weekly pension increases, references a points-based immigration system, opposes European defence integration, and advocates for restoring British sovereignty - all consistent with UKIP's 2005 general election manifesto positions.",
+      "variant": "anonymised",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2005",
+      "truth": "ukip",
+      "guess": "uk independence party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2005",
+      "truth": "green",
+      "identification": "This is a summary of the Green Party of England and Wales 2005 General Election Manifesto. The Green Party released this manifesto for the May 2005 UK General Election, and the policies described (Citizen's Income, Land Value Tax, Contraction and Convergence, specific renewable energy and organic farming targets) are signature Green Party proposals from that period.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text describes a 2005 policy manifesto with distinctly Green Party positions: Contraction and Convergence framework, Citizen's Income, Land Value Tax, opposition to nuclear power, 85% emissions reduction targets, opposition to EU constitution while supporting Europe, proportional representation, opposition to GMOs, focus on organic farming, and replacing VAT with environmental taxes. The specific targets (20% by 2010, 40% renewable by 2020, 30% organic by 2012) and UK-specific policies (NHS founding principles, congestion charging, rail renationalisation, tuition fees, European currency opposition) point to a British Green Party document.",
+      "variant": "anonymised",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2005",
+      "truth": "green",
+      "guess": "green party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "claude"
+    }
+  ]
+}
