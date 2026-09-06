@@ -1,0 +1,248 @@
+{
+  "election": 2001,
+  "model": "gpt-5",
+  "plan": {
+    "model": "gpt-5",
+    "summaries": 10,
+    "total_calls": 20
+  },
+  "leakage": {
+    "accuracy": 1.0,
+    "chance": 0.2,
+    "high_confidence_correct_rate": 0.8,
+    "threshold": 0.45,
+    "anonymisation_failed": true,
+    "n": 20
+  },
+  "dual": {
+    "minimal": 1.0,
+    "biased": 1.0,
+    "chance_biased": 0.2,
+    "gap": 0.0,
+    "partial_rate": 0.0,
+    "threshold": 0.45,
+    "anonymisation_indicated": true
+  },
+  "results": [
+    {
+      "family": "minimal",
+      "election": "2001",
+      "truth": "lab",
+      "identification": "A condensed summary of the UK Labour Party\u2019s 2001 General Election manifesto, titled \"Ambitions for Britain,\" produced by the Labour Party (UK), likely drawn from the party\u2019s official manifesto summary/leaflet or website.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text explicitly begins \"Labour Party Manifesto 2001 \u2013 Summary\" and uses hallmark New Labour language and structure from 2001: \"Five pledges for the next five years,\" \"Achievements since 1997,\" and \"Ten goals for 2010.\" It includes signature policies/phrases such as \"avoid boom and bust,\" NHS staffing increases (\"20,000 more nurses and 10,000 more doctors\"), police increases, minimum wage to \u00a34.20, a euro referendum promise (\"British people to have final say on joining the Euro\"), and the slogan-style close \"A lot done, more to do.\"",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2001",
+      "truth": "lab",
+      "guess": "labour",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2001",
+      "truth": "con",
+      "identification": "A bullet-point summary of the UK Conservative Party\u2019s 2001 General Election manifesto titled \u201cTime for Common Sense\u201d (the manifesto issued under William Hague). It originates from the Conservative Party (UK) manifesto for the 2001 election, presented here as a modern summary.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The heading reads \u201cConservative Party Manifesto 2001: \u2018Time for Common Sense\u2019 \u2014 Summary,\u201d and the content matches hallmark 2001 Tory positions (e.g., \u201cKeep the pound; reject euro,\u201d abolish IR35, 6p fuel duty cut, \u2018Brit Disc\u2019 for foreign lorries, English Votes for English Laws).",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2001",
+      "truth": "con",
+      "guess": "conservative",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2001",
+      "truth": "ld",
+      "identification": "A concise, unofficial bullet\u2011point summary of the UK Liberal Democrats\u2019 2001 General Election manifesto (United Kingdom), derived from the party\u2019s 2001 manifesto.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The heading explicitly says \u201cLiberal Democrats Manifesto 2001 \u2013 Summary (under 500 words)\u201d. The content matches hallmark UK Liberal Democrat policies from the 2001 UK general election period: e.g., \u201cAbolish university tuition fees,\u201d \u201cAV+ referendum for Westminster (ultimately STV),\u201d \u201crepeal Section 28,\u201d \u201crestructure Railtrack into a public\u2011interest model,\u201d \u201cno real\u2011terms fuel duty rise next Parliament,\u201d \u201coppose US NMD,\u201d \u201cend vouchers\u201d for asylum seekers, and detailed staffing/bed targets for the NHS.",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2001",
+      "truth": "ld",
+      "guess": "liberal democrats",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2001",
+      "truth": "snp",
+      "identification": "A bullet\u2011point summary of the Scottish National Party\u2019s 2001 UK General Election (Westminster) manifesto, derived from the SNP\u2019s own manifesto document originally published by the Scottish National Party.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The header explicitly states \u201cScottish National Party Manifesto 2001 \u2014 Summary.\u201d Content matches hallmark SNP 2001 positions: independence referendum trigger; abolish tuition fees; create a Scottish oil fund; oppose Trident and pursue phased NATO withdrawal with a Scottish Defence Force; free personal care for the elderly; pro\u2011EU but euro by referendum; no new nuclear; \u2018Scottish Six\u2019 in broadcasting; abolish Skye Bridge tolls; investment alternatives to PFI via a Scottish Trust for Public Investment.",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2001",
+      "truth": "snp",
+      "guess": "scottish national party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2001",
+      "truth": "ukip",
+      "identification": "A condensed summary of the UK Independence Party (UKIP) General Election Manifesto from the early 2000s\u2014specifically the UKIP manifesto for the 2001 UK general election\u2014produced by UKIP (as published in their 2001 manifesto document, later widely archived).",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "medium",
+      "evidence": "Mentions UKIP by name and founding year (\"UKIP, founded in 1993\"), core pledge to repeal the European Communities Act 1972 and keep the pound, opposition to an EU government/army/constitution, and the signature \"Independence Dividend\" of about \u00a320bn with detailed allocations (e.g., +\u00a32bn NHS, 30,000 teachers, 25,000 police, \u22129p/litre fuel duty). It references early\u20112000s issues such as opposing the partial sell\u2011off/PPP of the London Underground, scrapping compulsory metrication, rejecting EU Corpus Juris/Europol, repealing and re\u2011enacting the Human Rights Act to align with British common law, exiting the CAP/CFP with a 200\u2011mile limit, and leaving the EU Rapid Reaction Force while prioritising NATO/US interoperability.",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2001",
+      "truth": "ukip",
+      "guess": "uk independence party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2001",
+      "truth": "lab",
+      "identification": "The UK Labour Party\u2019s 2001 General Election manifesto under Tony Blair\u2014\u2018Ambitions for Britain\u2019\u2014and its associated five-pledge card, published by the Labour Party in May 2001.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "References to a \"2001 manifesto\" with five core pledges including: recruiting 10,000 teachers; 20,000 nurses and 10,000 doctors; 6,000 more police; retaining the winter fuel payment; raising the minimum wage to \u00a34.20; plus a commitment to a public vote on joining the euro and citing results since 1997 under Labour (lower inflation/unemployment, NHS waiting lists down, primary results up).",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2001",
+      "truth": "lab",
+      "guess": "labour",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2001",
+      "truth": "con",
+      "identification": "A bullet\u2011point digest of the UK Conservative Party\u2019s 2001 General Election manifesto (William Hague era), as compiled and posted by Dominic Cummings on his blog.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "medium",
+      "evidence": "References that match the UK Conservative Party\u2019s 2001 general\u2011election platform under William Hague include: keep the pound/oppose euro; abolish IR35; cut fuel duty by at least 6p/litre; tougher asylum policy with secure reception centres and a removals agency; visible policing/parish constables and ending automatic early release; privatise Channel 4 and move to a single communications regulator; English votes for English laws; restore a married couple\u2019s allowance; school autonomy with easier exclusions and scope for new faith/charitable/company\u2011run schools; a patient guarantee with use of private provision if NHS waits breached; oppose separate EU military structures and prioritise NATO; proposal for an EU\u2011NAFTA free trade area; debt relief/0.7% aid aspiration. The note\u2019s own heading says \u201cSummary of 2001 manifesto proposals,\u201d and the phrasing (e.g., \u201cFree Schools\u201d in quotes, \u201cideological framing and names omitted\u201d) matches Dominic Cummings\u2019s blog style for archival summaries.",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2001",
+      "truth": "con",
+      "guess": "conservative",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2001",
+      "truth": "ld",
+      "identification": "A summary of the UK Liberal Democrats\u2019 2001 General Election manifesto (under Charles Kennedy), i.e., the Lib Dems\u2019 official policy platform for the 2001 UK general election.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "UK-focused policies and phrasing that match the Liberal Democrats\u2019 2001 platform: abolish university tuition fees and restore grants; 1p on income tax for education; 50% top rate above \u00a3100k to fund pensions/NHS; local income tax; referendum on AV+ for Westminster and STV for local/European elections; no ID cards; stronger Freedom of Information; free personal care for the elderly; move toward scrapping prescription charges; euro entry via referendum; maintain a minimum nuclear deterrent while pursuing disarmament; oppose national missile defence; create OFCOM; protect the Post Office\u2019s universal service; site value rating and other classic Lib Dem local/rural measures.",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2001",
+      "truth": "ld",
+      "guess": "liberal democrats",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2001",
+      "truth": "snp",
+      "identification": "A summary/briefing of the Scottish National Party\u2019s policy programme for 2001 (i.e., the SNP\u2019s 2001 manifesto/policy proposals), originally published by the Scottish National Party.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "medium",
+      "evidence": "- Calls for a referendum on full self\u2011government for Scotland and a written constitution; retain the monarchy subject to a referendum (core SNP independence framing).\n- Establish a sovereign wealth\u2013style \"Scottish Fund for Future Generations\" from oil revenues and a public \"Scottish Trust for Public Investment\" to replace PFI (SNP-branded proposals from that era).\n- Remove nuclear weapons from Scotland; create a professional Scottish Defence Force; phased withdrawal from NATO while maintaining cooperation (historic SNP defence stance circa 2001).\n- No new nuclear power stations; decommission existing sites (SNP energy policy at the time).\n- Fisheries policy: devolved leadership in EU talks; reform the CFP toward zonal management (signature SNP fisheries position).\n- Transport: abolish Skye Bridge tolls; pilot Road Equivalent Tariff to cut ferry fares (distinctive SNP campaigns).\n- Lower voting age to 16; expand Gaelic-medium education; devolve broadcasting oversight (SNP constitutional/cultural agenda).\n- References to Scottish institutions/agencies like SEPA and HTBS, and policies targeted at devolved competences (points to a Scottish party platform rather than a UK-wide party).",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2001",
+      "truth": "snp",
+      "guess": "scottish national party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2001",
+      "truth": "ukip",
+      "identification": "A condensed summary of the UK Independence Party (UKIP) UK general election manifesto from the early 2000s, specifically the 2001 UKIP General Election Manifesto.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "medium",
+      "evidence": "Calls to withdraw from the EU and repeal the European Communities Act 1972; keep the pound and maintain Bank of England interest-rate independence (late-1990s/early-2000s UK context). \u2018Independence Dividend\u2019 of ~\u00a320bn with detailed allocations (UKIP hallmark). Replace VAT with a retail sales tax post-EU exit; oppose EU tax harmonisation. Exit the Common Fisheries Policy and assert a 200-mile exclusive zone. Restore frozen expat pensions. Review metrication and abattoir rules; amend right-to-roam (post-2000 CROW Act). Oppose part-sale/PPP of the London Underground (live issue circa 2001\u20132003). Repeal and reenact the Human Rights Act; resist EU-wide justice/policing. Skills-based immigration; reform the 1951 Refugee Convention. Oppose regionalisation; address West Lothian question; consider a further Welsh referendum. These are signature early-2000s UKIP policies and framing.",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2001",
+      "truth": "ukip",
+      "guess": "uk independence party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    }
+  ]
+}

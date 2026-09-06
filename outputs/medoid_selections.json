@@ -418,5 +418,65 @@
     "stability_rouge_l": 0.5419302275440023,
     "metrics_agree_on_medoid": true,
     "n_runs": 5
+  },
+  "profile:2001_explicit_mft_ipsos_gpt-5_forced": {
+    "cell": "profile:2001_explicit_mft_ipsos_gpt-5_forced",
+    "selected_run_index": 1,
+    "selected_cache_key": "2001_explicit_mft_ipsos_gpt-5_forced_run2",
+    "stability_cosine": 0.8227637350559235,
+    "stability_cosine_sd": 0.03353296581999097,
+    "stability_rouge_l": 0.37140372292237067,
+    "metrics_agree_on_medoid": false,
+    "n_runs": 5
+  },
+  "profile:2001_explicit_mft_bes_gpt-5_forced": {
+    "cell": "profile:2001_explicit_mft_bes_gpt-5_forced",
+    "selected_run_index": 0,
+    "selected_cache_key": "2001_explicit_mft_bes_gpt-5_forced_run1",
+    "stability_cosine": 0.9107758283615113,
+    "stability_cosine_sd": 0.023276551628951394,
+    "stability_rouge_l": 0.3755127464916014,
+    "metrics_agree_on_medoid": false,
+    "n_runs": 5
+  },
+  "profile:2001_bidirectional_mft_ipsos_gpt-5_forced": {
+    "cell": "profile:2001_bidirectional_mft_ipsos_gpt-5_forced",
+    "selected_run_index": 3,
+    "selected_cache_key": "2001_bidirectional_mft_ipsos_gpt-5_forced_run4",
+    "stability_cosine": 0.8378897905349731,
+    "stability_cosine_sd": 0.022760176977813303,
+    "stability_rouge_l": 0.4219088020211152,
+    "metrics_agree_on_medoid": false,
+    "n_runs": 5
+  },
+  "profile:2001_bidirectional_mft_bes_gpt-5_forced": {
+    "cell": "profile:2001_bidirectional_mft_bes_gpt-5_forced",
+    "selected_run_index": 4,
+    "selected_cache_key": "2001_bidirectional_mft_bes_gpt-5_forced_run5",
+    "stability_cosine": 0.8971183001995087,
+    "stability_cosine_sd": 0.015044429022923241,
+    "stability_rouge_l": 0.3482221873455683,
+    "metrics_agree_on_medoid": false,
+    "n_runs": 5
+  },
+  "profile:2001_axis_ipsos_gpt-5_forced": {
+    "cell": "profile:2001_axis_ipsos_gpt-5_forced",
+    "selected_run_index": 1,
+    "selected_cache_key": "2001_axis_ipsos_gpt-5_forced_run2",
+    "stability_cosine": 0.86708704829216,
+    "stability_cosine_sd": 0.03701748492339865,
+    "stability_rouge_l": 0.41324901798986674,
+    "metrics_agree_on_medoid": true,
+    "n_runs": 5
+  },
+  "profile:2001_axis_bes_gpt-5_forced": {
+    "cell": "profile:2001_axis_bes_gpt-5_forced",
+    "selected_run_index": 4,
+    "selected_cache_key": "2001_axis_bes_gpt-5_forced_run5",
+    "stability_cosine": 0.8926568746566772,
+    "stability_cosine_sd": 0.022648884461436744,
+    "stability_rouge_l": 0.47944690686050245,
+    "metrics_agree_on_medoid": false,
+    "n_runs": 5
   }
 }
