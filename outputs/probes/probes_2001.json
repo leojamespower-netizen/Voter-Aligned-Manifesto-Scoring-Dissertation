@@ -1,0 +1,248 @@
+{
+  "election": 2001,
+  "model": "claude",
+  "plan": {
+    "model": "claude",
+    "summaries": 10,
+    "total_calls": 20
+  },
+  "leakage": {
+    "accuracy": 1.0,
+    "chance": 0.2,
+    "high_confidence_correct_rate": 1.0,
+    "threshold": 0.45,
+    "anonymisation_failed": true,
+    "n": 20
+  },
+  "dual": {
+    "minimal": 1.0,
+    "biased": 1.0,
+    "chance_biased": 0.2,
+    "gap": 0.0,
+    "partial_rate": 0.0,
+    "threshold": 0.45,
+    "anonymisation_indicated": true
+  },
+  "results": [
+    {
+      "family": "minimal",
+      "election": "2001",
+      "truth": "lab",
+      "identification": "This is a summary of the UK Labour Party's 2001 General Election Manifesto, titled 'Ambitions for Britain'. The original manifesto was produced by the Labour Party under Tony Blair's leadership for the June 2001 UK General Election. This particular text appears to be a structured summary or analysis of that manifesto, likely produced by a researcher, academic, political analyst, or AI system for reference purposes.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text explicitly states it is a 'Summary: Labour Party Manifesto 2001 - Ambitions for Britain'. It references Tony Blair as Prime Minister, the 1997 and 2001 elections, specific policy pledges and claimed achievements from Labour's first term, and contrasts with Conservative opposition. The title 'Ambitions for Britain' and the specific details about five pledges, ten goals for 2010, and policy positions all align with the actual 2001 Labour manifesto.",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2001",
+      "truth": "lab",
+      "guess": "labour",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2001",
+      "truth": "con",
+      "identification": "This is a summary of the UK Conservative Party's 2001 General Election Manifesto titled 'Time for Common Sense'. The original manifesto was produced by the Conservative Party under leader William Hague. This particular summary appears to be a modern synthesis/summary document (likely AI-generated given the structured format and comprehensive coverage), not the original manifesto text itself.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text explicitly states it is a 'Summary: Conservative Party Manifesto 2001 - \"Time for Common Sense\"'. It references William Hague as leader, specific policies like the \u00a31,000 Married Couple's Allowance, 6p fuel duty cut, \u00a38 billion in tax cuts, and contextual details like the Foot and Mouth crisis and the Nice Treaty. The format and comprehensive nature suggests this is an AI-generated or human-written summary rather than the original document.",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2001",
+      "truth": "con",
+      "guess": "conservative",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2001",
+      "truth": "ld",
+      "identification": "This is a summary of the Liberal Democrats' manifesto for the 2001 UK General Election. The original manifesto was produced by the Liberal Democrats party under leader Charles Kennedy. However, this specific summary document appears to be a modern synthesis/summary of that manifesto, likely produced by an AI or human summarizer rather than being the original party document itself, given its structured markdown format and summarized nature.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text explicitly identifies itself as '# Liberal Democrats Manifesto 2001: Summary' in the title. It references Charles Kennedy as party leader, specific policy commitments (1p on income tax for education, abolishing tuition fees, 50% tax rate on incomes over \u00a3100,000), constitutional positions (Jenkins Commission AV+ system, elected Senate), and achievements in Scotland through Liberal Democrat influence. These are all consistent with the actual 2001 Liberal Democrat manifesto for the UK general election.",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2001",
+      "truth": "ld",
+      "guess": "liberal democrats",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2001",
+      "truth": "snp",
+      "identification": "This is an AI-generated summary of the Scottish National Party (SNP) General Election Manifesto from 2001. The original manifesto was produced by the SNP for the UK General Election held on 7 June 2001. This particular summary appears to have been created by an AI system (likely ChatGPT or similar) to condense the manifesto's key points, given its systematic structure and modern summarization style.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text explicitly states it is a 'Summary of the Scottish National Party Manifesto 2001' in the title. The content discusses specific policy proposals from that era including the \u00a37.7 billion figure, minimum wage of \u00a34.36, 12% renewable energy by 2010, references to foot-and-mouth disease (which occurred in 2001), and PFI/PPP schemes. The formatting, structured headings, and summarized nature suggest this is an AI-generated or human-written summary rather than the original manifesto text itself.",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2001",
+      "truth": "snp",
+      "guess": "scottish national party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2001",
+      "truth": "ukip",
+      "identification": "This is an AI-generated or human-written summary of the UKIP general election manifesto, most likely from the 2001 UK General Election. The specific policy costings, the reference to Britain as the fourth-largest economy, and the EU Rapid Reaction Force reference all point to this time period. This appears to be a condensed summary rather than the original manifesto text itself.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text explicitly identifies itself as 'UK Independence Party (UKIP) Manifesto Summary' and states UKIP was 'founded in 1993'. The specific financial figures (\u00a320 billion savings, \u00a38.5 billion EU contributions, pension increases of \u00a35/week, 40p/gallon fuel tax reduction), policy positions (30,000 teachers, 25,000 police officers), and references to Britain as 'the world's fourth-largest economy' suggest a specific election period. The mention of the 'EU Rapid Reaction Force' (established 1999) and the economic figures align with early 2000s data. The comprehensive policy platform covering EU withdrawal, the 'Independence Dividend' concept, and Commonwealth/NAFTA trade alternatives are characteristic UKIP manifesto themes from this era.",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2001",
+      "truth": "ukip",
+      "guess": "uk independence party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2001",
+      "truth": "lab",
+      "identification": "This is a summary of the 2001 UK Labour Party General Election Manifesto, titled 'Ambitions for Britain', produced by the Labour Party under Tony Blair's leadership for the June 2001 general election.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "Multiple distinctive indicators: 'lowest inflation in 30 years', 'one million children out of poverty', 'minimum wage to \u00a34.20', '\u00a3100 weekly for single pensioners', 'serving the many rather than the few' (Labour's slogan), devolution presented as achievement, promise of referendum on euro/common currency, 6,000 additional police recruits, 20,000 nurses and 10,000 doctors pledges. The 'rights and responsibilities' welfare language, ten-year goals format, and emphasis on 'economic stability' as foundation are characteristic of New Labour messaging. The timing references ('previous four years' of achievements, 2001 date) align with Labour seeking re-election after 1997-2001 first term.",
+      "variant": "anonymised",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2001",
+      "truth": "lab",
+      "guess": "labour",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2001",
+      "truth": "con",
+      "identification": "This is an AI-generated or human-written summary of the 2001 UK General Election Manifesto of the Conservative Party, led by William Hague. The original manifesto was titled 'Time for Common Sense'.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text explicitly states it is a 'Summary of 2001 UK General Election Manifesto'. The policies described - keeping the pound sterling, opposing European integration, tax cuts, school autonomy, reducing regulation, 'honest sentencing', restricting voting on England-only matters to English MPs (the West Lothian question), abolishing regional development agencies, and the general theme of returning power from central government to individuals and local communities - are strongly characteristic of Conservative Party policy positions. The reference to agricultural crisis recovery aligns with the 2001 foot-and-mouth disease outbreak. The specific proposal of 6p per litre fuel tax reduction was a notable Conservative pledge in that election.",
+      "variant": "anonymised",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2001",
+      "truth": "con",
+      "guess": "conservative",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2001",
+      "truth": "ld",
+      "identification": "This is a summary of the Liberal Democrats' 2001 UK General Election manifesto, titled 'Freedom, Justice, Honesty' - produced by the Liberal Democrats party led by Charles Kennedy",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text describes a 2001 UK political manifesto with specific policies including: abolishing tuition fees, one penny on income tax for education, free personal care (already implemented in Scotland), AV+ electoral reform, replacing Council Tax with local income tax, 50p tax rate on high earners, euro referendum, opposing nuclear power, and civil partnerships. These are highly distinctive Liberal Democrat policies from that era. The combination of constitutional reform (elected Senate, voting at 16), the specific NHS staffing numbers, and the emphasis on civil liberties align precisely with Liberal Democrat positioning. The reference to Scotland having already implemented free personal care dates this to post-2001 Scottish policy.",
+      "variant": "anonymised",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2001",
+      "truth": "ld",
+      "guess": "liberal democrats",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2001",
+      "truth": "snp",
+      "identification": "This is a summary of the Scottish National Party (SNP) manifesto for the 2001 UK General Election. The SNP is the main pro-independence political party in Scotland, and the policies described - particularly regarding independence via MP majority triggering a referendum, oil revenue funds, nuclear disarmament, and EU membership as an independent state - are characteristic SNP positions from that era.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text is explicitly titled 'Summary of the 2001 Scottish Manifesto' and contains policies advocating for Scottish independence through democratic means, a sovereign wealth fund using oil revenues, removal of nuclear weapons, EU membership as an independent nation, and specific Scottish policy concerns like Gaelic-medium education, fishing policy reform, ferry fares for island communities, and references to the Scottish Parliament. These are hallmark positions of the Scottish National Party (SNP).",
+      "variant": "anonymised",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2001",
+      "truth": "snp",
+      "guess": "scottish national party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2001",
+      "truth": "ukip",
+      "identification": "This is a summary of the UK Independence Party (UKIP) general election manifesto from 2001. The specific policy proposals, financial calculations, emphasis on sovereignty, fishing rights, Commonwealth trade, opposition to European integration, and the 'Independence Dividend' concept are characteristic of UKIP's platform during this period.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text describes a UK political party manifesto advocating withdrawal from the European Union, with specific British references including: Commonwealth nations, NHS funding, 'matron system' for hospitals, fishing rights, pounds sterling figures (\u00a3), fuel tax, pensions in \u00a3/week, opposition to metrication, references to transatlantic alliance (NATO), constitutional monarchy, common law traditions, and regional devolution concerns. The date 'c. 2001' and the specific financial figures (\u00a38.5-11 billion EU contributions, \u00a320 billion 'Independence Dividend') along with policies on fishing, agriculture (replacing CAP), and Eurosceptic positioning strongly suggest this is from UKIP (UK Independence Party), which was the primary single-issue anti-EU party in this era.",
+      "variant": "anonymised",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2001",
+      "truth": "ukip",
+      "guess": "uk independence party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "claude"
+    }
+  ]
+}
