@@ -1,0 +1,1044 @@
+{
+  "label": "claude1_1997",
+  "model": "claude",
+  "election": 1997,
+  "cells": [
+    {
+      "variant": "minimal",
+      "arm": "baseline",
+      "source": "noprofile",
+      "rho": 0.9999999999999999,
+      "null_percentile": 0.9915,
+      "winner": 1,
+      "positional_error": 0.3,
+      "rejected": 0,
+      "ranking": "lab > con > ld > referendum > snp"
+    },
+    {
+      "variant": "minimal",
+      "arm": "explicit_mft",
+      "source": "ipsos",
+      "rho": 0.0,
+      "null_percentile": 0.4732,
+      "winner": 0,
+      "positional_error": 0.2,
+      "rejected": 0,
+      "ranking": "ld > lab > snp > con > referendum"
+    },
+    {
+      "variant": "minimal",
+      "arm": "explicit_mft",
+      "source": "bes",
+      "rho": -0.20519567041703085,
+      "null_percentile": 0.3376,
+      "winner": 0,
+      "positional_error": 0.1,
+      "rejected": 0,
+      "ranking": "ld > snp > lab > con > referendum"
+    },
+    {
+      "variant": "minimal",
+      "arm": "bidirectional_mft",
+      "source": "ipsos",
+      "rho": 0.3,
+      "null_percentile": 0.6616,
+      "winner": 0,
+      "positional_error": 0.0,
+      "rejected": 0,
+      "ranking": "ld > lab > snp > con > referendum"
+    },
+    {
+      "variant": "minimal",
+      "arm": "bidirectional_mft",
+      "source": "bes",
+      "rho": 0.10259783520851543,
+      "null_percentile": 0.6064,
+      "winner": 0,
+      "positional_error": 0.1,
+      "rejected": 0,
+      "ranking": "ld > lab > snp > con > referendum"
+    },
+    {
+      "variant": "minimal",
+      "arm": "axis",
+      "source": "ipsos",
+      "rho": 0.7,
+      "null_percentile": 0.8838,
+      "winner": 1,
+      "positional_error": 0.1,
+      "rejected": 0,
+      "ranking": "lab > con > snp > ld > referendum"
+    },
+    {
+      "variant": "minimal",
+      "arm": "axis",
+      "source": "bes",
+      "rho": 0.6668859288553503,
+      "null_percentile": 0.8838,
+      "winner": 1,
+      "positional_error": 0.3,
+      "rejected": 0,
+      "ranking": "lab > con > snp > ld > referendum"
+    },
+    {
+      "variant": "framing_preserving",
+      "arm": "baseline",
+      "source": "noprofile",
+      "rho": 0.7,
+      "null_percentile": 0.8838,
+      "winner": 1,
+      "positional_error": 0.4,
+      "rejected": 0,
+      "ranking": "lab > ld > referendum > con > snp"
+    },
+    {
+      "variant": "framing_preserving",
+      "arm": "explicit_mft",
+      "source": "ipsos",
+      "rho": 0.0,
+      "null_percentile": 0.4732,
+      "winner": 0,
+      "positional_error": 0.2,
+      "rejected": 0,
+      "ranking": "ld > lab > snp > con > referendum"
+    },
+    {
+      "variant": "framing_preserving",
+      "arm": "explicit_mft",
+      "source": "bes",
+      "rho": -0.20519567041703085,
+      "null_percentile": 0.3376,
+      "winner": 0,
+      "positional_error": 0.1,
+      "rejected": 0,
+      "ranking": "ld > snp > lab > con > referendum"
+    },
+    {
+      "variant": "framing_preserving",
+      "arm": "bidirectional_mft",
+      "source": "ipsos",
+      "rho": 0.0,
+      "null_percentile": 0.4732,
+      "winner": 0,
+      "positional_error": 0.2,
+      "rejected": 0,
+      "ranking": "ld > lab > snp > con > referendum"
+    },
+    {
+      "variant": "framing_preserving",
+      "arm": "bidirectional_mft",
+      "source": "bes",
+      "rho": 0.10259783520851543,
+      "null_percentile": 0.6064,
+      "winner": 0,
+      "positional_error": 0.1,
+      "rejected": 0,
+      "ranking": "ld > lab > snp > con > referendum"
+    },
+    {
+      "variant": "framing_preserving",
+      "arm": "axis",
+      "source": "ipsos",
+      "rho": 0.39999999999999997,
+      "null_percentile": 0.746,
+      "winner": 1,
+      "positional_error": 0.3,
+      "rejected": 0,
+      "ranking": "lab > snp > con > ld > referendum"
+    },
+    {
+      "variant": "framing_preserving",
+      "arm": "axis",
+      "source": "bes",
+      "rho": 0.3,
+      "null_percentile": 0.6616,
+      "winner": 1,
+      "positional_error": 0.2,
+      "rejected": 0,
+      "ranking": "lab > snp > ld > con > referendum"
+    },
+    {
+      "variant": "anonymised",
+      "arm": "baseline",
+      "source": "noprofile",
+      "rho": 0.8999999999999998,
+      "null_percentile": 0.9597,
+      "winner": 1,
+      "positional_error": 0.4,
+      "rejected": 0,
+      "ranking": "lab > con > ld > snp > referendum"
+    },
+    {
+      "variant": "anonymised",
+      "arm": "explicit_mft",
+      "source": "ipsos",
+      "rho": -0.20519567041703085,
+      "null_percentile": 0.3376,
+      "winner": 0,
+      "positional_error": 0.1,
+      "rejected": 0,
+      "ranking": "ld > snp > lab > con > referendum"
+    },
+    {
+      "variant": "anonymised",
+      "arm": "explicit_mft",
+      "source": "bes",
+      "rho": -0.20519567041703085,
+      "null_percentile": 0.3376,
+      "winner": 0,
+      "positional_error": 0.1,
+      "rejected": 0,
+      "ranking": "ld > snp > lab > con > referendum"
+    },
+    {
+      "variant": "anonymised",
+      "arm": "bidirectional_mft",
+      "source": "ipsos",
+      "rho": 0.3,
+      "null_percentile": 0.6616,
+      "winner": 0,
+      "positional_error": 0.2,
+      "rejected": 0,
+      "ranking": "ld > lab > snp > con > referendum"
+    },
+    {
+      "variant": "anonymised",
+      "arm": "bidirectional_mft",
+      "source": "bes",
+      "rho": -0.09999999999999999,
+      "null_percentile": 0.3873,
+      "winner": 0,
+      "positional_error": 0.0,
+      "rejected": 0,
+      "ranking": "ld > snp > lab > con > referendum"
+    },
+    {
+      "variant": "anonymised",
+      "arm": "axis",
+      "source": "ipsos",
+      "rho": 0.8999999999999998,
+      "null_percentile": 0.9597,
+      "winner": 1,
+      "positional_error": 0.2,
+      "rejected": 0,
+      "ranking": "lab > con > referendum > ld > snp"
+    },
+    {
+      "variant": "anonymised",
+      "arm": "axis",
+      "source": "bes",
+      "rho": 0.9999999999999999,
+      "null_percentile": 0.9915,
+      "winner": 1,
+      "positional_error": 0.0,
+      "rejected": 0,
+      "ranking": "lab > con > ld > referendum > snp"
+    }
+  ],
+  "by_arm_source": [
+    {
+      "arm": "axis",
+      "source": "bes",
+      "n_cells": 3,
+      "mean_rho": 0.6556286429517834,
+      "cells_rho_positive": 3,
+      "winner_rate": 1,
+      "mean_positional_error": 0.16666666666666666,
+      "rejected": 0
+    },
+    {
+      "arm": "axis",
+      "source": "ipsos",
+      "n_cells": 3,
+      "mean_rho": 0.6666666666666665,
+      "cells_rho_positive": 3,
+      "winner_rate": 1,
+      "mean_positional_error": 0.2,
+      "rejected": 0
+    },
+    {
+      "arm": "baseline",
+      "source": "noprofile",
+      "n_cells": 3,
+      "mean_rho": 0.8666666666666666,
+      "cells_rho_positive": 3,
+      "winner_rate": 1,
+      "mean_positional_error": 0.3666666666666667,
+      "rejected": 0
+    },
+    {
+      "arm": "bidirectional_mft",
+      "source": "bes",
+      "n_cells": 3,
+      "mean_rho": 0.03506522347234362,
+      "cells_rho_positive": 2,
+      "winner_rate": 0,
+      "mean_positional_error": 0.06666666666666667,
+      "rejected": 0
+    },
+    {
+      "arm": "bidirectional_mft",
+      "source": "ipsos",
+      "n_cells": 3,
+      "mean_rho": 0.19999999999999998,
+      "cells_rho_positive": 2,
+      "winner_rate": 0,
+      "mean_positional_error": 0.13333333333333333,
+      "rejected": 0
+    },
+    {
+      "arm": "explicit_mft",
+      "source": "bes",
+      "n_cells": 3,
+      "mean_rho": -0.20519567041703085,
+      "cells_rho_positive": 0,
+      "winner_rate": 0,
+      "mean_positional_error": 0.1,
+      "rejected": 0
+    },
+    {
+      "arm": "explicit_mft",
+      "source": "ipsos",
+      "n_cells": 3,
+      "mean_rho": -0.06839855680567695,
+      "cells_rho_positive": 0,
+      "winner_rate": 0,
+      "mean_positional_error": 0.16666666666666669,
+      "rejected": 0
+    }
+  ],
+  "by_arm": [
+    {
+      "arm": "axis",
+      "n_cells": 6,
+      "mean_rho": 0.661147654809225,
+      "cells_rho_positive": 6,
+      "winner_rate": 1,
+      "mean_positional_error": 0.18333333333333335,
+      "rejected": 0
+    },
+    {
+      "arm": "baseline",
+      "n_cells": 3,
+      "mean_rho": 0.8666666666666666,
+      "cells_rho_positive": 3,
+      "winner_rate": 1,
+      "mean_positional_error": 0.3666666666666667,
+      "rejected": 0
+    },
+    {
+      "arm": "bidirectional_mft",
+      "n_cells": 6,
+      "mean_rho": 0.1175326117361718,
+      "cells_rho_positive": 4,
+      "winner_rate": 0,
+      "mean_positional_error": 0.1,
+      "rejected": 0
+    },
+    {
+      "arm": "explicit_mft",
+      "n_cells": 6,
+      "mean_rho": -0.1367971136113539,
+      "cells_rho_positive": 0,
+      "winner_rate": 0,
+      "mean_positional_error": 0.13333333333333333,
+      "rejected": 0
+    }
+  ],
+  "by_source": [
+    {
+      "source": "bes",
+      "n_cells": 9,
+      "mean_rho": 0.1618327320023654,
+      "cells_rho_positive": 5,
+      "winner_rate": 0.3333333333333333,
+      "mean_positional_error": 0.11111111111111112,
+      "rejected": 0
+    },
+    {
+      "source": "ipsos",
+      "n_cells": 9,
+      "mean_rho": 0.2660893699536632,
+      "cells_rho_positive": 5,
+      "winner_rate": 0.3333333333333333,
+      "mean_positional_error": 0.16666666666666669,
+      "rejected": 0
+    },
+    {
+      "source": "noprofile",
+      "n_cells": 3,
+      "mean_rho": 0.8666666666666666,
+      "cells_rho_positive": 3,
+      "winner_rate": 1,
+      "mean_positional_error": 0.3666666666666667,
+      "rejected": 0
+    }
+  ],
+  "by_variant": [
+    {
+      "variant": "anonymised",
+      "n_cells": 7,
+      "mean_rho": 0.36994409416656254,
+      "cells_rho_positive": 4,
+      "winner_rate": 0.42857142857142855,
+      "mean_positional_error": 0.14285714285714288,
+      "rejected": 0
+    },
+    {
+      "variant": "framing_preserving",
+      "n_cells": 7,
+      "mean_rho": 0.1853431663987835,
+      "cells_rho_positive": 4,
+      "winner_rate": 0.42857142857142855,
+      "mean_positional_error": 0.2142857142857143,
+      "rejected": 0
+    },
+    {
+      "variant": "minimal",
+      "n_cells": 7,
+      "mean_rho": 0.3663268705209764,
+      "cells_rho_positive": 5,
+      "winner_rate": 0.42857142857142855,
+      "mean_positional_error": 0.15714285714285714,
+      "rejected": 0
+    }
+  ],
+  "alpha": [
+    {
+      "alpha": 0.01,
+      "mean_rho": 0.25884342411205546,
+      "cells_rho_positive": 13,
+      "mean_pearson_log_share": 0.3649483244806919,
+      "best_cell_pearson": 0.8054959424968213,
+      "winner_rate": 0.42857142857142855
+    },
+    {
+      "alpha": 0.05,
+      "mean_rho": 0.24907220171124445,
+      "cells_rho_positive": 11,
+      "mean_pearson_log_share": 0.37061250558089254,
+      "best_cell_pearson": 0.8623850242818962,
+      "winner_rate": 0.42857142857142855
+    },
+    {
+      "alpha": 0.1,
+      "mean_rho": 0.30878157089280506,
+      "cells_rho_positive": 13,
+      "mean_pearson_log_share": 0.3735832782794993,
+      "best_cell_pearson": 0.8878695393116857,
+      "winner_rate": 0.42857142857142855
+    },
+    {
+      "alpha": 0.5,
+      "mean_rho": 0.28790967843748694,
+      "cells_rho_positive": 11,
+      "mean_pearson_log_share": 0.38082396948160874,
+      "best_cell_pearson": 0.9346362160235346,
+      "winner_rate": 0.42857142857142855
+    },
+    {
+      "alpha": 1.0,
+      "mean_rho": 0.30720471036210745,
+      "cells_rho_positive": 13,
+      "mean_pearson_log_share": 0.38339280359171146,
+      "best_cell_pearson": 0.9459081786124985,
+      "winner_rate": 0.42857142857142855
+    }
+  ],
+  "scores_by_cell": [
+    {
+      "variant": "minimal",
+      "arm": "baseline",
+      "source": "noprofile",
+      "spread": 0.9716848391927285,
+      "top_margin": 0.46294200711952993,
+      "pearson_log_share": 0.9115194817090548,
+      "score_con": 0.1076045744519343,
+      "score_lab": 0.5705465815714642,
+      "score_ld": -0.011841297211405366,
+      "score_referendum": -0.2651716011907288,
+      "score_snp": -0.4011382576212643
+    },
+    {
+      "variant": "minimal",
+      "arm": "explicit_mft",
+      "source": "ipsos",
+      "spread": 0.9808292530117264,
+      "top_margin": 0.4700036292457357,
+      "pearson_log_share": 0.1599566596822278,
+      "score_con": -0.4004961001087416,
+      "score_lab": 0.11032952365724916,
+      "score_ld": 0.5803331529029848,
+      "score_referendum": -0.4004961001087416,
+      "score_snp": 0.11032952365724916
+    },
+    {
+      "variant": "minimal",
+      "arm": "explicit_mft",
+      "source": "bes",
+      "spread": 0.9808292530117262,
+      "top_margin": 0.3364722366212129,
+      "pearson_log_share": -0.02684289039016663,
+      "score_con": -0.3963722426681944,
+      "score_lab": -0.039697298729462,
+      "score_ld": 0.5844570103435318,
+      "score_referendum": -0.3963722426681944,
+      "score_snp": 0.24798477372231892
+    },
+    {
+      "variant": "minimal",
+      "arm": "bidirectional_mft",
+      "source": "ipsos",
+      "spread": 1.0986122886681096,
+      "top_margin": 0.33647223662121284,
+      "pearson_log_share": 0.4446456286066969,
+      "score_con": -0.28852722301065664,
+      "score_lab": 0.2504692777220304,
+      "score_ld": 0.5869415143432433,
+      "score_referendum": -0.5116707743248663,
+      "score_snp": -0.03721279472975071
+    },
+    {
+      "variant": "minimal",
+      "arm": "bidirectional_mft",
+      "source": "bes",
+      "spread": 1.0986122886681096,
+      "top_margin": 0.4700036292457355,
+      "pearson_log_share": 0.27127862153383636,
+      "score_con": -0.29265108045120386,
+      "score_lab": 0.11281402765696062,
+      "score_ld": 0.5828176569026962,
+      "score_referendum": -0.5157946317654135,
+      "score_snp": 0.11281402765696062
+    },
+    {
+      "variant": "minimal",
+      "arm": "axis",
+      "source": "ipsos",
+      "spread": 0.9400072584914712,
+      "top_margin": 0.4453110166553641,
+      "pearson_log_share": 0.6492431548587542,
+      "score_con": 0.12486066131744103,
+      "score_lab": 0.5701716779728051,
+      "score_ld": -0.288255593526243,
+      "score_referendum": -0.369835580518666,
+      "score_snp": -0.03694116524533713
+    },
+    {
+      "variant": "minimal",
+      "arm": "axis",
+      "source": "bes",
+      "spread": 0.8362480242006187,
+      "top_margin": 0.14310084364067344,
+      "pearson_log_share": 0.4924453093233955,
+      "score_con": 0.2820495204284767,
+      "score_lab": 0.42515036406915013,
+      "score_ld": -0.41109766013146865,
+      "score_referendum": -0.41109766013146865,
+      "score_snp": 0.11499543576531049
+    },
+    {
+      "variant": "framing_preserving",
+      "arm": "baseline",
+      "source": "noprofile",
+      "spread": 0.696884232641399,
+      "top_margin": 0.3101549283038394,
+      "pearson_log_share": 0.6932772897441913,
+      "score_con": -0.1512013386077187,
+      "score_lab": 0.41636390094250175,
+      "score_ld": 0.10620897263866239,
+      "score_referendum": -0.09085120327454826,
+      "score_snp": -0.28052033169889723
+    },
+    {
+      "variant": "framing_preserving",
+      "arm": "explicit_mft",
+      "source": "ipsos",
+      "spread": 0.9808292530117264,
+      "top_margin": 0.4700036292457357,
+      "pearson_log_share": 0.1599566596822278,
+      "score_con": -0.4004961001087416,
+      "score_lab": 0.11032952365724916,
+      "score_ld": 0.5803331529029848,
+      "score_referendum": -0.4004961001087416,
+      "score_snp": 0.11032952365724916
+    },
+    {
+      "variant": "framing_preserving",
+      "arm": "explicit_mft",
+      "source": "bes",
+      "spread": 0.9808292530117262,
+      "top_margin": 0.3364722366212129,
+      "pearson_log_share": -0.02684289039016663,
+      "score_con": -0.3963722426681944,
+      "score_lab": -0.039697298729462,
+      "score_ld": 0.5844570103435318,
+      "score_referendum": -0.3963722426681944,
+      "score_snp": 0.24798477372231892
+    },
+    {
+      "variant": "framing_preserving",
+      "arm": "bidirectional_mft",
+      "source": "ipsos",
+      "spread": 0.9808292530117264,
+      "top_margin": 0.4700036292457357,
+      "pearson_log_share": 0.1599566596822278,
+      "score_con": -0.4004961001087416,
+      "score_lab": 0.11032952365724916,
+      "score_ld": 0.5803331529029848,
+      "score_referendum": -0.4004961001087416,
+      "score_snp": 0.11032952365724916
+    },
+    {
+      "variant": "framing_preserving",
+      "arm": "bidirectional_mft",
+      "source": "bes",
+      "spread": 1.0986122886681096,
+      "top_margin": 0.4700036292457355,
+      "pearson_log_share": 0.27127862153383636,
+      "score_con": -0.29265108045120386,
+      "score_lab": 0.11281402765696062,
+      "score_ld": 0.5828176569026962,
+      "score_referendum": -0.5157946317654135,
+      "score_snp": 0.11281402765696062
+    },
+    {
+      "variant": "framing_preserving",
+      "arm": "axis",
+      "source": "ipsos",
+      "spread": 0.836774003849819,
+      "top_margin": 0.45066066640260466,
+      "pearson_log_share": 0.3543677108818688,
+      "score_con": -0.15346762346629675,
+      "score_lab": 0.5643965840445482,
+      "score_ld": -0.25228745841492417,
+      "score_referendum": -0.2723774198052708,
+      "score_snp": 0.11373591764194352
+    },
+    {
+      "variant": "framing_preserving",
+      "arm": "axis",
+      "source": "bes",
+      "spread": 0.9627642456140872,
+      "top_margin": 0.456039088895363,
+      "pearson_log_share": 0.45921159996917493,
+      "score_con": -0.14356196623306222,
+      "score_lab": 0.5673196692666514,
+      "score_ld": -0.1395937070574418,
+      "score_referendum": -0.39544457634743585,
+      "score_snp": 0.11128058037128846
+    },
+    {
+      "variant": "anonymised",
+      "arm": "baseline",
+      "source": "noprofile",
+      "spread": 0.7035508374468655,
+      "top_margin": 0.3218332429934123,
+      "pearson_log_share": 0.9173526883164861,
+      "score_con": 0.10381640051866534,
+      "score_lab": 0.4256496435120777,
+      "score_ld": -0.015168944182555377,
+      "score_referendum": -0.2779011939347878,
+      "score_snp": -0.23639590591339982
+    },
+    {
+      "variant": "anonymised",
+      "arm": "explicit_mft",
+      "source": "ipsos",
+      "spread": 0.9808292530117262,
+      "top_margin": 0.3364722366212129,
+      "pearson_log_share": -0.02684289039016663,
+      "score_con": -0.3963722426681944,
+      "score_lab": -0.039697298729462,
+      "score_ld": 0.5844570103435318,
+      "score_referendum": -0.3963722426681944,
+      "score_snp": 0.24798477372231892
+    },
+    {
+      "variant": "anonymised",
+      "arm": "explicit_mft",
+      "source": "bes",
+      "spread": 0.9808292530117262,
+      "top_margin": 0.3364722366212129,
+      "pearson_log_share": -0.02684289039016663,
+      "score_con": -0.3963722426681944,
+      "score_lab": -0.039697298729462,
+      "score_ld": 0.5844570103435318,
+      "score_referendum": -0.3963722426681944,
+      "score_snp": 0.24798477372231892
+    },
+    {
+      "variant": "anonymised",
+      "arm": "bidirectional_mft",
+      "source": "ipsos",
+      "spread": 0.9540310598570023,
+      "top_margin": 0.14310084364067327,
+      "pearson_log_share": 0.35812254823086287,
+      "score_con": -0.30325264047393075,
+      "score_lab": 0.28453402442818815,
+      "score_ld": 0.4276348680688614,
+      "score_referendum": -0.5263961917881409,
+      "score_snp": 0.11747993976502202
+    },
+    {
+      "variant": "anonymised",
+      "arm": "bidirectional_mft",
+      "source": "bes",
+      "spread": 1.0986122886681096,
+      "top_margin": 0.33647223662121295,
+      "pearson_log_share": 0.08619407764580472,
+      "score_con": -0.2885272230106566,
+      "score_lab": -0.03721279472975067,
+      "score_ld": 0.5869415143432433,
+      "score_referendum": -0.5116707743248664,
+      "score_snp": 0.2504692777220303
+    },
+    {
+      "variant": "anonymised",
+      "arm": "axis",
+      "source": "ipsos",
+      "spread": 0.9627642456140872,
+      "top_margin": 0.45603908889536315,
+      "pearson_log_share": 0.8239055469734625,
+      "score_con": 0.11128058037128838,
+      "score_lab": 0.5673196692666516,
+      "score_ld": -0.14356196623306236,
+      "score_referendum": -0.13959370705744184,
+      "score_snp": -0.39544457634743574
+    },
+    {
+      "variant": "anonymised",
+      "arm": "axis",
+      "source": "bes",
+      "spread": 1.0986122886681096,
+      "top_margin": 0.33647223662121284,
+      "pearson_log_share": 0.9459081786124985,
+      "score_con": 0.2504692777220304,
+      "score_lab": 0.5869415143432433,
+      "score_ld": -0.03721279472975063,
+      "score_referendum": -0.2885272230106568,
+      "score_snp": -0.5116707743248663
+    }
+  ],
+  "scores_by_arm": [
+    {
+      "arm": "axis",
+      "n_cells": 6,
+      "mean_spread": 0.9395283444063655,
+      "mean_top_margin": 0.38127049018509684,
+      "mean_pearson_log_share": 0.620846916769859
+    },
+    {
+      "arm": "baseline",
+      "n_cells": 3,
+      "mean_spread": 0.7907066364269977,
+      "mean_top_margin": 0.36497672613892723,
+      "mean_pearson_log_share": 0.8407164865899107
+    },
+    {
+      "arm": "bidirectional_mft",
+      "n_cells": 6,
+      "mean_spread": 1.0548849112568612,
+      "mean_top_margin": 0.37100936743671764,
+      "mean_pearson_log_share": 0.26524602620554416
+    },
+    {
+      "arm": "explicit_mft",
+      "n_cells": 6,
+      "mean_spread": 0.9808292530117263,
+      "mean_top_margin": 0.3809827008293872,
+      "mean_pearson_log_share": 0.03542362630063151
+    }
+  ],
+  "scores_by_source": [
+    {
+      "source": "bes",
+      "n_cells": 9,
+      "mean_spread": 1.0151054648358135,
+      "mean_top_margin": 0.35794537490373024,
+      "mean_pearson_log_share": 0.27175419304978293
+    },
+    {
+      "source": "ipsos",
+      "n_cells": 9,
+      "mean_spread": 0.9683895409474883,
+      "mean_top_margin": 0.3975629973970709,
+      "mean_pearson_log_share": 0.34259018646757355
+    },
+    {
+      "source": "noprofile",
+      "n_cells": 3,
+      "mean_spread": 0.7907066364269977,
+      "mean_top_margin": 0.36497672613892723,
+      "mean_pearson_log_share": 0.8407164865899107
+    }
+  ],
+  "signed_error_by_party": [
+    {
+      "party": "lab",
+      "actual_rank": 1,
+      "mean_signed_error": 0.8095238095238095,
+      "cells_too_high": 0,
+      "cells_exact": 9,
+      "cells_too_low": 12
+    },
+    {
+      "party": "con",
+      "actual_rank": 2,
+      "mean_signed_error": 1.380952380952381,
+      "cells_too_high": 0,
+      "cells_exact": 6,
+      "cells_too_low": 15
+    },
+    {
+      "party": "ld",
+      "actual_rank": 3,
+      "mean_signed_error": -1,
+      "cells_too_high": 13,
+      "cells_exact": 4,
+      "cells_too_low": 4
+    },
+    {
+      "party": "referendum",
+      "actual_rank": 4,
+      "mean_signed_error": 0.7142857142857143,
+      "cells_too_high": 2,
+      "cells_exact": 2,
+      "cells_too_low": 17
+    },
+    {
+      "party": "snp",
+      "actual_rank": 5,
+      "mean_signed_error": -1.9047619047619047,
+      "cells_too_high": 17,
+      "cells_exact": 4,
+      "cells_too_low": 0
+    }
+  ],
+  "signed_error_by_cell": [
+    {
+      "cell": "minimal/baseline/noprofile",
+      "lab": 0,
+      "con": 0,
+      "ld": 0,
+      "referendum": 0,
+      "snp": 0
+    },
+    {
+      "cell": "minimal/explicit_mft/ipsos",
+      "lab": 1,
+      "con": 2,
+      "ld": -2,
+      "referendum": 1,
+      "snp": -2
+    },
+    {
+      "cell": "minimal/explicit_mft/bes",
+      "lab": 2,
+      "con": 2,
+      "ld": -2,
+      "referendum": 1,
+      "snp": -3
+    },
+    {
+      "cell": "minimal/bidirectional_mft/ipsos",
+      "lab": 1,
+      "con": 2,
+      "ld": -2,
+      "referendum": 1,
+      "snp": -2
+    },
+    {
+      "cell": "minimal/bidirectional_mft/bes",
+      "lab": 1,
+      "con": 2,
+      "ld": -2,
+      "referendum": 1,
+      "snp": -2
+    },
+    {
+      "cell": "minimal/axis/ipsos",
+      "lab": 0,
+      "con": 0,
+      "ld": 1,
+      "referendum": 1,
+      "snp": -2
+    },
+    {
+      "cell": "minimal/axis/bes",
+      "lab": 0,
+      "con": 0,
+      "ld": 1,
+      "referendum": 1,
+      "snp": -2
+    },
+    {
+      "cell": "framing_preserving/baseline/noprofile",
+      "lab": 0,
+      "con": 2,
+      "ld": -1,
+      "referendum": -1,
+      "snp": 0
+    },
+    {
+      "cell": "framing_preserving/explicit_mft/ipsos",
+      "lab": 1,
+      "con": 2,
+      "ld": -2,
+      "referendum": 1,
+      "snp": -2
+    },
+    {
+      "cell": "framing_preserving/explicit_mft/bes",
+      "lab": 2,
+      "con": 2,
+      "ld": -2,
+      "referendum": 1,
+      "snp": -3
+    },
+    {
+      "cell": "framing_preserving/bidirectional_mft/ipsos",
+      "lab": 1,
+      "con": 2,
+      "ld": -2,
+      "referendum": 1,
+      "snp": -2
+    },
+    {
+      "cell": "framing_preserving/bidirectional_mft/bes",
+      "lab": 1,
+      "con": 2,
+      "ld": -2,
+      "referendum": 1,
+      "snp": -2
+    },
+    {
+      "cell": "framing_preserving/axis/ipsos",
+      "lab": 0,
+      "con": 1,
+      "ld": 1,
+      "referendum": 1,
+      "snp": -3
+    },
+    {
+      "cell": "framing_preserving/axis/bes",
+      "lab": 0,
+      "con": 2,
+      "ld": 0,
+      "referendum": 1,
+      "snp": -3
+    },
+    {
+      "cell": "anonymised/baseline/noprofile",
+      "lab": 0,
+      "con": 0,
+      "ld": 0,
+      "referendum": 1,
+      "snp": -1
+    },
+    {
+      "cell": "anonymised/explicit_mft/ipsos",
+      "lab": 2,
+      "con": 2,
+      "ld": -2,
+      "referendum": 1,
+      "snp": -3
+    },
+    {
+      "cell": "anonymised/explicit_mft/bes",
+      "lab": 2,
+      "con": 2,
+      "ld": -2,
+      "referendum": 1,
+      "snp": -3
+    },
+    {
+      "cell": "anonymised/bidirectional_mft/ipsos",
+      "lab": 1,
+      "con": 2,
+      "ld": -2,
+      "referendum": 1,
+      "snp": -2
+    },
+    {
+      "cell": "anonymised/bidirectional_mft/bes",
+      "lab": 2,
+      "con": 2,
+      "ld": -2,
+      "referendum": 1,
+      "snp": -3
+    },
+    {
+      "cell": "anonymised/axis/ipsos",
+      "lab": 0,
+      "con": 0,
+      "ld": 1,
+      "referendum": -1,
+      "snp": 0
+    },
+    {
+      "cell": "anonymised/axis/bes",
+      "lab": 0,
+      "con": 0,
+      "ld": 0,
+      "referendum": 0,
+      "snp": 0
+    }
+  ],
+  "rejected": [
+    {
+      "cell": "total",
+      "rejected": 0
+    }
+  ],
+  "nulls_vs_performance": [
+    {
+      "arm": "axis",
+      "source": "bes",
+      "nulls": 0,
+      "n_cells": 3,
+      "mean_rho": 0.6556286429517834,
+      "winner_rate": 1
+    },
+    {
+      "arm": "axis",
+      "source": "ipsos",
+      "nulls": 0,
+      "n_cells": 3,
+      "mean_rho": 0.6666666666666665,
+      "winner_rate": 1
+    },
+    {
+      "arm": "bidirectional_mft",
+      "source": "bes",
+      "nulls": 0,
+      "n_cells": 3,
+      "mean_rho": 0.03506522347234362,
+      "winner_rate": 0
+    },
+    {
+      "arm": "bidirectional_mft",
+      "source": "ipsos",
+      "nulls": 0,
+      "n_cells": 3,
+      "mean_rho": 0.19999999999999998,
+      "winner_rate": 0
+    },
+    {
+      "arm": "explicit_mft",
+      "source": "bes",
+      "nulls": 0,
+      "n_cells": 3,
+      "mean_rho": -0.20519567041703085,
+      "winner_rate": 0
+    },
+    {
+      "arm": "explicit_mft",
+      "source": "ipsos",
+      "nulls": 0,
+      "n_cells": 3,
+      "mean_rho": -0.06839855680567695,
+      "winner_rate": 0
+    }
+  ]
+}
