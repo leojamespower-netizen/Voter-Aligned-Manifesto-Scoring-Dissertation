@@ -1,0 +1,11 @@
+{
+  "text": "{\n  \"evidence\": \"The text explicitly refers to 'The Referendum Party’s Statement of Aims' and describes its push for a referendum on the UK’s relationship with Europe beyond just the single currency.\",\n  \"confidence\": \"high\",\n  \"party\": \"Referendum Party\"\n}",
+  "model": "gpt-5",
+  "cache_key": "probe_biased_1997_referendum_minimal_gpt-5",
+  "timestamp": "2026-09-06T03:53:21.739565+00:00",
+  "prompt": "Below is a policy summary from a UK general election manifesto. Identify the party that produced it. You must choose one.\n\n<text>\nThe Referendum Party’s Statement of Aims addressed four questions:\n\n1) Why is the party needed? Because both major parties supported the Maastricht-amended Treaty on European Union, which the party argued transferred significant powers to European institutions. Such constitutional changes, involving sovereignty, should require public consent. The party’s purpose was to secure a full public debate on Britain’s relationship with Europe followed by a fair referendum.\n\n2) What would the referendum ask? Voters would choose between the UK joining a “federal Europe” or returning to an association of sovereign nations within a common trading market. While detailed notes accompanied both options, the party said Parliament would determine the exact wording.\n\n3) When would it happen? Either before or alongside the next General Election. The party cited urgency, referencing Helmut Kohl’s claim that a federal European state would become irreversible within two years, framing the next election as the last opportunity for a referendum.\n\n4) Aren’t the main parties offering a referendum? Yes, but only on joining a single currency (the Euro), which the Referendum Party deemed inadequate because it ignored the broader constitutional questions at stake.\n</text>\n\nRespond with a single JSON object and nothing else, with these keys in this order:\n\n{\n  \"evidence\": \"<what in the text informed your choice>\",\n  \"confidence\": \"high\" | \"medium\" | \"low\",\n  \"party\": one of ['Labour', 'Conservative', 'Liberal Democrats', 'Referendum Party', 'Scottish National Party']\n}",
+  "system": null,
+  "api_model": "gpt-5",
+  "decoding": {},
+  "prompt_hash": "38b4d7a0127800fc"
+}

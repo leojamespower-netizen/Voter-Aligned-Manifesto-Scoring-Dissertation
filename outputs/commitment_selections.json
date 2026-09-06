@@ -163,5 +163,170 @@
     "coverage": 0.875,
     "threshold": 0.75,
     "embedding_model": "all-MiniLM-L6-v2"
+  },
+  "summary:1997_lab_minimal_gpt-5": {
+    "cell": "summary:1997_lab_minimal_gpt-5",
+    "selected_index": 0,
+    "selected_cache_key": "1997_lab_minimal_gpt-5_run1",
+    "stability": 0.44404332129963897,
+    "n_clusters": 277,
+    "n_consensus": 89,
+    "coverage": 0.8764044943820225,
+    "threshold": 0.75,
+    "embedding_model": "all-MiniLM-L6-v2"
+  },
+  "summary:1997_lab_framing_preserving_gpt-5": {
+    "cell": "summary:1997_lab_framing_preserving_gpt-5",
+    "selected_index": 3,
+    "selected_cache_key": "1997_lab_framing_preserving_gpt-5_run4",
+    "stability": 0.40255319148936175,
+    "n_clusters": 235,
+    "n_consensus": 65,
+    "coverage": 0.8615384615384616,
+    "threshold": 0.75,
+    "embedding_model": "all-MiniLM-L6-v2"
+  },
+  "summary:1997_lab_anonymised_gpt-5": {
+    "cell": "summary:1997_lab_anonymised_gpt-5",
+    "selected_index": 3,
+    "selected_cache_key": "1997_lab_anonymised_gpt-5_run4",
+    "stability": 0.432620320855615,
+    "n_clusters": 374,
+    "n_consensus": 126,
+    "coverage": 0.8174603174603174,
+    "threshold": 0.75,
+    "embedding_model": "all-MiniLM-L6-v2"
+  },
+  "summary:1997_con_minimal_gpt-5": {
+    "cell": "summary:1997_con_minimal_gpt-5",
+    "selected_index": 0,
+    "selected_cache_key": "1997_con_minimal_gpt-5_run1",
+    "stability": 0.4338129496402878,
+    "n_clusters": 278,
+    "n_consensus": 93,
+    "coverage": 0.8279569892473119,
+    "threshold": 0.75,
+    "embedding_model": "all-MiniLM-L6-v2"
+  },
+  "summary:1997_con_framing_preserving_gpt-5": {
+    "cell": "summary:1997_con_framing_preserving_gpt-5",
+    "selected_index": 4,
+    "selected_cache_key": "1997_con_framing_preserving_gpt-5_run5",
+    "stability": 0.3382899628252788,
+    "n_clusters": 269,
+    "n_consensus": 53,
+    "coverage": 0.8113207547169812,
+    "threshold": 0.75,
+    "embedding_model": "all-MiniLM-L6-v2"
+  },
+  "summary:1997_con_anonymised_gpt-5": {
+    "cell": "summary:1997_con_anonymised_gpt-5",
+    "selected_index": 2,
+    "selected_cache_key": "1997_con_anonymised_gpt-5_run3",
+    "stability": 0.4114285714285714,
+    "n_clusters": 315,
+    "n_consensus": 94,
+    "coverage": 0.8723404255319149,
+    "threshold": 0.75,
+    "embedding_model": "all-MiniLM-L6-v2"
+  },
+  "summary:1997_ld_minimal_gpt-5": {
+    "cell": "summary:1997_ld_minimal_gpt-5",
+    "selected_index": 4,
+    "selected_cache_key": "1997_ld_minimal_gpt-5_run5",
+    "stability": 0.4142857142857143,
+    "n_clusters": 336,
+    "n_consensus": 96,
+    "coverage": 0.8958333333333334,
+    "threshold": 0.75,
+    "embedding_model": "all-MiniLM-L6-v2"
+  },
+  "summary:1997_ld_framing_preserving_gpt-5": {
+    "cell": "summary:1997_ld_framing_preserving_gpt-5",
+    "selected_index": 4,
+    "selected_cache_key": "1997_ld_framing_preserving_gpt-5_run5",
+    "stability": 0.3806060606060606,
+    "n_clusters": 330,
+    "n_consensus": 84,
+    "coverage": 0.9047619047619048,
+    "threshold": 0.75,
+    "embedding_model": "all-MiniLM-L6-v2"
+  },
+  "summary:1997_ld_anonymised_gpt-5": {
+    "cell": "summary:1997_ld_anonymised_gpt-5",
+    "selected_index": 0,
+    "selected_cache_key": "1997_ld_anonymised_gpt-5_run1",
+    "stability": 0.4285046728971963,
+    "n_clusters": 428,
+    "n_consensus": 137,
+    "coverage": 0.8905109489051095,
+    "threshold": 0.75,
+    "embedding_model": "all-MiniLM-L6-v2"
+  },
+  "summary:1997_referendum_minimal_gpt-5": {
+    "cell": "summary:1997_referendum_minimal_gpt-5",
+    "selected_index": 0,
+    "selected_cache_key": "1997_referendum_minimal_gpt-5_run1",
+    "stability": 0.6000000000000001,
+    "n_clusters": 9,
+    "n_consensus": 6,
+    "coverage": 0.8333333333333334,
+    "threshold": 0.75,
+    "embedding_model": "all-MiniLM-L6-v2"
+  },
+  "summary:1997_referendum_framing_preserving_gpt-5": {
+    "cell": "summary:1997_referendum_framing_preserving_gpt-5",
+    "selected_index": 0,
+    "selected_cache_key": "1997_referendum_framing_preserving_gpt-5_run1",
+    "stability": 0.43636363636363634,
+    "n_clusters": 11,
+    "n_consensus": 5,
+    "coverage": 0.8,
+    "threshold": 0.75,
+    "embedding_model": "all-MiniLM-L6-v2"
+  },
+  "summary:1997_referendum_anonymised_gpt-5": {
+    "cell": "summary:1997_referendum_anonymised_gpt-5",
+    "selected_index": 1,
+    "selected_cache_key": "1997_referendum_anonymised_gpt-5_run2",
+    "stability": 0.45,
+    "n_clusters": 12,
+    "n_consensus": 4,
+    "coverage": 1.0,
+    "threshold": 0.75,
+    "embedding_model": "all-MiniLM-L6-v2"
+  },
+  "summary:1997_snp_minimal_gpt-5": {
+    "cell": "summary:1997_snp_minimal_gpt-5",
+    "selected_index": 1,
+    "selected_cache_key": "1997_snp_minimal_gpt-5_run2",
+    "stability": 0.4273062730627306,
+    "n_clusters": 271,
+    "n_consensus": 87,
+    "coverage": 0.8505747126436781,
+    "threshold": 0.75,
+    "embedding_model": "all-MiniLM-L6-v2"
+  },
+  "summary:1997_snp_framing_preserving_gpt-5": {
+    "cell": "summary:1997_snp_framing_preserving_gpt-5",
+    "selected_index": 1,
+    "selected_cache_key": "1997_snp_framing_preserving_gpt-5_run2",
+    "stability": 0.39133858267716537,
+    "n_clusters": 254,
+    "n_consensus": 66,
+    "coverage": 0.8636363636363636,
+    "threshold": 0.75,
+    "embedding_model": "all-MiniLM-L6-v2"
+  },
+  "summary:1997_snp_anonymised_gpt-5": {
+    "cell": "summary:1997_snp_anonymised_gpt-5",
+    "selected_index": 3,
+    "selected_cache_key": "1997_snp_anonymised_gpt-5_run4",
+    "stability": 0.419935691318328,
+    "n_clusters": 311,
+    "n_consensus": 97,
+    "coverage": 0.8556701030927835,
+    "threshold": 0.75,
+    "embedding_model": "all-MiniLM-L6-v2"
   }
 }

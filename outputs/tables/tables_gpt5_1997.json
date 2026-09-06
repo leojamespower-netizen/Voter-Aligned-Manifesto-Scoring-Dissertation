@@ -1,0 +1,1044 @@
+{
+  "label": "gpt5_1997",
+  "model": "gpt-5",
+  "election": 1997,
+  "cells": [
+    {
+      "variant": "minimal",
+      "arm": "baseline",
+      "source": "noprofile",
+      "rho": 0.7999999999999999,
+      "null_percentile": 0.9343,
+      "winner": 1,
+      "positional_error": 0.0,
+      "rejected": 0,
+      "ranking": "lab > ld > con > snp > referendum"
+    },
+    {
+      "variant": "minimal",
+      "arm": "explicit_mft",
+      "source": "ipsos",
+      "rho": 0.4103913408340617,
+      "null_percentile": 0.7786,
+      "winner": 1,
+      "positional_error": 0.1,
+      "rejected": 0,
+      "ranking": "lab > ld > snp > con > referendum"
+    },
+    {
+      "variant": "minimal",
+      "arm": "explicit_mft",
+      "source": "bes",
+      "rho": 0.3,
+      "null_percentile": 0.6616,
+      "winner": 0,
+      "positional_error": 0.0,
+      "rejected": 0,
+      "ranking": "ld > lab > snp > con > referendum"
+    },
+    {
+      "variant": "minimal",
+      "arm": "bidirectional_mft",
+      "source": "ipsos",
+      "rho": 0.4103913408340617,
+      "null_percentile": 0.7786,
+      "winner": 1,
+      "positional_error": 0.1,
+      "rejected": 0,
+      "ranking": "lab > ld > snp > con > referendum"
+    },
+    {
+      "variant": "minimal",
+      "arm": "bidirectional_mft",
+      "source": "bes",
+      "rho": 0.3,
+      "null_percentile": 0.6616,
+      "winner": 0,
+      "positional_error": 0.0,
+      "rejected": 0,
+      "ranking": "ld > lab > snp > con > referendum"
+    },
+    {
+      "variant": "minimal",
+      "arm": "axis",
+      "source": "ipsos",
+      "rho": 0.3,
+      "null_percentile": 0.6616,
+      "winner": 0,
+      "positional_error": 0.0,
+      "rejected": 0,
+      "ranking": "con > referendum > lab > snp > ld"
+    },
+    {
+      "variant": "minimal",
+      "arm": "axis",
+      "source": "bes",
+      "rho": 0.3,
+      "null_percentile": 0.6616,
+      "winner": 0,
+      "positional_error": 0.2,
+      "rejected": 0,
+      "ranking": "con > referendum > lab > snp > ld"
+    },
+    {
+      "variant": "framing_preserving",
+      "arm": "baseline",
+      "source": "noprofile",
+      "rho": 0.7999999999999999,
+      "null_percentile": 0.9343,
+      "winner": 1,
+      "positional_error": 0.0,
+      "rejected": 0,
+      "ranking": "lab > ld > con > snp > referendum"
+    },
+    {
+      "variant": "framing_preserving",
+      "arm": "explicit_mft",
+      "source": "ipsos",
+      "rho": 0.4103913408340617,
+      "null_percentile": 0.7786,
+      "winner": 1,
+      "positional_error": 0.1,
+      "rejected": 0,
+      "ranking": "lab > ld > snp > con > referendum"
+    },
+    {
+      "variant": "framing_preserving",
+      "arm": "explicit_mft",
+      "source": "bes",
+      "rho": 0.3,
+      "null_percentile": 0.6616,
+      "winner": 0,
+      "positional_error": 0.0,
+      "rejected": 0,
+      "ranking": "ld > lab > snp > con > referendum"
+    },
+    {
+      "variant": "framing_preserving",
+      "arm": "bidirectional_mft",
+      "source": "ipsos",
+      "rho": 0.46169025843831935,
+      "null_percentile": 0.7786,
+      "winner": 0,
+      "positional_error": 0.2,
+      "rejected": 0,
+      "ranking": "ld > lab > con > snp > referendum"
+    },
+    {
+      "variant": "framing_preserving",
+      "arm": "bidirectional_mft",
+      "source": "bes",
+      "rho": 0.3,
+      "null_percentile": 0.6616,
+      "winner": 0,
+      "positional_error": 0.0,
+      "rejected": 0,
+      "ranking": "ld > lab > snp > con > referendum"
+    },
+    {
+      "variant": "framing_preserving",
+      "arm": "axis",
+      "source": "ipsos",
+      "rho": -0.09999999999999999,
+      "null_percentile": 0.3873,
+      "winner": 0,
+      "positional_error": 0.0,
+      "rejected": 0,
+      "ranking": "con > referendum > snp > lab > ld"
+    },
+    {
+      "variant": "framing_preserving",
+      "arm": "axis",
+      "source": "bes",
+      "rho": -0.09999999999999999,
+      "null_percentile": 0.3873,
+      "winner": 0,
+      "positional_error": 0.1,
+      "rejected": 0,
+      "ranking": "con > referendum > snp > lab > ld"
+    },
+    {
+      "variant": "anonymised",
+      "arm": "baseline",
+      "source": "noprofile",
+      "rho": 0.7999999999999999,
+      "null_percentile": 0.9343,
+      "winner": 1,
+      "positional_error": 0.0,
+      "rejected": 0,
+      "ranking": "lab > ld > con > snp > referendum"
+    },
+    {
+      "variant": "anonymised",
+      "arm": "explicit_mft",
+      "source": "ipsos",
+      "rho": 0.4103913408340617,
+      "null_percentile": 0.7786,
+      "winner": 1,
+      "positional_error": 0.1,
+      "rejected": 0,
+      "ranking": "lab > ld > snp > con > referendum"
+    },
+    {
+      "variant": "anonymised",
+      "arm": "explicit_mft",
+      "source": "bes",
+      "rho": 0.10259783520851543,
+      "null_percentile": 0.6064,
+      "winner": 0,
+      "positional_error": 0.1,
+      "rejected": 0,
+      "ranking": "ld > lab > snp > con > referendum"
+    },
+    {
+      "variant": "anonymised",
+      "arm": "bidirectional_mft",
+      "source": "ipsos",
+      "rho": 0.3,
+      "null_percentile": 0.6616,
+      "winner": 0,
+      "positional_error": 0.0,
+      "rejected": 0,
+      "ranking": "ld > lab > snp > con > referendum"
+    },
+    {
+      "variant": "anonymised",
+      "arm": "bidirectional_mft",
+      "source": "bes",
+      "rho": 0.3,
+      "null_percentile": 0.6616,
+      "winner": 0,
+      "positional_error": 0.0,
+      "rejected": 0,
+      "ranking": "ld > lab > snp > con > referendum"
+    },
+    {
+      "variant": "anonymised",
+      "arm": "axis",
+      "source": "ipsos",
+      "rho": 0.3,
+      "null_percentile": 0.6616,
+      "winner": 0,
+      "positional_error": 0.0,
+      "rejected": 0,
+      "ranking": "con > referendum > lab > snp > ld"
+    },
+    {
+      "variant": "anonymised",
+      "arm": "axis",
+      "source": "bes",
+      "rho": -0.10259783520851543,
+      "null_percentile": 0.3873,
+      "winner": 0,
+      "positional_error": 0.2,
+      "rejected": 0,
+      "ranking": "referendum > con > lab > snp > ld"
+    }
+  ],
+  "by_arm_source": [
+    {
+      "arm": "axis",
+      "source": "bes",
+      "n_cells": 3,
+      "mean_rho": 0.03246738826382819,
+      "cells_rho_positive": 1,
+      "winner_rate": 0,
+      "mean_positional_error": 0.16666666666666669,
+      "rejected": 0
+    },
+    {
+      "arm": "axis",
+      "source": "ipsos",
+      "n_cells": 3,
+      "mean_rho": 0.16666666666666666,
+      "cells_rho_positive": 2,
+      "winner_rate": 0,
+      "mean_positional_error": 0.0,
+      "rejected": 0
+    },
+    {
+      "arm": "baseline",
+      "source": "noprofile",
+      "n_cells": 3,
+      "mean_rho": 0.7999999999999999,
+      "cells_rho_positive": 3,
+      "winner_rate": 1,
+      "mean_positional_error": 0.0,
+      "rejected": 0
+    },
+    {
+      "arm": "bidirectional_mft",
+      "source": "bes",
+      "n_cells": 3,
+      "mean_rho": 0.3,
+      "cells_rho_positive": 3,
+      "winner_rate": 0,
+      "mean_positional_error": 0.0,
+      "rejected": 0
+    },
+    {
+      "arm": "bidirectional_mft",
+      "source": "ipsos",
+      "n_cells": 3,
+      "mean_rho": 0.390693866424127,
+      "cells_rho_positive": 3,
+      "winner_rate": 0.3333333333333333,
+      "mean_positional_error": 0.1,
+      "rejected": 0
+    },
+    {
+      "arm": "explicit_mft",
+      "source": "bes",
+      "n_cells": 3,
+      "mean_rho": 0.23419927840283847,
+      "cells_rho_positive": 3,
+      "winner_rate": 0,
+      "mean_positional_error": 0.03333333333333333,
+      "rejected": 0
+    },
+    {
+      "arm": "explicit_mft",
+      "source": "ipsos",
+      "n_cells": 3,
+      "mean_rho": 0.4103913408340617,
+      "cells_rho_positive": 3,
+      "winner_rate": 1,
+      "mean_positional_error": 0.1,
+      "rejected": 0
+    }
+  ],
+  "by_arm": [
+    {
+      "arm": "axis",
+      "n_cells": 6,
+      "mean_rho": 0.09956702746524743,
+      "cells_rho_positive": 3,
+      "winner_rate": 0,
+      "mean_positional_error": 0.08333333333333334,
+      "rejected": 0
+    },
+    {
+      "arm": "baseline",
+      "n_cells": 3,
+      "mean_rho": 0.7999999999999999,
+      "cells_rho_positive": 3,
+      "winner_rate": 1,
+      "mean_positional_error": 0.0,
+      "rejected": 0
+    },
+    {
+      "arm": "bidirectional_mft",
+      "n_cells": 6,
+      "mean_rho": 0.3453469332120635,
+      "cells_rho_positive": 6,
+      "winner_rate": 0.16666666666666666,
+      "mean_positional_error": 0.05,
+      "rejected": 0
+    },
+    {
+      "arm": "explicit_mft",
+      "n_cells": 6,
+      "mean_rho": 0.3222953096184501,
+      "cells_rho_positive": 6,
+      "winner_rate": 0.5,
+      "mean_positional_error": 0.06666666666666667,
+      "rejected": 0
+    }
+  ],
+  "by_source": [
+    {
+      "source": "bes",
+      "n_cells": 9,
+      "mean_rho": 0.18888888888888888,
+      "cells_rho_positive": 7,
+      "winner_rate": 0,
+      "mean_positional_error": 0.06666666666666667,
+      "rejected": 0
+    },
+    {
+      "source": "ipsos",
+      "n_cells": 9,
+      "mean_rho": 0.3225839579749518,
+      "cells_rho_positive": 8,
+      "winner_rate": 0.4444444444444444,
+      "mean_positional_error": 0.06666666666666667,
+      "rejected": 0
+    },
+    {
+      "source": "noprofile",
+      "n_cells": 3,
+      "mean_rho": 0.7999999999999999,
+      "cells_rho_positive": 3,
+      "winner_rate": 1,
+      "mean_positional_error": 0.0,
+      "rejected": 0
+    }
+  ],
+  "by_variant": [
+    {
+      "variant": "anonymised",
+      "n_cells": 7,
+      "mean_rho": 0.3014844772620088,
+      "cells_rho_positive": 6,
+      "winner_rate": 0.2857142857142857,
+      "mean_positional_error": 0.05714285714285715,
+      "rejected": 0
+    },
+    {
+      "variant": "framing_preserving",
+      "n_cells": 7,
+      "mean_rho": 0.2960116570389116,
+      "cells_rho_positive": 5,
+      "winner_rate": 0.2857142857142857,
+      "mean_positional_error": 0.05714285714285715,
+      "rejected": 0
+    },
+    {
+      "variant": "minimal",
+      "n_cells": 7,
+      "mean_rho": 0.4029689545240176,
+      "cells_rho_positive": 7,
+      "winner_rate": 0.42857142857142855,
+      "mean_positional_error": 0.05714285714285715,
+      "rejected": 0
+    }
+  ],
+  "alpha": [
+    {
+      "alpha": 0.01,
+      "mean_rho": 0.3408167797422542,
+      "cells_rho_positive": 19,
+      "mean_pearson_log_share": 0.3830297988936286,
+      "best_cell_pearson": 0.7481990645077037,
+      "winner_rate": 0.38095238095238093
+    },
+    {
+      "alpha": 0.05,
+      "mean_rho": 0.3333333333333333,
+      "cells_rho_positive": 17,
+      "mean_pearson_log_share": 0.3893481145719837,
+      "best_cell_pearson": 0.7891738302686123,
+      "winner_rate": 0.38095238095238093
+    },
+    {
+      "alpha": 0.1,
+      "mean_rho": 0.33104555734144325,
+      "cells_rho_positive": 18,
+      "mean_pearson_log_share": 0.3908242610745711,
+      "best_cell_pearson": 0.8075904637554396,
+      "winner_rate": 0.38095238095238093
+    },
+    {
+      "alpha": 0.5,
+      "mean_rho": 0.3067412077779165,
+      "cells_rho_positive": 17,
+      "mean_pearson_log_share": 0.3893034448305574,
+      "best_cell_pearson": 0.8428067866913176,
+      "winner_rate": 0.3333333333333333
+    },
+    {
+      "alpha": 1.0,
+      "mean_rho": 0.33348836294164597,
+      "cells_rho_positive": 18,
+      "mean_pearson_log_share": 0.3874973000255915,
+      "best_cell_pearson": 0.8518371255129871,
+      "winner_rate": 0.3333333333333333
+    }
+  ],
+  "scores_by_cell": [
+    {
+      "variant": "minimal",
+      "arm": "baseline",
+      "source": "noprofile",
+      "spread": 1.0986122886681098,
+      "top_margin": 0.33647223662121295,
+      "pearson_log_share": 0.8518371255129871,
+      "score_con": -0.0372127947297506,
+      "score_lab": 0.5869415143432434,
+      "score_ld": 0.2504692777220304,
+      "score_referendum": -0.5116707743248664,
+      "score_snp": -0.2885272230106568
+    },
+    {
+      "variant": "minimal",
+      "arm": "explicit_mft",
+      "source": "ipsos",
+      "spread": 0.9444616088408513,
+      "top_margin": 0.0,
+      "pearson_log_share": 0.531754108473781,
+      "score_con": -0.29416139840399597,
+      "score_lab": 0.4271566591226457,
+      "score_ld": 0.4271566591226457,
+      "score_referendum": -0.5173049497182056,
+      "score_snp": -0.0428469701230898
+    },
+    {
+      "variant": "minimal",
+      "arm": "explicit_mft",
+      "source": "bes",
+      "spread": 1.0986122886681096,
+      "top_margin": 0.33647223662121284,
+      "pearson_log_share": 0.4446456286066969,
+      "score_con": -0.28852722301065664,
+      "score_lab": 0.2504692777220304,
+      "score_ld": 0.5869415143432433,
+      "score_referendum": -0.5116707743248663,
+      "score_snp": -0.03721279472975071
+    },
+    {
+      "variant": "minimal",
+      "arm": "bidirectional_mft",
+      "source": "ipsos",
+      "spread": 0.9444616088408513,
+      "top_margin": 0.0,
+      "pearson_log_share": 0.531754108473781,
+      "score_con": -0.29416139840399597,
+      "score_lab": 0.4271566591226457,
+      "score_ld": 0.4271566591226457,
+      "score_referendum": -0.5173049497182056,
+      "score_snp": -0.0428469701230898
+    },
+    {
+      "variant": "minimal",
+      "arm": "bidirectional_mft",
+      "source": "bes",
+      "spread": 1.0986122886681096,
+      "top_margin": 0.33647223662121284,
+      "pearson_log_share": 0.4446456286066969,
+      "score_con": -0.28852722301065664,
+      "score_lab": 0.2504692777220304,
+      "score_ld": 0.5869415143432433,
+      "score_referendum": -0.5116707743248663,
+      "score_snp": -0.03721279472975071
+    },
+    {
+      "variant": "minimal",
+      "arm": "axis",
+      "source": "ipsos",
+      "spread": 1.0986122886681098,
+      "top_margin": 0.33647223662121306,
+      "pearson_log_share": 0.1887318263796909,
+      "score_con": 0.5869415143432434,
+      "score_lab": -0.037212794729750545,
+      "score_ld": -0.5116707743248664,
+      "score_referendum": 0.2504692777220303,
+      "score_snp": -0.2885272230106567
+    },
+    {
+      "variant": "minimal",
+      "arm": "axis",
+      "source": "bes",
+      "spread": 0.9724610033412097,
+      "top_margin": 0.3364722366212129,
+      "pearson_log_share": 0.14043754635419264,
+      "score_con": 0.578460665125321,
+      "score_lab": -0.15761156015165811,
+      "score_ld": -0.39400033821588865,
+      "score_referendum": 0.24198842850410812,
+      "score_snp": -0.2688371952618823
+    },
+    {
+      "variant": "framing_preserving",
+      "arm": "baseline",
+      "source": "noprofile",
+      "spread": 1.0986122886681098,
+      "top_margin": 0.33647223662121295,
+      "pearson_log_share": 0.8518371255129871,
+      "score_con": -0.0372127947297506,
+      "score_lab": 0.5869415143432434,
+      "score_ld": 0.2504692777220304,
+      "score_referendum": -0.5116707743248664,
+      "score_snp": -0.2885272230106568
+    },
+    {
+      "variant": "framing_preserving",
+      "arm": "explicit_mft",
+      "source": "ipsos",
+      "spread": 1.09861228866811,
+      "top_margin": 0.47000362924573547,
+      "pearson_log_share": 0.4558529063939473,
+      "score_con": -0.2926510804512038,
+      "score_lab": 0.5828176569026962,
+      "score_ld": 0.11281402765696066,
+      "score_referendum": -0.5157946317654137,
+      "score_snp": 0.11281402765696066
+    },
+    {
+      "variant": "framing_preserving",
+      "arm": "explicit_mft",
+      "source": "bes",
+      "spread": 1.0986122886681096,
+      "top_margin": 0.33647223662121284,
+      "pearson_log_share": 0.4446456286066969,
+      "score_con": -0.28852722301065664,
+      "score_lab": 0.2504692777220304,
+      "score_ld": 0.5869415143432433,
+      "score_referendum": -0.5116707743248663,
+      "score_snp": -0.03721279472975071
+    },
+    {
+      "variant": "framing_preserving",
+      "arm": "bidirectional_mft",
+      "source": "ipsos",
+      "spread": 0.9444616088408515,
+      "top_margin": 1.1102230246251565e-16,
+      "pearson_log_share": 0.6901127979854987,
+      "score_con": -0.16377967717310102,
+      "score_lab": 0.4240069877290178,
+      "score_ld": 0.4240069877290179,
+      "score_referendum": -0.5204546211118336,
+      "score_snp": -0.16377967717310102
+    },
+    {
+      "variant": "framing_preserving",
+      "arm": "bidirectional_mft",
+      "source": "bes",
+      "spread": 1.0986122886681096,
+      "top_margin": 0.33647223662121284,
+      "pearson_log_share": 0.4446456286066969,
+      "score_con": -0.28852722301065664,
+      "score_lab": 0.2504692777220304,
+      "score_ld": 0.5869415143432433,
+      "score_referendum": -0.5116707743248663,
+      "score_snp": -0.03721279472975071
+    },
+    {
+      "variant": "framing_preserving",
+      "arm": "axis",
+      "source": "ipsos",
+      "spread": 1.0986122886681096,
+      "top_margin": 0.33647223662121273,
+      "pearson_log_share": -0.124405679299395,
+      "score_con": 0.5869415143432432,
+      "score_lab": -0.28852722301065664,
+      "score_ld": -0.5116707743248665,
+      "score_referendum": 0.2504692777220304,
+      "score_snp": -0.03721279472975034
+    },
+    {
+      "variant": "framing_preserving",
+      "arm": "axis",
+      "source": "bes",
+      "spread": 0.9633988098606026,
+      "top_margin": 0.17627924233799203,
+      "pearson_log_share": -0.346532171215496,
+      "score_con": 0.4369187439462372,
+      "score_lab": -0.3033365146001554,
+      "score_ld": -0.5264800659143654,
+      "score_referendum": 0.26063950160824517,
+      "score_snp": 0.13225833496003844
+    },
+    {
+      "variant": "anonymised",
+      "arm": "baseline",
+      "source": "noprofile",
+      "spread": 1.0986122886681098,
+      "top_margin": 0.33647223662121295,
+      "pearson_log_share": 0.8518371255129871,
+      "score_con": -0.0372127947297506,
+      "score_lab": 0.5869415143432434,
+      "score_ld": 0.2504692777220304,
+      "score_referendum": -0.5116707743248664,
+      "score_snp": -0.2885272230106568
+    },
+    {
+      "variant": "anonymised",
+      "arm": "explicit_mft",
+      "source": "ipsos",
+      "spread": 0.9444616088408513,
+      "top_margin": 0.0,
+      "pearson_log_share": 0.531754108473781,
+      "score_con": -0.29416139840399597,
+      "score_lab": 0.4271566591226457,
+      "score_ld": 0.4271566591226457,
+      "score_referendum": -0.5173049497182056,
+      "score_snp": -0.0428469701230898
+    },
+    {
+      "variant": "anonymised",
+      "arm": "explicit_mft",
+      "source": "bes",
+      "spread": 1.0986122886681096,
+      "top_margin": 0.4700036292457355,
+      "pearson_log_share": 0.27127862153383636,
+      "score_con": -0.29265108045120386,
+      "score_lab": 0.11281402765696062,
+      "score_ld": 0.5828176569026962,
+      "score_referendum": -0.5157946317654135,
+      "score_snp": 0.11281402765696062
+    },
+    {
+      "variant": "anonymised",
+      "arm": "bidirectional_mft",
+      "source": "ipsos",
+      "spread": 1.0986122886681096,
+      "top_margin": 0.33647223662121284,
+      "pearson_log_share": 0.4446456286066969,
+      "score_con": -0.28852722301065664,
+      "score_lab": 0.2504692777220304,
+      "score_ld": 0.5869415143432433,
+      "score_referendum": -0.5116707743248663,
+      "score_snp": -0.03721279472975071
+    },
+    {
+      "variant": "anonymised",
+      "arm": "bidirectional_mft",
+      "source": "bes",
+      "spread": 1.0986122886681096,
+      "top_margin": 0.33647223662121284,
+      "pearson_log_share": 0.4446456286066969,
+      "score_con": -0.28852722301065664,
+      "score_lab": 0.2504692777220304,
+      "score_ld": 0.5869415143432433,
+      "score_referendum": -0.5116707743248663,
+      "score_snp": -0.03721279472975071
+    },
+    {
+      "variant": "anonymised",
+      "arm": "axis",
+      "source": "ipsos",
+      "spread": 1.0986122886681098,
+      "top_margin": 0.33647223662121306,
+      "pearson_log_share": 0.1887318263796909,
+      "score_con": 0.5869415143432434,
+      "score_lab": -0.037212794729750545,
+      "score_ld": -0.5116707743248664,
+      "score_referendum": 0.2504692777220303,
+      "score_snp": -0.2885272230106567
+    },
+    {
+      "variant": "anonymised",
+      "arm": "axis",
+      "source": "bes",
+      "spread": 0.9444616088408513,
+      "top_margin": 1.1102230246251565e-16,
+      "pearson_log_share": -0.14541184757502945,
+      "score_con": 0.4240069877290178,
+      "score_lab": -0.16377967717310118,
+      "score_ld": -0.5204546211118334,
+      "score_referendum": 0.4240069877290179,
+      "score_snp": -0.16377967717310118
+    }
+  ],
+  "scores_by_arm": [
+    {
+      "arm": "axis",
+      "n_cells": 6,
+      "mean_spread": 1.0293597146744988,
+      "mean_top_margin": 0.25369469813714063,
+      "mean_pearson_log_share": -0.016408083162724334
+    },
+    {
+      "arm": "baseline",
+      "n_cells": 3,
+      "mean_spread": 1.0986122886681098,
+      "mean_top_margin": 0.33647223662121295,
+      "mean_pearson_log_share": 0.8518371255129871
+    },
+    {
+      "arm": "bidirectional_mft",
+      "n_cells": 6,
+      "mean_spread": 1.04722872872569,
+      "mean_top_margin": 0.2243148244141419,
+      "mean_pearson_log_share": 0.5000749034810112
+    },
+    {
+      "arm": "explicit_mft",
+      "n_cells": 6,
+      "mean_spread": 1.0472287287256903,
+      "mean_top_margin": 0.26882528862231614,
+      "mean_pearson_log_share": 0.4466551670147899
+    }
+  ],
+  "scores_by_source": [
+    {
+      "source": "bes",
+      "n_cells": 9,
+      "mean_spread": 1.0524439060057023,
+      "mean_top_margin": 0.2961240323678894,
+      "mean_pearson_log_share": 0.23811114357010976
+    },
+    {
+      "source": "ipsos",
+      "n_cells": 9,
+      "mean_spread": 1.0301008754115504,
+      "mean_top_margin": 0.20176584174784304,
+      "mean_pearson_log_share": 0.3821035146519414
+    },
+    {
+      "source": "noprofile",
+      "n_cells": 3,
+      "mean_spread": 1.0986122886681098,
+      "mean_top_margin": 0.33647223662121295,
+      "mean_pearson_log_share": 0.8518371255129871
+    }
+  ],
+  "signed_error_by_party": [
+    {
+      "party": "lab",
+      "actual_rank": 1,
+      "mean_signed_error": 1.0476190476190477,
+      "cells_too_high": 0,
+      "cells_exact": 7,
+      "cells_too_low": 14
+    },
+    {
+      "party": "con",
+      "actual_rank": 2,
+      "mean_signed_error": 1,
+      "cells_too_high": 5,
+      "cells_exact": 1,
+      "cells_too_low": 15
+    },
+    {
+      "party": "ld",
+      "actual_rank": 3,
+      "mean_signed_error": -0.5238095238095238,
+      "cells_too_high": 15,
+      "cells_exact": 0,
+      "cells_too_low": 6
+    },
+    {
+      "party": "referendum",
+      "actual_rank": 4,
+      "mean_signed_error": 0.09523809523809523,
+      "cells_too_high": 6,
+      "cells_exact": 0,
+      "cells_too_low": 15
+    },
+    {
+      "party": "snp",
+      "actual_rank": 5,
+      "mean_signed_error": -1.619047619047619,
+      "cells_too_high": 21,
+      "cells_exact": 0,
+      "cells_too_low": 0
+    }
+  ],
+  "signed_error_by_cell": [
+    {
+      "cell": "minimal/baseline/noprofile",
+      "lab": 0,
+      "con": 1,
+      "ld": -1,
+      "referendum": 1,
+      "snp": -1
+    },
+    {
+      "cell": "minimal/explicit_mft/ipsos",
+      "lab": 0,
+      "con": 2,
+      "ld": -1,
+      "referendum": 1,
+      "snp": -2
+    },
+    {
+      "cell": "minimal/explicit_mft/bes",
+      "lab": 1,
+      "con": 2,
+      "ld": -2,
+      "referendum": 1,
+      "snp": -2
+    },
+    {
+      "cell": "minimal/bidirectional_mft/ipsos",
+      "lab": 0,
+      "con": 2,
+      "ld": -1,
+      "referendum": 1,
+      "snp": -2
+    },
+    {
+      "cell": "minimal/bidirectional_mft/bes",
+      "lab": 1,
+      "con": 2,
+      "ld": -2,
+      "referendum": 1,
+      "snp": -2
+    },
+    {
+      "cell": "minimal/axis/ipsos",
+      "lab": 2,
+      "con": -1,
+      "ld": 2,
+      "referendum": -2,
+      "snp": -1
+    },
+    {
+      "cell": "minimal/axis/bes",
+      "lab": 2,
+      "con": -1,
+      "ld": 2,
+      "referendum": -2,
+      "snp": -1
+    },
+    {
+      "cell": "framing_preserving/baseline/noprofile",
+      "lab": 0,
+      "con": 1,
+      "ld": -1,
+      "referendum": 1,
+      "snp": -1
+    },
+    {
+      "cell": "framing_preserving/explicit_mft/ipsos",
+      "lab": 0,
+      "con": 2,
+      "ld": -1,
+      "referendum": 1,
+      "snp": -2
+    },
+    {
+      "cell": "framing_preserving/explicit_mft/bes",
+      "lab": 1,
+      "con": 2,
+      "ld": -2,
+      "referendum": 1,
+      "snp": -2
+    },
+    {
+      "cell": "framing_preserving/bidirectional_mft/ipsos",
+      "lab": 1,
+      "con": 1,
+      "ld": -2,
+      "referendum": 1,
+      "snp": -1
+    },
+    {
+      "cell": "framing_preserving/bidirectional_mft/bes",
+      "lab": 1,
+      "con": 2,
+      "ld": -2,
+      "referendum": 1,
+      "snp": -2
+    },
+    {
+      "cell": "framing_preserving/axis/ipsos",
+      "lab": 3,
+      "con": -1,
+      "ld": 2,
+      "referendum": -2,
+      "snp": -2
+    },
+    {
+      "cell": "framing_preserving/axis/bes",
+      "lab": 3,
+      "con": -1,
+      "ld": 2,
+      "referendum": -2,
+      "snp": -2
+    },
+    {
+      "cell": "anonymised/baseline/noprofile",
+      "lab": 0,
+      "con": 1,
+      "ld": -1,
+      "referendum": 1,
+      "snp": -1
+    },
+    {
+      "cell": "anonymised/explicit_mft/ipsos",
+      "lab": 0,
+      "con": 2,
+      "ld": -1,
+      "referendum": 1,
+      "snp": -2
+    },
+    {
+      "cell": "anonymised/explicit_mft/bes",
+      "lab": 1,
+      "con": 2,
+      "ld": -2,
+      "referendum": 1,
+      "snp": -2
+    },
+    {
+      "cell": "anonymised/bidirectional_mft/ipsos",
+      "lab": 1,
+      "con": 2,
+      "ld": -2,
+      "referendum": 1,
+      "snp": -2
+    },
+    {
+      "cell": "anonymised/bidirectional_mft/bes",
+      "lab": 1,
+      "con": 2,
+      "ld": -2,
+      "referendum": 1,
+      "snp": -2
+    },
+    {
+      "cell": "anonymised/axis/ipsos",
+      "lab": 2,
+      "con": -1,
+      "ld": 2,
+      "referendum": -2,
+      "snp": -1
+    },
+    {
+      "cell": "anonymised/axis/bes",
+      "lab": 2,
+      "con": 0,
+      "ld": 2,
+      "referendum": -3,
+      "snp": -1
+    }
+  ],
+  "rejected": [
+    {
+      "cell": "total",
+      "rejected": 0
+    }
+  ],
+  "nulls_vs_performance": [
+    {
+      "arm": "axis",
+      "source": "bes",
+      "nulls": 0,
+      "n_cells": 3,
+      "mean_rho": 0.03246738826382819,
+      "winner_rate": 0
+    },
+    {
+      "arm": "axis",
+      "source": "ipsos",
+      "nulls": 0,
+      "n_cells": 3,
+      "mean_rho": 0.16666666666666666,
+      "winner_rate": 0
+    },
+    {
+      "arm": "bidirectional_mft",
+      "source": "bes",
+      "nulls": 0,
+      "n_cells": 3,
+      "mean_rho": 0.3,
+      "winner_rate": 0
+    },
+    {
+      "arm": "bidirectional_mft",
+      "source": "ipsos",
+      "nulls": 0,
+      "n_cells": 3,
+      "mean_rho": 0.390693866424127,
+      "winner_rate": 0.3333333333333333
+    },
+    {
+      "arm": "explicit_mft",
+      "source": "bes",
+      "nulls": 0,
+      "n_cells": 3,
+      "mean_rho": 0.23419927840283847,
+      "winner_rate": 0
+    },
+    {
+      "arm": "explicit_mft",
+      "source": "ipsos",
+      "nulls": 0,
+      "n_cells": 3,
+      "mean_rho": 0.4103913408340617,
+      "winner_rate": 1
+    }
+  ]
+}

@@ -1,0 +1,248 @@
+{
+  "election": 1997,
+  "model": "gpt-5",
+  "plan": {
+    "model": "gpt-5",
+    "summaries": 10,
+    "total_calls": 20
+  },
+  "leakage": {
+    "accuracy": 1.0,
+    "chance": 0.2,
+    "high_confidence_correct_rate": 0.9,
+    "threshold": 0.45,
+    "anonymisation_failed": true,
+    "n": 20
+  },
+  "dual": {
+    "minimal": 1.0,
+    "biased": 1.0,
+    "chance_biased": 0.2,
+    "gap": 0.0,
+    "partial_rate": 0.0,
+    "threshold": 0.45,
+    "anonymisation_indicated": true
+  },
+  "results": [
+    {
+      "family": "minimal",
+      "election": "1997",
+      "truth": "lab",
+      "identification": "A concise, third\u2011party summary of the UK Labour Party\u2019s 1997 general election manifesto\u2014\u2018New Labour: Because Britain Deserves Better\u2019 (Tony Blair)\u2014capturing its Ten Pledges and the five pledge\u2011card promises; i.e., content originating from the 1997 Labour manifesto.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "References unique to UK Labour\u2019s 1997 \u2018New Labour\u2019 platform, e.g. \u201cNew Labour\u2026 for the many, not the few,\u201d \u201cone\u2011off windfall levy on privatised utilities,\u201d \u201cno rise in basic/top income tax,\u201d \u201c250,000 under\u201125s into work,\u201d \u201ccut VAT on domestic fuel to 5%,\u201d \u201cend hereditary peers\u2019 voting rights,\u201d \u201cincorporate the ECHR,\u201d \u201cScottish Parliament; Welsh Assembly; London mayor,\u201d \u201csign Social Chapter; EMU decision by\u2026 referendum,\u201d \u201cretain Trident,\u201d and \u201cban all handguns.\u201d It also labels \u201cFive election pledges,\u201d mirroring Labour\u2019s 1997 pledge card.",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "1997",
+      "truth": "lab",
+      "guess": "labour",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "1997",
+      "truth": "con",
+      "identification": "A secondary, bullet\u2011point synopsis of the UK Conservative Party\u2019s 1997 general election manifesto (\u201cYou can only be sure with the Conservatives\u201d), compiled from the manifesto\u2019s themes and pledges. It is not the official text but a later summary produced by an unnamed summarizer (likely user- or AI-generated) drawing on the 1997 Conservative manifesto.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "medium",
+      "evidence": "The heading says \u201cConservative Party Manifesto 1997 \u2014 Summary.\u201d Content matches distinctive 1997 UK Conservative policies: opposing the EU Social Chapter and a national minimum wage; \u2018keep options open\u2019 on the single currency with a referendum and \u201cunlikely by 1999\u201d; proposals to privatise London Underground and National Air Traffic Services; complete rail privatisation; support for grammar schools and Assisted Places; \u2018Basic Pension Plus\u2019-style funded pensions via NI rebates for new entrants; responses to BSE; opposition to devolution to Scottish/Welsh assemblies; CAP reform; CCTV expansion and mandatory minimum sentences. These are all hallmarks of the 1997 UK Conservative general election manifesto under John Major.",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "1997",
+      "truth": "con",
+      "guess": "conservative",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "1997",
+      "truth": "ld",
+      "identification": "A condensed, third\u2011party style summary of the UK Liberal Democrats\u2019 1997 general election manifesto, originating from the Liberal Democrats\u2019 policy platform for that election (i.e., derived from the party\u2019s 1997 manifesto rather than a verbatim party document).",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The header says \u201cLiberal Democrats Manifesto 1997 \u2013 Summary.\u201d Signature 1997 Lib Dem policies appear throughout: \u201c+1p on the basic income tax rate\u201d to fund education; \u201cIndependent Bank of England\u201d; \u201cPR for all elections\u201d; \u201cHome Rule for Scotland and Wales (PR, tax\u2011varying powers)\u201d; \u201ceuro \u2026 if \u2026 referendum approves\u201d; \u201cequal age of consent; repeal Section 28\u201d; \u201ctreble rail freight and double passengers by 2010\u201d; \u201cno new nuclear subsidies\u201d; and \u201c50% rate over \u00a3100k.\u201d",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "1997",
+      "truth": "ld",
+      "guess": "liberal democrats",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "1997",
+      "truth": "referendum",
+      "identification": "A paraphrased summary of the UK Referendum Party\u2019s 1996\u201397 'Statement of Aims' as presented on the Wikipedia page 'Referendum Party (UK)'.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "Mentions the \"Referendum Party\u2019s Statement of Aims\"; focuses on Maastricht-amended Treaty on European Union; contrasts \"federal Europe\" vs. an association of sovereign nations; urgency tied to Helmut Kohl\u2019s claim about irreversibility within two years; notes main parties only offering a referendum on the single currency (the Euro).",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "1997",
+      "truth": "referendum",
+      "guess": "referendum party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "1997",
+      "truth": "snp",
+      "identification": "A modern, secondary bullet\u2011point synopsis of the Scottish National Party\u2019s 1997 UK General Election manifesto (SNP). It is not the original manifesto text; it appears to be a later summary compiled from that manifesto, likely from a contemporary online source (e.g., a Wikipedia-style or blog summary), with no explicit attribution in the excerpt.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "medium",
+      "evidence": "The heading explicitly says \u201cScottish National Party Manifesto 1997 \u2014 Summary (under 500 words)\u201d. The content matches SNP positions from the 1990s (e.g., independence route via SNP MP majority and an independence referendum; removal of Trident; Dounreay reprocessing end; abolition of feudal tenure; total handgun ban post\u2011Dunblane; creation of a Scottish Broadcasting Corporation; \u2018Scot\u2011Lot\u2019 lottery; pledge to cut corporation tax from 33% to 30% and small company rate from 23% to 18%; phase\u2011out of nuclear power; PR for a unicameral parliament; EU membership continuity). The \u201c\u2014 Summary (under 500 words)\u201d phrasing signals it is a secondary synopsis, not an original manifesto extract.",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "1997",
+      "truth": "snp",
+      "guess": "scottish national party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "1997",
+      "truth": "lab",
+      "identification": "A summary of the UK Labour Party\u2019s 1997 general election manifesto, \u2018New Labour: Because Britain Deserves Better,\u2019 including its five-pledge card; published by the Labour Party (April 1997, United Kingdom).",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text lists Labour\u2019s 1997 \u2018five pledges\u2019 (class sizes, halve time to sentence persistent young offenders, cut NHS waiting lists via \u00a3100m from bureaucracy, a windfall levy to get 250,000 under\u201125s into work, and no rise in basic/top income tax with VAT on fuel cut to 5%); promises Bank of England reform; creation of a Scottish Parliament, Welsh Assembly, and a London mayor; a national minimum wage set by an independent Low Pay Commission; ending hereditary peers\u2019 voting rights; a free vote on a complete ban on handguns; establishment of a Food Standards Agency, NESTA, the University for Industry and Individual Learning Accounts; a Freedom of Information Act; and the stance of \u2018no case for new nuclear power stations\u2019 alongside a referendum on joining the single currency.",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "1997",
+      "truth": "lab",
+      "guess": "labour",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "1997",
+      "truth": "con",
+      "identification": "A bullet-point summary of the UK Conservative Party\u2019s 1997 general election manifesto (John Major era), i.e., the Conservative Party (UK) 1997 manifesto.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "References that are distinctly Conservative (UK, 1997):\n- Education: \"expand Assisted Places,\" \"allow some selection and facilitate creation of grammar schools\" (Labour opposed these in 1997; Conservatives supported them).\n- Europe: \"oppose adding EU-level social and employment regulations\u2026 protect existing opt-outs\" (the Tory Social Chapter opt-out stance); \"keep options open on a single currency; no entry without a national referendum.\"\n- Privatisation: \"complete rail privatisation; privatise London Underground\u2026 privatise National Air Traffic Services\" (core Conservative policy in 1997).\n- Housing: \"continue Right to Buy\" (signature Conservative policy).\n- Taxes/spend: aim for \"20p basic income tax rate\" and top rate \"no higher than 40p,\" spending below 40% of GDP (classic Conservative positioning).\n- Citizen\u2019s Charter/Chartermark (a John Major Conservative initiative).",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "1997",
+      "truth": "con",
+      "guess": "conservative",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "1997",
+      "truth": "ld",
+      "identification": "A bullet\u2011point summary of the UK Liberal Democrats\u2019 1997 general election manifesto (\u201cMake the Difference\u201d), i.e., the Lib Dems\u2019 manifesto for the 1997 UK general election.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "\u201cInvest \u00a32bn per year (funded by +1p on basic income tax).\u201d (the Lib Dems\u2019 signature 1997 \u20181p on income tax for education\u2019 pledge); \u201cProportional representation for all elections; fixed four\u2011year terms\u201d (core Lib Dem constitutional reform platform); \u201cLocal Income Tax\u201d (long\u2011standing Lib Dem policy); \u201cSupport entry to a single European currency if criteria met and backed by referendum\u201d (Lib Dem pro\u2011EU stance with a referendum); \u201cRoyal Commission on drugs\u201d (distinctive Lib Dem justice policy); \u201cRepeal Section 28\u2026 equal age of consent\u2026 end discrimination in the armed forces\u201d (Lib Dem LGBT equality agenda); \u201cNo subsidies for nuclear; no replacements at end of life\u201d (Lib Dem 1997 anti\u2011new\u2011nuclear line); \u201cRestore free eye and dental checks\u201d (Lib Dem NHS pledge); \u201c0.7% ODA/GNP within 10 years\u201d (Lib Dem development target); \u201cRetain Trident with reduced warheads\u201d (Lib Dem defence position in 1997).",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "1997",
+      "truth": "ld",
+      "guess": "liberal democrats",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "1997",
+      "truth": "referendum",
+      "identification": "The Referendum Party\u2019s 1996\u201397 Draft Referendum Bill/pamphlet (issued by Sir James Goldsmith\u2019s Referendum Party) proposing a national referendum on the UK\u2019s relationship with the European Union.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "References to offering a referendum choice between being \"part of a federal Europe\" or \"an association of sovereign nations within a common trading market\"; proposing the vote \"before or alongside the next general election\"; arguing recent European treaties transferred powers and required public consent; and criticizing other parties for limiting any referendum to the \"single currency\" rather than the broader constitutional question.",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "1997",
+      "truth": "referendum",
+      "guess": "referendum party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "1997",
+      "truth": "snp",
+      "identification": "A summary of the Scottish National Party\u2019s 1997 UK general election manifesto (the SNP\u2019s independence-in-Europe program), published by the SNP.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "References specific to Scotland and the SNP\u2019s 1990s platform: independence route via a majority of Scottish MPs then a referendum; creation of Scottish Defence Forces, removal of nuclear weapons and phased NATO withdrawal; abolishing Skye Bridge tolls; ending nuclear reprocessing at Dounreay; prioritizing Rosyth refits; asserting North Sea jurisdiction; support for Gaelic and Scots; land reform to abolish feudal tenure; explicit 1997 dating.",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "1997",
+      "truth": "snp",
+      "guess": "scottish national party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    }
+  ]
+}
