@@ -506,3 +506,24 @@ def test_phase1_plan_counts_the_requested_variants():
     assert counts["summary_calls"] == 2 * 2 * summarise.N_RUNS and counts["total_calls"] == 2 * counts["summary_calls"]
 
 
+def test_summary_gate_rejects_fragments():
+    from phase_pipeline.summarise import looks_like_summary
+    manifesto = " ".join(f"word{i}" for i in range(3000))
+    assert not looks_like_summary("Thanks to Claude for assistance with this document.", manifesto)  # fragment
+    assert looks_like_summary(" ".join(f"summary{i}" for i in range(300)), manifesto)  # proper length
+    assert looks_like_summary("short", "a short manifesto")  # no floor for tiny sources like the Referendum leaflet
+
+
+def test_summary_gate_re_requests_and_store_reject(fake_api, monkeypatch):
+    # first reply is a fragment, second a real summary: the fragment is kept, the summary is used
+    llm_client, _, _, _ = fake_api
+    (llm_client.CACHE_DIR / "summaries").mkdir()
+    from phase_pipeline import summarise
+    replies = iter(["Vote Green!"] + [" ".join(f"s{i}" for i in range(300))] * 20)
+    monkeypatch.setattr(llm_client, "_anthropic_post", lambda body, key: {"content": [{"type": "text", "text": next(replies)}]})
+    monkeypatch.setattr(summarise, "N_RUNS", 1)
+    out = summarise.summarise_manifesto("2005", "green", " ".join(f"m{i}" for i in range(2000)), "claude", variants=["minimal"])
+    assert out[0]["rejected_attempts"] == 1 and len(out[0]["text"].split()) == 300
+    assert (llm_client.CACHE_DIR / "summaries_rejected" / "2005_green_minimal_claude_run1_rejected1.json").exists()
+
+

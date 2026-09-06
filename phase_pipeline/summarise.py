@@ -1,6 +1,8 @@
 """Phase 1: manifesto summarisation across six registered variants."""
 
 from .llm_client import call_llm
+from . import llm_client
+import json
 
 from .prompts import N_RUNS  # registered count
 
@@ -17,6 +19,21 @@ def anonymise(text, party_names):
         text = text.replace(name, "[PARTY]")
     return text
 
+# A response that is too short for its source, or mostly copied from it, is
+# a fragment, not a summary. Claude produced these for the
+# 2005 Green manifesto, which ends in a credits page.
+MIN_SUMMARY_WORDS = 150
+MAX_COPIED_SHARE = 0.5
+
+
+def looks_like_summary(summary, manifesto, min_words=MIN_SUMMARY_WORDS):
+    return len(manifesto.split()) <= 1000 or len(summary.split()) >= min_words
+
+# a rejected response is evidence about the model, as such it is retained in storage.
+def keep_rejected(response, name):
+    folder = llm_client.CACHE_DIR / "summaries_rejected"
+    folder.mkdir(parents=True, exist_ok=True)
+    (folder / f"{name}.json").write_text(json.dumps(response, indent=2, ensure_ascii=False), encoding="utf-8")
 
 # run all six variants x N_RUNS for one manifesto with one model
 def summarise_manifesto(election, party, manifesto_text, model, party_name='',
@@ -33,9 +50,17 @@ def summarise_manifesto(election, party, manifesto_text, model, party_name='',
                   else template.format(manifesto=text))
         for run in range(1, N_RUNS + 1):
             key = f"{election}_{party}_{variant}_{model}_run{run}"
-            responses.append(
-                call_llm(prompt, model=model, cache_key=key, subdir="summaries")
-            )
+            resp = call_llm(prompt, model=model, cache_key=key, subdir="summaries")
+            for attempt in range(3):  # not a summary: keep it as evidence and ask again
+                if looks_like_summary(resp["text"], text):
+                    break
+                print(f"  {key}: {len(resp['text'].split())} words, not a summary; re-requesting ({attempt + 1}/3)")
+                keep_rejected(resp, f"{key}_rejected{attempt + 1}")
+                resp = call_llm(prompt, model=model, cache_key=key, subdir="summaries", force_refresh=True)
+            else:
+                raise ValueError(f"{key}: no valid summary in 3 attempts; check the manifesto text")
+            resp["rejected_attempts"] = attempt
+            responses.append(resp)
     return responses
 
 
