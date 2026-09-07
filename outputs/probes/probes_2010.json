@@ -1,0 +1,248 @@
+{
+  "election": 2010,
+  "model": "gpt-5",
+  "plan": {
+    "model": "gpt-5",
+    "summaries": 10,
+    "total_calls": 20
+  },
+  "leakage": {
+    "accuracy": 0.95,
+    "chance": 0.2,
+    "high_confidence_correct_rate": 0.9,
+    "threshold": 0.45,
+    "anonymisation_failed": true,
+    "n": 20
+  },
+  "dual": {
+    "minimal": 0.9,
+    "biased": 1.0,
+    "chance_biased": 0.2,
+    "gap": 0.09999999999999998,
+    "partial_rate": 0.05,
+    "threshold": 0.45,
+    "anonymisation_indicated": true
+  },
+  "results": [
+    {
+      "family": "minimal",
+      "election": "2010",
+      "truth": "con",
+      "identification": "A bullet\u2011point summary of the UK Conservative Party\u2019s 2010 general election manifesto\u2014\u2018Invitation to Join the Government of Britain\u2019\u2014derived from that manifesto (produced by the Conservative Party), though the wording here is an unofficial paraphrase/summary rather than the original text.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "Repeated references to 2010-era UK Conservative policies: \u201cBig Society,\u201d Office for Budget Responsibility, emergency Budget/deficit reduction, elected police commissioners, GP\u2011led NHS commissioning, Cancer Drugs Fund, National Citizen Service, scrap ID cards/National Identity Register, \u2018referendum lock\u2019 and never join the Euro, restore earnings link for the state pension, bank levy/BoE supervision, Green Investment Bank/Green Deal, High Speed Rail while opposing Heathrow 3rd runway. These are all signature planks of the Conservatives\u2019 2010 general election manifesto.",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2010",
+      "truth": "con",
+      "guess": "conservative",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2010",
+      "truth": "lab",
+      "identification": "A third\u2011party summary of the UK Labour Party\u2019s 2010 general election manifesto titled \u201cA Future Fair for All,\u201d derived from the official Labour Party manifesto.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The header explicitly says \u201cLabour Party Manifesto 2010 \u2014 \u2018A Future Fair for All\u2019 (summary)\u201d. The bullets match signature 2010 UK Labour pledges: 50p top rate and NI rise; Future Jobs Fund; Heathrow third runway with conditions; fixed\u2011line broadband levy; AV referendum; National Care Service; 0.7% aid by 2013; High Speed Rail; Green Investment Bank.",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2010",
+      "truth": "lab",
+      "guess": "labour",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2010",
+      "truth": "ld",
+      "identification": "An unofficial, bullet\u2011point synopsis of the UK Liberal Democrats\u2019 2010 General Election manifesto. The content is drawn from the party\u2019s official 2010 manifesto, but the wording here is a later summary, not the original document.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "Title line explicitly says \u201cLiberal Democrat Manifesto 2010 \u2013 Summary\u201d; hallmark 2010 Lib Dem policies listed, e.g. raising the income tax personal allowance to \u00a310,000; introducing a mansion tax on property over \u00a32m; scrapping ID cards and control orders; opposing new nuclear power; phasing out university tuition fees over six years; reviewing Trident rather than like\u2011for\u2011like replacement; adopting STV for the Commons and votes at 16; the \u2018Freedom Bill\u2019 civil liberties package; the Pupil Premium; and creating a UK Infrastructure Bank.",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2010",
+      "truth": "ld",
+      "guess": "liberal democrats",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2010",
+      "truth": "ukip",
+      "identification": "An unofficial, third\u2011party bullet\u2011point summary of the UK Independence Party (UKIP) manifesto for the 2010 UK general election, derived from UKIP\u2019s 2010 manifesto rather than the party\u2019s official text.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "medium",
+      "evidence": "The header explicitly says \u201cUKIP Manifesto 2010 \u2013 Summary (under 500 words).\u201d The content lists hallmark UKIP 2010 positions: leaving the EU; five\u2011year freeze on immigration; repeal of the Human Rights Act and leaving the ECHR; climate\u2011sceptic stance and repeal of the Climate Change Act; large defence increase and maintaining Trident; citizen\u2019s pension; direct democracy and elected local boards; and transport ideas like a Thames Estuary hub airport.",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2010",
+      "truth": "ukip",
+      "guess": "uk independence party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2010",
+      "truth": "bnp",
+      "identification": "A secondary-source summary of the British National Party\u2019s 2010 UK general election manifesto (\u2018Democracy, Freedom, Culture and Identity\u2019), likely adapted from the British National Party article\u2019s policy/2010 manifesto section on Wikipedia.",
+      "grade": "PARTIAL",
+      "correct": false,
+      "stated_confidence": "medium",
+      "evidence": "It explicitly opens with \u201cThe British National Party\u2019s 2010 manifesto\u2026\u201d and lists hallmark BNP 2010 positions: halting all new immigration and promoting voluntary repatriation; leaving the EU; portraying Islam as incompatible with Western democracy and proposing bans on the burka, ritual slaughter, and new mosques; restoring corporal and capital punishment; reinstating a 200\u2011mile fishing limit; and nationalising telecoms infrastructure for universal 100 Mbps broadband. These are distinctive planks of the BNP\u2019s 2010 general election manifesto, \u2018Democracy, Freedom, Culture and Identity.\u2019",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2010",
+      "truth": "bnp",
+      "guess": "british national party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2010",
+      "truth": "con",
+      "identification": "A neutral, bullet\u2011point summary of the UK Conservative Party\u2019s 2010 General Election manifesto, \u2018Invitation to Join the Government of Britain\u2019 (published April 2010).",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "Multiple signature 2010 UK Conservative pledges appear: create the Office for Budget Responsibility and hold an emergency Budget within 50 days; scrap ID cards and limit DNA retention; recognise marriage in the tax system; set an annual cap on non\u2011EU migration; no new runways at Heathrow, Stansted or Gatwick; a bank levy; establish a Green Investment Bank and the Green Deal (~\u00a36,500 per home); renew the nuclear deterrent; an EU \u2018referendum lock\u2019; 0.7% aid by 2013; Cancer Drugs Fund; GP\u2011led commissioning; pupil premium; abolish regional housing targets; replace RDAs with Local Enterprise Partnerships; Border Police Force; reduce MPs by ~10%; Fair Fuel Stabiliser; R&D tax credits focused on hi\u2011tech SMEs; corporation tax to 25%/20% for small firms; four CCS plants; supermarket ombudsman; targeted badger control.",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2010",
+      "truth": "con",
+      "guess": "conservative",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2010",
+      "truth": "lab",
+      "identification": "A condensed summary of the UK Labour Party\u2019s 2010 General Election manifesto, \"A Future Fair for All,\" published by the Labour Party (April 2010).",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "References tightly match distinctive Labour 2010 pledges: \"Future Jobs Fund (200,000 jobs)\"; \"Referenda on Alternative Vote and a reformed, elected second chamber; fixed\u2011term parliaments\"; \"a third runway at Heathrow with conditions\"; \"Create UK Finance for Growth (\u00a34bn)\"; \"Transform the Post Office into a People\u2019s Bank\"; \"National Care Service... from 2011 free home care for highest needs\"; \"re\u2011link Basic State Pension to earnings from 2012\"; \"0.7% of national income to aid by 2013 in law\"; \"two\u2011thirds shareholder support\" for takeovers; \"Green Investment Bank\"; \"1% public\u2011sector pay cap (2011\u201313).\"",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2010",
+      "truth": "lab",
+      "guess": "labour",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2010",
+      "truth": "ld",
+      "identification": "An anonymised, policy\u2011only summary of the UK Liberal Democrats\u2019 2010 General Election manifesto (\u201cChange that works for you. Building a fairer Britain\u201d), originating from the Lib Dem 2010 manifesto.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "Flagship Liberal Democrat 2010 pledges appear throughout: raise the income tax personal allowance to \u00a310,000; a 1% levy on property value above \u00a32m (\u201cmansion tax\u201d); restore the state pension earnings link via a \u2018triple lock\u2019; scrap ID cards; no like\u2011for\u2011like Trident replacement; oppose new nuclear; \u00a32.5bn Pupil Premium; phase out tuition fees over six years; convert Northern Rock to a building society; per\u2011plane duty and cancel Heathrow\u2019s third runway; STV for MPs and votes at 16; end child detention in the asylum system; elected police authorities; PostBank; \u2018eco\u2011cashback\u2019 and a \u00a33.1bn green stimulus.",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2010",
+      "truth": "ld",
+      "guess": "liberal democrats",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2010",
+      "truth": "ukip",
+      "identification": "A policy summary of the United Kingdom Independence Party (UKIP) 2010 UK General Election manifesto, \u2018Empowering the People,\u2019 published by UKIP (ukip.org) in April 2010.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "Distinctive UKIP 2010 policies appear throughout: leaving the EU and ECHR; a 31% flat tax merging income tax and employee NI; abolishing VAT and replacing it with a Local Sales Tax shared with councils; a non\u2013means-tested Citizen\u2019s Pension of at least \u00a3130/week at 65; repeal of the Climate Change Act and expansion of nuclear to up to 50% of electricity; leaving the Common Fisheries Policy with a 200\u2011mile EEZ and landing all catches; English\u2011only sittings at Westminster; protecting imperial weights and measures; St George\u2019s Day as a holiday; a Thames Estuary hub airport; school and health vouchers; abolishing Ofsted; and strong border controls including restoring the Primary Purpose Rule.",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2010",
+      "truth": "ukip",
+      "guess": "uk independence party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2010",
+      "truth": "bnp",
+      "identification": "A bullet\u2011point summary of the British National Party\u2019s (BNP) 2010 UK general election manifesto, from the RationalWiki article on the British National Party (section: \u201cSummary of the 2010 manifesto\u201d).",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "Header explicitly says \u201cSummary of the 2010 manifesto (policies only, with ideological framing removed)\u201d. The policy mix matches the British National Party\u2019s 2010 UK general election manifesto: immediate EU withdrawal; halting most immigration and specifically from Muslim\u2011majority countries; repeal of race/equalities laws; withdrawal from the ECHR and repeal of the Human Rights Act; reintroduction of corporal and capital punishment; ban on non\u2011stunned ritual slaughter; 90 mph motorway limit; restoration of a 200\u2011mile fishing zone; maglev rail; nationalising telecoms infrastructure for universal 100 Mbps; compulsory one\u2011year community service for school leavers; \u201cvoluntary resettlement\u201d incentives; protection of pubs with supervised smoking rooms. The exact phrasing \u201cwith ideological framing removed\u201d and the bullet\u2011pointed, sectioned summary are characteristic of the RationalWiki page on the BNP, which includes a section titled precisely this.",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2010",
+      "truth": "bnp",
+      "guess": "british national party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    }
+  ]
+}

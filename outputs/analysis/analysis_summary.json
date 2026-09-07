@@ -1,0 +1,208 @@
+{
+  "elections": [
+    2010
+  ],
+  "source": "summary",
+  "n_verdicts": 420,
+  "best_cell": {
+    "2010": "minimal/baseline/noprofile"
+  },
+  "noise_floors": {
+    "invariance": {
+      "positional_swap": 0.08571428571428572,
+      "distorted_vs_minimal": {
+        "rate": null,
+        "n_comparisons": 0,
+        "values": [
+          "minimal"
+        ]
+      },
+      "calibration_repeats": {
+        "rate": null,
+        "n_comparisons": 0,
+        "values": []
+      },
+      "floor": 0.08571428571428572
+    },
+    "framing": {
+      "framing_axis": {
+        "rate": 0.1,
+        "n_comparisons": 70,
+        "values": [
+          "framing_preserving",
+          "minimal"
+        ]
+      },
+      "party_cue": {
+        "rate": null,
+        "n_comparisons": 0,
+        "values": [
+          "anonymised"
+        ]
+      },
+      "framework_arm": {
+        "rate": 0.38333333333333336,
+        "n_comparisons": 60,
+        "values": [
+          "axis",
+          "baseline",
+          "bidirectional_mft",
+          "explicit_mft"
+        ]
+      },
+      "source_condition": {
+        "rate": 0.2,
+        "n_comparisons": 90,
+        "values": [
+          "bes",
+          "ipsos",
+          "noprofile"
+        ]
+      },
+      "invariance_floor": 0.08571428571428572,
+      "ordering_holds": null
+    },
+    "calibration": {
+      "reversal_by_confidence": {
+        "medium": 0.11666666666666667,
+        "high": 0.009708737864077669
+      },
+      "gap": 0.106957928802589,
+      "distribution": {
+        "counts": {
+          "medium": 167,
+          "high": 253
+        },
+        "proportions": {
+          "medium": 0.3976190476190476,
+          "high": 0.6023809523809524
+        },
+        "n": 420
+      }
+    }
+  },
+  "profile_value_added": {
+    "2010": {
+      "rho_with_profile": 0.9999999999999999,
+      "rho_no_profile": 0.9999999999999999,
+      "improvement": 0.0,
+      "profile_helps": "False"
+    }
+  },
+  "party_error": {
+    "bnp": {
+      "mean_signed_error": 0,
+      "sd_across_elections": 0.0,
+      "n_elections": 1,
+      "per_election": {
+        "2010": 0
+      }
+    },
+    "con": {
+      "mean_signed_error": 0,
+      "sd_across_elections": 0.0,
+      "n_elections": 1,
+      "per_election": {
+        "2010": 0
+      }
+    },
+    "lab": {
+      "mean_signed_error": 0,
+      "sd_across_elections": 0.0,
+      "n_elections": 1,
+      "per_election": {
+        "2010": 0
+      }
+    },
+    "ld": {
+      "mean_signed_error": 0,
+      "sd_across_elections": 0.0,
+      "n_elections": 1,
+      "per_election": {
+        "2010": 0
+      }
+    },
+    "ukip": {
+      "mean_signed_error": 0,
+      "sd_across_elections": 0.0,
+      "n_elections": 1,
+      "per_election": {
+        "2010": 0
+      }
+    }
+  },
+  "directional_error": {
+    "by_family": {
+      "right": {
+        "mean_signed_error": 0,
+        "sd": 0.0,
+        "n_parties": 2
+      },
+      "centre-right": {
+        "mean_signed_error": 0,
+        "sd": 0.0,
+        "n_parties": 1
+      },
+      "centre-left": {
+        "mean_signed_error": 0,
+        "sd": 0.0,
+        "n_parties": 1
+      },
+      "centre": {
+        "mean_signed_error": 0,
+        "sd": 0.0,
+        "n_parties": 1
+      }
+    },
+    "by_party": {
+      "bnp": {
+        "mean_signed_error": 0,
+        "sd_across_elections": 0.0,
+        "n_elections": 1,
+        "per_election": {
+          "2010": 0
+        }
+      },
+      "con": {
+        "mean_signed_error": 0,
+        "sd_across_elections": 0.0,
+        "n_elections": 1,
+        "per_election": {
+          "2010": 0
+        }
+      },
+      "lab": {
+        "mean_signed_error": 0,
+        "sd_across_elections": 0.0,
+        "n_elections": 1,
+        "per_election": {
+          "2010": 0
+        }
+      },
+      "ld": {
+        "mean_signed_error": 0,
+        "sd_across_elections": 0.0,
+        "n_elections": 1,
+        "per_election": {
+          "2010": 0
+        }
+      },
+      "ukip": {
+        "mean_signed_error": 0,
+        "sd_across_elections": 0.0,
+        "n_elections": 1,
+        "per_election": {
+          "2010": 0
+        }
+      }
+    }
+  },
+  "families": {
+    "con": "centre-right",
+    "lab": "centre-left",
+    "ld": "centre",
+    "ukip": "right",
+    "bnp": "right"
+  },
+  "polling_benchmark": {}
+}
