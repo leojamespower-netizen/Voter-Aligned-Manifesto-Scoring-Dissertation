@@ -1,0 +1,216 @@
+{
+  "elections": [
+    2017
+  ],
+  "source": "summary",
+  "n_verdicts": 420,
+  "best_cell": {
+    "2017": "minimal/axis/ipsos"
+  },
+  "noise_floors": {
+    "invariance": {
+      "positional_swap": 0.12857142857142856,
+      "distorted_vs_minimal": {
+        "rate": null,
+        "n_comparisons": 0,
+        "values": [
+          "minimal"
+        ]
+      },
+      "calibration_repeats": {
+        "rate": null,
+        "n_comparisons": 0,
+        "values": []
+      },
+      "floor": 0.12857142857142856
+    },
+    "framing": {
+      "framing_axis": {
+        "rate": 0.17142857142857143,
+        "n_comparisons": 70,
+        "values": [
+          "framing_preserving",
+          "minimal"
+        ]
+      },
+      "party_cue": {
+        "rate": null,
+        "n_comparisons": 0,
+        "values": [
+          "anonymised"
+        ]
+      },
+      "framework_arm": {
+        "rate": 0.25,
+        "n_comparisons": 60,
+        "values": [
+          "axis",
+          "baseline",
+          "bidirectional_mft",
+          "explicit_mft"
+        ]
+      },
+      "source_condition": {
+        "rate": 0.6111111111111112,
+        "n_comparisons": 90,
+        "values": [
+          "bes",
+          "ipsos",
+          "noprofile"
+        ]
+      },
+      "invariance_floor": 0.12857142857142856,
+      "ordering_holds": null
+    },
+    "calibration": {
+      "reversal_by_confidence": {
+        "low": 0.2,
+        "high": 0.0784313725490196,
+        "medium": 0.10204081632653061
+      },
+      "gap": 0.1215686274509804,
+      "distribution": {
+        "counts": {
+          "low": 24,
+          "high": 247,
+          "medium": 149
+        },
+        "proportions": {
+          "low": 0.05714285714285714,
+          "high": 0.5880952380952381,
+          "medium": 0.3547619047619048
+        },
+        "n": 420
+      }
+    }
+  },
+  "profile_value_added": {
+    "2017": {
+      "rho_with_profile": 0.8999999999999998,
+      "rho_no_profile": 0.19999999999999998,
+      "improvement": 0.6999999999999998,
+      "profile_helps": "True"
+    }
+  },
+  "party_error": {
+    "con": {
+      "mean_signed_error": 0,
+      "sd_across_elections": 0.0,
+      "n_elections": 1,
+      "per_election": {
+        "2017": 0
+      }
+    },
+    "lab": {
+      "mean_signed_error": 0,
+      "sd_across_elections": 0.0,
+      "n_elections": 1,
+      "per_election": {
+        "2017": 0
+      }
+    },
+    "ld": {
+      "mean_signed_error": 1,
+      "sd_across_elections": 0.0,
+      "n_elections": 1,
+      "per_election": {
+        "2017": 1
+      }
+    },
+    "snp": {
+      "mean_signed_error": -1,
+      "sd_across_elections": 0.0,
+      "n_elections": 1,
+      "per_election": {
+        "2017": -1
+      }
+    },
+    "ukip": {
+      "mean_signed_error": 0,
+      "sd_across_elections": 0.0,
+      "n_elections": 1,
+      "per_election": {
+        "2017": 0
+      }
+    }
+  },
+  "directional_error": {
+    "by_family": {
+      "centre-right": {
+        "mean_signed_error": 0,
+        "sd": 0.0,
+        "n_parties": 1
+      },
+      "centre-left": {
+        "mean_signed_error": 0,
+        "sd": 0.0,
+        "n_parties": 1
+      },
+      "centre": {
+        "mean_signed_error": 1,
+        "sd": 0.0,
+        "n_parties": 1
+      },
+      "regionalist": {
+        "mean_signed_error": -1,
+        "sd": 0.0,
+        "n_parties": 1
+      },
+      "right": {
+        "mean_signed_error": 0,
+        "sd": 0.0,
+        "n_parties": 1
+      }
+    },
+    "by_party": {
+      "con": {
+        "mean_signed_error": 0,
+        "sd_across_elections": 0.0,
+        "n_elections": 1,
+        "per_election": {
+          "2017": 0
+        }
+      },
+      "lab": {
+        "mean_signed_error": 0,
+        "sd_across_elections": 0.0,
+        "n_elections": 1,
+        "per_election": {
+          "2017": 0
+        }
+      },
+      "ld": {
+        "mean_signed_error": 1,
+        "sd_across_elections": 0.0,
+        "n_elections": 1,
+        "per_election": {
+          "2017": 1
+        }
+      },
+      "snp": {
+        "mean_signed_error": -1,
+        "sd_across_elections": 0.0,
+        "n_elections": 1,
+        "per_election": {
+          "2017": -1
+        }
+      },
+      "ukip": {
+        "mean_signed_error": 0,
+        "sd_across_elections": 0.0,
+        "n_elections": 1,
+        "per_election": {
+          "2017": 0
+        }
+      }
+    }
+  },
+  "families": {
+    "con": "centre-right",
+    "lab": "centre-left",
+    "ld": "centre",
+    "snp": "regionalist",
+    "ukip": "right"
+  },
+  "polling_benchmark": {}
+}

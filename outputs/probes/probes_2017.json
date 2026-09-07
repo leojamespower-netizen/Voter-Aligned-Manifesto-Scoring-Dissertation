@@ -1,0 +1,248 @@
+{
+  "election": 2017,
+  "model": "claude",
+  "plan": {
+    "model": "claude",
+    "summaries": 10,
+    "total_calls": 20
+  },
+  "leakage": {
+    "accuracy": 1.0,
+    "chance": 0.2,
+    "high_confidence_correct_rate": 1.0,
+    "threshold": 0.45,
+    "anonymisation_failed": true,
+    "n": 20
+  },
+  "dual": {
+    "minimal": 1.0,
+    "biased": 1.0,
+    "chance_biased": 0.2,
+    "gap": 0.0,
+    "partial_rate": 0.0,
+    "threshold": 0.45,
+    "anonymisation_indicated": true
+  },
+  "results": [
+    {
+      "family": "minimal",
+      "election": "2017",
+      "truth": "con",
+      "identification": "This is an AI-generated or human-written summary/analysis of the 2017 UK Conservative Party General Election Manifesto. It is NOT the actual manifesto text itself, but rather a structured summary document produced by someone (likely an AI assistant like Claude, ChatGPT, or a student/researcher) who read and condensed the original manifesto 'Forward, Together: Our Plan for a Stronger Britain and a Prosperous Future' into key points.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text is formatted as a summary with clear section headings, presents information in a neutral encyclopedic tone rather than partisan language, uses bullet points to organize policy positions, and includes contextual framing like 'The manifesto identifies five fundamental challenges' rather than direct manifesto language like 'We will'. The content accurately reflects the 2017 Conservative manifesto's actual policies (social care reforms including the controversial 'dementia tax', Double Lock on pensions, grammar schools, T-levels, Digital Charter, etc.), but the presentation style is analytical rather than persuasive.",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2017",
+      "truth": "con",
+      "guess": "conservative",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2017",
+      "truth": "lab",
+      "identification": "This is a summary of the UK Labour Party's 2017 General Election Manifesto, officially titled 'For the Many, Not the Few'. The original manifesto was produced by the Labour Party under Jeremy Corbyn's leadership for the June 2017 snap general election. This particular summary appears to be an AI-generated or human-written condensation of that manifesto, not the original document itself.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text explicitly states it is a 'Summary: Labour Party Manifesto 2017 - For the Many, Not the Few' in the title. It references Jeremy Corbyn as the leader, specific policy commitments like the \u00a3250 billion National Transformation Fund, abolishing tuition fees, \u00a310/hour minimum wage, and positions on Brexit that align with Labour's 2017 platform. The slogan 'For the Many, Not the Few' was Labour's official 2017 campaign slogan.",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2017",
+      "truth": "lab",
+      "guess": "labour",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2017",
+      "truth": "ld",
+      "identification": "This is an AI-generated summary (likely by ChatGPT, Claude, or similar LLM) of the 2017 UK Liberal Democrat general election manifesto titled 'Change Britain's Future'. The original manifesto was produced by the Liberal Democrats political party for the June 2017 UK general election. The summary format, comprehensive structure, and neutral analytical tone are characteristic of LLM-produced political document summaries.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text is a structured summary of a political manifesto with specific policy details, dates (2017), party name (Liberal Democrats), leader name (Tim Farron), and manifesto title ('Change Britain's Future'). The format uses headers, bullet-point style summaries, and comprehensive policy coverage across multiple areas. The style and structure suggest an AI-generated summary rather than original source material.",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2017",
+      "truth": "ld",
+      "guess": "liberal democrats",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2017",
+      "truth": "snp",
+      "identification": "This is a summary of the Scottish National Party (SNP) 2017 UK General Election manifesto. The summary itself appears to be AI-generated or human-written analysis/condensation of the original manifesto document, likely created for educational, research, or informational purposes. It is not the official manifesto text but rather a third-party summary of it.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text is explicitly titled '# SNP Manifesto 2017 Summary' and contains detailed policy positions, achievements, and campaign themes consistent with the Scottish National Party's 2017 General Election manifesto titled 'Stronger for Scotland'. It references specific SNP policies (opposition to Trident, Brexit positioning, independence referendum), specific figures (\u00a3120 billion, 80,000 jobs, \u00a3190 million convergence funding), and specific achievements claimed by SNP MPs. The structured format with headers and bullet-point style summaries indicates this is a summary document rather than the original manifesto.",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2017",
+      "truth": "snp",
+      "guess": "scottish national party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2017",
+      "truth": "ukip",
+      "identification": "This is an AI-generated or human-written summary of the UK Independence Party (UKIP) 2017 General Election Manifesto. The original manifesto was produced by UKIP for the June 2017 UK General Election. This particular summary appears to have been created by an analyst, researcher, or AI system to condense the manifesto's key points, given its structured format with headers and bullet points that synthesize the original document's content.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text explicitly states it is a 'Summary of the UK Independence Party (UKIP) 2017 Manifesto' in the title. It references Paul Nuttall as leader, discusses Brexit tests, and contains specific policy positions consistent with UKIP's 2017 general election platform. The formatting, comprehensive policy coverage, and structured summary style suggests this was produced as an analytical summary rather than being the original manifesto itself.",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2017",
+      "truth": "ukip",
+      "guess": "uk independence party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2017",
+      "truth": "con",
+      "identification": "This is an AI-generated or human-written summary of the 2017 Conservative Party General Election Manifesto titled 'Forward, Together: Our Plan for a Stronger Britain and a More Prosperous Future', published by the UK Conservative Party under Theresa May's leadership for the June 2017 snap general election.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text explicitly states it is a 'Summary of 2017 UK Government Manifesto'. Key identifying details include: references to leaving the EU and the 'Great Repeal Bill', corporation tax reduction to 17% by 2020, replacing the triple lock with double lock, social care reforms allowing retention of \u00a3100,000 in assets, replacing universal infant free school meals with free breakfasts, T-levels, lifting the ban on selective schools, and the \u00a38 billion NHS funding increase. These are all distinctive Conservative Party 2017 manifesto commitments, particularly the controversial social care policy that became known as the 'dementia tax'.",
+      "variant": "anonymised",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2017",
+      "truth": "con",
+      "guess": "conservative",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2017",
+      "truth": "lab",
+      "identification": "This is a summary of the UK Labour Party's 2017 General Election Manifesto, titled 'For the Many, Not the Few', produced under Jeremy Corbyn's leadership",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The document contains several highly specific UK policy proposals that match the 2017 Labour Party manifesto: \u00a3250 billion National Transformation Fund, \u00a3250 billion National Investment Bank, \u00a380,000 income tax threshold guarantee, \u00a310 minimum wage by 2020, 10,000 additional police officers, \u00a330 billion NHS funding, abolishing tuition fees, ending zero-hours contracts, public ownership of railways/water/energy, 60% renewable energy by 2030, fracking ban, Brexit approach prioritising single market access, and the Constitutional Convention. The specific figures, the Brexit context, and the combination of policies all point to this document.",
+      "variant": "anonymised",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2017",
+      "truth": "lab",
+      "guess": "labour",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2017",
+      "truth": "ld",
+      "identification": "This is a summary of the Liberal Democrats' 2017 General Election Manifesto, titled 'Change Britain's Future', published by the Liberal Democrats party for the June 2017 UK general election.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text describes a UK political manifesto with specific policy positions including: opposition to 'hard Brexit' with a second referendum option, 1p Income Tax increase for NHS, \u00a37 billion education funding, proportional representation, maintaining freedom of movement, three-submarine nuclear deterrent (reducing from four), 0.7% overseas aid, opposing grammar school expansion, and strong pro-EU stance. These positions are distinctively Liberal Democrat policies. The specific details like the 1p tax for NHS, three-submarine Trident alternative, and the strong anti-Brexit stance with second referendum are signature Lib Dem positions from the 2017 general election campaign.",
+      "variant": "anonymised",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2017",
+      "truth": "ld",
+      "guess": "liberal democrats",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2017",
+      "truth": "snp",
+      "identification": "This is a summary of the Scottish National Party (SNP) manifesto for the 2017 UK General Election. The SNP is the main pro-independence party in Scotland, and these policy positions - particularly the combination of seeking independence referendum mandate, opposing Brexit, anti-austerity stance, opposition to Trident, and demands for devolved powers - are distinctively SNP positions from their 2017 Westminster campaign.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text explicitly states it is a 'Summary of a Scottish Political Party Manifesto (2017)'. Key identifying features include: focus on Scottish interests at UK Parliament level, support for Scottish independence referendum, seeking devolution of powers to Scottish Parliament, opposition to Brexit/leaving Single Market citing 80,000 Scottish jobs, opposition to Trident nuclear weapons renewal, support for free university tuition (a Scottish policy), demands for EU agricultural funding transfer to Scotland, and emphasis on Scotland's climate achievements. The combination of pro-independence stance, anti-Brexit position, left-of-center economic policies, and focus on Westminster elections points specifically to the SNP.",
+      "variant": "anonymised",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2017",
+      "truth": "snp",
+      "guess": "scottish national party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2017",
+      "truth": "ukip",
+      "identification": "This is a summary of UKIP's (UK Independence Party) 2017 General Election Manifesto, titled 'Britain Together'. The specific policy details including the \u00a313,500 personal allowance, \u00a36.3 billion fishing industry figure, 100,000 modular homes target, and constitutional reforms match UKIP's 2017 platform under then-leader Paul Nuttall.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "Multiple distinctive policy positions identify this as UKIP's 2017 manifesto: the six Brexit tests including completion before 2020, criticism of Article 50, reducing overseas aid from 0.7% to 0.2% of GNI, cancelling HS2, replacing the Barnett Formula, repealing the 1964 London Fishing Convention, abolishing the House of Lords and creating an English Parliament, repealing the Climate Change Act 2008, withdrawing from the Paris Agreement, the specific immigration policies including zero net migration and five-year moratorium on unskilled immigration, disbanding sharia councils, banning face coverings, and the distinctive combination of populist right-wing policies on Brexit, immigration, and climate while maintaining some welfare commitments like the triple lock.",
+      "variant": "anonymised",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2017",
+      "truth": "ukip",
+      "guess": "uk independence party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "claude"
+    }
+  ]
+}

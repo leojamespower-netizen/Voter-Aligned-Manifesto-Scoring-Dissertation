@@ -718,5 +718,65 @@
     "stability_rouge_l": 0.42747047962685203,
     "metrics_agree_on_medoid": false,
     "n_runs": 5
+  },
+  "profile:2017_explicit_mft_ipsos_claude_forced": {
+    "cell": "profile:2017_explicit_mft_ipsos_claude_forced",
+    "selected_run_index": 2,
+    "selected_cache_key": "2017_explicit_mft_ipsos_claude_forced_run3",
+    "stability_cosine": 0.9124456346035004,
+    "stability_cosine_sd": 0.0262826679681438,
+    "stability_rouge_l": 0.3916162093883015,
+    "metrics_agree_on_medoid": false,
+    "n_runs": 5
+  },
+  "profile:2017_explicit_mft_bes_claude_forced": {
+    "cell": "profile:2017_explicit_mft_bes_claude_forced",
+    "selected_run_index": 2,
+    "selected_cache_key": "2017_explicit_mft_bes_claude_forced_run3",
+    "stability_cosine": 0.9038660407066346,
+    "stability_cosine_sd": 0.035213532478503756,
+    "stability_rouge_l": 0.39608248623615866,
+    "metrics_agree_on_medoid": true,
+    "n_runs": 5
+  },
+  "profile:2017_bidirectional_mft_ipsos_claude_forced": {
+    "cell": "profile:2017_bidirectional_mft_ipsos_claude_forced",
+    "selected_run_index": 1,
+    "selected_cache_key": "2017_bidirectional_mft_ipsos_claude_forced_run2",
+    "stability_cosine": 0.921912533044815,
+    "stability_cosine_sd": 0.03170646953101122,
+    "stability_rouge_l": 0.40606564645834287,
+    "metrics_agree_on_medoid": true,
+    "n_runs": 5
+  },
+  "profile:2017_bidirectional_mft_bes_claude_forced": {
+    "cell": "profile:2017_bidirectional_mft_bes_claude_forced",
+    "selected_run_index": 2,
+    "selected_cache_key": "2017_bidirectional_mft_bes_claude_forced_run3",
+    "stability_cosine": 0.8872547090053559,
+    "stability_cosine_sd": 0.02072640063137146,
+    "stability_rouge_l": 0.30519567681446913,
+    "metrics_agree_on_medoid": false,
+    "n_runs": 5
+  },
+  "profile:2017_axis_ipsos_claude_forced": {
+    "cell": "profile:2017_axis_ipsos_claude_forced",
+    "selected_run_index": 0,
+    "selected_cache_key": "2017_axis_ipsos_claude_forced_run1",
+    "stability_cosine": 0.8438777148723602,
+    "stability_cosine_sd": 0.05916828973031935,
+    "stability_rouge_l": 0.4953026283332976,
+    "metrics_agree_on_medoid": false,
+    "n_runs": 5
+  },
+  "profile:2017_axis_bes_claude_forced": {
+    "cell": "profile:2017_axis_bes_claude_forced",
+    "selected_run_index": 0,
+    "selected_cache_key": "2017_axis_bes_claude_forced_run1",
+    "stability_cosine": 0.9205226838588715,
+    "stability_cosine_sd": 0.009449032063096595,
+    "stability_rouge_l": 0.45454698762958934,
+    "metrics_agree_on_medoid": true,
+    "n_runs": 5
   }
 }
