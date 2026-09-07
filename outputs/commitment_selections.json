@@ -1252,5 +1252,170 @@
     "coverage": 0.8571428571428571,
     "threshold": 0.75,
     "embedding_model": "all-MiniLM-L6-v2"
+  },
+  "summary:2019_con_minimal_claude": {
+    "cell": "summary:2019_con_minimal_claude",
+    "selected_index": 0,
+    "selected_cache_key": "2019_con_minimal_claude_run1",
+    "stability": 0.4326923076923077,
+    "n_clusters": 104,
+    "n_consensus": 34,
+    "coverage": 0.8529411764705882,
+    "threshold": 0.75,
+    "embedding_model": "all-MiniLM-L6-v2"
+  },
+  "summary:2019_con_framing_preserving_claude": {
+    "cell": "summary:2019_con_framing_preserving_claude",
+    "selected_index": 0,
+    "selected_cache_key": "2019_con_framing_preserving_claude_run1",
+    "stability": 0.401980198019802,
+    "n_clusters": 101,
+    "n_consensus": 29,
+    "coverage": 0.896551724137931,
+    "threshold": 0.75,
+    "embedding_model": "all-MiniLM-L6-v2"
+  },
+  "summary:2019_con_anonymised_claude": {
+    "cell": "summary:2019_con_anonymised_claude",
+    "selected_index": 2,
+    "selected_cache_key": "2019_con_anonymised_claude_run3",
+    "stability": 0.4191304347826087,
+    "n_clusters": 115,
+    "n_consensus": 37,
+    "coverage": 0.972972972972973,
+    "threshold": 0.75,
+    "embedding_model": "all-MiniLM-L6-v2"
+  },
+  "summary:2019_lab_minimal_claude": {
+    "cell": "summary:2019_lab_minimal_claude",
+    "selected_index": 4,
+    "selected_cache_key": "2019_lab_minimal_claude_run5",
+    "stability": 0.42195121951219516,
+    "n_clusters": 82,
+    "n_consensus": 26,
+    "coverage": 0.8846153846153846,
+    "threshold": 0.75,
+    "embedding_model": "all-MiniLM-L6-v2"
+  },
+  "summary:2019_lab_framing_preserving_claude": {
+    "cell": "summary:2019_lab_framing_preserving_claude",
+    "selected_index": 2,
+    "selected_cache_key": "2019_lab_framing_preserving_claude_run3",
+    "stability": 0.36756756756756753,
+    "n_clusters": 74,
+    "n_consensus": 15,
+    "coverage": 0.9333333333333333,
+    "threshold": 0.75,
+    "embedding_model": "all-MiniLM-L6-v2"
+  },
+  "summary:2019_lab_anonymised_claude": {
+    "cell": "summary:2019_lab_anonymised_claude",
+    "selected_index": 0,
+    "selected_cache_key": "2019_lab_anonymised_claude_run1",
+    "stability": 0.40588235294117647,
+    "n_clusters": 102,
+    "n_consensus": 26,
+    "coverage": 0.9230769230769231,
+    "threshold": 0.75,
+    "embedding_model": "all-MiniLM-L6-v2"
+  },
+  "summary:2019_ld_minimal_claude": {
+    "cell": "summary:2019_ld_minimal_claude",
+    "selected_index": 2,
+    "selected_cache_key": "2019_ld_minimal_claude_run3",
+    "stability": 0.4785714285714286,
+    "n_clusters": 56,
+    "n_consensus": 23,
+    "coverage": 0.9130434782608695,
+    "threshold": 0.75,
+    "embedding_model": "all-MiniLM-L6-v2"
+  },
+  "summary:2019_ld_framing_preserving_claude": {
+    "cell": "summary:2019_ld_framing_preserving_claude",
+    "selected_index": 2,
+    "selected_cache_key": "2019_ld_framing_preserving_claude_run3",
+    "stability": 0.4,
+    "n_clusters": 94,
+    "n_consensus": 24,
+    "coverage": 0.875,
+    "threshold": 0.75,
+    "embedding_model": "all-MiniLM-L6-v2"
+  },
+  "summary:2019_ld_anonymised_claude": {
+    "cell": "summary:2019_ld_anonymised_claude",
+    "selected_index": 1,
+    "selected_cache_key": "2019_ld_anonymised_claude_run2",
+    "stability": 0.3779816513761468,
+    "n_clusters": 109,
+    "n_consensus": 27,
+    "coverage": 0.8888888888888888,
+    "threshold": 0.75,
+    "embedding_model": "all-MiniLM-L6-v2"
+  },
+  "summary:2019_snp_minimal_claude": {
+    "cell": "summary:2019_snp_minimal_claude",
+    "selected_index": 3,
+    "selected_cache_key": "2019_snp_minimal_claude_run4",
+    "stability": 0.375,
+    "n_clusters": 80,
+    "n_consensus": 20,
+    "coverage": 0.85,
+    "threshold": 0.75,
+    "embedding_model": "all-MiniLM-L6-v2"
+  },
+  "summary:2019_snp_framing_preserving_claude": {
+    "cell": "summary:2019_snp_framing_preserving_claude",
+    "selected_index": 0,
+    "selected_cache_key": "2019_snp_framing_preserving_claude_run1",
+    "stability": 0.39692307692307693,
+    "n_clusters": 65,
+    "n_consensus": 19,
+    "coverage": 0.7894736842105263,
+    "threshold": 0.75,
+    "embedding_model": "all-MiniLM-L6-v2"
+  },
+  "summary:2019_snp_anonymised_claude": {
+    "cell": "summary:2019_snp_anonymised_claude",
+    "selected_index": 2,
+    "selected_cache_key": "2019_snp_anonymised_claude_run3",
+    "stability": 0.41250000000000003,
+    "n_clusters": 96,
+    "n_consensus": 30,
+    "coverage": 0.9333333333333333,
+    "threshold": 0.75,
+    "embedding_model": "all-MiniLM-L6-v2"
+  },
+  "summary:2019_green_minimal_claude": {
+    "cell": "summary:2019_green_minimal_claude",
+    "selected_index": 0,
+    "selected_cache_key": "2019_green_minimal_claude_run1",
+    "stability": 0.48045977011494256,
+    "n_clusters": 87,
+    "n_consensus": 35,
+    "coverage": 0.8285714285714286,
+    "threshold": 0.75,
+    "embedding_model": "all-MiniLM-L6-v2"
+  },
+  "summary:2019_green_framing_preserving_claude": {
+    "cell": "summary:2019_green_framing_preserving_claude",
+    "selected_index": 3,
+    "selected_cache_key": "2019_green_framing_preserving_claude_run4",
+    "stability": 0.5180722891566265,
+    "n_clusters": 83,
+    "n_consensus": 40,
+    "coverage": 0.875,
+    "threshold": 0.75,
+    "embedding_model": "all-MiniLM-L6-v2"
+  },
+  "summary:2019_green_anonymised_claude": {
+    "cell": "summary:2019_green_anonymised_claude",
+    "selected_index": 1,
+    "selected_cache_key": "2019_green_anonymised_claude_run2",
+    "stability": 0.35723270440251575,
+    "n_clusters": 159,
+    "n_consensus": 33,
+    "coverage": 0.8484848484848485,
+    "threshold": 0.75,
+    "embedding_model": "all-MiniLM-L6-v2"
   }
 }

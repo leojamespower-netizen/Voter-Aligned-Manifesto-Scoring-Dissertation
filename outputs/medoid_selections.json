@@ -658,5 +658,65 @@
     "stability_rouge_l": 0.49401547341130314,
     "metrics_agree_on_medoid": true,
     "n_runs": 5
+  },
+  "profile:2019_explicit_mft_ipsos_claude_forced": {
+    "cell": "profile:2019_explicit_mft_ipsos_claude_forced",
+    "selected_run_index": 2,
+    "selected_cache_key": "2019_explicit_mft_ipsos_claude_forced_run3",
+    "stability_cosine": 0.9459624767303467,
+    "stability_cosine_sd": 0.013137133832178736,
+    "stability_rouge_l": 0.4929494025855806,
+    "metrics_agree_on_medoid": false,
+    "n_runs": 5
+  },
+  "profile:2019_explicit_mft_bes_claude_forced": {
+    "cell": "profile:2019_explicit_mft_bes_claude_forced",
+    "selected_run_index": 0,
+    "selected_cache_key": "2019_explicit_mft_bes_claude_forced_run1",
+    "stability_cosine": 0.914081209897995,
+    "stability_cosine_sd": 0.022119042662472697,
+    "stability_rouge_l": 0.36330127890550973,
+    "metrics_agree_on_medoid": true,
+    "n_runs": 5
+  },
+  "profile:2019_bidirectional_mft_ipsos_claude_forced": {
+    "cell": "profile:2019_bidirectional_mft_ipsos_claude_forced",
+    "selected_run_index": 1,
+    "selected_cache_key": "2019_bidirectional_mft_ipsos_claude_forced_run2",
+    "stability_cosine": 0.9331337988376618,
+    "stability_cosine_sd": 0.016429800921363865,
+    "stability_rouge_l": 0.38797119871346175,
+    "metrics_agree_on_medoid": true,
+    "n_runs": 5
+  },
+  "profile:2019_bidirectional_mft_bes_claude_forced": {
+    "cell": "profile:2019_bidirectional_mft_bes_claude_forced",
+    "selected_run_index": 1,
+    "selected_cache_key": "2019_bidirectional_mft_bes_claude_forced_run2",
+    "stability_cosine": 0.8878158450126648,
+    "stability_cosine_sd": 0.01922165974101373,
+    "stability_rouge_l": 0.30278558378597387,
+    "metrics_agree_on_medoid": true,
+    "n_runs": 5
+  },
+  "profile:2019_axis_ipsos_claude_forced": {
+    "cell": "profile:2019_axis_ipsos_claude_forced",
+    "selected_run_index": 1,
+    "selected_cache_key": "2019_axis_ipsos_claude_forced_run2",
+    "stability_cosine": 0.8400037586688995,
+    "stability_cosine_sd": 0.060760568374992246,
+    "stability_rouge_l": 0.40709800554979253,
+    "metrics_agree_on_medoid": false,
+    "n_runs": 5
+  },
+  "profile:2019_axis_bes_claude_forced": {
+    "cell": "profile:2019_axis_bes_claude_forced",
+    "selected_run_index": 1,
+    "selected_cache_key": "2019_axis_bes_claude_forced_run2",
+    "stability_cosine": 0.888046658039093,
+    "stability_cosine_sd": 0.019103292491193854,
+    "stability_rouge_l": 0.42747047962685203,
+    "metrics_agree_on_medoid": false,
+    "n_runs": 5
   }
 }

@@ -1,0 +1,248 @@
+{
+  "election": 2019,
+  "model": "claude",
+  "plan": {
+    "model": "claude",
+    "summaries": 10,
+    "total_calls": 20
+  },
+  "leakage": {
+    "accuracy": 1.0,
+    "chance": 0.2,
+    "high_confidence_correct_rate": 1.0,
+    "threshold": 0.45,
+    "anonymisation_failed": true,
+    "n": 20
+  },
+  "dual": {
+    "minimal": 1.0,
+    "biased": 1.0,
+    "chance_biased": 0.2,
+    "gap": 0.0,
+    "partial_rate": 0.0,
+    "threshold": 0.45,
+    "anonymisation_indicated": true
+  },
+  "results": [
+    {
+      "family": "minimal",
+      "election": "2019",
+      "truth": "con",
+      "identification": "This is an AI-generated or human-written summary of the 2019 UK Conservative Party General Election Manifesto. It is not the original manifesto text itself, but rather a condensed overview of its key commitments. The summary was likely produced by an AI assistant (possibly Claude or a similar model) or a human analyst, given its structured format and neutral summarizing tone.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text explicitly identifies itself as 'Summary of the 2019 Conservative Party Manifesto' in the title. It discusses specific policy commitments associated with Boris Johnson's 2019 election campaign, including 'Get Brexit Done,' the January 31st 2020 Brexit deadline, 50,000 nurses, 20,000 police officers, and other well-known Conservative pledges from that election. The writing style is a structured summary with clear headings rather than original manifesto language.",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2019",
+      "truth": "con",
+      "guess": "conservative",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2019",
+      "truth": "lab",
+      "identification": "This is an AI-generated or human-written summary of the UK Labour Party's 2019 General Election Manifesto titled 'It's Time for Real Change.' The original manifesto was produced by the Labour Party under Jeremy Corbyn's leadership. This particular summary appears to be created by a third party (possibly an AI system, educational resource, or news organization) to condense the 105-page original document into key points.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text explicitly identifies itself in the title as '# Labour Party Manifesto 2019 Summary' and references the manifesto title 'It's Time for Real Change.' The specific policy details (\u00a3400 billion National Transformation Fund, \u00a3250 billion for green transformation, 4.3% NHS increases, \u00a310 minimum wage, 32-hour work week, net-zero by 2030, \u00a380,000+ tax threshold) all align with the actual 2019 Labour manifesto. The formatting with markdown headers and the summarized structure suggests this is a summary document rather than the original manifesto text.",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2019",
+      "truth": "lab",
+      "guess": "labour",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2019",
+      "truth": "ld",
+      "identification": "This is an AI-generated or human-written summary of the UK Liberal Democrats' 2019 General Election Manifesto (titled 'Stop Brexit: Build a Brighter Future'). It was likely produced by an AI assistant (possibly Claude or similar) or a human summarizer, not by the Liberal Democrats themselves. The original manifesto was published by the Liberal Democrats party in November 2019 ahead of the December 2019 UK General Election.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text is titled '# Liberal Democrats 2019 Manifesto Summary' and contains detailed policy positions consistent with the Liberal Democrats' 2019 general election platform, including their flagship 'Stop Brexit' position, the '\u00a350 billion Remain Bonus' slogan, specific pledges like net-zero by 2045, 1p income tax rise for NHS, and Jo Swinson-era policies. The structured summary format with markdown headers suggests this is a synthesized summary rather than original manifesto text.",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2019",
+      "truth": "ld",
+      "guess": "liberal democrats",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2019",
+      "truth": "snp",
+      "identification": "This is an AI-generated summary of the Scottish National Party's 2019 General Election manifesto. The structured format with markdown headings, the neutral summarizing tone, and the comprehensive yet condensed coverage of multiple policy areas is characteristic of AI-produced content designed to explain or summarize political documents. It was likely generated by an LLM (such as ChatGPT or Claude) in response to a request to summarize the SNP's 2019 manifesto.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text is formatted as a structured summary with clear headings, bullet points, and organized sections covering constitutional position, Brexit, and policy areas. It describes the SNP's 2019 manifesto titled 'Stronger for Scotland' in a neutral, analytical tone rather than persuasive political language. The systematic breakdown of policy areas and the inclusion of specific claims (like '\u00a33 billion smaller' economy, '\u00a3205 billion' Trident cost, net-zero targets) suggests this is an educational or informational summary rather than the original manifesto text itself.",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2019",
+      "truth": "snp",
+      "guess": "scottish national party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2019",
+      "truth": "green",
+      "identification": "This is a summary document of the UK Green Party's 2019 General Election Manifesto. It appears to be an AI-generated or human-written summary/analysis of the manifesto rather than official Green Party material, likely produced for educational, journalistic, or reference purposes. The structured format with clear headings and bullet points suggests it may have been generated by an AI assistant (possibly ChatGPT or similar) in response to a request to summarize the manifesto.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text explicitly states it is a 'Summary of the Green Party Manifesto 2019' in the title. The content discusses specific UK political policies including Brexit, the NHS, HS2, Universal Credit, and references to UK-specific measures like council homes, Passivhaus standards, and pounds sterling figures. The writing style is structured as a neutral summary document rather than the manifesto itself, suggesting it was produced by someone analyzing or summarizing the original manifesto.",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2019",
+      "truth": "green",
+      "guess": "green party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2019",
+      "truth": "con",
+      "identification": "This is an AI-generated or human-written summary of the 2019 Conservative Party (Tory) General Election Manifesto, titled 'Get Brexit Done: Unleash Britain's Potential'. The original manifesto was produced by the Conservative and Unionist Party under Boris Johnson's leadership. This summary itself appears to be produced by an AI system or researcher condensing the manifesto's key points.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text explicitly states it is a 'Summary of 2019 UK General Election Manifesto'. The specific policies mentioned align precisely with the 2019 Conservative Party manifesto: Brexit completion by January, \u00a334 billion NHS funding, 50,000 nurses, 40 new hospitals, 20,000 police officers, Australian-style points-based immigration system, Northern Powerhouse Rail, and the commitment to 'Get Brexit Done' as the central priority. These were all flagship Conservative pledges in that election.",
+      "variant": "anonymised",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2019",
+      "truth": "con",
+      "guess": "conservative",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2019",
+      "truth": "lab",
+      "identification": "This is a summary of the 2019 UK Labour Party General Election Manifesto, titled 'It's Time For Real Change', produced by the Labour Party under Jeremy Corbyn's leadership for the December 2019 general election.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text contains highly specific policy proposals characteristic of UK Labour Party manifestos: \u00a3400 billion public investment with \u00a3250 billion for green initiatives, 27 million homes upgraded, \u00a310 minimum wage, 32-hour work week, National Care Service, National Education Service, free full-fibre broadband by 2030, abolishing tuition fees, one million social homes, reducing voting age to 16, replacing the upper chamber (House of Lords), and the phrase 'Green Industrial Revolution' which was a signature Labour policy. The combination of nationalisation of utilities (energy, water, rail, mail), the specific funding figures, and the comprehensive left-wing platform strongly indicates this is a summary of the 2019 Labour Party General Election Manifesto under Jeremy Corbyn's leadership.",
+      "variant": "anonymised",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2019",
+      "truth": "lab",
+      "guess": "labour",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2019",
+      "truth": "ld",
+      "identification": "This is an AI-generated or human-written summary of the Liberal Democrat Party's 2019 General Election Manifesto ('Stop Brexit: Build a Brighter Future'). The specific policy details - particularly the \u00a3130 billion investment, Skills Wallet, 2045 net-zero target, and the central anti-Brexit positioning - all match the Liberal Democrats' 2019 manifesto exactly.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text explicitly states it is a 'summary of the manifesto's policy positions'. Key identifying features include: 1) 'stopping Brexit and remaining in the European Union' as the core position, 2) the \u00a3130 billion infrastructure investment figure, 3) the 'Skills Wallet' of \u00a310,000, 4) net-zero by 2045 target, 5) 1p income tax increase for NHS, 6) 300,000 homes annually, 7) proportional representation and votes at 16, 8) the specific combination of pro-EU, environmental, and constitutional reform policies characteristic of the Liberal Democrats' 2019 platform.",
+      "variant": "anonymised",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2019",
+      "truth": "ld",
+      "guess": "liberal democrats",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2019",
+      "truth": "snp",
+      "identification": "This is a summary of the Scottish National Party (SNP) manifesto for the 2019 UK General Election. The original manifesto would have been produced by the SNP, though this appears to be a condensed summary rather than the original document itself.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text explicitly identifies itself as a 'Summary of the 2019 Scottish Manifesto'. Key indicators pointing to the Scottish National Party (SNP) include: advocacy for Scottish independence and an independence referendum, opposition to Brexit, support for remaining in the EU, opposition to nuclear weapons (Trident), calls for devolution of immigration powers and a 'Scottish Visa', support for the WASPI campaign, and the specific policy positions on welfare, environment, and democratic reform that align with SNP platform positions. The 2019 timing corresponds to the December 2019 UK General Election.",
+      "variant": "anonymised",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2019",
+      "truth": "snp",
+      "guess": "scottish national party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2019",
+      "truth": "green",
+      "identification": "This is a summary of the Green Party of England and Wales 2019 General Election Manifesto, titled 'If Not Now, When?' The specific policies like net-zero by 2030, the \u00a389 UBI figure, 700 million trees, opposing HS2, and the combination of radical environmental and social policies are distinctive to this manifesto.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text contains several highly specific UK policy proposals: \u00a3100 billion Green New Deal, net-zero by 2030, 100,000 council homes annually, Universal Basic Income of \u00a389/\u00a3178, minimum wage of \u00a312, 700 million trees, remaining in EU, abolishing tuition fees, proportional representation, elected upper chamber, Land Value Tax, and opposition to HS2 (high-speed rail project). The combination of extremely ambitious 2030 net-zero target, anti-nuclear stance, drug legalization, UBI, and pro-EU position with pound sterling figures strongly indicates the Green Party of England and Wales.",
+      "variant": "anonymised",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2019",
+      "truth": "green",
+      "guess": "green party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "claude"
+    }
+  ]
+}
