@@ -1582,5 +1582,71 @@
     "coverage": 0.9047619047619048,
     "threshold": 0.75,
     "embedding_model": "all-MiniLM-L6-v2"
+  },
+  "summary:2005_ukip_minimal_gpt-5": {
+    "cell": "summary:2005_ukip_minimal_gpt-5",
+    "selected_index": 0,
+    "selected_cache_key": "2005_ukip_minimal_gpt-5_run1",
+    "stability": 0.4413502109704642,
+    "n_clusters": 237,
+    "n_consensus": 85,
+    "coverage": 0.8470588235294118,
+    "threshold": 0.75,
+    "embedding_model": "all-MiniLM-L6-v2"
+  },
+  "summary:2005_ukip_framing_preserving_gpt-5": {
+    "cell": "summary:2005_ukip_framing_preserving_gpt-5",
+    "selected_index": 4,
+    "selected_cache_key": "2005_ukip_framing_preserving_gpt-5_run5",
+    "stability": 0.3879245283018868,
+    "n_clusters": 265,
+    "n_consensus": 63,
+    "coverage": 0.873015873015873,
+    "threshold": 0.75,
+    "embedding_model": "all-MiniLM-L6-v2"
+  },
+  "summary:2005_ukip_anonymised_gpt-5": {
+    "cell": "summary:2005_ukip_anonymised_gpt-5",
+    "selected_index": 4,
+    "selected_cache_key": "2005_ukip_anonymised_gpt-5_run5",
+    "stability": 0.4669683257918552,
+    "n_clusters": 221,
+    "n_consensus": 84,
+    "coverage": 0.9285714285714286,
+    "threshold": 0.75,
+    "embedding_model": "all-MiniLM-L6-v2"
+  },
+  "summary:2005_green_minimal_gpt-5": {
+    "cell": "summary:2005_green_minimal_gpt-5",
+    "selected_index": 2,
+    "selected_cache_key": "2005_green_minimal_gpt-5_run3",
+    "stability": 0.4659793814432989,
+    "n_clusters": 291,
+    "n_consensus": 113,
+    "coverage": 0.9203539823008849,
+    "threshold": 0.75,
+    "embedding_model": "all-MiniLM-L6-v2"
+  },
+  "summary:2005_green_framing_preserving_gpt-5": {
+    "cell": "summary:2005_green_framing_preserving_gpt-5",
+    "selected_index": 1,
+    "selected_cache_key": "2005_green_framing_preserving_gpt-5_run2",
+    "stability": 0.41160409556314,
+    "n_clusters": 293,
+    "n_consensus": 87,
+    "coverage": 0.8620689655172413,
+    "threshold": 0.75,
+    "embedding_model": "all-MiniLM-L6-v2"
+  },
+  "summary:2005_green_anonymised_gpt-5": {
+    "cell": "summary:2005_green_anonymised_gpt-5",
+    "selected_index": 2,
+    "selected_cache_key": "2005_green_anonymised_gpt-5_run3",
+    "stability": 0.4760942760942761,
+    "n_clusters": 297,
+    "n_consensus": 115,
+    "coverage": 0.8695652173913043,
+    "threshold": 0.75,
+    "embedding_model": "all-MiniLM-L6-v2"
   }
 }

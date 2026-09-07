@@ -1,0 +1,248 @@
+{
+  "election": 2005,
+  "model": "gpt-5",
+  "plan": {
+    "model": "gpt-5",
+    "summaries": 10,
+    "total_calls": 20
+  },
+  "leakage": {
+    "accuracy": 1.0,
+    "chance": 0.2,
+    "high_confidence_correct_rate": 0.85,
+    "threshold": 0.45,
+    "anonymisation_failed": true,
+    "n": 20
+  },
+  "dual": {
+    "minimal": 1.0,
+    "biased": 1.0,
+    "chance_biased": 0.2,
+    "gap": 0.0,
+    "partial_rate": 0.0,
+    "threshold": 0.45,
+    "anonymisation_indicated": true
+  },
+  "results": [
+    {
+      "family": "minimal",
+      "election": "2005",
+      "truth": "lab",
+      "identification": "A secondary, bullet\u2011point summary of the UK Labour Party\u2019s 2005 General Election manifesto titled \u201cForward, Not Back,\u201d derived from the manifesto published by the Labour Party in April 2005.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The heading says \u201cLabour Party Manifesto 2005: Summary (under 500 words)\u201d and the text uses the 2005 Labour slogan \u201cForward, not back.\u201d It lists hallmark 2005 Labour policies: ID cards, a points\u2011based immigration system, Academies expansion (200 by 2010), NHS 18\u2011week referral\u2011to\u2011treatment target, CO2 cuts (\u221220% by 2010; \u221260% by 2050), commitment to 0.7% ODA by 2013, the 2012 Olympics legacy, BBC Trust and digital switchover (2008\u20132012), and Building Schools for the Future.",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2005",
+      "truth": "lab",
+      "guess": "labour",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2005",
+      "truth": "con",
+      "identification": "A bullet\u2011point summary of the UK Conservative Party\u2019s 2005 General Election manifesto, known as \u201cTimetable for Action,\u201d produced by the Conservative Party (UK).",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "Mentions signature 2005 Tory themes and pledges: \u201ccleaner hospitals, school discipline, more police, controlled immigration and lower taxes\u201d; Australian\u2011style points\u2011based immigration and a British Border Control Police; oppose the EU Constitution and the euro; restore the earnings link for the Basic State Pension; scrap university tuition fees; reclassify cannabis to Class B; 20,000 extra prison places and honesty in sentencing; end central NHS targets, restore matrons, funding to follow the patient; halve council tax for over\u201165s; extend Right to Buy; repatriate fisheries policy; \u2018English votes for English laws\u2019; and a first\u2011month \u2018Timetable for Action\u2019\u2014all hallmark policies of the UK Conservative Party\u2019s 2005 manifesto under Michael Howard.",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2005",
+      "truth": "con",
+      "guess": "conservative",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2005",
+      "truth": "ld",
+      "identification": "A condensed, bullet\u2011point summary of the UK Liberal Democrats\u2019 2005 General Election manifesto (\u201cThe Real Alternative\u201d), produced as the party\u2019s official \u2018manifesto in 500 words\u2019 briefing and circulated on the Liberal Democrats\u2019 campaign materials/website (libdems.org.uk) during the 2005 campaign.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "medium",
+      "evidence": "Header names the party and year; policies match distinctive 2005 Lib Dem pledges: replace Council Tax with a Local Income Tax; 50% income tax rate over \u00a3100,000; abolish tuition fees; scrap ID cards to fund 10,000 extra police; oppose new nuclear; convert Climate Change Levy to a Carbon Tax; EU Constitution referendum support; intercept evidence in terror cases; aim to withdraw from Iraq under UN mandate; cut Eurofighter Tranche 3; Citizen\u2019s Pension amounts.",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2005",
+      "truth": "ld",
+      "guess": "liberal democrats",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2005",
+      "truth": "ukip",
+      "identification": "A bullet\u2011point summary of the UK Independence Party (UKIP) manifesto for the 2005 UK general election, derived from UKIP\u2019s official 2005 manifesto.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The title says \u201cUKIP Manifesto 2005 \u2013 Summary.\u201d The bullets match hallmark UKIP 2005 positions: immediate exit from the EU by repealing the European Communities Act; replacing CAP/CFP with UK schemes and reclaiming UK waters; points\u2011based immigration with near\u2011zero net migration; repeal of the Human Rights Act and opposition to ID cards; leaving EU defence structures but staying in NATO; scrapping EU-driven regulations; and policies like halving council tax and raising pensions by \u00a32/week, all consistent with UKIP\u2019s 2005 general\u2011election platform.",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2005",
+      "truth": "ukip",
+      "guess": "uk independence party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2005",
+      "truth": "green",
+      "identification": "A volunteer-compiled Wikipedia-style summary of the Green Party of England and Wales\u2019 2005 UK general election manifesto (likely from Wikipedia\u2019s 2005 manifesto summaries), based on the party\u2019s official manifesto.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "medium",
+      "evidence": "The heading explicitly says \"Green Party Manifesto 2005 \u2014 Summary (under 500 words)\" and the content references UK-specific policies and institutions (e.g., Council Tax, Uniform Business Rates, NHS, Sure Start, APD, PR for Westminster/Lords, Scotland/Wales, CAP/CFP, withdrawing from Iraq). The structure and phrasing resemble a volunteer-written summary rather than an official PDF, matching the style of Wikipedia\u2019s 2005 UK general election manifesto summary pages.",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2005",
+      "truth": "green",
+      "guess": "green party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2005",
+      "truth": "lab",
+      "identification": "A condensed summary of the UK Labour Party\u2019s 2005 General Election manifesto (\u201cBritain forward not back\u201d), produced by the Labour Party.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "UK\u2011specific 2005\u201306 policy timings and Labour hallmarks: minimum wage rises to \u00a35.05 (Oct 2005) and \u00a35.35 (Oct 2006); 18\u2011week NHS target by 2008; Academies and BSF school rebuild; ID cards, e\u2011borders and a points\u2011based migration system; Serious Organised Crime Agency; digital switchover 2008\u20132012 and BBC Trust reform; Crossrail funding; free off\u2011peak bus travel for over\u201160s; target 0.7% of national income for aid by 2013; climate targets (\u221220% CO2 by 2010; \u221260% by 2050); commitment to retain the nuclear deterrent; EU Constitutional Treaty referendum. These align with Labour\u2019s 2005 general election platform under \u201cBritain forward not back.\u201d",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2005",
+      "truth": "lab",
+      "guess": "labour",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2005",
+      "truth": "con",
+      "identification": "A neutralized summary of the UK Conservative Party\u2019s 2005 General Election manifesto (Michael Howard), including elements from its \u2018Timetable for Action\u2019 section; sourced from the Conservative Party 2005 manifesto document.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "UK-specific policies (NHS, PCTs/Strategic Health Authorities, council tax, Winter Fuel Payments, TV licences 75+); \u2018English votes for English laws\u2019; EU Constitutional Treaty referendum and keep the pound; Australian\u2011style points system, Border Control Police, embarkation controls; free vote on hunting ban; extend Right to Buy; partial NHS rebate for self\u2011funded ops; bring back matrons and infection control; cuts to quangos and 235,000 bureaucratic posts; \u2018Timetable\u2019 of first-day/first-month actions. These align with the UK Conservative Party\u2019s 2005 manifesto under Michael Howard, which included a \u2018Timetable for Action\u2019.",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2005",
+      "truth": "con",
+      "guess": "conservative",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2005",
+      "truth": "ld",
+      "identification": "A policy summary/mini\u2011manifesto of the UK Liberal Democrats\u2019 2005 General Election manifesto (England) \u2014 published by the Liberal Democrats.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "Signature Liberal Democrat 2005 pledges appear throughout: replace Council Tax with a Local Income Tax; abolish university tuition/top\u2011up fees; introduce a 50% income tax rate only above \u00a3100,000; scrap ID cards to fund 10,000 more police; allow asylum seekers to work; extend STV voting; oppose replacing aging nuclear plants; carbon tax to replace the Climate Change Levy; Iraq withdrawal tied to the UN mandate; strong devolution note that policies mainly apply to England.",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2005",
+      "truth": "ld",
+      "guess": "liberal democrats",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2005",
+      "truth": "ukip",
+      "identification": "A condensed summary of the UK Independence Party (UKIP) UK General Election manifesto from the mid\u20112000s, specifically the 2005 UKIP General Election manifesto.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "medium",
+      "evidence": "Repeated core planks associated with UKIP mid-2000s manifestos: immediate withdrawal from the EU by repealing the ECA; exit the CAP/CFP and reassert control of UK waters; replace VAT with a domestic sales tax (only possible outside the EU); equal treatment for EU and non\u2011EU migrants and a near\u2011zero net immigration target with embarkation controls; scrapping EU measures like the Working Time Directive and limits on supplements/herbals; charge EU students full overseas fees; Commonwealth/North America/Asia trade focus; citizen\u2011initiated national referendums at a 5% threshold; repeal the Human Rights Act; abolish English regional assemblies; rural policies like considering restoration of the Milk Marketing Board; halt wind turbines, push new nuclear and clean coal; strong NATO alignment and disengagement from EU defense. Specific tax ideas (halve council tax; raise IHT threshold to \u00a3500k; reinstate pension fund dividend tax credits) and NHS \u2018matron\u2019/de\u2011bureaucratisation also match UKIP\u2019s 2005 general election platform.",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2005",
+      "truth": "ukip",
+      "guess": "uk independence party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2005",
+      "truth": "green",
+      "identification": "A condensed summary of the Green Party of England and Wales 2005 UK General Election manifesto (often presented under the title \u201cReal Progress: The Green Party Manifesto for a Sustainable Society\u201d).",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "UK\u2011specific policy mix including: universal Citizen\u2019s Income and Citizen\u2019s Pension; Land Value Tax to replace Council Tax/UBR; Contraction and Convergence with specific 2010/2020/2030 CO2 cuts; return rail and the London Tube to public ownership; re\u2011regulate buses; road pricing and higher fuel duty; oppose national ID cards; proportional representation and a fully elected upper chamber; disestablish the state church and limit the monarchy; oppose the proposed EU constitution while advocating EU reform; withdraw troops from Iraq and decommission nuclear weapons; Zero Waste Strategy banning incineration; strong animal welfare and GM\u2011free stance; targets like 40% renewables by 2020 and a 10% road\u2011traffic reduction by 2010. These are hallmark Green Party of England & Wales positions from 2005.",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2005",
+      "truth": "green",
+      "guess": "green party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    }
+  ]
+}
