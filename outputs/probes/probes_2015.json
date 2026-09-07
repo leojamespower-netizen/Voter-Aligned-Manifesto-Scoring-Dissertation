@@ -1,0 +1,248 @@
+{
+  "election": 2015,
+  "model": "claude",
+  "plan": {
+    "model": "claude",
+    "summaries": 10,
+    "total_calls": 20
+  },
+  "leakage": {
+    "accuracy": 1.0,
+    "chance": 0.2,
+    "high_confidence_correct_rate": 1.0,
+    "threshold": 0.45,
+    "anonymisation_failed": true,
+    "n": 20
+  },
+  "dual": {
+    "minimal": 1.0,
+    "biased": 1.0,
+    "chance_biased": 0.2,
+    "gap": 0.0,
+    "partial_rate": 0.0,
+    "threshold": 0.45,
+    "anonymisation_indicated": true
+  },
+  "results": [
+    {
+      "family": "minimal",
+      "election": "2015",
+      "truth": "con",
+      "identification": "This is a summary of the Conservative Party's 2015 General Election Manifesto (the original manifesto was titled 'Strong Leadership, A Clear Economic Plan, A Brighter, More Secure Future'). The summary itself appears to be a condensed version created by a third party (possibly for educational, journalistic, or research purposes) rather than an official party document, as it presents the manifesto content in an analytical summary format rather than the original's promotional style.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The title explicitly states 'Conservative Party Manifesto 2015: Summary'. The content covers specific policy commitments consistent with the 2015 UK General Election campaign, including the EU referendum pledge 'by end of 2017', the \u00a38 billion NHS commitment, the Northern Powerhouse initiative, specific tax thresholds (\u00a312,500 Personal Allowance, \u00a350,000 for 40p rate), and the household benefit cap reduction from \u00a326,000 to \u00a323,000. These are all documented positions from the actual 2015 Conservative manifesto.",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2015",
+      "truth": "con",
+      "guess": "conservative",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2015",
+      "truth": "lab",
+      "identification": "This is a summary/overview of the UK Labour Party's general election manifesto from 2015, titled 'Britain can be better.' The original manifesto was produced by the Labour Party under leader Ed Miliband. This particular summary appears to be a condensed version created by someone (possibly AI-generated or editorially produced) to outline the key policy proposals, rather than the original manifesto document itself.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text explicitly states it is a 'Summary of the Labour Party Manifesto 2015' in the title. The content matches known Labour Party 2015 election pledges including the Budget Responsibility Lock, 50p tax rate, Mansion Tax, \u00a36,000 tuition fees, abolishing non-dom status, repealing the Health and Social Care Act, and Ed Miliband-era policies like the energy bill freeze and Bedroom Tax abolition.",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2015",
+      "truth": "lab",
+      "guess": "labour",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2015",
+      "truth": "ukip",
+      "identification": "This is an AI-generated or human-written summary of the UK Independence Party's 2015 General Election Manifesto. The original manifesto was produced by UKIP under Nigel Farage's leadership for the May 2015 UK General Election. This particular summary appears to be created by an AI system (likely ChatGPT or Claude) or a researcher/journalist, given its structured format with bold headers and neutral analytical tone synthesizing the manifesto's key points.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text explicitly identifies itself as a 'Summary of UKIP's 2015 Manifesto' in the title. It contains detailed policy positions consistent with UKIP's 2015 platform, references to Nigel Farage as leader, specific figures (\u00a39 billion EU savings, \u00a313,000 personal allowance, 8,000 GPs, etc.), and policy proposals like the Australian-style points-based immigration system and Article 50 activation. The writing style is neutral and explanatory rather than partisan, suggesting this is a summary document rather than the original manifesto.",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2015",
+      "truth": "ukip",
+      "guess": "uk independence party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2015",
+      "truth": "ld",
+      "identification": "This is an AI-generated or human-written summary of the Liberal Democrats' 2015 UK General Election Manifesto. The original manifesto was produced by the Liberal Democrats party. This summary appears to be a condensed overview created for reference purposes, likely generated by an AI system or created as study/reference material, as it follows a structured markdown format typical of such summaries.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text explicitly states it is a 'Liberal Democrats Manifesto 2015 Summary' in the title. The content references specific 2015 UK election policies including balancing the budget by 2017/18, the coalition government record, the Smith Commission for Scotland, and positions on issues like the 'Snooper's Charter' and HS2. The policy details match the Liberal Democrats' 2015 general election platform.",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2015",
+      "truth": "ld",
+      "guess": "liberal democrats",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2015",
+      "truth": "snp",
+      "identification": "This is an AI-generated or human-written summary of the Scottish National Party's 2015 UK General Election manifesto titled 'Stronger for Scotland.' The original manifesto was produced by the SNP, but this summary document was likely created by an AI assistant (such as Claude or similar) or a researcher/analyst, as it is formatted as a structured analytical summary rather than the original document itself.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text is explicitly titled 'Summary of the Scottish National Party (SNP) Manifesto 2015' and references 'Stronger for Scotland' as the manifesto title, Nicola Sturgeon as leader, specific policy proposals like the \u00a38.70 minimum wage by 2020, \u00a32 billion NHS funding, 30,000 Modern Apprenticeships, opposition to Trident, and the post-independence referendum context of 'Home Rule' and devolved powers promises.",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2015",
+      "truth": "snp",
+      "guess": "scottish national party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2015",
+      "truth": "con",
+      "identification": "This is a summary of the 2015 Conservative Party General Election Manifesto (titled 'Strong Leadership, A Clear Economic Plan, A Brighter, More Secure Future'). The summary appears to have been produced by an AI or analyst condensing the manifesto's key points, rather than being an official Conservative Party document itself.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text references specific UK policy proposals including: 2018-19 budget surplus target, Northern Powerhouse, High Speed 2/3, EU referendum by end of 2017, 'English votes for English laws', Personal Allowance of \u00a312,500, \u00a38 billion NHS funding by 2020, 200,000 Starter Homes, replacing Human Rights Act with British Bill of Rights, maintaining triple lock on pensions, and specific figures like \u00a330 billion savings and \u00a323,000 benefit cap. These are all distinctive Conservative Party pledges from their 2015 General Election campaign.",
+      "variant": "anonymised",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2015",
+      "truth": "con",
+      "guess": "conservative",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2015",
+      "truth": "lab",
+      "identification": "This is an AI-generated or human-written summary of the 2015 UK General Election Manifesto from the Labour Party, led by Ed Miliband. The original manifesto was titled 'Britain can be better.'",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text references specific UK Labour Party 2015 manifesto policies: \u00a36,000 tuition fees (Labour's proposal to cut from \u00a39,000), abolishing non-domicile tax status, mansion tax on high-value homes to fund NHS, 200,000 homes target, banning exploitative zero-hours contracts, replacing House of Lords with elected Senate, votes at 16, raising minimum wage to \u00a38 by 2019, and the 'spare room subsidy' language (Labour's term for what Conservatives called the 'bedroom tax'). These are distinctively Labour policies from their 2015 campaign.",
+      "variant": "anonymised",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2015",
+      "truth": "lab",
+      "guess": "labour",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2015",
+      "truth": "ukip",
+      "identification": "This is an AI-generated or human-written summary of the UK Independence Party (UKIP) General Election Manifesto from 2015, titled 'Believe in Britain'. The original manifesto was produced by UKIP under the leadership of Nigel Farage for the May 2015 UK General Election. This appears to be a structured summary rather than the original document itself.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text explicitly states it is a 'Summary: UK Independence Party Manifesto 2015' in the title. The content aligns with known UKIP policies from that era: EU withdrawal via Article 50, Australian-style points-based immigration, repealing the Climate Change Act, opposition to HS2, grammar school support, and the specific financial figures (\u00a39 billion EU savings, raising personal allowance to \u00a313,000, etc.) match the 2015 UKIP manifesto.",
+      "variant": "anonymised",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2015",
+      "truth": "ukip",
+      "guess": "uk independence party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2015",
+      "truth": "ld",
+      "identification": "This is a summary of the Liberal Democrats' 2015 UK General Election Manifesto, titled 'Stronger Economy. Fairer Society.'",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "Multiple specific policy details point to a UK political party manifesto from 2015: the \u00a312,500 personal allowance target, \u00a38 billion NHS funding by 2020, 300,000 homes annually with Garden Cities, 60% renewable electricity by 2030, votes at 16, proportional representation advocacy, House of Lords reform, maintaining EU membership with reforms, and the 'Rent to Own' scheme. The combination of pro-EU stance, constitutional reform including PR, environmental focus, civil liberties emphasis, and the specific \u00a32 million property levy (mansion tax) strongly indicates the Liberal Democrats. The budget balance target of 2017/18 and Business Bank proposal also match their 2015 platform.",
+      "variant": "anonymised",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2015",
+      "truth": "ld",
+      "guess": "liberal democrats",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "claude"
+    },
+    {
+      "family": "minimal",
+      "election": "2015",
+      "truth": "snp",
+      "identification": "This is a summary of the Scottish National Party (SNP) manifesto for the 2015 UK General Election, titled 'Stronger for Scotland'. The specific policy details including the \u00a38.70 minimum wage target, bedroom tax abolition, opposition to Trident, and constitutional proposals regarding EU referendum voting requirements are distinctive SNP positions from that election.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text describes a manifesto for elections in Scotland focused on Westminster influence, mentions the independence referendum promises, proposes \u00a38.70 minimum wage by 2020, 100,000 affordable homes, \u00a32 billion NHS spending increase by 2020-21, opposition to bedroom tax and Universal Credit, 30,000 apprenticeships, opposition to Trident renewal (\u00a3100 billion savings), devolution of powers to Scotland, requiring all four UK nations to approve EU withdrawal, and 16-17 voting age. These specific policy positions and figures align with SNP policies from the 2015 general election period.",
+      "variant": "anonymised",
+      "model": "claude"
+    },
+    {
+      "family": "biased",
+      "election": "2015",
+      "truth": "snp",
+      "guess": "scottish national party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "claude"
+    }
+  ]
+}
