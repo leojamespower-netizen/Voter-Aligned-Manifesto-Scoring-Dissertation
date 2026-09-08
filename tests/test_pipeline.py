@@ -23,6 +23,7 @@ from phase_pipeline.bes_extract import (BLINDING_EXCLUSIONS, assert_blinded,
 from phase_pipeline.ipsos_extract import IPSOS_NON_ANSWERS, prepare_ipsos
 from phase_pipeline.profiles import parse_profile
 from phase_pipeline.vote_shares import vote_shares
+from phase_pipeline.consolidate_metrics import implied_shares, mean_error_points
 
 BES_DIR = os.environ.get("BES_DIR", "data/bes")
 IPSOS_DIR = os.environ.get("IPSOS_DIR", "data/ipsos")
@@ -526,4 +527,14 @@ def test_summary_gate_re_requests_and_store_reject(fake_api, monkeypatch):
     assert out[0]["rejected_attempts"] == 1 and len(out[0]["text"].split()) == 300
     assert (llm_client.CACHE_DIR / "summaries_rejected" / "2005_green_minimal_claude_run1_rejected1.json").exists()
 
+def test_implied_shares_are_the_fitted_choice_probabilities():
+    # checks thatmequal scores give an equal split, and thus raising one party's score raises only its share
+    parties = ["lab", "con", "reform", "ld", "green"]
+    flat = implied_shares({p: 0.0 for p in parties}, parties)
+    assert all(abs(v - 20.0) < 1e-9 for v in flat.values())
+    lead = implied_shares({**{p: 0.0 for p in parties}, "lab": 1.0}, parties)
+    assert lead["lab"] > 20 and all(lead[p] < 20 for p in parties if p != "lab")
+    assert abs(sum(lead.values()) - 100) < 1e-9
+    shares = {"lab": 33.7, "con": 23.7, "reform": 14.3, "ld": 12.2, "green": 6.4}
+    assert mean_error_points(flat, shares, parties) == pytest.approx(8.9, abs=0.01)  # 20 against each actual share
 
