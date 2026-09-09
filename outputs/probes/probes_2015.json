@@ -1,0 +1,248 @@
+{
+  "election": 2015,
+  "model": "gpt-5",
+  "plan": {
+    "model": "gpt-5",
+    "summaries": 10,
+    "total_calls": 20
+  },
+  "leakage": {
+    "accuracy": 1.0,
+    "chance": 0.2,
+    "high_confidence_correct_rate": 0.9,
+    "threshold": 0.45,
+    "anonymisation_failed": true,
+    "n": 20
+  },
+  "dual": {
+    "minimal": 1.0,
+    "biased": 1.0,
+    "chance_biased": 0.2,
+    "gap": 0.0,
+    "partial_rate": 0.0,
+    "threshold": 0.45,
+    "anonymisation_indicated": true
+  },
+  "results": [
+    {
+      "family": "minimal",
+      "election": "2015",
+      "truth": "con",
+      "identification": "A bullet\u2011point synopsis of the UK Conservative Party\u2019s 2015 General Election manifesto (Strong Leadership, A Clear Economic Plan, A Brighter, More Secure Future). It\u2019s an unofficial summary derived from the Conservative Party\u2019s 2015 manifesto.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The header explicitly says \u201cConservative Party Manifesto 2015 \u2013 Summary.\u201d Distinctive 2015 Conservative pledges appear throughout: \u201cHold an in/out EU referendum by end\u20112017,\u201d \u201cReplace the Human Rights Act with a British Bill of Rights,\u201d \u201cextend Right to Buy to Housing Association tenants,\u201d \u201cdeliver 3 million new apprenticeships,\u201d \u201cat least \u00a38bn extra [for the NHS] by 2020 to deliver a 7\u2011day NHS,\u201d \u201cNorthern Powerhouse,\u201d \u201cend new subsidies for onshore wind,\u201d \u201ctriple lock,\u201d and \u201craise [the] Inheritance Tax threshold on the family home to \u00a31m for couples.\u201d",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2015",
+      "truth": "con",
+      "guess": "conservative",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2015",
+      "truth": "lab",
+      "identification": "A user-written, \u2264500-word bullet-point summary of the UK Labour Party\u2019s 2015 General Election manifesto, originating as an answer on Politics Stack Exchange in the 2015 \u2018manifestos in 500 words\u2019 Q&A thread.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "medium",
+      "evidence": "The heading reads \u201cLabour Party Manifesto 2015 \u2013 Summary (\u2264500 words)\u201d. The bullet-point style and the 500-word cap match a well-known Politics Stack Exchange thread from the 2015 UK election where users posted \u2264500-word manifesto summaries. The content lists distinctive 2015 Labour pledges (e.g., Budget Responsibility Lock; restore 50p rate and 10p starting rate; abolish non-dom status; freeze energy bills until 2017; reduce tuition fees to \u00a36,000; repeal the Health and Social Care Act; replace the House of Lords with an elected Senate of the Nations and Regions), aligning closely with Labour\u2019s 2015 manifesto.",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2015",
+      "truth": "lab",
+      "guess": "labour",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2015",
+      "truth": "ukip",
+      "identification": "A community-written 500\u2011word summary of the UK Independence Party (UKIP) 2015 UK General Election manifesto, posted as part of Politics Stack Exchange\u2019s manifesto summary series.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The title line says \"UKIP Manifesto 2015 \u2013 Summary (\u2264500 words)\" and the bullets align with well-known UKIP 2015 positions: leave the EU via Article 50 and seek a UK\u2013EU FTA; Australian\u2011style points immigration system and a moratorium on unskilled immigration; scrap HS2; repeal the Climate Change Act and end wind/solar subsidies; oppose an EU army; retain Trident; restrict benefits/health access for recent migrants; end the ECHR/HRA in favor of a UK Bill of Rights. The structured, cross\u2011policy, bullet\u2011point format is characteristic of the 500\u2011word party\u2011manifesto summaries produced on Politics Stack Exchange for the 2015 UK General Election.",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2015",
+      "truth": "ukip",
+      "guess": "uk independence party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2015",
+      "truth": "ld",
+      "identification": "An unofficial bullet\u2011point summary of the UK Liberal Democrats\u2019 2015 General Election manifesto (\u201cStronger Economy, Fairer Society: Opportunity for Everyone\u201d), derived from the Liberal Democrats\u2019 2015 manifesto published by the Liberal Democrats (UK).",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text explicitly uses the 2015 Liberal Democrat slogan \u201cStronger Economy, Fairer Society: Opportunity for Everyone,\u201d and lists signature 2015 Lib Dem policies: \u201cFive Green Laws,\u201d raising the Personal Allowance to \u00a312,500, a \u201cHigh Value Property Levy on homes >\u00a32m\u201d (their \u2018mansion tax\u2019), pro\u2011EU with TTIP safeguards and a referendum only on material treaty change, votes at 16 and STV, protecting the Human Rights Act and a Digital Bill of Rights, stepping down the nuclear posture (ending continuous patrols), and mental health parity with extra NHS funding.",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2015",
+      "truth": "ld",
+      "guess": "liberal democrats",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2015",
+      "truth": "snp",
+      "identification": "A community\u2011written, \u2264500\u2011word bullet\u2011point summary of the Scottish National Party (SNP) manifesto for the 2015 UK general election, published as part of the manifesto\u2011summary project on the Politics Stack Exchange (community wiki).",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "medium",
+      "evidence": "The heading 'SNP Manifesto 2015 \u2013 Summary (\u2264500 words)' indicates a condensed overview rather than the manifesto itself. The bullets match distinctive 2015 SNP positions (e.g., deliver the Smith Commission; oppose Trident renewal; seek a 'double majority' on any EU exit; moratorium on fracking; NHS funding boost routed to Scotland; no focus on independence in this election). The '\u2264500 words' label and standardized, sectional bullet\u2011point style are characteristic of the Politics Stack Exchange community\u2011wiki manifesto\u2011summary series.",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2015",
+      "truth": "snp",
+      "guess": "scottish national party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2015",
+      "truth": "con",
+      "identification": "A concise summary of the UK Conservative Party\u2019s 2015 General Election manifesto (\u201cStrong Leadership, A Clear Economic Plan, A Brighter, More Secure Future\u201d), i.e., the official Conservative manifesto published in April 2015.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "\u201cIn\u2013out EU referendum by end-2017 after a renegotiation; \u2026 end \u2018ever closer union.\u2019\u201d\n\u201cRaise the Personal Allowance to \u00a312,500 and the higher-rate threshold to \u00a350,000 \u2026\u201d\n\u201cExtend Right to Buy to Housing Association tenants \u2026\u201d\n\u201cBuild 200,000 Starter Homes (20% discount for under-40 first-time buyers) \u2026\u201d\n\u201cAt least \u00a38bn extra [for the NHS] by 2020; \u2026 seven-day GP and hospital services by 2020.\u201d\n\u201c3 million apprenticeships \u2026\u201d\n\u201cReplace the Human Rights Act with a British Bill of Rights.\u201d\n\u201cTarget net migration in the tens of thousands \u2026\u201d\n\u201cMaintain the triple lock \u2026 raise the effective Inheritance Tax threshold for the family home to \u00a31m for couples.\u201d",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2015",
+      "truth": "con",
+      "guess": "conservative",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2015",
+      "truth": "lab",
+      "identification": "A concise summary of the UK Labour Party\u2019s 2015 General Election manifesto (\u201cBritain Can Be Better\u201d), produced as a policy\u2011commitments overview of Labour\u2019s manifesto under Ed Miliband.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "UK\u2011specific pledges strongly associated with Labour\u2019s 2015 platform: energy bill freeze to 2017; restore the 50p top income tax rate; abolish non\u2011dom status; mansion tax/tobacco levy to fund NHS staff; repeal NHS competition regime and cap private\u2011provider profits; abolish employment\u2011tribunal fees; end the Free Schools programme; public operator option for rail; abolish the Bedroom Tax; OBR audits of manifestos; two\u2011year wait for in\u2011work benefits for new EU arrivals; protect the Human Rights Act/ECHR; Constitutional Convention and a Senate of Nations and Regions; National Infrastructure Commission; British Investment Bank.",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2015",
+      "truth": "lab",
+      "guess": "labour",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2015",
+      "truth": "ukip",
+      "identification": "A bullet-point summary of the UK Independence Party (UKIP) 2015 UK general election manifesto, as presented on Wikipedia\u2019s \u201cPolicies of the UK Independence Party\u201d page (the \u2018Summary of proposals (2015 manifesto)\u2019 section).",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "Mentions hallmark UKIP 2015 policies: leaving the EU and ending freedom of movement via an Australian-style points system; repealing the Climate Change Act and ending new wind/solar subsidies; cancelling HS2; reopening Manston Airport; allowing ventilated smoking rooms in pubs; decriminalising TV licence non-payment; cutting overseas aid to ~0.2% of GNI and folding DFID into the FCO; free hospital parking; UK fishing policy of a 12\u2011mile zone and 200\u2011mile EEZ; protecting under\u201110m fleet; and specific UKIP proposals like scrapping DCPC and creating a shale sovereign wealth fund. The heading \u201cSummary of proposals (2015 manifesto)\u201d matches the subsection title used on Wikipedia\u2019s UKIP policies page.",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2015",
+      "truth": "ukip",
+      "guess": "uk independence party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2015",
+      "truth": "ld",
+      "identification": "A concise policy summary from the UK Liberal Democrats\u2019 2015 General Election manifesto (Stronger Economy. Fairer Society. Opportunity for Everyone.)\u2014the manifesto\u2019s at\u2011a\u2011glance/summary of proposals.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "Multiple signature Liberal Democrat 2015 policies appear: \u201cFive green laws\u201d; \u201creduce nuclear patrol posture\u201d (ending continuous at\u2011sea deterrence posture); \u201cProportional voting (STV) \u2026 votes at 16 \u2026 elected second chamber\u201d; \u201cDigital Bill of Rights \u2026 net neutrality \u2026 oppose blanket surveillance\u201d; drugs reform with \u201cdiversion for possession \u2026 medicinal cannabis; move policy lead to Health\u201d; a \u201c\u00a3250 annual bonus\u201d for carers; housing measures like \u201cRent to Own\u201d and \u201cdeposit loans for under\u201130s\u201d; \u201cbanded levy on homes over \u00a32m\u201d (mansion tax); pro\u2011EU stance; \u201cGreen Investment Bank with borrowing powers\u201d; early \u201cnet\u2011zero emissions target by 2050\u201d.",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2015",
+      "truth": "ld",
+      "guess": "liberal democrats",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2015",
+      "truth": "snp",
+      "identification": "A policy-only, de\u2011rhetoricized summary of the Scottish National Party\u2019s 2015 UK General Election (Westminster) manifesto, \u2018Stronger for Scotland,\u2019 derived from the SNP manifesto.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "References specific to Scotland and SNP positions, e.g.: \"Implement the Smith Commission swiftly and fully\"; \"Seek further devolution toward full financial responsibility\"; \"Support continued EU membership with a \u201cdouble\u2011majority\u201d requirement for any UK exit\"; \"Oppose renewal of the UK nuclear deterrent\"; \"Increase UK health spending (yielding about \u00a32bn extra for Scotland by 2020\u201321)\"; \"Maintain free university tuition\"; \"Retain 1,000 additional police officers\"; \"Connect Scotland to HS2\"; and energy/renewables priorities including \"island interconnectors\" and \"transmission charging reform\" that are hallmark SNP/Scotland-focused policies circa 2015.",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2015",
+      "truth": "snp",
+      "guess": "scottish national party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    }
+  ]
+}
