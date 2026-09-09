@@ -4,3 +4,38 @@ election,party_key,polling_average,window,source
 2024,reform,14.33333333,3-8th June 2024,Pollbase first-week average
 2024,ld,9.722222222,3-8th June 2024,Pollbase first-week average
 2024,green,5.611111111,3-8th June 2024,Pollbase first-week average
+2019,con,38.2,4-10th November 2019,Pollbase first-week average
+2019,lab,28.2,4-10th November 2019,Pollbase first-week average
+2019,ld,16.07692308,4-10th November 2019,Pollbase first-week average
+2019,snp,3.73,4-10th November 2019,Wikipedia
+2019,green,3.5,4-10th November 2019,Pollbase first-week average
+2017,con,46.625,1-7th May 2017,Pollbase first-week average
+2017,lab,28.875,1-7th May 2017,Pollbase first-week average
+2017,ld,9.5,1-7th May 2017,Pollbase first-week average
+2017,ukip,6.625,1-7th May 2017,Pollbase first-week average
+2017,snp,4.25,1-7th May 2017,Wikipedia
+2015,con,33,31th March - 6th April,Pollbase first-week average
+2015,lab,33.44444444,31th March - 6th April,Pollbase first-week average
+2015,ld,8.125,31th March - 6th April,Pollbase first-week average
+2015,ukip,14.8,31th March - 6th April,Pollbase first-week average
+2015,snp,4.27,31th March - 6th April,Based on scotland only polling figures derived from wikipedia
+2010,con,38.25,30th March - 4th April,Pollbase first-week average
+2010,lab,29.75,30th March - 4th April,Pollbase first-week average
+2010,ld,19.66666667,30th March - 4th April,Pollbase first-week average
+2010,ukip,4.22,30th March - 4th April,Wikipedia
+2010,bnp,2.1,30th March - 4th April,Wikipedia
+2005,lab,37.5,4-10th April ,Pollbase first-week average
+2005,con,34.3,4-10th April ,Pollbase first-week average
+2005,ukip,,4-10th April ,
+2005,ld,20.8,4-10th April ,Pollbase first-week average
+2005,green,,4-10th April ,
+2001,lab,49.5,31th April - 6th May,Pollbase first-week average
+2001,con,33,31th April - 6th May,Pollbase first-week average
+2001,ld,12,31th April - 6th May,Pollbase first-week average
+2001,snp,2.37,31th April - 6th May,Based on scotland only polling figures derived from wikipedia
+2001,ukip,,31th April - 6th May,
+1997,lab,52.57142857,31th March - 6th April,Pollbase first-week average
+1997,con,30.14285714,31th March - 6th April,Pollbase first-week average
+1997,ld,11.14285714,31th March - 6th April,Pollbase first-week average
+1997,snp,1.98,31th March - 6th April,Based on scotland only polling figures derived from wikipedia
+1997,referen,2.5,31th March - 6th April,Pollbase first-week average

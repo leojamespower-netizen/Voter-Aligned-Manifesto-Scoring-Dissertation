@@ -467,7 +467,7 @@ def test_score_spread_and_margin_come_from_the_raw_scores():
     rows = {r["variant"]: r for r in cm.score_rows(report)}
     assert rows["minimal"]["spread"] == 4.0 and rows["minimal"]["top_margin"] == 1.0
     assert rows["neutral"]["spread"] == pytest.approx(0.04) and rows["neutral"]["top_margin"] == pytest.approx(0.01)
-    assert rows["minimal"]["pearson_log_share"] == pytest.approx(rows["neutral"]["pearson_log_share"])  # same order, same correlation
+    assert rows["minimal"]["mean_error_points"] != rows["neutral"]["mean_error_points"]  # same order, different spread, different implied shares
 
 
 def test_main_grid_is_a_subset_of_the_narrowed_design():

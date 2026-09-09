@@ -34,6 +34,7 @@ def polling_averages(election, path=POLLING_CSV):
         return None
     rows = _load(path)
     rows = rows[rows["election"] == election]
+    rows = rows.dropna(subset=["polling_average"])
     if rows.empty:
         return None
     return dict(zip(rows["party_key"], rows["polling_average"].astype(float)))

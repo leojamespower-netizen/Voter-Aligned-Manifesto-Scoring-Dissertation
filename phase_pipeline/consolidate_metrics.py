@@ -7,7 +7,6 @@ import json
 from collections import defaultdict
 from pathlib import Path
 from statistics import mean
-import math
 import choix
 from scipy.stats import pearsonr, spearmanr
 
@@ -78,16 +77,15 @@ def marginal(rows, keys):
 def alpha_rows(report):
     shares = report["vote_shares"]
     parties = sorted(shares)
-    log_share = [math.log(shares[p]) for p in parties]
-    by_alpha = defaultdict(lambda: {"rho": [], "winner": [], "pearson": []})
+    by_alpha = defaultdict(lambda: {"rho": [], "winner": [], "error": []})
     for c in report["cells"].values():
         for alpha, scores in c["alpha_sensitivity"].items():
             rho, _ = spearmanr([scores[p] for p in parties], [shares[p] for p in parties])
-            r, _ = pearsonr([scores[p] for p in parties], log_share)  # magnitude, not just order
             by_alpha[alpha]["rho"].append(float(rho))
-            by_alpha[alpha]["pearson"].append(float(r))
+            by_alpha[alpha]["error"].append(mean_error_points(implied_shares(scores, parties), shares, parties))
             by_alpha[alpha]["winner"].append(max(scores, key=scores.get) == max(shares, key=shares.get))
-    return [{"alpha": float(a), "mean_rho": mean(v["rho"]), "cells_rho_positive": sum(r > 0 for r in v["rho"]), "mean_pearson_log_share": mean(v["pearson"]), "best_cell_pearson": max(v["pearson"]),
+    return [{"alpha": float(a), "mean_rho": mean(v["rho"]), "cells_rho_positive": sum(r > 0 for r in v["rho"]),
+             "mean_error_points": mean(v["error"]), "best_cell_error_points": min(v["error"]),
              "winner_rate": mean(v["winner"])} for a, v in sorted(by_alpha.items(), key=lambda kv: float(kv[0]))]
 
 
@@ -125,6 +123,10 @@ def implied_shares(scores, parties):
     probs = choix.probabilities(range(len(parties)), [scores[p] for p in parties])
     return {p: 100 * float(probs[i]) for i, p in enumerate(parties)}
 
+# shares of a subset, rescaled to sum to 100, so both sides are on the same base
+def renormalise(shares, parties):
+    total = sum(shares[p] for p in parties)
+    return {p: 100 * shares[p] / total for p in parties}
 
 def mean_error_points(implied, shares, parties):
     return mean(abs(implied[p] - shares[p]) for p in parties)
@@ -134,18 +136,15 @@ def mean_error_points(implied, shares, parties):
 # parties are, how clear the top is, and whether magnitude tracks vote share
 def score_rows(report):
     shares = report["vote_shares"]; parties = sorted(shares)
-    log_share = [math.log(shares[p]) for p in parties]
     rows = []
     for name, c in report["cells"].items():
         variant, arm, source = name.split("/")
         sc = c["scores"]; ordered = sorted(sc.values(), reverse=True)
-        r, _ = pearsonr([sc[p] for p in parties], log_share)
         rows.append({"variant": variant, "arm": arm, "source": source,
                      "spread": ordered[0] - ordered[-1],        # top minus bottom
                      "top_margin": ordered[0] - ordered[1],     # first over second
                      "mean_error_points": mean_error_points(implied_shares(sc, parties), shares, parties),  # points per party, raw
                      **{f"implied_{p}": implied_shares(sc, parties)[p] for p in parties},
-                     "pearson_log_share": float(r),            # magnitude against log vote share
                      **{f"score_{p}": sc[p] for p in parties}})
     return rows
 
@@ -156,7 +155,6 @@ def score_marginal(rows, keys):
     return [{**dict(zip(keys, g)), "n_cells": len(rs),
              "mean_spread": mean(r["spread"] for r in rs),
              "mean_top_margin": mean(r["top_margin"] for r in rs),
-             "mean_pearson_log_share": mean(r["pearson_log_share"] for r in rs),
              "mean_error_points": mean(r["mean_error_points"] for r in rs),
              "best_cell_error_points": min(r["mean_error_points"] for r in rs)}
             for g, rs in sorted(groups.items())]
@@ -192,31 +190,35 @@ def main():
     }
     polling = polling_averages(report["election"])
     if polling:
-        shares = report["vote_shares"]; parties = sorted(shares)
-        rho_polling = float(spearmanr([polling[p] for p in parties], [shares[p] for p in parties]).statistic)
+        shares = report["vote_shares"]
+        parties = sorted(shares)
+        polled = sorted(polling)  # parties the polls report separately; the rest sat in "Others"
+        partial = len(polled) < len(parties)
         tables["polling_benchmark"] = {
-            "rho_polling": rho_polling,                      # polls versus the result, same criterion as the pipeline
+            "polled_parties": polled,
+            "partial": partial,
             "polling_ranking": " > ".join(sorted(polling, key=polling.get, reverse=True)),
-            "mean_rho_pipeline": mean(r["rho"] for r in rows),
-            "best_cell_rho_pipeline": max(r["rho"] for r in rows),
-            "cells_matching_or_beating_polls": sum(r["rho"] >= rho_polling for r in rows),
         }
-        pearson_polling = float(pearsonr([math.log(polling[p]) for p in parties], [math.log(shares[p]) for p in parties])[0])
-        cell_pearson = [r["pearson_log_share"] for r in score_rows(report)]
-        tables["polling_benchmark"].update({
-            "pearson_polling_log_share": pearson_polling,
-            "mean_pearson_pipeline": mean(cell_pearson),
-            "best_cell_pearson_pipeline": max(cell_pearson),
-            "cells_matching_or_beating_polls_pearson": sum(c >= pearson_polling for c in cell_pearson),})
-
-        # and in points: the polls' own error against the result, beside the cells'
-        error_points_polling = mean_error_points(polling, shares, parties)
-        cell_error = [r["mean_error_points"] for r in score_rows(report)]
+        if not partial:  # a rank correlation on three of five parties is not comparable with the pipeline's
+            rho_polling = float(spearmanr([polling[p] for p in parties], [shares[p] for p in parties]).statistic)
+            tables["polling_benchmark"].update({
+                "rho_polling": rho_polling,
+                "mean_rho_pipeline": mean(r["rho"] for r in rows),
+                "best_cell_rho_pipeline": max(r["rho"] for r in rows),
+                "cells_matching_or_beating_polls": sum(r["rho"] >= rho_polling for r in rows),
+            })
+        # in points, on the polled parties only, each side renormalised over that subset
+        error_points_polling = mean_error_points(renormalise(polling, polled), renormalise(shares, polled), polled)
+        cell_error = [mean_error_points(renormalise({p: r[f"implied_{p}"] for p in polled}, polled),
+                                        renormalise(shares, polled), polled)
+                      for r in score_rows(report)]
         tables["polling_benchmark"].update({
             "error_points_polling": error_points_polling,
             "mean_error_points_pipeline": mean(cell_error),
             "best_cell_error_points_pipeline": min(cell_error),
             "cells_beating_polls_error_points": sum(m <= error_points_polling for m in cell_error),
+            "polling_shares": {p: polling[p] for p in polled},
+            "actual_shares": {p: shares[p] for p in polled},
         })
     if args.phase2:
         tables["nulls_vs_performance"] = nulls_vs_performance(rows, profile_nulls(load(args.phase2)))
