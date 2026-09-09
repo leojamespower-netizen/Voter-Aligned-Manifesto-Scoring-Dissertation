@@ -1,0 +1,221 @@
+{
+  "elections": [
+    2019
+  ],
+  "source": "summary",
+  "n_verdicts": 420,
+  "best_cell": {
+    "2019": "minimal/explicit_mft/ipsos"
+  },
+  "noise_floors": {
+    "invariance": {
+      "positional_swap": 0.06666666666666667,
+      "distorted_vs_minimal": {
+        "rate": null,
+        "n_comparisons": 0,
+        "values": [
+          "minimal"
+        ]
+      },
+      "calibration_repeats": {
+        "rate": null,
+        "n_comparisons": 0,
+        "values": []
+      },
+      "floor": 0.06666666666666667
+    },
+    "framing": {
+      "framing_axis": {
+        "rate": 0.07142857142857142,
+        "n_comparisons": 70,
+        "values": [
+          "framing_preserving",
+          "minimal"
+        ]
+      },
+      "party_cue": {
+        "rate": null,
+        "n_comparisons": 0,
+        "values": [
+          "anonymised"
+        ]
+      },
+      "framework_arm": {
+        "rate": 0.16666666666666666,
+        "n_comparisons": 60,
+        "values": [
+          "axis",
+          "baseline",
+          "bidirectional_mft",
+          "explicit_mft"
+        ]
+      },
+      "source_condition": {
+        "rate": 0.07777777777777778,
+        "n_comparisons": 90,
+        "values": [
+          "bes",
+          "ipsos",
+          "noprofile"
+        ]
+      },
+      "invariance_floor": 0.06666666666666667,
+      "ordering_holds": null
+    },
+    "calibration": {
+      "reversal_by_confidence": {
+        "high": 0.0,
+        "medium": 0.17073170731707318
+      },
+      "gap": 0.17073170731707318,
+      "distribution": {
+        "counts": {
+          "high": 215,
+          "medium": 205
+        },
+        "proportions": {
+          "high": 0.5119047619047619,
+          "medium": 0.4880952380952381
+        },
+        "n": 420
+      }
+    }
+  },
+  "profile_value_added": {
+    "2019": {
+      "rho_with_profile": 0.9999999999999999,
+      "rho_no_profile": 0.9746794344808963,
+      "improvement": 0.025320565519103555,
+      "profile_helps": "True"
+    }
+  },
+  "party_error": {
+    "con": {
+      "mean_signed_error": 0,
+      "sd_across_elections": 0.0,
+      "n_elections": 1,
+      "per_election": {
+        "2019": 0
+      }
+    },
+    "green": {
+      "mean_signed_error": 0,
+      "sd_across_elections": 0.0,
+      "n_elections": 1,
+      "per_election": {
+        "2019": 0
+      }
+    },
+    "lab": {
+      "mean_signed_error": 0,
+      "sd_across_elections": 0.0,
+      "n_elections": 1,
+      "per_election": {
+        "2019": 0
+      }
+    },
+    "ld": {
+      "mean_signed_error": 0,
+      "sd_across_elections": 0.0,
+      "n_elections": 1,
+      "per_election": {
+        "2019": 0
+      }
+    },
+    "snp": {
+      "mean_signed_error": 0,
+      "sd_across_elections": 0.0,
+      "n_elections": 1,
+      "per_election": {
+        "2019": 0
+      }
+    }
+  },
+  "directional_error": {
+    "by_family": {
+      "centre-right": {
+        "mean_signed_error": 0,
+        "sd": 0.0,
+        "n_parties": 1
+      },
+      "left": {
+        "mean_signed_error": 0,
+        "sd": 0.0,
+        "n_parties": 1
+      },
+      "centre-left": {
+        "mean_signed_error": 0,
+        "sd": 0.0,
+        "n_parties": 1
+      },
+      "centre": {
+        "mean_signed_error": 0,
+        "sd": 0.0,
+        "n_parties": 1
+      },
+      "regionalist": {
+        "mean_signed_error": 0,
+        "sd": 0.0,
+        "n_parties": 1
+      }
+    },
+    "by_party": {
+      "con": {
+        "mean_signed_error": 0,
+        "sd_across_elections": 0.0,
+        "n_elections": 1,
+        "per_election": {
+          "2019": 0
+        }
+      },
+      "green": {
+        "mean_signed_error": 0,
+        "sd_across_elections": 0.0,
+        "n_elections": 1,
+        "per_election": {
+          "2019": 0
+        }
+      },
+      "lab": {
+        "mean_signed_error": 0,
+        "sd_across_elections": 0.0,
+        "n_elections": 1,
+        "per_election": {
+          "2019": 0
+        }
+      },
+      "ld": {
+        "mean_signed_error": 0,
+        "sd_across_elections": 0.0,
+        "n_elections": 1,
+        "per_election": {
+          "2019": 0
+        }
+      },
+      "snp": {
+        "mean_signed_error": 0,
+        "sd_across_elections": 0.0,
+        "n_elections": 1,
+        "per_election": {
+          "2019": 0
+        }
+      }
+    }
+  },
+  "families": {
+    "con": "centre-right",
+    "lab": "centre-left",
+    "ld": "centre",
+    "snp": "regionalist",
+    "green": "left"
+  },
+  "polling_benchmark": {
+    "2019": {
+      "rho_pipeline": 0.9999999999999999,
+      "rho_polling": 0.9999999999999999,
+      "gap": 0.0,
+      "pipeline_matches_or_beats": "True",
+      "n_parties": 5
+    }
+  }
+}

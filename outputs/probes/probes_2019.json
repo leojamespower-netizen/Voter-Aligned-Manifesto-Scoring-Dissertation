@@ -1,0 +1,248 @@
+{
+  "election": 2019,
+  "model": "gpt-5",
+  "plan": {
+    "model": "gpt-5",
+    "summaries": 10,
+    "total_calls": 20
+  },
+  "leakage": {
+    "accuracy": 1.0,
+    "chance": 0.2,
+    "high_confidence_correct_rate": 0.95,
+    "threshold": 0.45,
+    "anonymisation_failed": true,
+    "n": 20
+  },
+  "dual": {
+    "minimal": 1.0,
+    "biased": 1.0,
+    "chance_biased": 0.2,
+    "gap": 0.0,
+    "partial_rate": 0.0,
+    "threshold": 0.45,
+    "anonymisation_indicated": true
+  },
+  "results": [
+    {
+      "family": "minimal",
+      "election": "2019",
+      "truth": "con",
+      "identification": "An unofficial bullet\u2011point summary of the UK Conservative Party\u2019s 2019 General Election manifesto, titled \u201cGet Brexit Done: Unleash Britain\u2019s Potential,\u201d derived from that manifesto rather than being the official document.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "\u201cConservative Party Manifesto 2019 \u2013 Summary (\u2264500 words)\u201d ... \u201cGet Brexit done: Pass the \u2018oven\u2011ready\u2019 deal\u201d ... \u201cNHS: \u2026 50,000 more nurses\u201d \u2026 \u201cCrime and justice \u2026 20,000 more police\u201d \u2026 \u201cImmigration \u2013 Australian-style points-based system\u201d \u2026 \u201crepeal Fixed\u2011term Parliaments Act\u201d \u2026 \u201cGlobal role: \u2026 0.7% aid\u201d",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2019",
+      "truth": "con",
+      "guess": "conservative",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2019",
+      "truth": "lab",
+      "identification": "A condensed, unofficial summary of the UK Labour Party\u2019s 2019 General Election manifesto (\u201cIt\u2019s Time For Real Change\u201d), derived from that manifesto.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The heading says \u201cLabour Party Manifesto 2019 \u2013 Summary.\u201d Content matches distinctive 2019 UK Labour policies: \u201cIt\u2019s time for real change\u201d framing; raise income tax above \u00a380k; \u00a3400bn National Transformation Fund incl. \u00a3250bn Green fund; free full\u2011fibre broadband by 2030 via public ownership; bring rail into public ownership; 32\u2011hour week; abolish tuition fees; 1m climate jobs; ban fracking; final\u2011say referendum within six months; abolish the House of Lords for an elected Senate; end the hostile environment; scrap Universal Credit; maintain NATO/2% and renew Trident.",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2019",
+      "truth": "lab",
+      "guess": "labour",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2019",
+      "truth": "ld",
+      "identification": "A bullet\u2011point summary of the UK Liberal Democrats\u2019 2019 General Election manifesto (\u201cStop Brexit. Build a Brighter Future\u201d), derived from the party\u2019s official manifesto.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The heading says \u201cLiberal Democrats Manifesto 2019 \u2013 summary\u201d; distinctive Lib Dem 2019 pledges appear throughout, e.g. \u201cStop Brexit\u2026 use a \u00a350bn \u2018Remain Bonus\u2019\u201d, \u201c1p on Income Tax\u2026 ringfenced for NHS and social care\u201d, \u201cProportional representation (STV)\u201d, \u201cSkills Wallet: \u00a310,000 per adult\u201d, \u201creplace Business Rates with a Commercial Landowner Levy\u201d, \u201call new cars/vans electric by 2030\u201d, and \u201crecognise Palestine\u201d.",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2019",
+      "truth": "ld",
+      "guess": "liberal democrats",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2019",
+      "truth": "snp",
+      "identification": "An unofficial, third\u2011party 500\u2011word summary of the Scottish National Party\u2019s 2019 UK General Election manifesto, likely taken from a manifesto\u2011summaries compilation or blog rather than the SNP\u2019s official publication.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "medium",
+      "evidence": "The heading explicitly says \u201cScottish National Party Manifesto 2019 \u2013 Summary (\u2264500 words)\u201d. The content matches distinctive SNP 2019 GE positions: a new independence referendum via Section 30, support for a UK\u2011wide second EU referendum, scrapping Trident, devolving immigration and employment law, opposing the \u00a330k salary threshold, a Scottish Visa, backing WASPI women, protecting the NHS from trade deals, and climate targets aligned with Scotland\u2019s (75% by 2030; net\u2011zero carbon by 2040; all GHGs by 2045). The structured, bullet\u2011point, synopsis style indicates it is a condensed, third\u2011party summary rather than the full official manifesto.",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2019",
+      "truth": "snp",
+      "guess": "scottish national party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2019",
+      "truth": "green",
+      "identification": "An unofficial condensed summary of the Green Party of England & Wales\u2019 2019 UK General Election manifesto (\u201cIf not now, when?\u201d) and its costings\u2014compiled from the party\u2019s policies rather than an official text excerpt.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The header explicitly says \u201cGreen Party Manifesto 2019 \u2013 Summary.\u201d Content matches the Green Party of England & Wales\u2019 2019 UK General Election manifesto: net\u2011zero by 2030 via a Green New Deal; UBI at \u00a389/week for adults and \u00a3178/week for pensioners; remain in the EU via a People\u2019s Vote; cancel Trident and HS2; no new road capacity or runways; ban fracking and no new nuclear; proportional representation; votes at 16; scrap tuition fees and write off \u00a39k\u2011era debt; Land Value Tax; carbon tax raising ~\u00a376.7bn.",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2019",
+      "truth": "green",
+      "guess": "green party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2019",
+      "truth": "con",
+      "identification": "A neutral, bullet\u2011point synopsis of the UK Conservative Party\u2019s 2019 General Election manifesto, \u201cGet Brexit Done: Unleash Britain\u2019s Potential,\u201d condensed from the official manifesto published in November 2019.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "Distinctive 2019 UK Conservative manifesto pledges appear throughout: \u201cGet Brexit Done\u201d timetable (no extension beyond Dec 2020), FTAs with US/AUS/NZ/Japan and up to 10 freeports; no rises in main income tax/NI/VAT rates and raising the NI threshold to \u00a39,500; 50,000 more nurses; 6,000 more GPs and 50m more GP appointments; 40 new hospitals; 20,000 extra police; Australian-style points-based immigration; end \u2018no\u2011fault\u2019 evictions; target 300,000 homes a year; gigabit broadband nationwide by 2025 with \u00a35bn for hard\u2011to\u2011reach areas; SME R&D tax credit to 13% and a new high\u2011risk research agency; leave the Common Fisheries Policy; Environment Bill with a new watchdog, 40GW offshore wind by 2030, fracking moratorium, \u00a3500m Blue Planet Fund; repeal the Fixed-term Parliaments Act, voter ID; exceed NATO 2% with 0.5% real growth; maintain 0.7% aid and introduce Magnitsky sanctions; tougher animal welfare laws and ban on trophy hunting imports.",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2019",
+      "truth": "con",
+      "guess": "conservative",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2019",
+      "truth": "lab",
+      "identification": "A neutral, bullet\u2011point \u2018ideology\u2011free\u2019 summary of the UK Labour Party\u2019s 2019 General Election manifesto (\u201cIt\u2019s Time for Real Change\u201d), as compiled by Ben Goldacre in his public Google Doc summary of the manifesto (November 2019).",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "Mentions a \u00a3400bn National Transformation Fund with a \u00a3250bn Green Transformation Fund; public ownership of rail, buses, energy and water; free full\u2011fibre broadband by 2030 via a public provider; \u00a310 Real Living Wage and 32\u2011hour week; abolish tuition fees; bring academies/free schools under local oversight; end Right to Buy; abolish the House of Lords and replace with an elected Senate; recognise Palestine; retain NATO/2% defence and renew the nuclear deterrent; Brexit plan of a new customs\u2011union\u2011based deal put to a confirmatory referendum alongside remain within six months. These are hallmark planks of the UK Labour Party\u2019s 2019 general election manifesto.",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2019",
+      "truth": "lab",
+      "guess": "labour",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2019",
+      "truth": "ld",
+      "identification": "A condensed, paraphrased summary of the UK Liberal Democrats\u2019 2019 General Election manifesto (\u201cStop Brexit. Build a Brighter Future.\u201d), i.e., the Liberal Democrats\u2019 official 2019 policy platform.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "\u201cRevoke Article 50 to remain in the EU if winning a majority; otherwise back a referendum with an option to remain.\u201d; \u201cSkills Wallets of \u00a310,000 per adult for lifelong learning\u201d; \u201c+1p on Income Tax \u2026 for NHS and social care\u201d; \u201cReplace Business Rates with a Commercial Landowner Levy\u201d; \u201cNet\u2011zero by 2045\u201d and plant \u201c60m trees/year\u201d; \u201cYoung People\u2019s Premium\u201d; \u201cReplace Police and Crime Commissioners with local boards\u201d; \u201cdecriminalise possession for personal use\u201d and a \u201cregulated cannabis market\u201d; electoral reform to \u201cSingle Transferable Vote \u2026 votes at 16\u201d; \u201cmaintain 0.7% aid \u2026 minimum nuclear deterrent (reduced fleet, altered posture).\u201d",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2019",
+      "truth": "ld",
+      "guess": "liberal democrats",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2019",
+      "truth": "snp",
+      "identification": "A neutral bullet\u2011point summary of the Scottish National Party (SNP) manifesto for the 2019 UK general election, drawn from the SNP\u2019s 2019 manifesto.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "References to a second Scottish independence referendum; devolving immigration to create a Scottish Visa; Scottish\u2011specific climate targets (net zero by 2045, 75% by 2030); growing the Scottish National Investment Bank; devolved broadcasting powers; cancellation of the UK\u2019s nuclear weapons (Trident) while retaining bases/regiments; free higher education in Scotland; agriculture convergence uplift and fisheries lines specific to Scotland.",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2019",
+      "truth": "snp",
+      "guess": "scottish national party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2019",
+      "truth": "green",
+      "identification": "A condensed bullet-point summary of the Green Party of England and Wales\u2019 2019 UK General Election manifesto (\u201cIf Not Now, When?\u201d), drawn from the party\u2019s official manifesto/costings materials.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "Mentions specific Green Party 2019 planks, e.g.: \u201cA 10-year Green New Deal to reach net-zero emissions by 2030\u2026 over \u00a3100bn a year\u2026 \u00a394.4bn a year of public capital borrowing\u201d; \u201cno new nuclear; ban fracking\u201d; \u201cFrequent Flyer Levy\u201d; \u201ccancel HS2\u201d; \u201cplant 700m trees\u201d; \u201cNature GCSE\u201d; \u201cUniversal Basic Income: adults \u00a389/week; pensioners \u00a3178/week\u201d; \u201creplace Council Tax and Business Rates with a Land Value Tax\u201d; \u201ccancel Trident replacement.\u201d These are distinctive to the Green Party of England & Wales\u2019 2019 manifesto.",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2019",
+      "truth": "green",
+      "guess": "green party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    }
+  ]
+}
