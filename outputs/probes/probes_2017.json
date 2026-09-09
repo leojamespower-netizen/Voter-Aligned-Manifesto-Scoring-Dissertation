@@ -1,0 +1,248 @@
+{
+  "election": 2017,
+  "model": "gpt-5",
+  "plan": {
+    "model": "gpt-5",
+    "summaries": 10,
+    "total_calls": 20
+  },
+  "leakage": {
+    "accuracy": 0.9,
+    "chance": 0.2,
+    "high_confidence_correct_rate": 0.8,
+    "threshold": 0.45,
+    "anonymisation_failed": true,
+    "n": 20
+  },
+  "dual": {
+    "minimal": 0.8,
+    "biased": 1.0,
+    "chance_biased": 0.2,
+    "gap": 0.19999999999999996,
+    "partial_rate": 0.1,
+    "threshold": 0.45,
+    "anonymisation_indicated": true
+  },
+  "results": [
+    {
+      "family": "minimal",
+      "election": "2017",
+      "truth": "con",
+      "identification": "A third\u2011party bullet\u2011point summary of the UK Conservative and Unionist Party\u2019s 2017 General Election manifesto, \u201cForward, Together: Our Plan for a Stronger Britain and a Prosperous Future\u201d (Theresa May). It derives from that manifesto.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The text explicitly labels itself \u201cConservative Party Manifesto 2017 \u2013 Summary,\u201d and is filled with hallmark 2017 Tory pledges and phrases: \u201cStrong and stable\u201d leadership; leave the single market and customs union with a \u201cGreat Repeal Bill\u201d and \u201cno deal better than a bad deal\u201d; reduce net migration to the \u201ctens of thousands\u201d; maintain 0.7% aid and defence \u22652% of GDP; retain Trident; move from the pensions Triple Lock to a Double Lock; means-test Winter Fuel Payments; social care reforms including home value in the means test and a \u00a3100,000 asset floor; an energy price \u201csafeguard tariff\u201d cap; HS2, Northern Powerhouse Rail and Heathrow expansion; T-levels and institutes of technology; UK Shared Prosperity Fund; a Digital Charter and right for young people to delete data at 18. These are all distinctive elements of the Conservative and Unionist Party\u2019s 2017 general election manifesto under Theresa May (\u201cForward, Together: Our Plan for a Stronger Britain and a Prosperous Future\u201d).",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2017",
+      "truth": "con",
+      "guess": "conservative",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2017",
+      "truth": "lab",
+      "identification": "An unofficial, supporter-made bullet\u2011point summary of the UK Labour Party\u2019s 2017 general election manifesto (\u201cFor the Many, Not the Few\u201d), not the official manifesto text.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "medium",
+      "evidence": "The title line says \u201cLabour Party Manifesto 2017 \u2013 Summary (under 500 words)\u201d. The content matches signature 2017 UK Labour policies and slogans: \u201can economy for the many, not the few\u201d; a \u00a3250bn National Transformation Fund; the Fiscal Credibility Rule; abolishing university tuition fees; public ownership of rail, energy networks, water and Royal Mail; \u00a310 Living Wage by 2020; ending zero\u2011hours contracts; reversing NHS privatisation and adding >\u00a330bn; jobs\u2011first Brexit with EU nationals\u2019 rights; renewing Trident while keeping 0.7% aid. These are all core planks of Labour\u2019s 2017 general election manifesto, For the Many, Not the Few.",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2017",
+      "truth": "lab",
+      "guess": "labour",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2017",
+      "truth": "ld",
+      "identification": "An unofficial, third\u2011party bullet\u2011point summary of the UK Liberal Democrats\u2019 2017 General Election manifesto, compiled from the party\u2019s official 2017 manifesto.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "The header states \u201cLiberal Democrats Manifesto 2017 \u2013 Summary,\u201d and the bullet points align with distinctive 2017 UK Liberal Democrat pledges (e.g., a second EU referendum; 1p income tax rise for the NHS/social care; legal, regulated cannabis market; votes at 16 and STV; three\u2011boat reduced\u2011readiness nuclear deterrent; protections for Erasmus+, EHIC, and roaming; opposition to new grammar schools).",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2017",
+      "truth": "ld",
+      "guess": "liberal democrats",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2017",
+      "truth": "snp",
+      "identification": "A user\u2011generated bullet\u2011point summary of the Scottish National Party\u2019s 2017 UK general election manifesto, posted as part of a \u2264500\u2011word manifesto summaries thread on Politics Stack Exchange (community\u2011wiki).",
+      "grade": "PARTIAL",
+      "correct": false,
+      "stated_confidence": "high",
+      "evidence": "The header reads \u201cScottish National Party Manifesto 2017 \u2013 Summary (\u2264500 words)\u201d. The bullet points match SNP 2017 UK general election positions (e.g., scrapping Trident, opposing further Corporation Tax cuts, protecting EU nationals\u2019 rights, Scotland\u2019s right to choose an independence referendum post\u2011Brexit, returning the \u00a3190m convergence uplift to farmers, capping standard variable energy tariffs, no fox\u2011hunting). The \u201c\u2264500 words\u201d constraint and outline style are characteristic of a Politics Stack Exchange community\u2011wiki manifesto\u2011summary thread.",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2017",
+      "truth": "snp",
+      "guess": "scottish national party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2017",
+      "truth": "ukip",
+      "identification": "A third\u2011party bullet\u2011point summary of the UK Independence Party (UKIP) 2017 UK general election manifesto, derived from UKIP\u2019s official 2017 manifesto document (not the original manifesto text itself).",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "medium",
+      "evidence": "The heading explicitly says \u201cUKIP Manifesto 2017 \u2013 Summary (under 500 words).\u201d The bullet points list hallmark UKIP 2017 policies: six Brexit tests, reclaiming fisheries/200\u2011mile zone, bringing back blue passports, cutting foreign aid to 0.2% GNI, scrapping HS2 and the BBC licence fee, an Australian\u2011style points system with a pause on low\u2011skilled migration, banning face coverings, repealing the Human Rights Act and leaving the ECHR, creating an English Parliament and PR, and introducing a \u201cBritdisc\u201d for foreign vehicles.",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2017",
+      "truth": "ukip",
+      "guess": "uk independence party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "minimal",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2017",
+      "truth": "con",
+      "identification": "A non\u2011ideological bullet\u2011point summary of the UK Conservative and Unionist Party\u2019s 2017 general election manifesto, \u2018Forward, Together: Our Plan for a Stronger Britain and a Prosperous Future\u2019 (Conservative Party, May 2017), compiled from the manifesto text.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "Distinctive 2017 UK Conservative manifesto items: raise personal allowance to \u00a312,500/\u00a350,000 by 2020; cut corporation tax to 17%; energy price cap/safeguard tariff; leave single market and customs union with a Great Repeal Bill; social care reform including home value in means test with a \u00a3100,000 floor; end Leveson 2 and repeal Section 40; merge the SFO into the NCA; lift ban on new selective (grammar) schools; keep students in migration statistics and tighten student visas; create nine regional Trade Commissioners and reconvene the Board of Trade; UK Shared Prosperity Fund; Blue Belt marine protections; shale gas development with a new regulator; defence at \u22652% of GDP and +0.5% above inflation; aim for near\u2011zero\u2011emission cars/vans by 2050.",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2017",
+      "truth": "con",
+      "guess": "conservative",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2017",
+      "truth": "lab",
+      "identification": "A condensed summary of the UK Labour Party\u2019s 2017 General Election manifesto, \u2018For the Many, Not the Few,\u2019 produced by the Labour Party (manifesto policy highlights).",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "References unique to UK Labour\u2019s 2017 manifesto include: \u201c\u00a3250bn National Transformation Fund\u2026\u201d, \u201cNational Investment Bank\u2026\u201d, \u201cno income tax rise below \u00a380k\u2026\u201d, \u201cFiscal Credibility Rule\u2026\u201d, \u201cReturn rail, energy networks, water and postal services to public ownership\u2026\u201d, \u201cNational Education Service\u2026 scrap tuition fees\u2026 restore maintenance grants\u201d, \u201cLiving Wage \u2265\u00a310 by 2020\u201d, \u201cfreedom of movement\u2026 end\u201d, \u201crecognise Palestine\u201d, \u201crenew nuclear deterrent while pursuing multilateral disarmament\u201d, \u201cComplete HS2\u2026 Crossrail of the North\u2026 Crossrail 2\u201d, \u201cban fracking\u201d, and \u201ccomplete Leveson\u201d.",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2017",
+      "truth": "lab",
+      "guess": "labour",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2017",
+      "truth": "ld",
+      "identification": "An ideology\u2011neutral bullet\u2011point summary of the UK Liberal Democrats\u2019 2017 General Election manifesto (\u201cChange Britain\u2019s Future\u201d).",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "\u2018Hold a referendum on the final EU deal, with an option to remain\u2019; \u2018Add 1p to Income Tax \u2026 ringfenced for NHS and social care\u2019; \u2018Regulate cannabis for adults\u2019; \u2018Votes at 16; STV for Westminster and local elections\u2019; \u2018Build 300,000 homes/year by 2022; at least 10 new garden cities\u2019; \u2018Young Person\u2019s Bus Discount Card (16\u201321)\u2019; \u2018ban new diesel car/small van sales by 2025\u2019; \u2018maintain a minimum nuclear deterrent with reduced posture\u2019. These are signature Liberal Democrat 2017 pledges.",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2017",
+      "truth": "ld",
+      "guess": "liberal democrats",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2017",
+      "truth": "snp",
+      "identification": "A neutral, bullet\u2011point summary of the Scottish National Party\u2019s 2017 UK general election manifesto (\u201cStronger for Scotland\u201d).",
+      "grade": "PARTIAL",
+      "correct": false,
+      "stated_confidence": "high",
+      "evidence": "References specific to SNP positions and Scotland: cancelling nuclear weapons renewal (Trident), affirming the Scottish Parliament\u2019s right to decide on a future independence referendum after Brexit terms are known, Scotland\u2011specific policies (free prescriptions and tuition, \u00a32bn NHS Scotland increase, GM\u2011free status), oil and gas sector measures, opposition to Hinkley Point C, moratorium on fracking, devolution asks (immigration, employment law, agriculture/fisheries on repatriation), broadband to 100% by 2021, and EU\u2011related protections (Erasmus+, EMA, EHIC).",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2017",
+      "truth": "snp",
+      "guess": "scottish national party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "minimal",
+      "election": "2017",
+      "truth": "ukip",
+      "identification": "A neutral, third\u2011party bullet\u2011point summary of the UK Independence Party (UKIP) 2017 General Election manifesto (\u2018Britain Together\u2019), not the original manifesto text.",
+      "grade": "EXACT",
+      "correct": true,
+      "stated_confidence": "high",
+      "evidence": "Distinctive UKIP 2017 policies appear throughout: banning face coverings in public; leaving the ECHR/ECJ and setting strict \u201csix tests\u201d for Brexit; restoring a 200\u2011mile Exclusive Economic Zone and creating a Fisheries Protection Force; abolishing the TV licence; repealing the Climate Change Act and leaving the Paris Agreement and EU ETS; cutting foreign aid to 0.2% and commissioning a 500\u2011bed hospital ship; near\u2011zero net migration with a five\u2011year moratorium on low\u2011skilled visas and requiring private medical insurance; abolishing the upper chamber, creating an English Parliament, PR for Commons, and citizen\u2011initiated referenda; scrapping HS2; FOBT \u00a32 stake cap; hospital parking charges scrapped. These align with UKIP\u2019s \u2018Britain Together: The UKIP 2017 General Election Manifesto.\u2019",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    },
+    {
+      "family": "biased",
+      "election": "2017",
+      "truth": "ukip",
+      "guess": "uk independence party",
+      "correct": true,
+      "stated_confidence": "high",
+      "variant": "anonymised",
+      "model": "gpt-5"
+    }
+  ]
+}
