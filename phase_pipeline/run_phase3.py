@@ -1,15 +1,14 @@
-"""Phase 3: manifesto text and profiles in, party rankings and validation out.
+"""Phase 3: manifesto summaries and profiles in, party rankings and validation out.
 
     python -m phase_pipeline.run_phase3 2024 --dry-run
-    python -m phase_pipeline.run_phase3 2024 --text-source cmp
 
---text-source selects what the model compares. "summary" uses the Phase 1
-LLM summaries; "cmp" uses the Manifesto Project coded text instead. Running
-both and comparing the rankings is the content diagnostic: if they diverge,
-summarisation lost something the coders kept. The cmp source is registered
-for 2015, 2019 and 2024 only.
+Every pair of parties is judged in both orderings under pseudonyms, once per
+design cell. Bradley-Terry converts the verdicts into a score per party, which is
+validated against that election's vote shares, and polling.
 
-Pass --variants, --arms and --sources to restrict the grid after the pilot.
+--variants, --arms and --sources default to the main-series grid registered in
+prompts.py. Naming them explicitly recovers the full grid the 2024 calibration
+cycle ran.
 """
 
 import argparse
@@ -17,7 +16,7 @@ import json
 import sys
 from pathlib import Path
 
-from . import bradley_terry, cmp, compare, profiles, validate
+from . import bradley_terry, compare, profiles, validate
 from .report import write_report
 from .prompts import CARRIED_FORWARD, COMPARE_PROMPTS, MAIN_ARMS, MAIN_SOURCES, MAIN_VARIANTS, NEEDS_PROFILE
 from .vote_shares import vote_shares
@@ -29,31 +28,6 @@ DEFAULT_OUTPUT = REPO_ROOT / "outputs" / "phase3"
 
 PROMPT_TYPES = tuple(COMPARE_PROMPTS)
 
-# the CMP comparison runs only where corpus coverage is complete and the
-# survey instrument is strongest; on the earlier cycles a divergence could
-# not be separated from everything else that is uncertain about them
-CMP_ELECTIONS = (2015, 2019, 2024)
-
-
-def load_cmp_texts(election, parties):
-    """Read the CMP coded text for every party in one election.
-
-    Args:
-        election (int): election year.
-        parties (list): party keys.
-
-    Returns:
-        tuple: {party: text} for those available, and a list of the rest
-        with the reason. The Referendum Party is coded in no MARPOR round, so
-        1997 will always be short one.
-    """
-    texts, missing = {}, []
-    for party in parties:
-        try:
-            texts[party] = cmp.load_cmp_text(election, party)
-        except FileNotFoundError as err:
-            missing.append((party, str(err)))
-    return texts, missing
 
 
 def load_phase1(phase1_dir, election, variants):
@@ -184,16 +158,12 @@ def parse_args():
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--model", default="gpt-5")
     parser.add_argument("--temperature", type=float, default=None)
-    parser.add_argument("--variants", nargs="+", default=list(MAIN_VARIANTS), choices=(CARRIED_FORWARD),
-                        help="summary variants to run (default: all carried)")
+    parser.add_argument("--variants", nargs="+", default=list(MAIN_VARIANTS), choices=CARRIED_FORWARD,
+                        help="summary variants to run (default: the main-series grid)")
     parser.add_argument("--arms", nargs="+", default=["baseline", *MAIN_ARMS], choices=list(PROMPT_TYPES),
                         help="comparison prompt types to run")
     parser.add_argument("--sources", nargs="+", default=list(MAIN_SOURCES), choices=["ipsos", "bes", "both"],
                         help="profile source conditions to run")
-    parser.add_argument("--text-source", choices=("summary", "cmp"),
-                        default="summary",
-                        help="what the model compares: Phase 1 summaries, or "
-                             "Manifesto Project coded text")
     parser.add_argument("--run-index", type=int, default=0,
                         help="seeds the pseudonym mapping")
     parser.add_argument("--dry-run", action="store_true")
@@ -206,31 +176,13 @@ def main():
         from . import llm_client 
         llm_client.TEMPERATURE_OVERRIDE = args.temperature
 
-    if (args.text_source == "cmp"
-            and args.election not in CMP_ELECTIONS):
-        sys.exit(f"--text-source cmp is registered for "
-                 f"{', '.join(str(e) for e in CMP_ELECTIONS)} only; "
-                 f"{args.election} has incomplete corpus coverage.")
 
     shares = vote_shares(args.election)
     parties = list(shares)
 
     try:
         profs = load_phase2(args.phase2, args.election)
-        if args.text_source == "cmp":
-            # one text per party, so the variant dimension collapses
-            texts, missing = load_cmp_texts(args.election, parties)
-            for party, reason in missing:
-                print(f"  no CMP text for {party}: {reason}", file=sys.stderr)
-            if not texts:
-                sys.exit("No CMP texts found. Download the corpus exports "
-                         "into data/cmp/.")
-            parties = [p for p in parties if p in texts]
-            shares = {p: shares[p] for p in parties}
-            args.variants = ["cmp"]
-            summaries = {"cmp": texts}
-        else:
-            summaries = load_phase1(args.phase1, args.election, args.variants)
+        summaries = load_phase1(args.phase1, args.election, args.variants)
     except FileNotFoundError as err:
         sys.exit(str(err))
 
@@ -246,8 +198,7 @@ def main():
         print("\nDry run: no calls made.")
         for variant in args.variants:
             have = len(summaries.get(variant, {}))
-            label = "texts" if args.text_source == "cmp" else "summaries"
-            print(f"  {variant}: {have}/{len(parties)} {label}")
+            print(f"  {variant}: {have}/{len(parties)} summaries")
         for arm in args.arms:
             if arm in NEEDS_PROFILE:
                 ready = sum(1 for s in args.sources
@@ -284,15 +235,13 @@ def main():
     report = {
         "election": args.election,
         "model": args.model,
-        "text_source": args.text_source,
+        "text_source": "summary",
         "plan": counts,
         "vote_shares": shares,
         "cells": results,
         "verdicts": all_verdicts,
     }
-    path = write_report(args.output,
-                        f"phase3_{args.election}_{args.text_source}",
-                        report)
+    path = write_report(args.output, f"phase3_{args.election}_summary", report)
     print(f"\nWrote {path}")
 
 
