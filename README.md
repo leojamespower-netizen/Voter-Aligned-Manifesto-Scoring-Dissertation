@@ -121,7 +121,7 @@ the dissertation calls a framework.
 
 ```
 python -m pytest tests/ -q
-BES_DIR=/path/to/dta IPSOS_DIR=/path/to/ipsos python -m pytest tests/ -q
+$env:BES_DIR="C:\path\to\dta"; $env:IPSOS_DIR="C:\path\to\ipsos"; python -m pytest tests/ -q
 ```
 
 ## Status
@@ -130,11 +130,6 @@ Complete. All eight elections have been run on both models, with 2024 also
 run on the extended grid and a second time for Opus 4.5 with sampling
 randomness disabled. The cache holds every response, and the analysis stage
 regenerates every reported table from it.
-
-Written but not run, and affecting no reported result: `run_calibration.py`,
-which would repeat an identical cell to measure pure sampling noise, and the
-threshold sweep for the commitment-grouping parameter. Both are discussed in
-the dissertation's limitations.
 
 
 
