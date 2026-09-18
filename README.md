@@ -121,7 +121,12 @@ the dissertation calls a framework.
 
 ```
 python -m pytest tests/ -q
+
+# Windows PowerShell
 $env:BES_DIR="C:\path\to\dta"; $env:IPSOS_DIR="C:\path\to\ipsos"; python -m pytest tests/ -q
+
+# macOS or Linux
+BES_DIR=/path/to/dta IPSOS_DIR=/path/to/ipsos python -m pytest tests/ -q
 ```
 
 ## Status
