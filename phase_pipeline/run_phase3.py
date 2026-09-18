@@ -1,4 +1,4 @@
-"""Phase 3: manifesto summaries and profiles in, party rankings and validation out.
+"""Phase 3: takes manifesto summaries and profiles in and pumps party rankings and validation out.
 
     python -m phase_pipeline.run_phase3 2024 --dry-run
 
@@ -31,7 +31,7 @@ PROMPT_TYPES = tuple(COMPARE_PROMPTS)
 
 
 def load_phase1(phase1_dir, election, variants):
-    """Read the selected summary for every party and variant.
+    """Reads the summary for every party and variant.
 
     Args:
         phase1_dir (Path): directory of phase1_{election}.json reports.
@@ -55,7 +55,7 @@ def load_phase1(phase1_dir, election, variants):
 
 
 def load_phase2(phase2_dir, election):
-    """Read the selected profile for every arm and source.
+    """Reads the profile for every arm and source.
 
     Returns:
         dict: {arm: {source: parsed profile}}.
@@ -75,7 +75,7 @@ def load_phase2(phase2_dir, election):
 
 
 def cells(variants, arms, sources):
-    """Every (variant, prompt_type, source) combination to run.
+    """Every combination to run.
 
     The baseline prompt takes no profile, so it runs once per variant rather
     than once per source.
@@ -105,7 +105,7 @@ def plan(parties, design, model):
 
 def run_cell(election, parties, summaries, profile, variant, prompt_type,
              source, model, run_index):
-    """Run every pair for one design cell, in both orderings.
+    """Runs every pair for one design cell, in both orderings.
 
     Returns:
         list: verdict dicts, two per pair.

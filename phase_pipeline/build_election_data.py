@@ -1,8 +1,8 @@
-"""Write the sixteen survey records to data/voter_profiles/.
+"""Writes the sixteen survey records to data/voter_profiles/.
 
     python -m phase_pipeline.build_election_data --bes DIR --ipsos DIR
 
-Derived files. If a reader changes, rerun; --check reports what differs.
+If a reader changes, rerun; --check reports what differs.
 """
 
 import argparse
@@ -46,7 +46,7 @@ def write(records, output_dir):
     return written
 
 
-# which files on disk differ from what the readers now produce
+# Checks which files on disk differ from what the readers now produce
 def check(records, output_dir):
     stale = []
     for key, record in sorted(records.items()):

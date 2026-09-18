@@ -8,14 +8,14 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 
-# Resolve paths relative to the repo root (parent of this package), so the code works regardless of the notebook's working directory.
+# Ensures that the code works regardless of the working directory.
 REPO_ROOT = Path(__file__).resolve().parent.parent
 CACHE_DIR = REPO_ROOT / "cache"
 CALL_LOG = CACHE_DIR / "call_log.csv"
 
 # Model identifiers used throughout the pipeline.
 GPT5 = "gpt-5" # closed-weight, fixed temperature via OPENAI API
-CLAUDE = "claude" # closed-weight, fixed temperature via the Anthropic API
+CLAUDE = "claude" # closed-weight, adaptable temperature via the Anthropic API
 
 
 # Registered decoding parameters, per stage.
@@ -61,8 +61,8 @@ def call_llm(prompt, model, cache_key, subdir='comparisons', system=None,
     if PROVIDERS[model]["sdk"] == "anthropic":
         decoding["max_tokens"] = ANTHROPIC_MAX_TOKENS  # required by the Messages API
 
-    # the key carries the temperature so that runs at different values
-    # write to different files rather than one serving the other's responses
+    # the key carries the temperature to ensure runs at different values
+    # write to distinct files, rather than one serving the other's responses
     if temperature != DEFAULT_TEMPERATURE:
         cache_key = f"{cache_key}_t{temperature}"
     
@@ -109,7 +109,6 @@ def call_llm(prompt, model, cache_key, subdir='comparisons', system=None,
 
 
 # providers, keyed by model id
-# Opus 4.1 was retired on 5 August 2026; Opus 4.5 is the nearest surviving model in tier and date
 PROVIDERS = {
     GPT5: {"sdk": "openai", "key_var": "OPENAI_API_KEY", "api_model": "gpt-5"},
     CLAUDE: {"sdk": "anthropic", "key_var": "ANTHROPIC_API_KEY", "api_model": "claude-opus-4-5-20251101"},
@@ -122,7 +121,7 @@ _CLIENTS = {}
 
 
 def _api_key(model):
-    """Returns the provider's API key from the environment."""
+    ##Returns the provider's API key from the environment.
     spec = PROVIDERS[model]
     key = os.environ.get(spec["key_var"])
     if not key:
@@ -133,7 +132,7 @@ def _api_key(model):
 
 
 def _client(model):
-    """Build and cache one OpenAI client per model."""
+    #Builds and caches one OpenAI client per model
     if model in _CLIENTS:
         return _CLIENTS[model]
     key = _api_key(model)  # checked before the import so a missing key is reported as such
@@ -142,8 +141,8 @@ def _client(model):
     return _CLIENTS[model]
 
 def _anthropic_post(body, key):
-    """Posts one request to the Messages API and returns the parsed response.
-    Called over HTTP because the anthropic SDK (v1.0+) refuses the temperature parameter."""
+    #Posts one request to the Messages API and returns the parsed response.
+    #Called over HTTP because the modern anthropic SDK refuses the temperature parameter."""
     import httpx
     response = httpx.post(
         ANTHROPIC_URL,
@@ -191,14 +190,14 @@ def _api_request(prompt, model, system, decoding):
                 "cache_control": {"type": "ephemeral"}}]}],
                 **decoding}
         if system:
-            body["system"] = system  # top-level on this API, not a message
+            body["system"] = system 
         data = _anthropic_post(body, _api_key(model))
         return "".join(block.get("text", "") for block in data.get("content", [])
                        if block.get("type") == "text")
 
     raise ValueError(f"Unknown sdk for {model}: {spec['sdk']}")
 
-# append one row per fresh API call to cache/call_log.csv
+# appends one row per fresh API call to cache/call_log.csv
 def _log_call(cache_key, model, subdir):
     CALL_LOG.parent.mkdir(parents=True, exist_ok=True)
     is_new = not CALL_LOG.exists()
@@ -210,7 +209,7 @@ def _log_call(cache_key, model, subdir):
                          cache_key, model, subdir])
 
 
-# load all cached responses in cache/{subdir} matching `pattern`
+# loads all cached responses in cache/{subdir} matching the given `pattern`
 def load_cached(subdir, pattern='*.json'):
     folder = CACHE_DIR / subdir
     files = sorted(folder.glob(pattern))

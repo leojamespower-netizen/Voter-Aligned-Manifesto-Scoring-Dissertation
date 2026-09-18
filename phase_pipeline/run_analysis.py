@@ -3,13 +3,9 @@
     python -m phase_pipeline.run_analysis
     python -m phase_pipeline.run_analysis --elections 2015 2019 2024
 
-Phase 3 scores one design cell at a time and writes it. The measures here
-need more than one cell: framing sensitivity compares verdicts between
+Phase 3 scores one design cell at a time, and stores it's results. Framing sensitivity compares verdicts between
 conditions, directional error pools party families across elections, and the
-invariance floor is what every other rate is judged against. Nothing new is
-called - these are the validate functions Phase 3 cannot reach.
-
-Makes no API calls.
+postional floor, listed here as invariance is what every other rate is judged against.
 """
 
 import argparse
@@ -27,12 +23,12 @@ DEFAULT_OUTPUT = REPO_ROOT / "outputs" / "analysis"
 
 
 def load_reports(phase3_dir, elections, source):
-    """Read every Phase 3 report for the requested elections.
+    """Reads every Phase 3 report for the requested elections.
 
     Args:
         phase3_dir (Path): directory of phase3_{election}_{source}.json.
         elections (list): election years, or None for whatever is present.
-        source (str): "summary" or "cmp".
+        source (str): "summary"
 
     Returns:
         dict: {election: report}.
@@ -58,12 +54,7 @@ def pool_verdicts(reports):
 
 
 def best_cell(report):
-    """The cell with the highest rank correlation.
-
-    Cross-election measures need one score set per election, and the design
-    grid gives many. The best cell is used, and which one it was is recorded
-    so the choice is visible rather than buried.
-    """
+    # The cell with the highest rank correlation.
     cells = report["cells"]
     if not cells:
         return None, None
@@ -72,7 +63,7 @@ def best_cell(report):
 
 
 def baseline_cell(report):
-    """The no-profile cell, for profile_value_added."""
+    #The no-profile cell, for profile_value_added
     for key, cell in report["cells"].items():
         if key.endswith("/noprofile"):
             return cell
@@ -80,7 +71,7 @@ def baseline_cell(report):
 
 
 def noise_floors(verdicts):
-    """The rates every manipulation is judged against."""
+    #calibration is not included
     return {
         "invariance": validate.invariance_violation(verdicts),
         "framing": validate.framing_sensitivity(verdicts),
@@ -89,7 +80,7 @@ def noise_floors(verdicts):
 
 
 def per_party(reports):
-    """Signed rank error per party, and pooled by ideological family."""
+    # Signed rank error per party, and pooled by ideological family
     bt = {e: best_cell(r)[1]["scores"] for e, r in reports.items()
           if best_cell(r)[1]}
     shares = {e: vote_shares(e) for e in bt}
@@ -111,7 +102,7 @@ def per_party(reports):
 
 
 def profile_contribution(reports):
-    """Whether the Phase 2 profile changed the ranking at all."""
+    # Explains whether the Phase 2 profile changed the ranking at all
     out = {}
     for election, report in reports.items():
         baseline = baseline_cell(report)
@@ -127,7 +118,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--phase3", type=Path, default=DEFAULT_PHASE3)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
-    parser.add_argument("--source", choices=("summary", "cmp"),
+    parser.add_argument("--source", choices=("summary",),
                         default="summary")
     parser.add_argument("--elections", type=int, nargs="+")
     return parser.parse_args()

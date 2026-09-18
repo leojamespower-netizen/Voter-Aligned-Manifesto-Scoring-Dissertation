@@ -32,6 +32,6 @@ def rank_parties(scores):
     return sorted(scores, key=scores.get, reverse=True)
 
 
-# re-estimate across alphas; report whether the ranking is stable
+# re-estimates across alphas to investigate the impact reguliser adjustment on ranking stability
 def alpha_sensitivity(verdicts, parties, alphas=(0.01, 0.05, 0.1, 0.5, 1.0)):
     return {a: estimate_scores(verdicts, parties, alpha=a) for a in alphas}

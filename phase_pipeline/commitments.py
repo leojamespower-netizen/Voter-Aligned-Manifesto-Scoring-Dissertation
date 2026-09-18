@@ -7,15 +7,15 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 SELECTIONS = REPO_ROOT / "outputs" / "commitment_selections.json"
 
 # registered constants
-EMBEDDING_MODEL = "all-MiniLM-L6-v2"   # pinned; threshold is tied to it
+EMBEDDING_MODEL = "all-MiniLM-L6-v2"   # chosen stability model
 MATCH_THRESHOLD = 0.75                 # cosine above which two commitments match
-CONSENSUS_MIN = 3                      # replicates a commitment must appear in
+CONSENSUS_MIN = 3                      # governs the number of replicates a commitment must appear in.
 SENSITIVITY_GRID = (0.65, 0.70, 0.75, 0.80, 0.85)
 
 _MODEL = None
 
 
-# embed short commitment clauses
+# embeds short commitment clauses
 def _embed(texts, embedder=None):
     if embedder is not None:
         return embedder(texts)
@@ -25,7 +25,7 @@ def _embed(texts, embedder=None):
         _MODEL = SentenceTransformer(EMBEDDING_MODEL)
     return _MODEL.encode(texts, normalize_embeddings=True)
 
-# extraction
+
 
 # one cached extraction call
 def extract_commitments(summary, model, cache_key):
@@ -36,7 +36,7 @@ def extract_commitments(summary, model, cache_key):
     return parse_lines(resp["text"])
 
 
-# strip bullets and numbering the model may add despite instructions
+# strips bullet points and numbering the model may add despite instructions
 def parse_lines(raw):
     out = []
     for line in raw.strip().splitlines():
@@ -53,7 +53,7 @@ def parse_lines(raw):
 
 # clustering
 
-# cluster commitments across replicates; return one entry per cluster
+# clusters commitments across replicates, thereby returning one entry per cluster
 def cluster_commitments(replicates, threshold=MATCH_THRESHOLD, embedder=None):
     flat, origin = [], []
     for r, lst in enumerate(replicates):
@@ -66,7 +66,7 @@ def cluster_commitments(replicates, threshold=MATCH_THRESHOLD, embedder=None):
     order = sorted(range(len(flat)), key=lambda i: (flat[i].lower(), origin[i]))
     emb = _embed([flat[i] for i in order], embedder)
 
-    canonical = []          # indices into `order`
+    canonical = []          
     assignment = [-1] * len(order)
     for pos in range(len(order)):
         for c_idx, c_pos in enumerate(canonical):
@@ -156,7 +156,7 @@ def select_replicate(cell_key, responses, commitment_lists,
 
 # sensitivity
 
-# re-run the whole measure across a grid of match thresholds
+# re-runs the whole measure across a grid of match thresholds
 def threshold_sensitivity(replicates, grid=SENSITIVITY_GRID,
                           consensus_min=CONSENSUS_MIN, embedder=None):
     rows = {}
@@ -175,7 +175,7 @@ def threshold_sensitivity(replicates, grid=SENSITIVITY_GRID,
     }
 
 
-# sample commitment pairs spanning the similarity range, for hand-judging
+# records sample commitment pairs spanning the similarity range.
 def calibration_pairs(replicates, n=50, embedder=None):
     flat = sorted({c for lst in replicates for c in lst})
     if len(flat) < 2:

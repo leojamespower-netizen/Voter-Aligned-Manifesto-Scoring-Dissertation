@@ -19,7 +19,7 @@ ARMS = tuple(PROFILE_PROMPTS)
 
 
 def load_records(records_dir, election):
-    """Read the two survey records for one election.
+    """Reads the two survey records for one election.
 
     Args:
         records_dir (Path): directory written by build_election_data.
@@ -55,12 +55,12 @@ def plan(model, arms, sources):
 
 
 def run_election(election, ipsos, bes, model, arms=ARMS, sources=SOURCE_CONDITIONS):
-    """Generate and select a profile for every cell.
+    """Generates and selects a profile for every cell.
 
     Args:
-        election (int): election year.
-        ipsos (str): the Ipsos record.
-        bes (str): the BES record.
+        election (int): year.
+        ipsos (str): Ipsos record.
+        bes (str): BES record.
         model (str): model identifier passed to llm_client.
 
     Returns:

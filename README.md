@@ -1,72 +1,79 @@
 # LLM Manifesto-Alignment Pipeline
 
-Code and data for the dissertation: "Using Large Language Models to Predict
-Electoral Outcomes Through Voter-Aligned Manifesto Scoring".
+Code, data and cached model responses for the project: *Using Large
+Language Models to Predict Electoral Outcomes Through Voter-Aligned Manifesto
+Scoring*.
 
-The pipeline constructs voter priority profiles from the Ipsos Issues Index
-and the British Election Study, summarises UK party manifestos with an LLM,
-runs pairwise voter-alignment comparisons, estimates Bradley-Terry scores,
-and validates them against actual vote shares across eight UK general
+The pipeline operates in three stages.
+Stage 1: UK party manifestos are summarised via a JSON prompt sent to the OPENAI/ANTHROPIC API, via the command line. 
+Stage 2: A separate command line instruction then prompts the same LLMs to construct Voter priority profiles using Ipsos Issues Index
+and the British Election Study, filtered through the lens of Moral Foundations Theory, and the GAL-TAN Axis.
+Stage 3: An additional command line instruction then send a separate set of prompts that draw from the cache of phase 1 and 2 outputs to facilitate a pairwise voter-alignment comparison using choix's Bradley-Terry package.
+Analysis: The resultant log odds, Luce-Plackett probabilities and stability measures are checked against actual vote shares across eight UK general
 elections (1997–2024).
 
-## Reproducing the results (no API keys required)
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/leojamespower-netizen/Voter-Aligned-Manifesto-Scoring-Dissertation/blob/main/execution_notebooks/reproduce_results.ipynb)
+Every model response is committed in `cache/`, so all
+reported results can be regenerated without an API key.
 
-1. Click the badge above, or open `execution_notebooks/reproduce_results.ipynb` in Colab.
-2. Runtime → Run all.
-3. Compare the regenerated outputs to Tables/Figures [TODO: X–Y] in the dissertation.
+## Reproducing the results (no API key required)
 
-This notebook rebuilds every result from the raw LLM responses committed in
-`cache/`. It needs no API keys, costs nothing, and completes in a few minutes.
+Two commands rebuild every table in the report from the raw responses in
+`cache/`. Neither makes a network call:
+
+```
+python -m phase_pipeline.run_analysis --phase3 cache/comparisons --output outputs
+python -m phase_pipeline.consolidate_metrics --output outputs
+```
 
 ## Repository layout
 
-- `phase_pipeline/` — all pipeline code.
+- `phase_pipeline/` — the pipeline. A runner per phase, the modules that
+  build and parse each phase's requests, `prompts.py` holding every prompt
+  and registered setting, the survey readers, the analysis modules, and
+  `llm_client.py`, which handles both APIs.
 - `scripts/` — steps run outside the pipeline, on a machine holding the
   licensed survey files.
-- `tests/` — unit tests. Five require the survey files and skip without them.
-- `execution_notebooks/execute_pipeline.ipynb` — the full pipeline **including
-  API calls**. Requires `OPENAI_API_KEY`; documents how the cached responses
-  were generated. Re-running it produces slightly different raw outputs due
-  to LLM stochasticity (see dissertation §3.4).
-- `execution_notebooks/reproduce_results.ipynb` — deterministic reproduction
-  from cached responses (see above).
-- `cache/` — every raw LLM response (JSON, one file per call) plus
-  `call_log.csv`. This is the evidential record.
-- `data/` — manifesto texts, Manifesto Project documents, survey aggregates,
-  vote shares, and the sixteen election records read by Phase 2. Survey
-  microdata is **not** committed: UK Data Service files are licensed for use
-  but not redistribution (SN 3890, 4620, 6607, 8202).
-- `outputs/` — reports written by each phase, plus tables and figures.
+- `tests/` — fifty test functions. Five need the survey files and skip
+  without them, so the suite runs anywhere.
+- `cache/` — every raw model response, one JSON file per call, under
+  `summaries/`, `summaries_rejected/`, `extractions/`, `profiles/`,
+  `comparisons/` and `probes/`, plus `call_log.csv`. This is the evidential
+  record behind every number in the dissertation.
+- `data/` — the forty manifesto texts, the sixteen election records read by
+  Phase 2, CHES party families, vote shares and pre-election polling
+  averages. Survey data is **not** committed: UK Data Service files are
+  licensed for use but not redistribution (SN 3890, 4620, 6607, 8202).
+- `outputs/` — per-election analysis JSON and the consolidated tables.
 
 ## Environment
 
-Python 3.13 · install pinned dependencies with:
+Python 3.13. Install the pinned dependencies:
 
 ```
 pip install -r requirements.txt
 ```
 
-## API keys (only needed for the stages that call a model)
+## API keys (only for the stages that call a model)
 
-Set as an environment variable or Colab Secret, never committed:
-`OPENAI_API_KEY`. No key is needed for `--dry-run`, the tests, or
-`run_analysis`.
+`OPENAI_API_KEY` and `ANTHROPIC_API_KEY`, set as environment variables,
+never committed. No key is needed for `--dry-run`, the tests,
+or any analysis stage.
 
-## Building the inputs
+## Building each input
 
-Survey microdata is not committed, so two steps run locally against files
-downloaded from the UK Data Service.
+Two steps run locally against files downloaded from the UK Data Service,
+because the data cannot be redistributed. Both of their outputs are
+committed, so the repository runs without the licensed files.
 
-The BES Internet Panel (SN 8202) is 3.26 GB and too large to process in the
-pipeline, so it is aggregated once:
+The BES Internet Panel (SN 8202) is 3.26 GB and too large to process inside
+the pipeline, so it is aggregated once:
 
 ```
 python scripts/besip_aggregate.py bes_panel_ukds_v30_1.dta -o data/besip_aggregates.csv
 ```
 
-The sixteen election records — eight elections × two sources — are then
+The sixteen election records, eight elections by two sources, are then
 written to `data/voter_profiles/`:
 
 ```
@@ -74,32 +81,41 @@ python -m phase_pipeline.build_election_data --bes DIR --ipsos DIR
 python -m phase_pipeline.build_election_data --bes DIR --ipsos DIR --check
 ```
 
-Both outputs are committed, so the repository runs without the licensed
-files. `--check` reports which records differ from what the readers now
-produce; if a reader changes, rerun.
+Every BES record is rendered into the same eight-slot structure, with a note
+in any slot the study did not measure, so that a change in the instrument
+cannot reach the model as an apparent change in the electorate. `--check`
+reports which committed records differ from what the readers now produce; if
+a reader changes, rerun.
 
 ## Running the pipeline
 
 Every stage takes `--dry-run`, which resolves its inputs, counts the calls it
-would make and stops without touching the API.
+would make, and stops without touching the API.
 
 ```
-python -m phase_pipeline.run_phase1 2024        # summaries, 300 calls
-python -m phase_pipeline.run_probes 2024        # identification, 20 calls
-python -m phase_pipeline.run_phase2 2024        # profiles, 60 calls
-python -m phase_pipeline.run_phase3 2024        # comparisons, up to 1000 calls
-python -m phase_pipeline.run_calibration        # noise floor, 100 calls
-python -m phase_pipeline.run_analysis           # no calls
+python -m phase_pipeline.run_phase1 2024 --model gpt-5     # summaries
+python -m phase_pipeline.run_probes 2024 --model gpt-5     # identification probes
+python -m phase_pipeline.run_phase2 2024 --model gpt-5     # profiles
+python -m phase_pipeline.run_phase3 2024 --model gpt-5     # comparisons
+python -m phase_pipeline.run_analysis                      # no calls
 ```
 
-Run them in that order: each reads the report the previous one wrote, into
-`outputs/`. Every API response is cached, so an interrupted run resumes
-without re-billing.
+Run them in that order: each reads the report the previous one wrote into
+`outputs/`. Every response is cached under a key recording everything that
+could change it, so an interrupted run resumes without re-billing, and a
+changed prompt writes to a new key rather than overwriting the old one.
 
-Phase 3 takes `--variants`, `--arms` and `--sources` to restrict the grid,
-and `--text-source cmp` to compare Manifesto Project coded text instead of
-the Phase 1 summaries. Comparing the two runs is the content diagnostic; it
-is registered for 2015, 2019 and 2024 only.
+The registered grid is 21 cells per election per model: three summarising
+instructions, crossed with a no-profile control plus three frameworks by two
+surveys, with all ten pairs judged in both orders. That is 620 calls per
+election per model across the four stages. `--variants`, `--arms` and
+`--sources` restrict the grid; `--temperature` was used only for the 2024
+Opus 4.5 comparison. The 2024 election was additionally run on an extended grid
+of 50 cells, 1,380 calls per model condition, and the results of that run
+fixed the narrower design used for the other seven.
+
+One point of vocabulary: the code and the output tables use `arm` for what
+the dissertation calls a framework.
 
 ## Tests
 
@@ -108,17 +124,18 @@ python -m pytest tests/ -q
 BES_DIR=/path/to/dta IPSOS_DIR=/path/to/ipsos python -m pytest tests/ -q
 ```
 
-Twenty-seven tests. Five need the licensed survey files and skip when the
-directories are absent, so the suite runs anywhere.
+## Status
 
-## Current state
+Complete. All eight elections have been run on both models, with 2024 also
+run on the extended grid and a second time for Opus 4.5 with sampling
+randomness disabled. The cache holds every response, and the analysis stage
+regenerates every reported table from it.
 
-Working: survey extraction for all eight elections and both sources; forty
-manifestos; fifteen Manifesto Project documents; all four phases, the
-calibration cell, the identification probes and the analysis stage;
-twenty-seven tests.
+Written but not run, and affecting no reported result: `run_calibration.py`,
+which would repeat an identical cell to measure pure sampling noise, and the
+threshold sweep for the commitment-grouping parameter. Both are discussed in
+the dissertation's limitations.
 
-Not yet run against a live API. Outstanding: polling averages for
-`benchmark_against_polling`, an adversarial run for `adversarial_ablation`,
-and anonymisation replacement lists if the identification probe indicates
-they are needed.
+
+
+

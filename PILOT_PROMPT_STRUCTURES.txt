@@ -203,11 +203,7 @@ The text below is drawn from {source_description}, a measure of the priorities o
 
 Your task is to construct a Moral Foundations profile for this electorate on the basis of the data above.
 
-Your profile construction must follow the below rules:
-
-   - All six foundations must appear exactly once.
-   - Each foundation must be given a weight between 0 and 1.
-   - The six weights must sum to 1.
+If the supplied data cannot support a judgment for a given foundation, return status "INSUFFICIENT" for that foundation and leave its weight null. Do not estimate. An INSUFFICIENT return is a correct answer, not a failure. Where a foundation is engaged but the data cannot resolve the direction of the appeal, return status "AMBIGUOUS".
 
 Respond with a single JSON object and nothing else. Do not wrap it in markdown code fences and do not add commentary before or after it. The object must have exactly these keys, in this order:
 
@@ -216,9 +212,12 @@ Respond with a single JSON object and nothing else. Do not wrap it in markdown c
   "foundations": [
     {"foundation": "care" | "loyalty" | "authority" | "sanctity" | "equality" | "proportionality",
      "basis": "<one line: which items in the data bear on this>",
-     "weight": <0-1>}
+     "status": "SCORED" | "AMBIGUOUS" | "INSUFFICIENT",
+     "weight": <0-1> | null}
   ]
 }
+
+All six foundations must appear exactly once. The weights of entries with status "SCORED" must sum to 1. Entries with status "AMBIGUOUS" or "INSUFFICIENT" must have weight null.
 
 ------------------------------------------------------------------------------
 2.2  BIDIRECTIONAL_MFT   [returns: foundations]
@@ -264,11 +263,7 @@ The text below is drawn from {source_description}, a measure of the priorities o
 
 Your task is to construct a Moral Foundations profile for this electorate on the basis of the data above, taking into account that each foundation may be invoked in either direction.
 
-Your profile construction must follow the below rules:
-
-   - All six foundations must appear exactly once.
-   - Each foundation must be given a weight between 0 and 1.
-   - The six weights must sum to 1.
+If the supplied data cannot support a judgment for a given foundation, return status "INSUFFICIENT" for that foundation and leave its weight null. Do not estimate. An INSUFFICIENT return is a correct answer, not a failure. Where a foundation is engaged but the data cannot resolve the direction of the appeal, return status "AMBIGUOUS".
 
 Respond with a single JSON object and nothing else. Do not wrap it in markdown code fences and do not add commentary before or after it. The object must have exactly these keys, in this order:
 
@@ -277,9 +272,12 @@ Respond with a single JSON object and nothing else. Do not wrap it in markdown c
   "foundations": [
     {"foundation": "care" | "loyalty" | "authority" | "sanctity" | "equality" | "proportionality",
      "basis": "<one line: which items in the data bear on this>",
-     "weight": <0-1>}
+     "status": "SCORED" | "AMBIGUOUS" | "INSUFFICIENT",
+     "weight": <0-1> | null}
   ]
 }
+
+All six foundations must appear exactly once. The weights of entries with status "SCORED" must sum to 1. Entries with status "AMBIGUOUS" or "INSUFFICIENT" must have weight null.
 
 ------------------------------------------------------------------------------
 2.3  AXIS   [returns: poles]
@@ -308,14 +306,9 @@ The text below is drawn from {source_description}, a measure of the priorities o
 
 {voter_priority_data}
 
-
 Your task is to construct a positional profile for this electorate on the basis of the data above.
 
-Your profile construction must follow the below rules:
-
-   - All poles must appear exactly once.
-   - Each pole must be given a weight between 0 and 1.
-   - The two weights must sum to 1.
+If the supplied data cannot support a judgment for a given pole, return status "INSUFFICIENT" for that pole and leave its weight null. Do not estimate. An INSUFFICIENT return is a correct answer, not a failure. Where a pole is engaged but the data cannot resolve the direction of the appeal, return status "AMBIGUOUS".
 
 Respond with a single JSON object and nothing else. Do not wrap it in markdown code fences and do not add commentary before or after it. The object must have exactly these keys, in this order:
 
@@ -324,9 +317,12 @@ Respond with a single JSON object and nothing else. Do not wrap it in markdown c
   "poles": [
     {"pole": "gal" | "tan",
      "basis": "<one line: which items in the data bear on this>",
-     "weight": <0-1>}
+     "status": "SCORED" | "AMBIGUOUS" | "INSUFFICIENT",
+     "weight": <0-1> | null}
   ]
 }
+
+Both poles must appear exactly once. The weights of entries with status "SCORED" must sum to 1. Entries with status "AMBIGUOUS" or "INSUFFICIENT" must have weight null.
 
 ------------------------------------------------------------------------------
 2.4  ZERO_DEFINITION   [returns: foundations]
@@ -341,11 +337,7 @@ The text below is drawn from {source_description}, a measure of the priorities o
 
 Your task is to construct a Moral Foundations profile for this electorate on the basis of the data above.
 
-Your profile construction must follow the below rules:
-
-   - All six foundations must appear exactly once.
-   - Each foundation must be given a weight between 0 and 1.
-   - The six weights must sum to 1.
+If the supplied data cannot support a judgment for a given foundation, return status "INSUFFICIENT" for that foundation and leave its weight null. Do not estimate. An INSUFFICIENT return is a correct answer, not a failure. Where a foundation is engaged but the data cannot resolve the direction of the appeal, return status "AMBIGUOUS".
 
 Respond with a single JSON object and nothing else. Do not wrap it in markdown code fences and do not add commentary before or after it. The object must have exactly these keys, in this order:
 
@@ -354,9 +346,12 @@ Respond with a single JSON object and nothing else. Do not wrap it in markdown c
   "foundations": [
     {"foundation": "care" | "loyalty" | "authority" | "sanctity" | "equality" | "proportionality",
      "basis": "<one line: which items in the data bear on this>",
-     "weight": <0-1>}
+     "status": "SCORED" | "AMBIGUOUS" | "INSUFFICIENT",
+     "weight": <0-1> | null}
   ]
 }
+
+All six foundations must appear exactly once. The weights of entries with status "SCORED" must sum to 1. Entries with status "AMBIGUOUS" or "INSUFFICIENT" must have weight null.
 
 ------------------------------------------------------------------------------
 2.5  SOURCE CONDITIONS  -  provenance-tagged data blocks

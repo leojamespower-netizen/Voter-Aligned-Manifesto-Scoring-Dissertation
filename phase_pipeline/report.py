@@ -1,4 +1,4 @@
-"""Write a phase report to disk."""
+"""Writes a phase report to disk."""
 
 import json
 

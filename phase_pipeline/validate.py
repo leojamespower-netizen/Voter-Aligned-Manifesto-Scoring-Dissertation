@@ -7,7 +7,7 @@ from scipy.stats import spearmanr
 # every design dimension a verdict carries
 _DESIGN_KEYS = ("variant", "prompt_type", "source", "labelled", "run_index")
 
-# spearman rho between BT scores and vote shares for one election
+# spearman rho between Bradley Terry scores and vote shares for one election
 def spearman_validation(scores, vote_shares):
     parties = sorted(set(scores) & set(vote_shares))
     rho, p = spearmanr([scores[p_] for p_ in parties],
@@ -21,7 +21,7 @@ def binary_winner(scores, vote_shares):
 
 # error types
 
-# verdict reversal rate across orderings, against the 48.4% benchmark
+# measures verdict reversal rate across orderings, against the 48.4% benchmark
 def positional_error(verdicts):
     cells = defaultdict(list)
     for v in verdicts:
@@ -40,8 +40,7 @@ def positional_error(verdicts):
     return reversals / len(pairs)
 
 
-# hold every dimension constant except the excluded one, or verdicts from
-# different arms and sources collapse into one group and the rate is nothing
+# holds every dimension constant except the excluded one
 def _comparison_key(meta, exclude=None):
     key = [meta["election"], tuple(sorted(meta["pair"])), meta["scorer"]]
     for k in _DESIGN_KEYS:
@@ -51,11 +50,8 @@ def _comparison_key(meta, exclude=None):
 
 
 def _flip_rate(verdicts, varying):
-    """Disagreement rate across one condition dimension.
+    """Measures Disagreement rate across one condition dimension.
 
-    Groups verdicts by the comparison being made, then within each group asks
-    how often the winner changes as `varying` changes. Groups with only one
-    value of `varying` contribute nothing.
 
     Args:
         verdicts (list): parsed verdicts.
@@ -93,23 +89,11 @@ def _flip_rate(verdicts, varying):
 
 
 def invariance_violation(verdicts):
-    """Disagreement where the meaning is identical, so divergence is noise.
+    
+    #Three comparisons used to qualify: the positional swap (same text, different
+    # slot), distorted against minimal summaries, and repeated runs of the calibration cell.
+    # However, only positional biases were tested, past the pilot run
 
-    Three comparisons qualify: the positional swap (same text, different
-    slot), distorted against minimal summaries (same semantics, articles
-    deleted), and repeated runs of the calibration cell (nothing varies).
-
-    This is the only place the published prompt-sensitivity benchmarks apply,
-    because Sclar et al. and Salinas and Morstatter both measure
-    meaning-preserving perturbation.
-
-    Args:
-        verdicts (list): parsed verdicts.
-
-    Returns:
-        dict: a rate for each of the three comparisons, and the highest of
-        them, which is the floor any manipulation must clear.
-    """
     try:
         positional = positional_error(verdicts)
     except ValueError:
@@ -133,15 +117,7 @@ def invariance_violation(verdicts):
 
 
 def framing_sensitivity(verdicts):
-    """Divergence across conditions that differ in meaning.
-
-    These should diverge: that is the manipulation working. What matters is
-    the size relative to the invariance floor, not the rate itself.
-
-    neutral against framing_preserving is NOT an invariance control - one
-    instructs suppression of ideological framing and the other instructs
-    preservation, which is the core framing manipulation. The invariance
-    control among summary variants is distorted against minimal.
+    """Measures diverges across prompt variants.
 
     Args:
         verdicts (list): parsed verdicts.
@@ -175,12 +151,7 @@ def framing_sensitivity(verdicts):
 
 
 def confidence_distribution(verdicts):
-    """How often each confidence label was used.
-
-    Registered alongside calibration_error: if the model returns one label
-    almost uniformly, the calibration comparison is underpowered and that
-    should be reported rather than a rate computed from a handful of cases.
-    """
+    # Tracks How often each confidence label was used.
     counts = defaultdict(int)
     for v in verdicts:
         if not v.get("parse_error"):

@@ -1,8 +1,4 @@
-"""Ipsos Issues Index reading to the text Phase 2 reads.
-
-Not in the eight-slot BES structure: a single-question survey rendered in
-a skeleton built for a different instrument would make the two sources
-look more alike than they are.
+"""Translates the collected Ipsos Issues Indexes to the text Phase 2 reads.
 """
 
 import ast
@@ -24,12 +20,12 @@ READINGS = {
     2024: ("June 2024", "July 2024", 4),
 }
 
-# exact label match, never substring
+# exact label match
 IPSOS_NON_ANSWERS = {
     "Don't know",
 }
 
-# read the dict literal only; the file's normalisation step is not run
+# reads the dict literal only; the file's normalisation step is not run
 def parse_file(path):
     text = Path(path).read_text(encoding="utf-8")
     match = re.search(r"\{.*?\}", text, re.S)
@@ -42,7 +38,7 @@ def parse_file(path):
 
 
 def prepare_ipsos(cycle, data_dir):
-    """Read one Ipsos reading into the text a prompt receives.
+    """Reads one Ipsos reading into the text a prompt receives.
 
     Args:
         cycle (int): election year.

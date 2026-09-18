@@ -2,19 +2,23 @@
 
 Modules
 -------
-prompts         REGISTERED prompt wordings and schemas (frozen artefact).
-llm_client      All API calls, with disk caching, retries, and origin.
-summarise       Phase 1: six summarisation variants.
+prompts         REGISTERED prompt wordings and schemas.
+llm_client      All API calls, with disk caching, retries, and provenance.
+summarise       Phase 1: summarisation variants. Six are registered, but the
+                main series runs three.
 commitments     PRIMARY Phase 1 stability: commitment extraction, survival,
-                selection, threshold sensitivity.
-stability       Secondary text-similarity metric; medoid selection for profiles.
-profiles        Phase 2: model-derived electorate profiles, four arms.
+                selection.
+stability       Secondary text-similarity metric, and medoid selection for profiles.
+profiles        Phase 2: electorate profiles. Four arms are
+                registered, three are carried into Phase 3.
 compare         Phase 3: pairwise comparison, both orderings, label
                 randomisation, slot balance.
 bradley_terry   Bradley-Terry estimation (regularised lsr_pairwise).
-validate        Spearman validation, binary winner, four error analyses.
+validate        Spearman validation, binary winner, and the four registered
+                error types.
 probe           Identification probe: measured anonymisation leakage.
-cmp             CMP corpus text and the content diagnostic layer.
-ches            CHES party families (directional error) and expert GAL-TAN
-                positions (external benchmark for the axis arm).
+ches            CHES party families, for directional error. Expert GAL-TAN
+                positions are implemented but not used by the main series.
+consolidate_metrics
+                Per-run results tables, assembled from the phase reports.
 """

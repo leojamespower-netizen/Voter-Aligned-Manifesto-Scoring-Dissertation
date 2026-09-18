@@ -1,4 +1,4 @@
-"""Goal of this addition is to consolidate the various performance metrics from the phase2 and 3 reports.
+"""Goal is to consolidate the various performance metrics from the phase2 and 3 reports.
 Writes one JSON file holding every table. Nothing is from recomputed from verdicts, apart from the alpha table, 
 which re-ranks the stored verdicts"""
 
@@ -192,7 +192,7 @@ def summary_stability_rows(phase1):
     return sorted(out, key=lambda r: r["variant"])
 
 
-# Phase 2 replication stability per profile cell, both metrics and whether they agree
+# Measures Phase 2 stability per profile cell, according to both metrics and whether they agree
 def profile_stability_rows(phase2):
     out = []
     for arm, sources in phase2.get("selections", {}).items():
@@ -207,8 +207,7 @@ def profile_stability_rows(phase2):
     
 
 
-# Phase 1 commitment stability, the primary replication measure: the share of
-# distinct commitments that survived across the five runs, per variant. The
+# Phase 1 commitment stability is the primary stability measure. The
 # ledger accumulates over every election and model, so it is filtered by both.
 def commitment_stability_rows(ledger, election, model):
     prefix, suffix = f"summary:{election}_", f"_{model}"
@@ -238,8 +237,7 @@ def probe_rows(probes):
              **{f"accuracy_{k}": v for k, v in dual.items() if isinstance(v, (int, float))}}]
 
 
-# per party: rank error and error in points, per cell and averaged, so a party the
-# pipeline consistently favours is visible
+# per party: rank error and error in points, per cell and averaged to pick up parties consistently favoured.
 def party_rows(report, score_rows_):
     shares = report["vote_shares"]
     actual = sorted(shares, key=shares.get, reverse=True)
@@ -318,7 +316,7 @@ def main():
                 "best_cell_rho_pipeline": max(r["rho"] for r in rows),
                 "cells_matching_or_beating_polls": sum(r["rho"] >= rho_polling for r in rows),
             })
-        # in points, on the polled parties only, each side renormalised over that subset
+        
         error_points_polling = mean_error_points(renormalise(polling, polled), renormalise(shares, polled), polled)
         cell_error = [mean_error_points(renormalise({p: r[f"implied_{p}"] for p in polled}, polled),
                                         renormalise(shares, polled), polled)

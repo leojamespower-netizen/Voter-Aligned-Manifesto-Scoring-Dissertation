@@ -1,8 +1,8 @@
-"""Aggregate BESIP waves to weighted summaries.
+"""Aggregates the BESIP waves to weighted summaries.
 
     python besip_aggregate.py bes_panel_ukds_v30_1.dta -o out.csv
 
-Reads only the listed variables, so the 3 GB file is never fully loaded.
+
 """
 
 import argparse
@@ -52,7 +52,7 @@ def check_input(path):
 
 # 2. Which variables to read
 
-# manual coding to wave 25, LLM from wave 26
+# BES uses manual coding to wave 25 and LLM from wave 26
 def salience_var(wave):
     return f"mii_cat_llmW{wave}" if wave >= 26 else f"mii_catW{wave}"
 
@@ -78,7 +78,6 @@ def wanted_variables(wave):
     return ([salience_var(wave), WEIGHT[wave]]
             + list(scale_vars(wave).values()))
 
-# 3. First pass: variable names only
 
 # first pass: names only, so a wrong name surfaces before the read
 def check_variables(path, waves):
@@ -109,7 +108,7 @@ def read_columns(path, columns):
 
 # 5. Weighting
 
-# weighted share per category. Categories as published; not rescaled
+# weighted share per category. Categories used as published, not rescaled
 def weighted_percentages(df, var, weight, labels):
     valid = df[df[var].between(MIN_SALIENCE_CODE, MAX_SALIENCE_CODE)
                & (df[weight] > 0)]

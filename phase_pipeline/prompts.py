@@ -1,7 +1,5 @@
-"""REGISTERED prompt specification (Phases 1-3)."""
-# Registered replication count: every LLM cell (summary variant, profile
-# cell, calibration pass) is run this many times. One value, imported
-# everywhere, so the phases cannot drift apart.
+"""Prompt specification (Phases 1-3)."""
+
 N_RUNS = 5
 
 VERDICT_SCHEMA = """Respond with a single JSON object and nothing else. Do not wrap it in \
@@ -93,15 +91,15 @@ MFT_DEFINITIONS = """  - Care/Harm: related to our long evolution as mammals wit
   - Proportionality: related to our intuitions about individuals getting
     rewarded in proportion to their merit or contribution."""
 
-# Single worked example of a bidirectional foundation
+# Single example of a bidirectional foundation
 BIDIRECTIONALITY_EXAMPLES = """One person's sensitivity to the Care/Harm foundation may lead them to support \
 high levels of immigration from poorer nations, to reduce the suffering of those \
 who migrate. Whereas another person's sensitivity to the very same foundation \
 may lead them to oppose those levels, because they believe it could lead to \
 people they care about being harmed."""
 
-# Single-axis GAL-TAN formulation (Hooghe, Marks & Wilson 2002; operationalised
-# by the Chapel Hill Expert Survey, which is also the party-family source for
+# Single-axis GAL-TAN formulation (Hooghe, Marks & Wilson 2002, born from the
+# the Chapel Hill Expert Survey, which is also the party-family source for
 # directional error). Held byte-identical across all conditions.
 AXIS_DEFINITIONS = """The GAL-TAN framework identifies political orientation on a single axis. \
 Individuals and texts are placed according to the degree to which their views \
@@ -165,7 +163,7 @@ CARRIED_FORWARD: tuple[str, ...] = (
     "minimal", "neutral", "framing_preserving", "framed", "anonymised",
 )
 
-# Main-series grid for 1997-2019, cut after the 2024 calibration cycle ran the
+# Main-series grid for 1997-2019, cut after the 2024 test cycle ran the
 # full design: the summary variant moved verdicts in under a fifth of pairs,
 # and "both" was never better than the better single source. minimal is the
 # reference, framing_preserving the framing contrast, anonymised the blinding

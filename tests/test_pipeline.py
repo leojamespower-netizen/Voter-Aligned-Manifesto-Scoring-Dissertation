@@ -5,7 +5,9 @@
 Every bug found in this codebase so far produced plausible output rather
 than an error. For example a substring match that deleted a thousand real responses, a
 threshold that excluded nothing, two modules disagreeing about whether a key
-was called slot_A or slot_a.These tests target such a class of error, in a precise manner
+was called slot_A or slot_a.
+
+These tests target such a class of error, in a precise manner
 
 The survey tests need the .dta files, which are licensed and not committed,
 so they skip when the directory is absent.
@@ -33,10 +35,10 @@ needs_ipsos = pytest.mark.skipif(not os.path.isdir(IPSOS_DIR),
                                  reason="Ipsos files not present")
 
 
-# known values
+
+#The below group checks if the BES CSV extraction and IPSOS translation, reproduced the correct figures
 # If the weighting, the exclusions or the code frames change, these move.
 # They are recorded here so a change has to be deliberate.
-
 @needs_bes
 def test_1997_health_share_is_stable():
     text, _ = build_election_data(1997, BES_DIR)
@@ -57,9 +59,6 @@ def test_1997_ipsos_nhs_share_is_unnormalised():
     assert "63.0%" in text
 
 
-# non-answer exclusion
-# "na" is a substring of "National Health Service"; "not sure" is a
-# substring of "Not sure of party". Both deleted real categories once.
 
 def test_exclusion_is_by_code_not_by_label():
     import pandas as pd
@@ -84,7 +83,6 @@ def test_ipsos_exclusion_does_not_match_substrings():
     assert "Race relations" not in IPSOS_NON_ANSWERS
 
 
-# blinding
 # The guard has to reject identifying detail without rejecting real data.
 # "Government Reform" and "labour market" are genuine survey categories.
 
@@ -129,9 +127,9 @@ def test_blinding_exclusions_are_applied():
 
 
 # key agreement between modules
-# compare.py writes the metadata; validate.py reads it. A disagreement
+# compare.py writes the metadata and validate.py reads it. A disagreement
 # about a key name returns an empty result rather than an error, which
-# looks exactly like a null finding.
+# looks exactly like a null finding. A bug this is designed to detect
 
 def _verdict(pair, slot_a, winner, **meta):
     base = {"election": "2024", "pair": list(pair), "scorer": "gpt-5",
@@ -171,15 +169,13 @@ def test_framing_sensitivity_finds_the_variant_key():
 
 
 def test_invariance_survives_missing_ordering_pairs():
-    # one ordering only: the positional floor is unavailable, but the rest
-    # of the analysis must still run
+    # test whether the analysis still runs of the postional ordering is absent
     verdicts = [_verdict(("lab", "con"), "lab", "lab", variant="minimal")]
     result = validate.invariance_violation(verdicts)
     assert result["positional_swap"] is None
 
 
-# parsers
-# The two places the code assumes something about what the model returns.
+
 # Models wrap JSON in code fences and add commentary regardless of
 # instructions.
 
@@ -278,12 +274,12 @@ def test_cache_keys_separate_by_model():
 
 @pytest.fixture
 def fake_api(monkeypatch, tmp_path):
-    # stubs the two provider calls, recording what each was sent, and points
+    # recording what each was sent for each of provider call, and points
     # the cache and the call log at a temporary directory
     from types import SimpleNamespace
     from phase_pipeline import llm_client
     sent = {}
-    failures = []  # exceptions to raise before succeeding
+    failures = []  
 
     def create(**kwargs):  # stands in for OpenAI's chat.completions.create
         if failures:
@@ -331,7 +327,7 @@ def test_every_subdir_used_has_decoding_settings():
 def test_request_and_record_match(fake_api):
     llm_client, sent, _, _ = fake_api
     response = llm_client.call_llm("hi", "gpt-5", "k", subdir="probes")
-    assert response["decoding"] == decoding_sent(sent)  # the cache file records what was sent
+    assert response["decoding"] == decoding_sent(sent)  # cache file records what was sent
 
 
 def test_temperature_is_uniform_across_stages():
@@ -345,7 +341,7 @@ def test_temperature_override_separates_the_cache(fake_api):
     llm_client.call_llm("hi", "claude", "k", subdir="probes")
     llm_client.TEMPERATURE_OVERRIDE = 0.0
     llm_client.call_llm("hi", "claude", "k", subdir="probes")
-    assert sent["temperature"] == 0.0  # the override is sent
+    assert sent["temperature"] == 0.0  # overrides default Anthropic API temperature
     assert len(list(cache.iterdir())) == 2, "two temperatures shared a file"
 
 def test_no_output_cap_is_registered():
@@ -400,12 +396,10 @@ def test_consolidate_metrics_mean_rho(tmp_path, monkeypatch):
     t = json.loads((tmp_path / "tables_t.json").read_text(encoding="utf-8"))
     assert t["by_arm_source"] == [{"arm": "explicit_mft", "source": "bes", "n_cells": 2, "mean_rho": 0.0,
                                    "cells_rho_positive": 1, "winner_rate": 0, "mean_positional_error": 0.5, "rejected": 0}]
-    assert t["by_arm_source"] == [{"arm": "explicit_mft", "source": "bes", "n_cells": 2, "mean_rho": 0.0,
-    "cells_rho_positive": 1, "winner_rate": 0, "mean_positional_error": 0.5, "rejected": 0}]
 
 
 def test_profile_design_tag_is_in_the_cache_keys():
-    # pilot files are 2024_<arm>_<source>_<model>_runN; the main series must not read them
+    # pilot files are 2024_<arm>_<source>_<model>_runN. The main series must not read them
     import inspect
     from phase_pipeline import profiles, compare, prompts as P
     assert P.PROFILE_DESIGN == "forced"
@@ -413,7 +407,7 @@ def test_profile_design_tag_is_in_the_cache_keys():
     assert "P.PROFILE_DESIGN" in inspect.getsource(compare.run_pair)
 
 def test_polling_averages_2024_rank_the_parties_as_the_result_did():
-    # the recorded 2024 averages must be one row per party and order them like the vote
+    # the recorded 2024 averages must be one row per party
     from phase_pipeline.vote_shares import polling_averages, vote_shares
     polling, shares = polling_averages(2024), vote_shares(2024)
     assert set(polling) == set(shares)
@@ -426,7 +420,7 @@ def test_polling_averages_absent_election_returns_none(tmp_path):
     assert polling_averages(2024, path=tmp_path / "missing.csv") is None
 
 def test_polling_benchmark_gap_is_polls_minus_pipeline():
-    # perfect polls, backwards pipeline: gap is 2 and the pipeline does not match
+    # tests benchmarks reproduces the correct gap
     from phase_pipeline import validate
     shares = {"lab": 33.7, "con": 23.7, "reform": 14.3, "ld": 12.2, "green": 6.4}
     backwards = {p: -v for p, v in shares.items()}
@@ -436,7 +430,7 @@ def test_polling_benchmark_gap_is_polls_minus_pipeline():
     assert not out["pipeline_matches_or_beats"] 
 
 def test_verdict_names_the_text_not_the_position():
-    # the question and the schema use the pseudonyms; "A"/"B" appear nowhere as references
+    # the question and the schema use the pseudonyms. "A"/"B" appear nowhere as references
     import inspect
     from phase_pipeline.vote_shares import ELECTIONS, vote_shares
     for election in ELECTIONS:
@@ -455,7 +449,7 @@ def test_verdict_names_the_text_not_the_position():
     assert "LABEL_SCHEME" in inspect.getsource(compare.run_pair)
 
 def test_score_spread_and_margin_come_from_the_raw_scores():
-    # a decisive ranking and a near-tied one have the same rho; only the scores tell them apart
+    # a decisive ranking and a near-tied one have the same rho, only using the scores tells them apart
     from phase_pipeline import consolidate_metrics as cm
     shares = {"lab": 33.7, "con": 23.7, "reform": 14.3, "ld": 12.2, "green": 6.4}
     def cell(scores):
@@ -474,7 +468,7 @@ def test_main_grid_is_a_subset_of_the_narrowed_design():
     assert set(P.MAIN_VARIANTS) <= set(P.CARRIED_FORWARD)
     assert set(P.MAIN_ARMS) <= set(P.PROFILE_PROMPTS) and "baseline" not in P.MAIN_ARMS  # Phase 3 adds baseline
     assert set(P.MAIN_SOURCES) <= set(P.SOURCE_CONDITIONS)
-    assert "minimal" in P.MAIN_VARIANTS and "anonymised" in P.MAIN_VARIANTS  # reference and blinding condition stay
+    assert "minimal" in P.MAIN_VARIANTS and "anonymised" in P.MAIN_VARIANTS  # reference and anonymising condition stays
 
 
 def test_pipeline_defaults_to_the_main_grid(monkeypatch):
@@ -506,16 +500,16 @@ def test_phase1_plan_counts_the_requested_variants():
     assert counts["summary_calls"] == 2 * 2 * summarise.N_RUNS and counts["total_calls"] == 2 * counts["summary_calls"]
 
 
-def test_summary_gate_rejects_fragments():
+def test_summary_gate_rejects_fragments(): #ensures length gate is enforced, with the exceptions accounted for
     from phase_pipeline.summarise import looks_like_summary
     manifesto = " ".join(f"word{i}" for i in range(3000))
     assert not looks_like_summary("Thanks to Claude for assistance with this document.", manifesto)  # fragment
     assert looks_like_summary(" ".join(f"summary{i}" for i in range(300)), manifesto)  # proper length
-    assert looks_like_summary("short", "a short manifesto")  # no floor for tiny sources like the Referendum leaflet
+    assert looks_like_summary("short", "a short manifesto")  # no gate for tiny sources like the Referendum leaflet
 
 
 def test_summary_gate_re_requests_and_store_reject(fake_api, monkeypatch):
-    # first reply is a fragment, second a real summary: the fragment is kept, the summary is used
+    # first reply is a fragment, second a real summary. The fragment is kept, the summary is used
     llm_client, _, _, _ = fake_api
     (llm_client.CACHE_DIR / "summaries").mkdir()
     from phase_pipeline import summarise
@@ -538,7 +532,7 @@ def test_implied_shares_are_the_fitted_choice_probabilities():
     assert mean_error_points(flat, shares, parties) == pytest.approx(8.9, abs=0.01)  # 20 against each actual share
 
 def test_commitment_ledger_is_filtered_by_election_model_and_variant():
-    # one ledger holds every run; a multi-word variant must not be split at its underscore
+    # checks that one ledger holds every run
     from phase_pipeline.consolidate_metrics import commitment_stability_rows
     def entry(stability):
         return {"stability": stability, "n_clusters": 10, "n_consensus": 4,
@@ -558,7 +552,7 @@ def test_commitment_ledger_is_filtered_by_election_model_and_variant():
 
 
 def test_party_error_signs_are_the_right_way_round():
-    # a party the pipeline ranks too low reads positive; one it overstates in points reads positive
+    # checks that a party the pipeline ranks too low reads positive and also that the reverse logic works for points
     from phase_pipeline.consolidate_metrics import party_rows, score_rows
     shares = {"lab": 40.0, "con": 30.0, "ld": 20.0, "green": 10.0}
     scores = {"lab": -1.0, "con": 0.0, "ld": 0.5, "green": 0.5}  # lab pushed to the bottom
