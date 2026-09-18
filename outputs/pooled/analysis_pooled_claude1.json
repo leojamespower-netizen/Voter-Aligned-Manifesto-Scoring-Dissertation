@@ -1,0 +1,466 @@
+{
+  "elections": [
+    1997,
+    2001,
+    2005,
+    2010,
+    2015,
+    2017,
+    2019,
+    2024
+  ],
+  "source": "summary",
+  "n_verdicts": 3940,
+  "best_cell": {
+    "1997": "minimal/baseline/noprofile",
+    "2001": "minimal/bidirectional_mft/bes",
+    "2005": "minimal/axis/ipsos",
+    "2010": "minimal/bidirectional_mft/bes",
+    "2015": "minimal/axis/ipsos",
+    "2017": "minimal/axis/ipsos",
+    "2019": "anonymised/axis/bes",
+    "2024": "anonymised/baseline/noprofile"
+  },
+  "noise_floors": {
+    "invariance": {
+      "positional_swap": 0.21218274111675126,
+      "distorted_vs_minimal": {
+        "rate": null,
+        "n_comparisons": 0,
+        "values": [
+          "minimal"
+        ]
+      },
+      "calibration_repeats": {
+        "rate": null,
+        "n_comparisons": 0,
+        "values": []
+      },
+      "floor": 0.21218274111675126
+    },
+    "framing": {
+      "framing_axis": {
+        "rate": 0.13220338983050847,
+        "n_comparisons": 590,
+        "values": [
+          "framing_preserving",
+          "minimal",
+          "neutral"
+        ]
+      },
+      "party_cue": {
+        "rate": 0.09,
+        "n_comparisons": 100,
+        "values": [
+          "anonymised",
+          "framed"
+        ]
+      },
+      "framework_arm": {
+        "rate": 0.4087719298245614,
+        "n_comparisons": 570,
+        "values": [
+          "axis",
+          "baseline",
+          "bidirectional_mft",
+          "explicit_mft"
+        ]
+      },
+      "source_condition": {
+        "rate": 0.35384615384615387,
+        "n_comparisons": 780,
+        "values": [
+          "bes",
+          "both",
+          "ipsos",
+          "noprofile"
+        ]
+      },
+      "invariance_floor": 0.21218274111675126,
+      "ordering_holds": false
+    },
+    "calibration": {
+      "reversal_by_confidence": {
+        "medium": 0.27740863787375414,
+        "low": 0.25,
+        "high": 0.07162534435261708
+      },
+      "gap": 0.20578329352113706,
+      "distribution": {
+        "counts": {
+          "medium": 1763,
+          "low": 218,
+          "high": 1959
+        },
+        "proportions": {
+          "medium": 0.44746192893401016,
+          "low": 0.05532994923857868,
+          "high": 0.49720812182741114
+        },
+        "n": 3940
+      }
+    }
+  },
+  "profile_value_added": {
+    "1997": {
+      "rho_with_profile": 0.9999999999999999,
+      "rho_no_profile": 0.9999999999999999,
+      "improvement": 0.0,
+      "profile_helps": "False"
+    },
+    "2001": {
+      "rho_with_profile": 0.9999999999999999,
+      "rho_no_profile": 0.8999999999999998,
+      "improvement": 0.10000000000000009,
+      "profile_helps": "True"
+    },
+    "2005": {
+      "rho_with_profile": 0.9999999999999999,
+      "rho_no_profile": 0.8999999999999998,
+      "improvement": 0.10000000000000009,
+      "profile_helps": "True"
+    },
+    "2010": {
+      "rho_with_profile": 0.9999999999999999,
+      "rho_no_profile": 0.05129891760425771,
+      "improvement": 0.9487010823957421,
+      "profile_helps": "True"
+    },
+    "2015": {
+      "rho_with_profile": 0.9746794344808963,
+      "rho_no_profile": 0.8207826816681234,
+      "improvement": 0.15389675281277293,
+      "profile_helps": "True"
+    },
+    "2017": {
+      "rho_with_profile": 0.8999999999999998,
+      "rho_no_profile": 0.19999999999999998,
+      "improvement": 0.6999999999999998,
+      "profile_helps": "True"
+    },
+    "2019": {
+      "rho_with_profile": 0.9999999999999999,
+      "rho_no_profile": 0.39999999999999997,
+      "improvement": 0.5999999999999999,
+      "profile_helps": "True"
+    },
+    "2024": {
+      "rho_with_profile": 0.9746794344808963,
+      "rho_no_profile": -0.3,
+      "improvement": 1.2746794344808963,
+      "profile_helps": "True"
+    }
+  },
+  "party_error": {
+    "con": {
+      "mean_signed_error": -0.125,
+      "sd_across_elections": 0.33071891388307384,
+      "n_elections": 8,
+      "per_election": {
+        "1997": 0,
+        "2001": 0,
+        "2005": 0,
+        "2010": 0,
+        "2015": 0,
+        "2017": 0,
+        "2019": 0,
+        "2024": -1
+      }
+    },
+    "lab": {
+      "mean_signed_error": 0.125,
+      "sd_across_elections": 0.33071891388307384,
+      "n_elections": 8,
+      "per_election": {
+        "1997": 0,
+        "2001": 0,
+        "2005": 0,
+        "2010": 0,
+        "2015": 0,
+        "2017": 0,
+        "2019": 0,
+        "2024": 1
+      }
+    },
+    "ld": {
+      "mean_signed_error": 0.125,
+      "sd_across_elections": 0.33071891388307384,
+      "n_elections": 8,
+      "per_election": {
+        "1997": 0,
+        "2001": 0,
+        "2005": 0,
+        "2010": 0,
+        "2015": 0,
+        "2017": 1,
+        "2019": 0,
+        "2024": 0
+      }
+    },
+    "referendum": {
+      "mean_signed_error": 0,
+      "sd_across_elections": 0.0,
+      "n_elections": 1,
+      "per_election": {
+        "1997": 0
+      }
+    },
+    "snp": {
+      "mean_signed_error": -0.2,
+      "sd_across_elections": 0.4,
+      "n_elections": 5,
+      "per_election": {
+        "1997": 0,
+        "2001": 0,
+        "2015": 0,
+        "2017": -1,
+        "2019": 0
+      }
+    },
+    "ukip": {
+      "mean_signed_error": 0,
+      "sd_across_elections": 0.0,
+      "n_elections": 5,
+      "per_election": {
+        "2001": 0,
+        "2005": 0,
+        "2010": 0,
+        "2015": 0,
+        "2017": 0
+      }
+    },
+    "green": {
+      "mean_signed_error": 0,
+      "sd_across_elections": 0.0,
+      "n_elections": 3,
+      "per_election": {
+        "2005": 0,
+        "2019": 0,
+        "2024": 0
+      }
+    },
+    "bnp": {
+      "mean_signed_error": 0,
+      "sd_across_elections": 0.0,
+      "n_elections": 1,
+      "per_election": {
+        "2010": 0
+      }
+    },
+    "reform": {
+      "mean_signed_error": 0,
+      "sd_across_elections": 0.0,
+      "n_elections": 1,
+      "per_election": {
+        "2024": 0
+      }
+    }
+  },
+  "directional_error": {
+    "by_family": {
+      "centre-right": {
+        "mean_signed_error": -0.125,
+        "sd": 0.0,
+        "n_parties": 1
+      },
+      "centre-left": {
+        "mean_signed_error": 0.125,
+        "sd": 0.0,
+        "n_parties": 1
+      },
+      "centre": {
+        "mean_signed_error": 0.125,
+        "sd": 0.0,
+        "n_parties": 1
+      },
+      "regionalist": {
+        "mean_signed_error": -0.2,
+        "sd": 0.0,
+        "n_parties": 1
+      },
+      "right": {
+        "mean_signed_error": 0,
+        "sd": 0.0,
+        "n_parties": 3
+      },
+      "left": {
+        "mean_signed_error": 0,
+        "sd": 0.0,
+        "n_parties": 1
+      }
+    },
+    "by_party": {
+      "con": {
+        "mean_signed_error": -0.125,
+        "sd_across_elections": 0.33071891388307384,
+        "n_elections": 8,
+        "per_election": {
+          "1997": 0,
+          "2001": 0,
+          "2005": 0,
+          "2010": 0,
+          "2015": 0,
+          "2017": 0,
+          "2019": 0,
+          "2024": -1
+        }
+      },
+      "lab": {
+        "mean_signed_error": 0.125,
+        "sd_across_elections": 0.33071891388307384,
+        "n_elections": 8,
+        "per_election": {
+          "1997": 0,
+          "2001": 0,
+          "2005": 0,
+          "2010": 0,
+          "2015": 0,
+          "2017": 0,
+          "2019": 0,
+          "2024": 1
+        }
+      },
+      "ld": {
+        "mean_signed_error": 0.125,
+        "sd_across_elections": 0.33071891388307384,
+        "n_elections": 8,
+        "per_election": {
+          "1997": 0,
+          "2001": 0,
+          "2005": 0,
+          "2010": 0,
+          "2015": 0,
+          "2017": 1,
+          "2019": 0,
+          "2024": 0
+        }
+      },
+      "referendum": {
+        "mean_signed_error": 0,
+        "sd_across_elections": 0.0,
+        "n_elections": 1,
+        "per_election": {
+          "1997": 0
+        }
+      },
+      "snp": {
+        "mean_signed_error": -0.2,
+        "sd_across_elections": 0.4,
+        "n_elections": 5,
+        "per_election": {
+          "1997": 0,
+          "2001": 0,
+          "2015": 0,
+          "2017": -1,
+          "2019": 0
+        }
+      },
+      "ukip": {
+        "mean_signed_error": 0,
+        "sd_across_elections": 0.0,
+        "n_elections": 5,
+        "per_election": {
+          "2001": 0,
+          "2005": 0,
+          "2010": 0,
+          "2015": 0,
+          "2017": 0
+        }
+      },
+      "green": {
+        "mean_signed_error": 0,
+        "sd_across_elections": 0.0,
+        "n_elections": 3,
+        "per_election": {
+          "2005": 0,
+          "2019": 0,
+          "2024": 0
+        }
+      },
+      "bnp": {
+        "mean_signed_error": 0,
+        "sd_across_elections": 0.0,
+        "n_elections": 1,
+        "per_election": {
+          "2010": 0
+        }
+      },
+      "reform": {
+        "mean_signed_error": 0,
+        "sd_across_elections": 0.0,
+        "n_elections": 1,
+        "per_election": {
+          "2024": 0
+        }
+      }
+    }
+  },
+  "families": {
+    "lab": "centre-left",
+    "con": "centre-right",
+    "ld": "centre",
+    "snp": "regionalist",
+    "ukip": "right",
+    "green": "left",
+    "bnp": "right",
+    "reform": "right"
+  },
+  "polling_benchmark": {
+    "1997": {
+      "rho_pipeline": 0.9999999999999999,
+      "rho_polling": 0.9999999999999999,
+      "gap": 0.0,
+      "pipeline_matches_or_beats": "True",
+      "n_parties": 5
+    },
+    "2001": {
+      "rho_pipeline": 1.0,
+      "rho_polling": 1.0,
+      "gap": 0.0,
+      "pipeline_matches_or_beats": "True",
+      "n_parties": 4
+    },
+    "2005": {
+      "rho_pipeline": 1.0,
+      "rho_polling": 1.0,
+      "gap": 0.0,
+      "pipeline_matches_or_beats": "True",
+      "n_parties": 3
+    },
+    "2010": {
+      "rho_pipeline": 0.9999999999999999,
+      "rho_polling": 0.9999999999999999,
+      "gap": 0.0,
+      "pipeline_matches_or_beats": "True",
+      "n_parties": 5
+    },
+    "2015": {
+      "rho_pipeline": 0.9746794344808963,
+      "rho_polling": 0.8999999999999998,
+      "gap": -0.07467943448089653,
+      "pipeline_matches_or_beats": "True",
+      "n_parties": 5
+    },
+    "2017": {
+      "rho_pipeline": 0.8999999999999998,
+      "rho_polling": 0.8999999999999998,
+      "gap": 0.0,
+      "pipeline_matches_or_beats": "True",
+      "n_parties": 5
+    },
+    "2019": {
+      "rho_pipeline": 0.9999999999999999,
+      "rho_polling": 0.9999999999999999,
+      "gap": 0.0,
+      "pipeline_matches_or_beats": "True",
+      "n_parties": 5
+    },
+    "2024": {
+      "rho_pipeline": 0.9746794344808963,
+      "rho_polling": 0.9999999999999999,
+      "gap": 0.025320565519103555,
+      "pipeline_matches_or_beats": "False",
+      "n_parties": 5
+    }
+  }
+}
