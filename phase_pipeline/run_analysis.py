@@ -178,7 +178,6 @@ def main():
     missing = [e for e in elections if e not in analysis["polling_benchmark"]]
     if missing:
         print(f"No polling averages recorded for {missing}; benchmark_against_polling skipped there.")
-    print("Not computed here: adversarial_ablation needs an adversarial run.")
 
 if __name__ == "__main__":
     main()

@@ -3,13 +3,12 @@
     python -m pytest tests/ -v
 
 Every bug found in this codebase so far produced plausible output rather
-than an error: a substring match that deleted a thousand real responses, a
+than an error. For example a substring match that deleted a thousand real responses, a
 threshold that excluded nothing, two modules disagreeing about whether a key
-was called slot_A or slot_a. None of those would fail a smoke test, and all
-of them change the numbers. These tests target that class specifically.
+was called slot_A or slot_a.These tests target such a class of error, in a precise manner
 
 The survey tests need the .dta files, which are licensed and not committed,
-so they skip when the directory is absent. Everything else runs anywhere.
+so they skip when the directory is absent.
 """
 
 import os
@@ -537,4 +536,47 @@ def test_implied_shares_are_the_fitted_choice_probabilities():
     assert abs(sum(lead.values()) - 100) < 1e-9
     shares = {"lab": 33.7, "con": 23.7, "reform": 14.3, "ld": 12.2, "green": 6.4}
     assert mean_error_points(flat, shares, parties) == pytest.approx(8.9, abs=0.01)  # 20 against each actual share
+
+def test_commitment_ledger_is_filtered_by_election_model_and_variant():
+    # one ledger holds every run; a multi-word variant must not be split at its underscore
+    from phase_pipeline.consolidate_metrics import commitment_stability_rows
+    def entry(stability):
+        return {"stability": stability, "n_clusters": 10, "n_consensus": 4,
+                "coverage": 0.8, "threshold": 0.75}
+    ledger = {
+        "summary:2024_lab_framing_preserving_gpt-5": entry(0.4),
+        "summary:2024_con_framing_preserving_gpt-5": entry(0.6),
+        "summary:2024_lab_minimal_gpt-5": entry(0.9),
+        "summary:2024_lab_framing_preserving_claude": entry(0.1),   # other model
+        "summary:1997_lab_framing_preserving_gpt-5": entry(0.2),    # other election
+    }
+    rows = {r["variant"]: r for r in commitment_stability_rows(ledger, 2024, "gpt-5")}
+    assert set(rows) == {"framing_preserving", "minimal"}
+    assert rows["framing_preserving"]["n_parties"] == 2
+    assert rows["framing_preserving"]["mean_commitment_stability"] == pytest.approx(0.5)
+    assert rows["minimal"]["n_parties"] == 1
+
+
+def test_party_error_signs_are_the_right_way_round():
+    # a party the pipeline ranks too low reads positive; one it overstates in points reads positive
+    from phase_pipeline.consolidate_metrics import party_rows, score_rows
+    shares = {"lab": 40.0, "con": 30.0, "ld": 20.0, "green": 10.0}
+    scores = {"lab": -1.0, "con": 0.0, "ld": 0.5, "green": 0.5}  # lab pushed to the bottom
+    report = {"vote_shares": shares,
+              "cells": {"minimal/axis/bes": {"scores": scores,
+                                             "ranking": sorted(scores, key=scores.get, reverse=True)}}}
+    rows = {r["party"]: r for r in party_rows(report, score_rows(report))}
+    assert rows["lab"]["mean_rank_error"] == 3          # first by vote, last by score
+    assert rows["lab"]["mean_share_error"] < 0          # understated in points
+    assert rows["lab"]["cells_overstated"] == 0
+    assert rows["green"]["mean_rank_error"] < 0         # last by vote, ranked higher
+    assert rows["green"]["mean_share_error"] > 0 and rows["green"]["cells_overstated"] == 1
+
+
+def test_probe_rows_survive_a_missing_dual_block():
+    # older probe reports have no dual probe; the row is still produced
+    from phase_pipeline.consolidate_metrics import probe_rows
+    row = probe_rows({"leakage": {"accuracy": 0.8, "chance": 0.2, "n": 20}})[0]
+    assert row["accuracy"] == 0.8 and row["anonymisation_failed"] is None
+    assert not any(k.startswith("accuracy_") for k in row)
 

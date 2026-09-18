@@ -187,8 +187,8 @@ def _api_request(prompt, model, system, decoding):
 
     if spec["sdk"] == "anthropic":
         body = {"model": spec["api_model"],
-                "messages": [{"role": "user", "content": [{"type: "text", "text":prompt,
-                "cache_control: {"type": "ephemeral"}}]}],
+                "messages": [{"role": "user", "content": [{"type": "text", "text":prompt,
+                "cache_control": {"type": "ephemeral"}}]}],
                 **decoding}
         if system:
             body["system"] = system  # top-level on this API, not a message

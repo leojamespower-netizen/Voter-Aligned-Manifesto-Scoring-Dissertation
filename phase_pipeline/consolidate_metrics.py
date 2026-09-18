@@ -159,17 +159,125 @@ def score_marginal(rows, keys):
              "best_cell_error_points": min(r["mean_error_points"] for r in rs)}
             for g, rs in sorted(groups.items())]
 
+# how much each design dimension moves performance: the spread between its best
+# and worst level, so "does the arm matter more than the variant" is answerable
+def contrasts(rows, score_rows_, keys):
+    err = {(r["variant"], r["arm"], r["source"]): r["mean_error_points"] for r in score_rows_}
+    out = []
+    for key in keys:
+        groups = defaultdict(list)
+        for r in rows:
+            groups[r[key]].append(r)
+        means = {g: mean(r["rho"] for r in rs) for g, rs in groups.items()}
+        errs = {g: mean(err[(r["variant"], r["arm"], r["source"])] for r in rs) for g, rs in groups.items()}
+        best, worst = max(means, key=means.get), min(means, key=means.get)
+        out.append({"dimension": key, "n_levels": len(means),
+                    "best_level": best, "best_mean_rho": means[best],
+                    "worst_level": worst, "worst_mean_rho": means[worst],
+                    "rho_spread": means[best] - means[worst],
+                    "error_points_spread": max(errs.values()) - min(errs.values())})
+    return out
+
+
+# Phase 1 replication stability per summary variant: text similarity across the
+# five runs, and how far apart the parties within a variant were
+def summary_stability_rows(phase1):
+    out = []
+    for variant, block in phase1.get("stability", {}).items():
+        per = block.get("per_cell", {})
+        out.append({"variant": variant, "mean_stability": block.get("mean_stability"),
+                    "sd_across_parties": block.get("sd_across_cells"),
+                    "least_stable": block.get("min_cell"), "most_stable": block.get("max_cell"),
+                    "n_parties": len(per)})
+    return sorted(out, key=lambda r: r["variant"])
+
+
+# Phase 2 replication stability per profile cell, both metrics and whether they agree
+def profile_stability_rows(phase2):
+    out = []
+    for arm, sources in phase2.get("selections", {}).items():
+        for source, sel in sources.items():
+            out.append({"arm": arm, "source": source,
+                        "stability_cosine": sel.get("stability_cosine"),
+                        "stability_cosine_sd": sel.get("stability_cosine_sd"),
+                        "stability_rouge_l": sel.get("stability_rouge_l"),
+                        "metrics_agree_on_medoid": sel.get("metrics_agree_on_medoid"),
+                        "selected_run": sel.get("selected_run_index"), "n_runs": sel.get("n_runs")})
+    return sorted(out, key=lambda r: (r["arm"], r["source"]))
+    
+
+
+# Phase 1 commitment stability, the primary replication measure: the share of
+# distinct commitments that survived across the five runs, per variant. The
+# ledger accumulates over every election and model, so it is filtered by both.
+def commitment_stability_rows(ledger, election, model):
+    prefix, suffix = f"summary:{election}_", f"_{model}"
+    by_variant = defaultdict(list)
+    for key, rec in ledger.items():
+        if not (key.startswith(prefix) and key.endswith(suffix)):
+            continue
+        variant = key[len(prefix):-len(suffix)].split("_", 1)[1]  # key is <election>_<party>_<variant>_<model>
+        by_variant[variant].append(rec)
+    return [{"variant": v, "n_parties": len(rs),
+             "mean_commitment_stability": mean(r["stability"] for r in rs),
+             "mean_clusters": mean(r["n_clusters"] for r in rs),
+             "mean_consensus_set": mean(r["n_consensus"] for r in rs),
+             "mean_coverage_of_selected": mean(r["coverage"] for r in rs),
+             "match_threshold": rs[0]["threshold"]}
+            for v, rs in sorted(by_variant.items())]
+   
+
+
+# whether the model could name the parties from the summaries it was given
+def probe_rows(probes):
+    leak, dual = probes.get("leakage", {}), probes.get("dual", {})
+    return [{"accuracy": leak.get("accuracy"), "chance": leak.get("chance"),
+             "high_confidence_correct_rate": leak.get("high_confidence_correct_rate"),
+             "threshold": leak.get("threshold"), "anonymisation_failed": leak.get("anonymisation_failed"),
+             "n": leak.get("n"),
+             **{f"accuracy_{k}": v for k, v in dual.items() if isinstance(v, (int, float))}}]
+
+
+# per party: rank error and error in points, per cell and averaged, so a party the
+# pipeline consistently favours is visible
+def party_rows(report, score_rows_):
+    shares = report["vote_shares"]
+    actual = sorted(shares, key=shares.get, reverse=True)
+    out = []
+    for i, party in enumerate(actual):
+        ranks = [c["ranking"].index(party) - i for c in report["cells"].values()]
+        implied = [r[f"implied_{party}"] for r in score_rows_]
+        out.append({"party": party, "actual_rank": i + 1, "actual_share": shares[party],
+                    "mean_rank_error": mean(ranks),          # + means placed too low
+                    "mean_implied_share": mean(implied),
+                    "mean_share_error": mean(v - shares[party] for v in implied),  # + means overstated
+                    "cells_overstated": sum(v > shares[party] for v in implied),
+                    "n_cells": len(implied)})
+    return out
+
+
+# where each cell's rho sits in its own permutation null: the check that a ranking
+# beats chance, which rho alone cannot say on five parties
+def null_rows(rows):
+    return [{"threshold": t, "cells_at_or_above": sum(r["null_percentile"] >= t for r in rows),
+             "n_cells": len(rows)} for t in (0.5, 0.9, 0.95, 0.99)]
+
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("phase3", type=Path)
     ap.add_argument("--phase2", type=Path, default=None)
+    ap.add_argument("--phase1", type=Path, default=None)
+    ap.add_argument("--probes", type=Path, default=None)
+    ap.add_argument("--commitments", type=Path, default=None,
+                    help="outputs/commitment_selections.json, the accumulating Phase 1 ledger")
     ap.add_argument("--out", type=Path, default=Path("outputs/tables"))
     ap.add_argument("--label", default="")
     args = ap.parse_args()
 
     report = load(args.phase3)
     rows = cell_rows(report)
+    scores = score_rows(report)
     tables = {
         "label": args.label,
         "model": report["model"],
@@ -184,6 +292,9 @@ def main():
         "scores_by_arm": score_marginal(score_rows(report), ["arm"]),
         "scores_by_source": score_marginal(score_rows(report), ["source"]),
         "signed_error_by_party": signed_error_rows(report)[1], # mean over all 50 cells
+        "contrasts": contrasts(rows, scores, ["arm", "source", "variant"]),  # how much each dimension moves performance
+        "party_error": party_rows(report, scores),        # per party, in ranks and in points
+        "null_percentiles": null_rows(rows),              # cells beating their own permutation null
         "signed_error_by_cell": signed_error_rows(report)[0],
         "rejected": [{"cell": f"{r['variant']}/{r['arm']}/{r['source']}", "rejected": r["rejected"]}
                      for r in rows if r["rejected"]] + [{"cell": "total", "rejected": sum(r["rejected"] for r in rows)}],
@@ -221,7 +332,20 @@ def main():
             "actual_shares": {p: shares[p] for p in polled},
         })
     if args.phase2:
+        phase2 = load(args.phase2)
         tables["nulls_vs_performance"] = nulls_vs_performance(rows, profile_nulls(load(args.phase2)))
+        tables["profile_stability"] = profile_stability_rows(phase2)
+
+    if args.phase1:
+        tables["summary_stability"] = summary_stability_rows(load(args.phase1))
+
+    if args.probes:
+        tables["probe"] = probe_rows(load(args.probes))
+
+    if args.commitments:
+        tables["commitment_stability"] = commitment_stability_rows(
+            load(args.commitments), report["election"], report["model"])
+        
     args.out.mkdir(parents=True, exist_ok=True)
     path = args.out / f"tables_{args.label or report['model']}.json"
     path.write_text(json.dumps(tables, indent=2), encoding="utf-8")

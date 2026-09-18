@@ -10,7 +10,7 @@ from .profiles import _extract_json
 # Set BEFORE seeing the rate (open item in the pre-analysis plan).
 FAILURE_THRESHOLD = 0.45
 
-# OPEN family: no candidate list, no domain framing, no election
+# Minimal family: no candidate list, no domain framing, no election
 # Matched to Phase 3 conditions. Do not add scaffolding here: naming the
 # country, the document type, or the parties converts this into the forced
 # probe and inflates the measured rate.
@@ -55,7 +55,7 @@ def biased_check(election, party, text, model, parties, variant='neutral', alias
     if not correct and aliases:
         correct = any(guess == str(a).strip().lower() for a in aliases)
     return {
-        "family": "biased", "kind": "singleton", "election": election,
+        "family": "biased", "election": election,
         "truth": party,
         "guess": guess, "correct": correct,
         "stated_confidence": obj.get("confidence"),  # diagnostic only
@@ -84,7 +84,7 @@ def leakage_report(results, n_parties=5):
         "n": len(results),
     }
 
-# OPEN family - spontaneous recognition, no scaffolding
+# Minimal family - spontaneous recognition, no scaffolding
 
 # Registered grading rule for free-text identifications.
 
@@ -127,7 +127,7 @@ def minimal_check(election, party, text, model, variant='neutral'):
     ident = obj.get("identification", "")
     grade = grade_open(ident, party)
     return {
-        "family": "open", "kind": "singleton", "election": election,
+        "family": "minimal", "election": election,
         "truth": party, "identification": ident, "grade": grade,
         "correct": grade == "EXACT",
         "stated_confidence": obj.get("confidence"),  # diagnostic only

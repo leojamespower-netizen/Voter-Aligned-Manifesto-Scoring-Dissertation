@@ -252,18 +252,6 @@ def scores_with_noise_context(scores, verdicts):
     }
 
 
-# is the profile load-bearing?
-def adversarial_ablation(scores_real, scores_adversarial):
-    rank_real = sorted(scores_real, key=scores_real.get, reverse=True)
-    rank_adv = sorted(scores_adversarial, key=scores_adversarial.get,
-                      reverse=True)
-    return {
-        "ranking_real": rank_real,
-        "ranking_adversarial": rank_adv,
-        "ranking_changed": rank_real != rank_adv,
-        "profile_is_load_bearing": rank_real != rank_adv,
-    }
-
 # Null baselines and benchmarks
 
 def permutation_null(vote_shares, n_iter=10000, seed=20260101):
